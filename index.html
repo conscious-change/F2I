@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<section id="hero" class="section hero">
+  <div class="container">
+    <h1>Federal to Industry</h1>
+    <p>Your roadmap to private sector success.</p>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>About</h2>
+    <p>This site provides resources and job listings for federal employees transitioning to industry roles.</p>
+  </div>
+</section>
+
+<section id="resources" class="section alt">
+  <div class="container">
+    <h2>Resources</h2>
+    <ul>
+      {% for resource in site.resources %}
+        <li><a href="{{ resource.url }}">{{ resource.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="jobs" class="section">
+  <div class="container">
+    <h2>Job Listings</h2>
+    <ul>
+      {% for job in site.job_listings %}
+        <li><a href="{{ job.url }}">{{ job.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+

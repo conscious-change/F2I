@@ -1,0 +1,38 @@
+title: Fed to Industry (F2I)  
+email: your-email@example.com
+description: Resources for federal employees transitioning to industry careers.
+author: ""  
+baseurl: ""
+url: ""
+markdown: kramdown
+
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections:
+  resources:
+    output: true
+    permalink: /:collection/:name
+  job_listings:
+    output: true
+    permalink: /:collection/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+  - scope:
+      path: ""
+      type: "job_listings"
+    values:
+      layout: "job"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
