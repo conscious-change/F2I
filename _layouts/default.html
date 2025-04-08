@@ -22,9 +22,7 @@
     {{ content }}
   </main>
 
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
-  </footer>
+  {% include footer.html %}
 
   <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>

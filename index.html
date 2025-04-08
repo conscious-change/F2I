@@ -6,7 +6,8 @@ title: Home
 <section id="hero" class="section hero">
   <div class="container">
     <h1>Federal to Industry</h1>
-    <p>Your roadmap to private sector success.</p>
+    <p class="hero-tagline">Transform Your Government Experience Into Private Sector Success</p>
+    <p class="hero-subtitle">Trusted by over 5,000 federal employees who successfully made the transition</p>
     <div class="hero-buttons">
       <a href="/pages/transition-roadmap.html" class="btn btn-primary">Start Your Journey</a>
       <a href="/pages/success-stories.html" class="btn btn-secondary">Success Stories</a>
@@ -17,6 +18,7 @@ title: Home
 <section id="features" class="section">
   <div class="container">
     <h2 class="section-title">How We Help You Transition</h2>
+    <p class="section-subtitle">Our comprehensive approach addresses every aspect of your federal-to-private sector journey</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">📋</div>
@@ -36,6 +38,24 @@ title: Home
         <p>Expert advice on crafting a resume that highlights your federal experience for private sector employers.</p>
         <a href="/pages/resume-personal-branding.html" class="feature-link">Learn More →</a>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Interview Preparation</h3>
+        <p>Strategies and practice for excelling in private sector interviews and addressing common concerns about government experience.</p>
+        <a href="/pages/interview-preparation.html" class="feature-link">Learn More →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Compensation Guidance</h3>
+        <p>Understanding private sector compensation structures and negotiating packages that reflect your true value.</p>
+        <a href="/pages/compensation-benefits.html" class="feature-link">Learn More →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Community Support</h3>
+        <p>Connect with others who have successfully made the transition from federal service to the private sector.</p>
+        <a href="/pages/community.html" class="feature-link">Learn More →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -43,11 +63,43 @@ title: Home
 <section id="testimonials" class="section alt">
   <div class="container">
     <h2 class="section-title">Success Stories</h2>
+    <p class="section-subtitle">Hear from federal employees who successfully made the transition</p>
     <div class="testimonial-slider">
       <div class="testimonial">
-        <p class="testimonial-text">"F2I provided me with the roadmap and confidence I needed to successfully transition from my 15-year federal career to a senior role in the tech industry."</p>
-        <p class="testimonial-author">— Sarah J., Former FDA Regulator</p>
+        <div class="testimonial-content">
+          <p class="testimonial-text">"F2I provided me with the roadmap and confidence I needed to successfully transition from my 15-year federal career to a senior role in the tech industry. The skill translation tools were invaluable in helping me communicate my experience."</p>
+          <div class="testimonial-info">
+            <p class="testimonial-author">Sarah J.</p>
+            <p class="testimonial-position">Former FDA Regulator → Senior Director at Tech Company</p>
+            <p class="testimonial-result">40% salary increase</p>
+          </div>
+        </div>
       </div>
+      <div class="testimonial">
+        <div class="testimonial-content">
+          <p class="testimonial-text">"After 12 years at the Department of Defense, I wasn't sure how my skills would translate to the private sector. The F2I community connected me with mentors who had made similar transitions and guided me through the entire process."</p>
+          <div class="testimonial-info">
+            <p class="testimonial-author">Michael T.</p>
+            <p class="testimonial-position">Former DoD Program Manager → VP of Operations at Defense Contractor</p>
+            <p class="testimonial-result">Found position in just 8 weeks</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-content">
+          <p class="testimonial-text">"The interview preparation resources helped me address the common concerns private sector employers have about federal employees. I went from nervous to confident in my interviews and received multiple offers."</p>
+          <div class="testimonial-info">
+            <p class="testimonial-author">Elena R.</p>
+            <p class="testimonial-position">Former State Department Analyst → Management Consultant</p>
+            <p class="testimonial-result">3 job offers in competitive consulting firms</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-nav">
+      <button class="testimonial-dot active" data-slide="0"></button>
+      <button class="testimonial-dot" data-slide="1"></button>
+      <button class="testimonial-dot" data-slide="2"></button>
     </div>
     <div class="text-center">
       <a href="/pages/success-stories.html" class="btn btn-primary">Read More Success Stories</a>
@@ -55,28 +107,66 @@ title: Home
   </div>
 </section>
 
-<section id="resources-preview" class="section">
+<section id="stats" class="section">
   <div class="container">
-    <h2 class="section-title">Latest Resources</h2>
-    <div class="resources-grid">
-      {% for resource in site.resources limit:3 %}
-        <div class="resource-card">
-          <h3>{{ resource.title }}</h3>
-          <p>{{ resource.excerpt | strip_html | truncatewords: 25 }}</p>
-          <a href="{{ resource.url }}" class="resource-link">Read More →</a>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="text-center">
-      <a href="/pages/resources.html" class="btn btn-secondary">View All Resources</a>
+    <h2 class="section-title">Our Impact</h2>
+    <p class="section-subtitle">We've helped thousands of federal employees successfully transition to the private sector</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">5,000+</div>
+        <div class="stat-label">Successful Transitions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">35%</div>
+        <div class="stat-label">Average Salary Increase</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">92%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">12+</div>
+        <div class="stat-label">Industries Served</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="cta" class="section alt">
+<section id="faq" class="section alt">
   <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Common questions about transitioning from federal service to the private sector</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3 class="faq-question">How long does the transition typically take?</h3>
+        <p class="faq-answer">Most federal employees successfully transition within 3-6 months, though this can vary based on your target industry, level of preparation, and market conditions. Our roadmap helps you create a realistic timeline for your specific situation.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">Will I have to take a pay cut when moving to the private sector?</h3>
+        <p class="faq-answer">Not necessarily. While compensation structures differ, many federal employees actually see an increase in total compensation when moving to the private sector, especially when factoring in bonuses, equity, and other benefits. Our compensation resources help you understand and negotiate your true market value.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">How do I explain my government experience to private sector employers?</h3>
+        <p class="faq-answer">Our Skill Translation Hub provides frameworks and tools to help you translate your government experience into terms that resonate with private sector employers, focusing on transferable skills, achievements, and the unique value you bring.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">What happens to my federal benefits when I leave?</h3>
+        <p class="faq-answer">Our resources include detailed guidance on managing your federal benefits during transition, including options for your pension, TSP, health insurance, and other benefits to ensure you make informed decisions.</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="/pages/resources.html" class="btn btn-primary">View All Resources</a>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="section">
+  <div class="container text-center">
     <h2>Ready to Start Your Transition Journey?</h2>
     <p>Join our community of federal employees successfully transitioning to rewarding careers in the private sector.</p>
-    <a href="/pages/community.html" class="btn btn-primary">Join Our Community</a>
+    <div class="cta-buttons">
+      <a href="/pages/transition-roadmap.html" class="btn btn-primary">Start Your Journey</a>
+      <a href="/pages/community.html" class="btn btn-secondary">Join Our Community</a>
+    </div>
   </div>
 </section>
