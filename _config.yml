@@ -1,16 +1,31 @@
-title: Fed to Industry (F2I)  
-email: your-email@example.com
+# Site Settings
+title: Fed to Industry (F2I)
+email: contact@federaltoindustry.com
 description: Resources for federal employees transitioning to industry careers.
-author: ""  
+author: "F2I Team"
 baseurl: ""
 url: ""
 markdown: kramdown
 
+# Social Media
+social:
+  linkedin: "#"
+  twitter: "#"
+  facebook: "#"
+
+# Contact Information
+contact:
+  phone: "(555) 123-4567"
+  address: "1234 Federal Way, Washington, DC 20001"
+
+# Build Settings
 theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
+# Content Collections
 collections:
   resources:
     output: true
@@ -18,21 +33,96 @@ collections:
   job_listings:
     output: true
     permalink: /:collection/:name
+  success_stories:
+    output: true
+    permalink: /:collection/:name
+  guides:
+    output: true
+    permalink: /:collection/:name
 
+# Collection Metadata (for reference, not used by Jekyll directly)
+collection_meta:
+  resources:
+    title: "Resources"
+    description: "Helpful resources for federal employees transitioning to the private sector"
+  job_listings:
+    title: "Job Listings"
+    description: "Current job opportunities for federal employees"
+  success_stories:
+    title: "Success Stories"
+    description: "Real stories from federal employees who successfully transitioned to the private sector"
+  guides:
+    title: "Transition Guides"
+    description: "Step-by-step guides for various aspects of the federal-to-private transition"
+
+# Default Layouts
 defaults:
   - scope:
       path: ""
       type: "resources"
     values:
       layout: "resource"
+      image: "/assets/img/resource-default.jpg"
   - scope:
       path: ""
       type: "job_listings"
     values:
       layout: "job"
+      image: "/assets/img/job-default.jpg"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      image: "/assets/img/post-default.jpg"
+  - scope:
+      path: ""
+      type: "success_stories"
+    values:
+      layout: "success_story"
+      image: "/assets/img/story-default.jpg"
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "guide"
+      image: "/assets/img/guide-default.jpg"
+  - scope:
+      path: "pages"
+    values:
+      layout: "page"
 
+# Navigation Structure
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /pages/about.html
+  - title: Transition Resources
+    children:
+      - title: Transition Roadmap
+        url: /pages/transition-roadmap.html
+      - title: Skill Translation
+        url: /pages/skill-translation-hub.html
+      - title: Resume & Branding
+        url: /pages/resume-personal-branding.html
+      - title: Interview Prep
+        url: /pages/interview-preparation.html
+      - title: Networking
+        url: /pages/networking-strategies.html
+      - title: Job Search
+        url: /pages/job-search-resources.html
+      - title: Compensation
+        url: /pages/compensation-benefits.html
+  - title: Community
+    children:
+      - title: Success Stories
+        url: /pages/success-stories.html
+      - title: Join Community
+        url: /pages/community.html
+      - title: Blog
+        url: /pages/blog.html
+  - title: Learning Center
+    url: /pages/learning-center.html
+  - title: Resources
+    url: /pages/resources.html

@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+{% include breadcrumbs.html %}
+
+<article class="success-story">
+  <div class="story-header">
+    <div class="container">
+      <h1 class="story-title">{{ page.title }}</h1>
+      <div class="story-meta">
+        <div class="story-person">
+          <span class="name">{{ page.name }}</span>
+          <span class="transition">{{ page.former_role }} → {{ page.current_role }}</span>
+        </div>
+        <div class="story-details">
+          {% if page.transition_time %}
+          <div class="detail-item">
+            <span class="detail-label">Transition Time:</span>
+            <span class="detail-value">{{ page.transition_time }}</span>
+          </div>
+          {% endif %}
+          
+          {% if page.salary_increase %}
+          <div class="detail-item">
+            <span class="detail-label">Salary Increase:</span>
+            <span class="detail-value">{{ page.salary_increase }}</span>
+          </div>
+          {% endif %}
+          
+          {% if page.industry %}
+          <div class="detail-item">
+            <span class="detail-label">Industry:</span>
+            <span class="detail-value">{{ page.industry }}</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-content">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-main">
+          {% if page.image %}
+          <div class="story-image">
+            <img src="{{ page.image }}" alt="{{ page.name }}">
+          </div>
+          {% endif %}
+          
+          {{ content }}
+        </div>
+        
+        <div class="story-sidebar">
+          <div class="key-takeaways">
+            <h3>Key Takeaways</h3>
+            <ul class="takeaways-list">
+              <li>Start preparing early - at least 6 months before your planned transition</li>
+              <li>Focus on translating your federal experience into private sector terms</li>
+              <li>Build your network before you need it</li>
+              <li>Don't undervalue your government experience</li>
+              <li>Research compensation thoroughly to ensure you're properly valued</li>
+            </ul>
+          </div>
+          
+          <div class="related-resources">
+            <h3>Related Resources</h3>
+            <ul class="related-list">
+              {% for resource in site.resources limit:5 %}
+                <li><a href="{{ resource.url }}">{{ resource.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          
+          <div class="cta-box">
+            <h3>Ready to Start Your Transition?</h3>
+            <p>Follow our proven roadmap to successfully transition from federal service to the private sector.</p>
+            <a href="/pages/transition-roadmap.html" class="btn btn-primary">View Transition Roadmap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section class="more-stories">
+  <div class="container">
+    <h2>More Success Stories</h2>
+    <div class="stories-grid">
+      {% assign current_story = page.url %}
+      {% for story in site.success_stories limit:3 %}
+        {% if story.url != current_story %}
+          <div class="story-card">
+            <a href="{{ story.url }}">
+              {% if story.image %}
+              <div class="card-image">
+                <img src="{{ story.image }}" alt="{{ story.name }}">
+              </div>
+              {% endif %}
+              <h3>{{ story.title }}</h3>
+              <p class="story-transition">{{ story.former_role }} → {{ story.current_role }}</p>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="text-center">
+      <a href="/pages/success-stories.html" class="btn btn-secondary">View All Success Stories</a>
+    </div>
+  </div>
+</section>
