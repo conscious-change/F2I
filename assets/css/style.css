@@ -295,13 +295,17 @@ body {
 }
 
 .btn-secondary {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #ff6b00; /* Bright orange color */
   color: white;
-  border: 2px solid white;
+  border: 2px solid #ff6b00;
+  font-weight: 600;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #ff8c33; /* Lighter orange on hover */
+  border-color: #ff8c33;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .section-title {
@@ -869,52 +873,14 @@ body {
 /* Team Section */
 .team-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
-}
-
-.team-image {
-  flex: 1;
-  min-width: 300px;
-}
-
-.team-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .team-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.team-values {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.value-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  min-width: 100px;
-}
-
-.value-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #0056b3;
-}
-
-.value-text {
-  font-weight: 600;
-  color: #333;
+  width: 100%;
+  line-height: 1.6;
 }
 
 /* Testimonial Section */
