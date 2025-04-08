@@ -1,40 +1,82 @@
 ---
 layout: default
+title: Home
 ---
 
 <section id="hero" class="section hero">
   <div class="container">
     <h1>Federal to Industry</h1>
     <p>Your roadmap to private sector success.</p>
+    <div class="hero-buttons">
+      <a href="/pages/transition-roadmap.html" class="btn btn-primary">Start Your Journey</a>
+      <a href="/pages/success-stories.html" class="btn btn-secondary">Success Stories</a>
+    </div>
   </div>
 </section>
 
-<section id="about" class="section">
+<section id="features" class="section">
   <div class="container">
-    <h2>About</h2>
-    <p>This site provides resources and job listings for federal employees transitioning to industry roles.</p>
+    <h2 class="section-title">How We Help You Transition</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Transition Roadmap</h3>
+        <p>Step-by-step guidance to navigate your career transition from federal service to the private sector.</p>
+        <a href="/pages/transition-roadmap.html" class="feature-link">Learn More →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Skill Translation</h3>
+        <p>Tools and resources to help you translate your government experience into valuable private sector skills.</p>
+        <a href="/pages/skill-translation-hub.html" class="feature-link">Learn More →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Resume Building</h3>
+        <p>Expert advice on crafting a resume that highlights your federal experience for private sector employers.</p>
+        <a href="/pages/resume-personal-branding.html" class="feature-link">Learn More →</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="resources" class="section alt">
+<section id="testimonials" class="section alt">
   <div class="container">
-    <h2>Resources</h2>
-    <ul>
-      {% for resource in site.resources %}
-        <li><a href="{{ resource.url }}">{{ resource.title }}</a></li>
+    <h2 class="section-title">Success Stories</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p class="testimonial-text">"F2I provided me with the roadmap and confidence I needed to successfully transition from my 15-year federal career to a senior role in the tech industry."</p>
+        <p class="testimonial-author">— Sarah J., Former FDA Regulator</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="/pages/success-stories.html" class="btn btn-primary">Read More Success Stories</a>
+    </div>
+  </div>
+</section>
+
+<section id="resources-preview" class="section">
+  <div class="container">
+    <h2 class="section-title">Latest Resources</h2>
+    <div class="resources-grid">
+      {% for resource in site.resources limit:3 %}
+        <div class="resource-card">
+          <h3>{{ resource.title }}</h3>
+          <p>{{ resource.excerpt | strip_html | truncatewords: 25 }}</p>
+          <a href="{{ resource.url }}" class="resource-link">Read More →</a>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
+    <div class="text-center">
+      <a href="/pages/resources.html" class="btn btn-secondary">View All Resources</a>
+    </div>
   </div>
 </section>
 
-<section id="jobs" class="section">
+<section id="cta" class="section alt">
   <div class="container">
-    <h2>Job Listings</h2>
-    <ul>
-      {% for job in site.job_listings %}
-        <li><a href="{{ job.url }}">{{ job.title }}</a></li>
-      {% endfor %}
-    </ul>
+    <h2>Ready to Start Your Transition Journey?</h2>
+    <p>Join our community of federal employees successfully transitioning to rewarding careers in the private sector.</p>
+    <a href="/pages/community.html" class="btn btn-primary">Join Our Community</a>
   </div>
 </section>
-
