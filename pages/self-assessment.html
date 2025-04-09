@@ -1,13 +1,13 @@
 ---
 layout: assessment
-title: F2I Skills Self-Assessment
-subtitle: Identify and translate your federal experience into private sector skills
+title: F2I Self-Assessment
+subtitle: Identify and translate your federal experience into private sector value
 ---
 
 <div class="assessment-container">
   <div class="assessment-intro">
     <p>
-      This skills assessment will help you identify transferable skills from your federal career that are valuable in the private sector.
+      This self-assessment will help you identify transferable skills and achievements from your federal career that are valuable in the private sector.
       Complete each section at your own pace. Please be honest and specific in your responses.
     </p>
 
@@ -160,14 +160,15 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Key Achievements</h3>
-        <p>List your most significant achievements in federal service</p>
+        <p class="rating-guide">Document your most significant achievements in federal service</p>
+        <p class="instruction-text">Focus on measurable results and the skills you demonstrated in each achievement</p>
 
         <div id="keyAchievements">
           <div class="achievement-entry">
             <input type="text" class="form-control achievement-title" placeholder="Achievement title">
-            <textarea class="form-control achievement-description" placeholder="Brief description of the achievement"></textarea>
-            <textarea class="form-control achievement-impact" placeholder="Quantifiable impact (numbers, percentages, etc.)"></textarea>
-            <textarea class="form-control achievement-skills" placeholder="Skills demonstrated"></textarea>
+            <textarea class="form-control achievement-description compact-textarea" placeholder="Brief description of the achievement"></textarea>
+            <textarea class="form-control achievement-impact compact-textarea" placeholder="Quantifiable impact (numbers, percentages, etc.)"></textarea>
+            <textarea class="form-control achievement-skills compact-textarea" placeholder="Skills demonstrated"></textarea>
           </div>
         </div>
         <button id="addAchievement" class="btn btn-small">+ Add Achievement</button>
@@ -175,7 +176,8 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>STAR Stories</h3>
-        <p>Develop stories that demonstrate your impact using the STAR format</p>
+        <p class="rating-guide">Develop stories that demonstrate your impact using the STAR format</p>
+        <p class="instruction-text">These stories will help you prepare for behavioral interview questions</p>
 
         <div id="starStories">
           <div class="star-story">
@@ -183,23 +185,23 @@ subtitle: Identify and translate your federal experience into private sector ski
             <div class="star-fields">
               <div class="star-field">
                 <label>Situation:</label>
-                <textarea class="form-control" name="situation_1"></textarea>
+                <textarea class="form-control compact-textarea" name="situation_1" placeholder="Describe the situation"></textarea>
               </div>
               <div class="star-field">
                 <label>Task:</label>
-                <textarea class="form-control" name="task_1"></textarea>
+                <textarea class="form-control compact-textarea" name="task_1" placeholder="What was your task or responsibility?"></textarea>
               </div>
               <div class="star-field">
                 <label>Action:</label>
-                <textarea class="form-control" name="action_1"></textarea>
+                <textarea class="form-control compact-textarea" name="action_1" placeholder="What actions did you take?"></textarea>
               </div>
               <div class="star-field">
                 <label>Result:</label>
-                <textarea class="form-control" name="result_1"></textarea>
+                <textarea class="form-control compact-textarea" name="result_1" placeholder="What was the outcome? Include metrics if possible"></textarea>
               </div>
               <div class="star-field">
                 <label>Skills Demonstrated:</label>
-                <textarea class="form-control" name="skills_1"></textarea>
+                <textarea class="form-control compact-textarea" name="skills_1" placeholder="What skills did you demonstrate in this story?"></textarea>
               </div>
             </div>
           </div>
@@ -214,20 +216,21 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Target Industry Skills</h3>
-        <p>Identify skills required in your target industry and assess your current level</p>
+        <p class="rating-guide">Identify skills required in your target industry and assess your current level</p>
+        <p class="instruction-text">This will help you identify skill gaps to address in your transition plan</p>
 
         <div id="industrySkills">
           <div class="industry-skill-entry">
             <input type="text" class="form-control industry-skill-name" placeholder="Required industry skill">
             <select class="form-control industry-skill-rating">
               <option value="">Your current level</option>
-              <option value="1">1 - Basic</option>
-              <option value="2">2 - Intermediate</option>
-              <option value="3">3 - Proficient</option>
-              <option value="4">4 - Advanced</option>
-              <option value="5">5 - Expert</option>
+              <option value="1">1 = Basic</option>
+              <option value="2">2 = Intermediate</option>
+              <option value="3">3 = Proficient</option>
+              <option value="4">4 = Advanced</option>
+              <option value="5">5 = Expert</option>
             </select>
-            <textarea class="form-control industry-skill-gap" placeholder="How to close the gap"></textarea>
+            <textarea class="form-control industry-skill-gap compact-textarea" placeholder="How to close the gap"></textarea>
           </div>
         </div>
         <button id="addIndustrySkill" class="btn btn-small">+ Add Industry Skill</button>
@@ -235,7 +238,8 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Terminology Translation</h3>
-        <p>Translate federal terms to industry equivalents</p>
+        <p class="rating-guide">Translate federal terms to industry equivalents</p>
+        <p class="instruction-text">Learning to speak the language of your target industry is essential for a successful transition</p>
 
         <div id="terminologyTranslation">
           <div class="terminology-entry">
@@ -250,11 +254,12 @@ subtitle: Identify and translate your federal experience into private sector ski
 
     <!-- Section 5: Summary -->
     <div class="assessment-section" id="section5">
-      <h2>Skills Inventory Summary</h2>
+      <h2>Inventory Summary</h2>
 
       <div class="subsection">
         <h3>Top Skills for Industry Transition</h3>
-        <p>List your 5 strongest skills for transitioning to industry</p>
+        <p class="rating-guide">List your 5 strongest skills for transitioning to industry</p>
+        <p class="instruction-text">These will be your key selling points in resumes, cover letters, and interviews</p>
 
         <div id="topSkills">
           <div class="numbered-item">
@@ -282,7 +287,8 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Skills to Develop</h3>
-        <p>List the top 3 skills you need to develop for your industry transition</p>
+        <p class="rating-guide">List the top 3 skills you need to develop for your industry transition</p>
+        <p class="instruction-text">These will be priority areas for your professional development plan</p>
 
         <div id="skillsToDevelop">
           <div class="numbered-item">
@@ -302,7 +308,8 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Your Unique Value Proposition</h3>
-        <p class="hint">Write a 2-3 sentence statement that captures the unique value you bring from federal service to industry</p>
+        <p class="rating-guide">Write a 2-3 sentence statement that captures the unique value you bring from federal service to industry</p>
+        <p class="instruction-text">This will be the foundation for your elevator pitch and personal branding</p>
 
         <textarea id="valueProposition" class="form-control" rows="4"></textarea>
       </div>

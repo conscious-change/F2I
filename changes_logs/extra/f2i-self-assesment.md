@@ -1,4 +1,4 @@
-# Fed to Industry (F2I) Skills Inventory Worksheet
+# Fed 2 Industry (F2I) Skills Inventory Worksheet
 
 ## Introduction
 
@@ -221,16 +221,16 @@ Based on your skills inventory, identify 2-3 potential industry roles
 ## SKILLS INVENTORY SUMMARY
 
 ### Top 5 Strongest Skills for Industry Transition
-1. 
-2. 
-3. 
-4. 
-5. 
+1.
+2.
+3.
+4.
+5.
 
 ### Top 3 Skills to Develop
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ### Your Unique Value Proposition (Draft)
 *Write a 2-3 sentence statement that captures the unique combination of skills, experience, and perspective you bring from federal service to industry:*
@@ -239,9 +239,9 @@ Based on your skills inventory, identify 2-3 potential industry roles
 
 
 ### Next Steps
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ---
 

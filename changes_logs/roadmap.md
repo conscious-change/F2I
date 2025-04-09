@@ -1,4 +1,4 @@
-# Fed to Industry (F2I)
+# Fed 2 Industry (F2I)
 ## The Ultimate Guide for Federal Employees Transitioning to Industry
 
 ![F2I Logo]
@@ -47,7 +47,7 @@
 
 ## About This Guide
 
-Welcome to **Fed to Industry (F2I)**, the comprehensive resource designed specifically for federal employees making the transition to the private sector. Whether you're facing a layoff, looking for new challenges, or simply exploring your options, this guide will provide you with a clear roadmap to successfully navigate your journey from federal service to industry.
+Welcome to **Fed 2 Industry (F2I)**, the comprehensive resource designed specifically for federal employees making the transition to the private sector. Whether you're facing a layoff, looking for new challenges, or simply exploring your options, this guide will provide you with a clear roadmap to successfully navigate your journey from federal service to industry.
 
 The path from government to private sector employment can seem daunting. Different application processes, unfamiliar company cultures, and new expectations might feel overwhelming at first. However, your federal experience has equipped you with valuable skills, knowledge, and perspectives that are highly sought after in the right industry positions.
 

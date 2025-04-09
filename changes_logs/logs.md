@@ -125,7 +125,7 @@ These systems provide a user-friendly interface for content creation while still
 
 ### Benefits
 These changes ensure that:
-- **Consistent Horizontal Alignment**: The footer content now aligns perfectly with the header "Fed to Industry (F2I)" text, creating a clean, professional look.
+- **Consistent Horizontal Alignment**: The footer content now aligns perfectly with the header "Fed 2 Industry (F2I)" text, creating a clean, professional look.
 - **Proper Container Sizing**: The footer container has the same width and padding as the header container, ensuring visual consistency throughout the site.
 - **Subtle Text Alignment**: The slight left padding on the about section ensures that the text aligns properly with the header text.
 
@@ -226,9 +226,9 @@ The self-assessment toolkit now works properly, particularly the Technical Skill
 * The ability to add custom agency-specific skills
 * The ability to add software and digital tools with proficiency ratings
 * Automatic saving of all entered data
-* The ability to export data to a JSON file and import it later. 
+* The ability to export data to a JSON file and import it later.
 
-# Summary of Improvements to the Self-Assessment Toolkit Continued 
+# Summary of Improvements to the Self-Assessment Toolkit Continued
 
 I've made several improvements to the self-assessment toolkit, focusing on the Technical Skills section and overall readability:
 
@@ -297,37 +297,9 @@ I've made several adjustments to ensure the Agency-Specific Technical Skills sec
 * The Agency-Specific Technical Skills section no longer has oversized textareas
 * The visual flow between the two sections is now more harmonious
 
-# Toolkit Improvements Continued 
+# Toolkit Improvements Continued
 
-## 1. Enhanced Transferable Skills Section
-* **Improved Layout and Formatting**:
-   * Added clear rating guides with the same format as the Technical Skills section
-   * Added instructional text explaining the importance of each skill category
-   * Implemented consistent styling across all subsections
-   * Used the same rating legend format (1 = Basic, 2 = Intermediate, etc.)
-* **Added Comprehensive Skill Sets**:
-   * Leadership & Management Skills (10 key leadership competencies)
-   * Problem-Solving & Critical Thinking Skills (10 analytical skills)
-   * Communication & Interpersonal Skills (10 essential communication abilities)
-* **Implemented Interactive Functionality**:
-   * Created JavaScript functions to generate skill grids dynamically
-   * Added data collection and storage for all transferable skills
-   * Ensured proper loading and saving of all skill ratings
-   * Updated progress tracking to include transferable skills
-
-## 2. Improved User Interface
-* **Changed "Load from File" Button Color**:
-   * Replaced the bright orange with a neutral gray color
-   * Created a new `btn-neutral` class for a more subdued appearance
-   * Maintained consistent button styling and hover effects
-   * Improved visual hierarchy with the "Save to File" button now more prominent
-* **Enhanced Visual Consistency**:
-   * Maintained the same grid layout and spacing across all sections
-   * Used consistent rating scales and formatting
-   * Added helpful instructional text in each subsection
-   * Ensured all form controls have the same styling and behavior
-
-## 3. Improved Code Structure
+zure
 * **Refactored JavaScript Code**:
    * Created a generic `generateSkillsGrid` function to reduce code duplication
    * Organized skill data into separate, well-defined lists

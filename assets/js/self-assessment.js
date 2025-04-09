@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dataStr = JSON.stringify(data, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
 
-    const exportFileDefaultName = 'f2i-skills-assessment.json';
+    const exportFileDefaultName = 'f2i-self-assessment.json';
 
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
