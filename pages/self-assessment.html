@@ -8,8 +8,21 @@ subtitle: Identify and translate your federal experience into private sector ski
   <div class="assessment-intro">
     <p>
       This skills assessment will help you identify transferable skills from your federal career that are valuable in the private sector.
-      Complete each section at your own pace - your responses are saved in your browser as you go.
+      Complete each section at your own pace.
     </p>
+
+    <div class="save-load-info">
+      <h3>Save & Continue Later</h3>
+      <p>
+        Your responses are automatically saved in your browser as you work. If you need to continue on a different device or browser,
+        you can save your progress to a file and load it later:
+      </p>
+      <ol>
+        <li><strong>Save your progress</strong> - Click the "Save to File" button to download your responses as a JSON file</li>
+        <li><strong>Continue later</strong> - When you return, click "Load from File" to upload your saved responses and continue where you left off</li>
+      </ol>
+    </div>
+
     <div class="assessment-controls">
       <button id="saveAssessment" class="btn btn-primary">Save to File</button>
       <button id="loadAssessment" class="btn btn-secondary">Load from File</button>
@@ -41,7 +54,14 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Core Technical Skills</h3>
-        <p>Rate your proficiency in each skill area (1=Basic, 3=Proficient, 5=Expert)</p>
+        <p class="rating-guide">Rate your proficiency in each skill area:</p>
+        <div class="rating-legend">
+          <span class="rating-item"><strong>1</strong> = Basic</span>
+          <span class="rating-item"><strong>2</strong> = Intermediate</span>
+          <span class="rating-item"><strong>3</strong> = Proficient</span>
+          <span class="rating-item"><strong>4</strong> = Advanced</span>
+          <span class="rating-item"><strong>5</strong> = Expert</span>
+        </div>
 
         <div class="skill-grid" id="coreTechnicalSkills">
           <!-- Will be populated by JavaScript -->
@@ -51,19 +71,20 @@ subtitle: Identify and translate your federal experience into private sector ski
       <div class="subsection">
         <h3>Agency-Specific Technical Skills</h3>
         <p>List specialized technical skills from your agency/role</p>
+        <p class="instruction-text">Add skills specific to your agency or role that may be valuable in the private sector</p>
 
         <div id="agencySkills">
           <div class="skill-entry">
             <input type="text" class="form-control skill-name" placeholder="Skill name">
             <select class="form-control skill-rating">
               <option value="">Select rating</option>
-              <option value="1">1 - Basic</option>
-              <option value="2">2 - Intermediate</option>
-              <option value="3">3 - Proficient</option>
-              <option value="4">4 - Advanced</option>
-              <option value="5">5 - Expert</option>
+              <option value="1">1 = Basic</option>
+              <option value="2">2 = Intermediate</option>
+              <option value="3">3 = Proficient</option>
+              <option value="4">4 = Advanced</option>
+              <option value="5">5 = Expert</option>
             </select>
-            <textarea class="form-control skill-notes" placeholder="How this skill transfers to industry"></textarea>
+            <textarea class="form-control skill-notes compact-textarea" placeholder="How this skill transfers to industry"></textarea>
           </div>
         </div>
         <button id="addAgencySkill" class="btn btn-small">+ Add Skill</button>
@@ -72,17 +93,18 @@ subtitle: Identify and translate your federal experience into private sector ski
       <div class="subsection">
         <h3>Software & Digital Tools</h3>
         <p>List software and digital tools you're proficient with</p>
+        <p class="instruction-text">Include all relevant software, platforms, and digital tools you've used in your federal role</p>
 
         <div id="softwareTools">
           <div class="tool-entry">
             <input type="text" class="form-control tool-name" placeholder="Tool/Software name">
             <select class="form-control tool-rating">
               <option value="">Select rating</option>
-              <option value="1">1 - Basic</option>
-              <option value="2">2 - Intermediate</option>
-              <option value="3">3 - Proficient</option>
-              <option value="4">4 - Advanced</option>
-              <option value="5">5 - Expert</option>
+              <option value="1">1 = Basic</option>
+              <option value="2">2 = Intermediate</option>
+              <option value="3">3 = Proficient</option>
+              <option value="4">4 = Advanced</option>
+              <option value="5">5 = Expert</option>
             </select>
             <input type="text" class="form-control tool-equivalent" placeholder="Industry equivalent (if different)">
           </div>
