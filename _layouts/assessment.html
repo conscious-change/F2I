@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/assessment.css' | relative_url }}">
+
+<div class="page-header">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="page-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container">
+  {{ content }}
+</div>
+
+<script src="{{ '/assets/js/self-assessment.js' | relative_url }}"></script>
