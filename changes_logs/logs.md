@@ -103,3 +103,32 @@ Netlify CMS: An open-source CMS for static site generators
 
 Contentful: A more robust headless CMS with a user-friendly interface
 These systems provide a user-friendly interface for content creation while still leveraging the benefits of a static site generator like Jekyll.
+
+## Footer Styling Changes
+
+### 1. Added Container Styling for the Footer
+- Added specific CSS for the `.site-footer .container` selector
+- Set the same properties as the navbar container:
+  - `max-width: 1200px`
+  - `margin: 0 auto`
+  - `padding: 0 1rem`
+- This ensures that the footer content aligns perfectly with the header content
+
+### 2. Added Left Padding to the About Section
+- Added a specific style for the `.footer-section.about` selector
+- Set `padding-left: 0.5rem` to ensure proper alignment of the footer title
+- This subtle adjustment helps align the text with the header logo
+
+### 3. Maintained Consistent Spacing
+- Kept the footer bottom section padding consistent with the rest of the footer
+- Ensured that all elements in the footer are properly aligned
+
+### Benefits
+These changes ensure that:
+- **Consistent Horizontal Alignment**: The footer content now aligns perfectly with the header "Fed to Industry (F2I)" text, creating a clean, professional look.
+- **Proper Container Sizing**: The footer container has the same width and padding as the header container, ensuring visual consistency throughout the site.
+- **Subtle Text Alignment**: The slight left padding on the about section ensures that the text aligns properly with the header text.
+
+## Changes Made to the Homepage
+- Updated Button Text: Changed the text from "Success Stories" to "Join Our Community"
+- Updated Button Link: Changed the link destination from /pages/success-stories.html to /pages/community.html
