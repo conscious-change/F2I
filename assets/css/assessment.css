@@ -1,4 +1,20 @@
 /* Self-Assessment Styles */
+/* Reset button styles */
+button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Specific button overrides */
+#saveAssessment, #loadAssessment {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
 .assessment-container {
   max-width: 900px;
   margin: 0 auto;
@@ -36,6 +52,14 @@
   display: flex;
   gap: 10px;
   margin-top: 20px;
+}
+
+.assessment-controls .btn {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
 }
 
 .assessment-progress {

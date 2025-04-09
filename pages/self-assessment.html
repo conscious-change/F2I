@@ -8,7 +8,7 @@ subtitle: Identify and translate your federal experience into private sector ski
   <div class="assessment-intro">
     <p>
       This skills assessment will help you identify transferable skills from your federal career that are valuable in the private sector.
-      Complete each section at your own pace.
+      Complete each section at your own pace. Please be honest and specific in your responses.
     </p>
 
     <div class="save-load-info">
@@ -24,8 +24,8 @@ subtitle: Identify and translate your federal experience into private sector ski
     </div>
 
     <div class="assessment-controls">
-      <button id="saveAssessment" class="btn btn-primary">Save to File</button>
-      <button id="loadAssessment" class="btn btn-secondary">Load from File</button>
+      <button id="saveAssessment" class="btn btn-primary" style="border: none !important;">Save to File</button>
+      <button id="loadAssessment" class="btn btn-neutral" style="border: none !important;">Load from File</button>
       <input type="file" id="loadAssessmentFile" style="display: none;" accept=".json">
     </div>
   </div>
@@ -119,7 +119,14 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Leadership & Management Skills</h3>
-        <p>Rate your proficiency in each leadership skill (1=Basic, 3=Proficient, 5=Expert)</p>
+        <p class="rating-guide">Rate your proficiency in each leadership skill:</p>
+        <div class="rating-legend">
+          <span class="rating-item"><strong>1</strong> = Basic</span>
+          <span class="rating-item"><strong>2</strong> = Intermediate</span>
+          <span class="rating-item"><strong>3</strong> = Proficient</span>
+          <span class="rating-item"><strong>4</strong> = Advanced</span>
+          <span class="rating-item"><strong>5</strong> = Expert</span>
+        </div>
 
         <div class="skill-grid" id="leadershipSkills">
           <!-- Will be populated by JavaScript -->
@@ -128,7 +135,8 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Problem-Solving & Critical Thinking</h3>
-        <p>Rate your proficiency in each problem-solving skill</p>
+        <p class="rating-guide">Rate your proficiency in each problem-solving skill:</p>
+        <p class="instruction-text">These skills are highly valued across all industries and demonstrate your ability to tackle complex challenges</p>
 
         <div class="skill-grid" id="problemSolvingSkills">
           <!-- Will be populated by JavaScript -->
@@ -137,7 +145,8 @@ subtitle: Identify and translate your federal experience into private sector ski
 
       <div class="subsection">
         <h3>Communication & Interpersonal Skills</h3>
-        <p>Rate your proficiency in each communication skill</p>
+        <p class="rating-guide">Rate your proficiency in each communication skill:</p>
+        <p class="instruction-text">Effective communication skills are essential for success in any private sector role</p>
 
         <div class="skill-grid" id="communicationSkills">
           <!-- Will be populated by JavaScript -->

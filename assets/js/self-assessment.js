@@ -13,6 +13,48 @@ document.addEventListener('DOMContentLoaded', function() {
     { name: "Program Evaluation", id: "programEvaluation" }
   ];
 
+  // Leadership skills data
+  const leadershipSkillsList = [
+    { name: "Team Leadership", id: "teamLeadership" },
+    { name: "Strategic Planning", id: "strategicPlanning" },
+    { name: "Decision Making", id: "decisionMaking" },
+    { name: "Delegation", id: "delegation" },
+    { name: "Performance Management", id: "performanceManagement" },
+    { name: "Conflict Resolution", id: "conflictResolution" },
+    { name: "Change Management", id: "changeManagement" },
+    { name: "Mentoring/Coaching", id: "mentoring" },
+    { name: "Resource Allocation", id: "resourceAllocation" },
+    { name: "Stakeholder Management", id: "stakeholderManagement" }
+  ];
+
+  // Problem-solving skills data
+  const problemSolvingSkillsList = [
+    { name: "Critical Thinking", id: "criticalThinking" },
+    { name: "Analytical Reasoning", id: "analyticalReasoning" },
+    { name: "Root Cause Analysis", id: "rootCauseAnalysis" },
+    { name: "Creative Problem Solving", id: "creativeProblemSolving" },
+    { name: "Decision Analysis", id: "decisionAnalysis" },
+    { name: "Systems Thinking", id: "systemsThinking" },
+    { name: "Risk Assessment", id: "riskAssessment" },
+    { name: "Process Improvement", id: "processImprovement" },
+    { name: "Research & Investigation", id: "research" },
+    { name: "Adaptability", id: "adaptability" }
+  ];
+
+  // Communication skills data
+  const communicationSkillsList = [
+    { name: "Written Communication", id: "writtenCommunication" },
+    { name: "Verbal Communication", id: "verbalCommunication" },
+    { name: "Presentation Skills", id: "presentationSkills" },
+    { name: "Active Listening", id: "activeListening" },
+    { name: "Negotiation", id: "negotiation" },
+    { name: "Persuasion & Influence", id: "persuasion" },
+    { name: "Cross-functional Communication", id: "crossFunctionalComm" },
+    { name: "Client/Customer Communication", id: "clientCommunication" },
+    { name: "Feedback Delivery", id: "feedbackDelivery" },
+    { name: "Digital Communication", id: "digitalCommunication" }
+  ];
+
   // Initialize the assessment
   initializeAssessment();
 
@@ -25,8 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize the assessment
   function initializeAssessment() {
     console.log('Initializing assessment...');
-    // Generate core technical skills grid
+    // Generate skills grids
     generateCoreSkillsGrid();
+    generateLeadershipSkillsGrid();
+    generateProblemSolvingSkillsGrid();
+    generateCommunicationSkillsGrid();
 
     // Load saved data if available
     loadSavedData();
@@ -96,10 +141,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // Generate the core technical skills grid
   function generateCoreSkillsGrid() {
     console.log('Generating core skills grid...');
-    const container = document.getElementById('coreTechnicalSkills');
+    generateSkillsGrid('coreTechnicalSkills', coreTechnicalSkillsList);
+  }
+
+  // Generate the leadership skills grid
+  function generateLeadershipSkillsGrid() {
+    console.log('Generating leadership skills grid...');
+    generateSkillsGrid('leadershipSkills', leadershipSkillsList);
+  }
+
+  // Generate the problem-solving skills grid
+  function generateProblemSolvingSkillsGrid() {
+    console.log('Generating problem-solving skills grid...');
+    generateSkillsGrid('problemSolvingSkills', problemSolvingSkillsList);
+  }
+
+  // Generate the communication skills grid
+  function generateCommunicationSkillsGrid() {
+    console.log('Generating communication skills grid...');
+    generateSkillsGrid('communicationSkills', communicationSkillsList);
+  }
+
+  // Generic function to generate a skills grid
+  function generateSkillsGrid(containerId, skillsList) {
+    const container = document.getElementById(containerId);
 
     if (!container) {
-      console.error('Core Technical Skills container not found');
+      console.error(`Skills container '${containerId}' not found`);
       return;
     }
 
@@ -107,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.innerHTML = '';
 
     // Create skill items
-    coreTechnicalSkillsList.forEach(skill => {
+    skillsList.forEach(skill => {
       const skillItem = document.createElement('div');
       skillItem.className = 'skill-item';
 
@@ -282,7 +350,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const data = {
       coreTechnicalSkills: {},
       agencySkills: [],
-      softwareTools: []
+      softwareTools: [],
+      leadershipSkills: {},
+      problemSolvingSkills: {},
+      communicationSkills: {}
     };
 
     // Collect core technical skills
@@ -290,6 +361,30 @@ document.addEventListener('DOMContentLoaded', function() {
       const select = document.getElementById(skill.id);
       if (select) {
         data.coreTechnicalSkills[skill.id] = select.value;
+      }
+    });
+
+    // Collect leadership skills
+    leadershipSkillsList.forEach(skill => {
+      const select = document.getElementById(skill.id);
+      if (select) {
+        data.leadershipSkills[skill.id] = select.value;
+      }
+    });
+
+    // Collect problem-solving skills
+    problemSolvingSkillsList.forEach(skill => {
+      const select = document.getElementById(skill.id);
+      if (select) {
+        data.problemSolvingSkills[skill.id] = select.value;
+      }
+    });
+
+    // Collect communication skills
+    communicationSkillsList.forEach(skill => {
+      const select = document.getElementById(skill.id);
+      if (select) {
+        data.communicationSkills[skill.id] = select.value;
       }
     });
 
@@ -337,6 +432,36 @@ document.addEventListener('DOMContentLoaded', function() {
         const select = document.getElementById(skill.id);
         if (select && data.coreTechnicalSkills[skill.id]) {
           select.value = data.coreTechnicalSkills[skill.id];
+        }
+      });
+    }
+
+    // Populate leadership skills
+    if (data.leadershipSkills) {
+      leadershipSkillsList.forEach(skill => {
+        const select = document.getElementById(skill.id);
+        if (select && data.leadershipSkills[skill.id]) {
+          select.value = data.leadershipSkills[skill.id];
+        }
+      });
+    }
+
+    // Populate problem-solving skills
+    if (data.problemSolvingSkills) {
+      problemSolvingSkillsList.forEach(skill => {
+        const select = document.getElementById(skill.id);
+        if (select && data.problemSolvingSkills[skill.id]) {
+          select.value = data.problemSolvingSkills[skill.id];
+        }
+      });
+    }
+
+    // Populate communication skills
+    if (data.communicationSkills) {
+      communicationSkillsList.forEach(skill => {
+        const select = document.getElementById(skill.id);
+        if (select && data.communicationSkills[skill.id]) {
+          select.value = data.communicationSkills[skill.id];
         }
       });
     }
@@ -464,15 +589,42 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Simple implementation - count filled fields in the first section
+    // Count filled fields in all sections
     const totalFields = coreTechnicalSkillsList.length +
                         document.querySelectorAll('#agencySkills input, #agencySkills select, #agencySkills textarea').length +
-                        document.querySelectorAll('#softwareTools input, #softwareTools select').length;
+                        document.querySelectorAll('#softwareTools input, #softwareTools select').length +
+                        leadershipSkillsList.length +
+                        problemSolvingSkillsList.length +
+                        communicationSkillsList.length;
 
     let filledFields = 0;
 
     // Count filled core technical skills
     coreTechnicalSkillsList.forEach(skill => {
+      const select = document.getElementById(skill.id);
+      if (select && select.value) {
+        filledFields++;
+      }
+    });
+
+    // Count filled leadership skills
+    leadershipSkillsList.forEach(skill => {
+      const select = document.getElementById(skill.id);
+      if (select && select.value) {
+        filledFields++;
+      }
+    });
+
+    // Count filled problem-solving skills
+    problemSolvingSkillsList.forEach(skill => {
+      const select = document.getElementById(skill.id);
+      if (select && select.value) {
+        filledFields++;
+      }
+    });
+
+    // Count filled communication skills
+    communicationSkillsList.forEach(skill => {
       const select = document.getElementById(skill.id);
       if (select && select.value) {
         filledFields++;

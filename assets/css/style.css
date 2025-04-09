@@ -283,11 +283,14 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  border: none; /* Remove default border */
 }
 
 .btn-primary {
   background-color: #0056b3;
   color: white;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .btn-primary:hover {
@@ -306,6 +309,20 @@ body {
   border-color: #ff8c33;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-neutral {
+  background-color: #6c757d; /* Neutral gray color */
+  color: white;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-weight: 500;
+}
+
+.btn-neutral:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .section-title {
