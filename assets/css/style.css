@@ -2427,11 +2427,54 @@ body {
   padding: 1rem;
   border-radius: 8px;
   min-height: 80px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border: 1px solid #ddd;
   color: #333;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.result-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: right;
+  margin-top: 0;
+}
+
+.result-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* Elevator Pitch Styles */
+textarea[readonly] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.practice-mode {
+  background-color: #f0f7ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.practice-timer {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #0056b3;
+}
+
+.practice-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .common-translations {
@@ -2443,6 +2486,46 @@ body {
   margin-bottom: 1rem;
   color: #333;
   font-size: 1.1rem;
+}
+
+/* Value Proposition Worksheet Styles */
+.worksheet-form {
+  max-width: 100%;
+}
+
+.worksheet-intro {
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.worksheet-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.worksheet-section:last-child {
+  border-bottom: none;
+}
+
+.worksheet-section h4 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.worksheet-tip {
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #0056b3;
+  font-size: 0.95rem;
+  color: #555;
 }
 
 /* Personal Branding Section */

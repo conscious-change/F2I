@@ -410,7 +410,7 @@ subtitle: Craft a compelling professional identity that showcases your federal e
           <li>Specific problems you're uniquely qualified to solve</li>
           <li>The intersection of your skills, passions, and market needs</li>
         </ul>
-        <a href="#" class="tool-link">Value Proposition Worksheet →</a>
+        <button id="openValuePropositionWorksheet" class="btn btn-primary">Value Proposition Worksheet</button>
       </div>
 
       <div class="step-card">
@@ -424,7 +424,7 @@ subtitle: Craft a compelling professional identity that showcases your federal e
             "I'm a former FDA regulatory affairs specialist with 12 years of experience navigating complex approval processes for medical devices. I help companies develop regulatory strategies that accelerate time-to-market while ensuring compliance. My government background gives me unique insight into how regulatory bodies evaluate submissions, which has helped my clients achieve a 40% faster approval rate."
           </p>
         </div>
-        <a href="#" class="tool-link">Elevator Pitch Builder →</a>
+        <button id="openElevatorPitchBuilder" class="btn btn-primary">Elevator Pitch Builder</button>
       </div>
 
       <div class="step-card">
@@ -498,7 +498,7 @@ subtitle: Craft a compelling professional identity that showcases your federal e
     </p>
     <div class="cta-buttons">
       <a href="/pages/interview-preparation.html" class="btn btn-primary">Interview Preparation</a>
-      <a href="/pages/networking-strategies.html" class="btn btn-secondary">Networking Strategies</a>
+      <a href="/pages/networking-strategies.html" class="btn btn-primary">Networking Strategies</a>
     </div>
   </div>
 </div>
@@ -602,6 +602,155 @@ subtitle: Craft a compelling professional identity that showcases your federal e
             <div class="table-cell">Program Management Office (PMO)</div>
             <div class="table-cell">Project Management Office</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Elevator Pitch Builder Modal -->
+<div class="modal" id="elevatorPitchModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Elevator Pitch Builder</h3>
+
+    <div class="elevator-form">
+      <p class="worksheet-intro">Your elevator pitch is a 30-second introduction that communicates who you are, what you do, and the value you offer. Complete the sections below to craft a compelling elevator pitch.</p>
+
+      <div class="form-group">
+        <label>Introduction (Who you are):</label>
+        <textarea id="elevatorIntro" placeholder="E.g., I'm a former FDA regulatory affairs specialist with 12 years of experience..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Value Proposition (What you do & your unique value):</label>
+        <textarea id="elevatorValue" placeholder="E.g., I help companies develop regulatory strategies that accelerate time-to-market while ensuring compliance..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Proof Point (Specific achievement or credential):</label>
+        <textarea id="elevatorProof" placeholder="E.g., In my last role, I reduced approval timelines by 40% while maintaining 100% compliance..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Call to Action (What you're looking for):</label>
+        <textarea id="elevatorAction" placeholder="E.g., I'm currently exploring opportunities in the medical device industry where I can help companies navigate regulatory challenges..."></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button id="generateElevatorPitch" class="btn btn-primary">Generate Elevator Pitch</button>
+      </div>
+
+      <div class="result-container">
+        <h4>Your Elevator Pitch:</h4>
+        <div id="elevatorPitchResult" class="statement-result"></div>
+        <p class="result-note"><em>Please modify further for clarity and natural speech (this is just an example framework)</em></p>
+        <div class="result-actions">
+          <button id="copyElevatorPitch" class="btn btn-outline">Copy to Clipboard</button>
+          <button id="practiceElevatorPitch" class="btn btn-primary">Practice Mode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Value Proposition Worksheet Modal -->
+<div class="modal" id="valuePropositionModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Value Proposition Worksheet</h3>
+
+    <div class="worksheet-form">
+      <p class="worksheet-intro">Complete this worksheet to define your unique value proposition for private sector employers. This will help you articulate what makes you valuable and differentiated in the job market.</p>
+
+      <div class="worksheet-section">
+        <h4>1. Your Federal Experience</h4>
+        <div class="form-group">
+          <label>What specialized knowledge or expertise did you gain in federal service?</label>
+          <textarea id="federalExpertise" placeholder="E.g., Regulatory compliance in healthcare, cybersecurity protocols for critical infrastructure, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What unique perspectives do you have from working in government?</label>
+          <textarea id="federalPerspectives" placeholder="E.g., Understanding of how policy decisions impact implementation, insight into government priorities, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>2. Your Skills & Strengths</h4>
+        <div class="form-group">
+          <label>What are your top 3-5 transferable skills?</label>
+          <textarea id="transferableSkills" placeholder="E.g., Project management, stakeholder engagement, data analysis, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What do colleagues consistently praise you for?</label>
+          <textarea id="strengths" placeholder="E.g., Ability to simplify complex information, calm leadership during crises, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>3. Market Needs & Opportunities</h4>
+        <div class="form-group">
+          <label>What specific problems or challenges exist in your target industry?</label>
+          <textarea id="marketChallenges" placeholder="E.g., Navigating complex regulations, improving operational efficiency, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>How does your federal background uniquely position you to solve these problems?</label>
+          <textarea id="uniqueSolutions" placeholder="E.g., Insider knowledge of regulatory processes, experience managing large-scale government programs, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>4. Your Passions & Motivations</h4>
+        <div class="form-group">
+          <label>What aspects of your work do you find most energizing or meaningful?</label>
+          <textarea id="passions" placeholder="E.g., Mentoring team members, solving complex problems, creating efficient systems, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What impact do you want to make in your next role?</label>
+          <textarea id="desiredImpact" placeholder="E.g., Help organizations navigate regulatory challenges, improve public-private partnerships, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>5. Your Value Proposition Statement</h4>
+        <p class="worksheet-tip">Based on your answers above, craft a value proposition statement that captures your unique combination of expertise, skills, and perspective.</p>
+
+        <div class="form-group">
+          <label>I help [target employers/industry]...</label>
+          <textarea id="valuePropositionTarget" placeholder="E.g., healthcare technology companies..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>to [solve specific problems]...</label>
+          <textarea id="valuePropositionProblem" placeholder="E.g., navigate complex regulatory environments and accelerate approval processes..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>by leveraging my [unique skills/experience]...</label>
+          <textarea id="valuePropositionSkills" placeholder="E.g., decade of experience in FDA regulatory affairs and deep understanding of compliance requirements..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>which results in [specific benefits]...</label>
+          <textarea id="valuePropositionBenefits" placeholder="E.g., faster time-to-market, reduced compliance risks, and more effective government relations."></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button id="generateValueProposition" class="btn btn-primary">Generate Value Proposition</button>
+      </div>
+
+      <div class="result-container">
+        <h4>Your Value Proposition Statement:</h4>
+        <div id="valuePropositionResult" class="statement-result"></div>
+        <p class="result-note"><em>Please modify further for clarity and flow (this is just an example framework)</em></p>
+        <div class="result-actions">
+          <button id="copyValueProposition" class="btn btn-outline">Copy to Clipboard</button>
+          <button id="saveValueProposition" class="btn btn-primary">Save to PDF</button>
         </div>
       </div>
     </div>
