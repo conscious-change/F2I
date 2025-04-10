@@ -440,7 +440,7 @@ subtitle: Craft a compelling professional identity that showcases your federal e
           <li>Including relevant skills and endorsements</li>
           <li>Requesting recommendations from colleagues and supervisors</li>
         </ul>
-        <a href="#" class="tool-link">LinkedIn Profile Checklist →</a>
+        <button id="openLinkedInChecklist" class="btn btn-primary">LinkedIn Profile Checklist</button>
       </div>
 
       <div class="step-card">
@@ -602,6 +602,220 @@ subtitle: Craft a compelling professional identity that showcases your federal e
             <div class="table-cell">Program Management Office (PMO)</div>
             <div class="table-cell">Project Management Office</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LinkedIn Profile Checklist Modal -->
+<div class="modal" id="linkedinChecklistModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>LinkedIn Profile Checklist</h3>
+
+    <div class="linkedin-checklist-form">
+      <p class="worksheet-intro">Use this comprehensive checklist to optimize your LinkedIn profile for your transition to the private sector. Track your progress and ensure your profile makes the right impression on recruiters and hiring managers.</p>
+
+      <!-- Profile Photo & Banner Section -->
+      <div class="checklist-section">
+        <h4>Profile Photo & Banner</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-photo" class="linkedin-checkbox">
+            <label for="linkedin-photo">Professional headshot (well-lit, appropriate attire, neutral background)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-banner" class="linkedin-checkbox">
+            <label for="linkedin-banner">Custom banner image related to your industry or professional brand</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Headline Section -->
+      <div class="checklist-section">
+        <h4>Headline</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-headline-keywords" class="linkedin-checkbox">
+            <label for="linkedin-headline-keywords">Contains relevant industry keywords (not just job title)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-headline-value" class="linkedin-checkbox">
+            <label for="linkedin-headline-value">Communicates your value proposition or specialty</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-headline-private" class="linkedin-checkbox">
+            <label for="linkedin-headline-private">Uses private sector terminology (not government titles/acronyms)</label>
+          </div>
+        </div>
+        <div class="example-box">
+          <h5>Example Headlines:</h5>
+          <p><strong>Instead of:</strong> "GS-14 Program Analyst at Department of Defense"</p>
+          <p><strong>Try:</strong> "Program Management & Operations Leader | Cybersecurity Expert | Driving Efficiency & Innovation in Complex Organizations"</p>
+        </div>
+      </div>
+
+      <!-- About/Summary Section -->
+      <div class="checklist-section">
+        <h4>About/Summary</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-story" class="linkedin-checkbox">
+            <label for="linkedin-summary-story">Tells your professional story in first person</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-value" class="linkedin-checkbox">
+            <label for="linkedin-summary-value">Includes your value proposition</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-achievements" class="linkedin-checkbox">
+            <label for="linkedin-summary-achievements">Highlights 2-3 key achievements with metrics</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-skills" class="linkedin-checkbox">
+            <label for="linkedin-summary-skills">Lists core skills and expertise areas</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-seeking" class="linkedin-checkbox">
+            <label for="linkedin-summary-seeking">Mentions what you're seeking or interested in</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-call" class="linkedin-checkbox">
+            <label for="linkedin-summary-call">Includes a call to action (how to contact you)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="checklist-section">
+        <h4>Experience</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-titles" class="linkedin-checkbox">
+            <label for="linkedin-experience-titles">Job titles translated to private sector equivalents</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-descriptions" class="linkedin-checkbox">
+            <label for="linkedin-experience-descriptions">Descriptions focus on achievements, not just responsibilities</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-metrics" class="linkedin-checkbox">
+            <label for="linkedin-experience-metrics">Quantifiable results and metrics included</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-keywords" class="linkedin-checkbox">
+            <label for="linkedin-experience-keywords">Industry-relevant keywords incorporated</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-acronyms" class="linkedin-checkbox">
+            <label for="linkedin-experience-acronyms">Government acronyms and jargon translated or explained</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-bullets" class="linkedin-checkbox">
+            <label for="linkedin-experience-bullets">Bullet points used for readability (not dense paragraphs)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills & Endorsements Section -->
+      <div class="checklist-section">
+        <h4>Skills & Endorsements</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-relevant" class="linkedin-checkbox">
+            <label for="linkedin-skills-relevant">Top skills relevant to target industry/roles</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-order" class="linkedin-checkbox">
+            <label for="linkedin-skills-order">Skills ordered by relevance to target roles</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-endorsements" class="linkedin-checkbox">
+            <label for="linkedin-skills-endorsements">Endorsements requested from colleagues</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-keywords" class="linkedin-checkbox">
+            <label for="linkedin-skills-keywords">Industry-specific keywords included</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations Section -->
+      <div class="checklist-section">
+        <h4>Recommendations</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-recommendations-received" class="linkedin-checkbox">
+            <label for="linkedin-recommendations-received">At least 3 recommendations received</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-recommendations-diverse" class="linkedin-checkbox">
+            <label for="linkedin-recommendations-diverse">Recommendations from diverse sources (supervisors, peers, subordinates)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-recommendations-given" class="linkedin-checkbox">
+            <label for="linkedin-recommendations-given">Recommendations given to others (reciprocity)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Sections -->
+      <div class="checklist-section">
+        <h4>Additional Sections</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-education" class="linkedin-checkbox">
+            <label for="linkedin-education">Education section complete with degrees, certifications, and relevant coursework</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-accomplishments" class="linkedin-checkbox">
+            <label for="linkedin-accomplishments">Accomplishments section includes projects, publications, patents, etc.</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-volunteer" class="linkedin-checkbox">
+            <label for="linkedin-volunteer">Volunteer experience added (if applicable)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-interests" class="linkedin-checkbox">
+            <label for="linkedin-interests">Following relevant industry companies, groups, and thought leaders</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile URL & Activity -->
+      <div class="checklist-section">
+        <h4>Profile URL & Activity</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-url" class="linkedin-checkbox">
+            <label for="linkedin-url">Custom URL created (linkedin.com/in/yourname)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-activity" class="linkedin-checkbox">
+            <label for="linkedin-activity">Recent activity shows engagement with industry content</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-posts" class="linkedin-checkbox">
+            <label for="linkedin-posts">Posted or shared relevant industry content</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-open" class="linkedin-checkbox">
+            <label for="linkedin-open">"Open to Work" setting configured appropriately</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-actions">
+        <button id="resetLinkedInChecklist" class="btn btn-outline">Reset Checklist</button>
+        <button id="saveLinkedInChecklist" class="btn btn-primary">Save Progress</button>
+        <button id="exportLinkedInChecklist" class="btn btn-primary">Export as PDF</button>
+      </div>
+
+      <div class="linkedin-progress">
+        <h4>Your Progress: <span id="linkedinProgress">0%</span></h4>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="linkedinProgressBar" style="width: 0%;"></div>
         </div>
       </div>
     </div>

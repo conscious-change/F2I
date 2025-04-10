@@ -326,6 +326,117 @@ document.addEventListener('DOMContentLoaded', function() {
     valuePropositionButton.addEventListener('click', loadValuePropositionWorksheet);
   }
 
+  // Open LinkedIn Profile Checklist modal
+  const openLinkedInChecklistButton = document.getElementById('openLinkedInChecklist');
+  const linkedinChecklistModal = document.getElementById('linkedinChecklistModal');
+
+  if (openLinkedInChecklistButton && linkedinChecklistModal) {
+    openLinkedInChecklistButton.onclick = function() {
+      linkedinChecklistModal.style.display = "block";
+
+      // Load saved LinkedIn checklist data
+      loadLinkedInChecklistData();
+
+      // Update progress bar
+      updateLinkedInProgress();
+    }
+  }
+
+  // LinkedIn Checklist functionality
+  const linkedinCheckboxes = document.querySelectorAll('.linkedin-checkbox');
+  const resetLinkedInChecklistButton = document.getElementById('resetLinkedInChecklist');
+  const saveLinkedInChecklistButton = document.getElementById('saveLinkedInChecklist');
+  const exportLinkedInChecklistButton = document.getElementById('exportLinkedInChecklist');
+
+  // Add change event to all LinkedIn checkboxes
+  linkedinCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      updateLinkedInProgress();
+      saveLinkedInChecklistData();
+    });
+  });
+
+  // Reset LinkedIn checklist
+  if (resetLinkedInChecklistButton) {
+    resetLinkedInChecklistButton.onclick = function() {
+      if (confirm('Are you sure you want to reset the entire checklist?')) {
+        linkedinCheckboxes.forEach(checkbox => {
+          checkbox.checked = false;
+        });
+        updateLinkedInProgress();
+        saveLinkedInChecklistData();
+      }
+    }
+  }
+
+  // Save LinkedIn checklist
+  if (saveLinkedInChecklistButton) {
+    saveLinkedInChecklistButton.onclick = function() {
+      saveLinkedInChecklistData();
+      alert('Your LinkedIn profile checklist progress has been saved!');
+    }
+  }
+
+  // Export LinkedIn checklist as PDF
+  if (exportLinkedInChecklistButton) {
+    exportLinkedInChecklistButton.onclick = function() {
+      // In a real implementation, this would use a PDF generation library
+      // For now, we'll just show an alert
+      alert('In a production environment, this would generate a PDF with your LinkedIn profile checklist progress. For now, your progress is saved in your browser.');
+    }
+  }
+
+  // Update LinkedIn progress bar
+  function updateLinkedInProgress() {
+    const totalCheckboxes = linkedinCheckboxes.length;
+    let checkedCount = 0;
+
+    linkedinCheckboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        checkedCount++;
+      }
+    });
+
+    const progressPercentage = totalCheckboxes > 0 ? Math.round((checkedCount / totalCheckboxes) * 100) : 0;
+
+    const progressElement = document.getElementById('linkedinProgress');
+    const progressBarElement = document.getElementById('linkedinProgressBar');
+
+    if (progressElement) {
+      progressElement.textContent = progressPercentage + '%';
+    }
+
+    if (progressBarElement) {
+      progressBarElement.style.width = progressPercentage + '%';
+    }
+  }
+
+  // Save LinkedIn checklist data
+  function saveLinkedInChecklistData() {
+    const checklistData = {};
+
+    linkedinCheckboxes.forEach(checkbox => {
+      checklistData[checkbox.id] = checkbox.checked;
+    });
+
+    localStorage.setItem('linkedinChecklist', JSON.stringify(checklistData));
+  }
+
+  // Load LinkedIn checklist data
+  function loadLinkedInChecklistData() {
+    const savedData = localStorage.getItem('linkedinChecklist');
+
+    if (savedData) {
+      const checklistData = JSON.parse(savedData);
+
+      linkedinCheckboxes.forEach(checkbox => {
+        if (checklistData[checkbox.id] !== undefined) {
+          checkbox.checked = checklistData[checkbox.id];
+        }
+      });
+    }
+  }
+
   // Open elevator pitch builder modal
   const openElevatorPitchButton = document.getElementById('openElevatorPitchBuilder');
   const elevatorPitchModal = document.getElementById('elevatorPitchModal');

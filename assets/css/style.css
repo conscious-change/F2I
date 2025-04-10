@@ -2290,6 +2290,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .tool-card:hover {
@@ -2314,6 +2315,12 @@ body {
   line-height: 1.6;
   margin-bottom: 1.5rem;
   flex-grow: 1;
+  width: 100%;
+}
+
+.tool-card .btn {
+  align-self: center;
+  min-width: 200px;
 }
 
 .template-buttons {
@@ -2322,6 +2329,8 @@ body {
   gap: 0.8rem;
   margin: 0 auto;
   max-width: 200px;
+  width: 100%;
+  align-self: center;
 }
 
 /* Modal Styles */
@@ -2475,6 +2484,64 @@ textarea[readonly] {
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+/* LinkedIn Checklist Styles */
+.linkedin-checklist-form {
+  max-width: 100%;
+}
+
+.checklist-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.checklist-section:last-child {
+  border-bottom: none;
+}
+
+.checklist-section h4 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.checklist-section h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.linkedin-checkbox {
+  margin-right: 1rem;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.linkedin-progress {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #0056b3;
+  border-radius: 10px;
+  transition: width 0.3s ease;
 }
 
 .common-translations {
