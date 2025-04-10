@@ -1723,6 +1723,518 @@ body {
   }
 }
 
+/* Networking Strategies Page Styles */
+.networking-hero {
+  background: linear-gradient(135deg, #0077cc 0%, #004080 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.networking-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23ffffff" fill-opacity="0.05" width="50" height="50" x="0" y="0"/><rect fill="%23ffffff" fill-opacity="0.05" width="50" height="50" x="50" y="50"/></svg>');
+  background-size: 30px 30px;
+  opacity: 0.3;
+}
+
+.networking-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.networking-hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.networking-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.intro-section {
+  margin-bottom: 3rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  border-top: 5px solid #0077cc;
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.why-networking {
+  margin-bottom: 3rem;
+}
+
+.why-networking h2, .networking-strategies h2, .networking-tips h2, .overcoming-challenges h2, .success-stories h2, .networking-tools h2 {
+  color: #0077cc;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.why-networking h2::after, .networking-strategies h2::after, .networking-tips h2::after, .overcoming-challenges h2::after, .success-stories h2::after, .networking-tools h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #0077cc;
+}
+
+.why-networking p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.why-networking ul {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+.why-networking li {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.networking-strategies {
+  margin-bottom: 4rem;
+}
+
+.strategy-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.strategy-card h3 {
+  color: #0077cc;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.8rem;
+}
+
+.strategy-card p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.strategy-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.strategy-card li {
+  margin-bottom: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.example-box {
+  background-color: #f0f7ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 3px solid #0077cc;
+}
+
+.example-box h4 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.example-box p {
+  margin: 0;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.tool-link {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.tool-link:hover {
+  color: #004080;
+  text-decoration: underline;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tip-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.tip-card h3 {
+  color: #0077cc;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.5rem;
+}
+
+.tip-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.challenge-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.challenge-card h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.challenge-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.challenge-card strong {
+  color: #0077cc;
+}
+
+.story-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.story-card::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 4rem;
+  color: #f0f7ff;
+  font-family: Georgia, serif;
+  line-height: 1;
+  z-index: 0;
+}
+
+.story-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.story-header h3 {
+  color: #0077cc;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.story-author {
+  color: #777;
+  font-style: italic;
+  margin: 0;
+}
+
+.story-card p {
+  position: relative;
+  z-index: 1;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tool-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.tool-card h3 {
+  color: #0077cc;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.tool-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.tool-card .tool-link {
+  align-self: center;
+  margin-top: auto;
+}
+
+.next-steps {
+  background-color: #f0f7ff;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.next-steps h2 {
+  color: #0077cc;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.next-steps p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Network Mapping Tool Modal */
+.network-mapping-form {
+  max-width: 100%;
+}
+
+.mapping-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.mapping-section:last-child {
+  border-bottom: none;
+}
+
+.mapping-section h4 {
+  color: #0077cc;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.contact-list {
+  margin-bottom: 1.5rem;
+}
+
+.contact-entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #eaeaea;
+}
+
+.contact-entry:last-child {
+  border-bottom: none;
+}
+
+.contact-field {
+  flex: 1 1 200px;
+}
+
+.contact-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.contact-field input, .contact-field select, .contact-field textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.contact-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.add-contact-btn {
+  background-color: #f0f7ff;
+  color: #0077cc;
+  border: 1px solid #0077cc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.add-contact-btn:hover {
+  background-color: #e0f0ff;
+}
+
+.remove-contact-btn {
+  background-color: #fff0f0;
+  color: #cc0000;
+  border: 1px solid #cc0000;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.remove-contact-btn:hover {
+  background-color: #ffe0e0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .networking-hero h2 {
+    font-size: 2rem;
+  }
+
+  .tips-grid, .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .strategy-card, .challenge-card, .story-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .networking-hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro-section {
+    padding: 1.5rem;
+  }
+
+  .contact-entry {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
 /* Resume & Personal Branding Page Styles */
 .resume-hero {
   background: linear-gradient(135deg, #0056b3 0%, #0077cc 100%);
