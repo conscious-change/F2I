@@ -368,60 +368,6 @@ subtitle: Craft a compelling professional identity that showcases your federal e
           <h4>Achievement Statement Builder</h4>
           <p>Create powerful achievement statements that highlight your impact using our interactive builder.</p>
           <button class="btn btn-primary" id="openAchievementBuilder">Build Statements</button>
-
-          <!-- Achievement Builder Modal (hidden by default) -->
-          <div class="modal" id="achievementBuilderModal">
-            <div class="modal-content">
-              <span class="close-modal">&times;</span>
-              <h3>Achievement Statement Builder</h3>
-
-              <div class="builder-form">
-                <div class="form-group">
-                  <label for="challenge">Challenge/Situation:</label>
-                  <textarea id="challenge" placeholder="What problem or situation did you address?"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="action">Action Taken:</label>
-                  <textarea id="action" placeholder="What specific actions did you take?"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="result">Result/Impact:</label>
-                  <textarea id="result" placeholder="What measurable outcomes did you achieve? (Include numbers if possible)"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="actionVerb">Action Verb:</label>
-                  <select id="actionVerb">
-                    <option value="">Select an action verb...</option>
-                    <option value="Led">Led</option>
-                    <option value="Developed">Developed</option>
-                    <option value="Implemented">Implemented</option>
-                    <option value="Created">Created</option>
-                    <option value="Managed">Managed</option>
-                    <option value="Improved">Improved</option>
-                    <option value="Reduced">Reduced</option>
-                    <option value="Increased">Increased</option>
-                    <option value="Streamlined">Streamlined</option>
-                    <option value="Transformed">Transformed</option>
-                    <option value="Spearheaded">Spearheaded</option>
-                    <option value="Orchestrated">Orchestrated</option>
-                  </select>
-                </div>
-
-                <div class="form-actions">
-                  <button id="generateStatement" class="btn btn-primary">Generate Statement</button>
-                </div>
-
-                <div class="result-container">
-                  <h4>Your Achievement Statement:</h4>
-                  <div id="statementResult" class="statement-result"></div>
-                  <button id="copyStatement" class="btn btn-outline">Copy to Clipboard</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="tool-card">
@@ -429,56 +375,6 @@ subtitle: Craft a compelling professional identity that showcases your federal e
           <h4>Federal-to-Private Translator</h4>
           <p>Translate government terminology into private sector language that hiring managers understand.</p>
           <button class="btn btn-primary" id="openTermTranslator">Translate Terms</button>
-
-          <!-- Term Translator Modal (hidden by default) -->
-          <div class="modal" id="termTranslatorModal">
-            <div class="modal-content">
-              <span class="close-modal">&times;</span>
-              <h3>Federal-to-Private Sector Translator</h3>
-
-              <div class="translator-form">
-                <div class="form-group">
-                  <label for="federalTerm">Enter Federal Term or Phrase:</label>
-                  <textarea id="federalTerm" placeholder="E.g., GS-14 Supervisory Program Analyst"></textarea>
-                </div>
-
-                <div class="form-actions">
-                  <button id="translateTerm" class="btn btn-primary">Translate</button>
-                </div>
-
-                <div class="translation-result">
-                  <h4>Private Sector Translation:</h4>
-                  <div id="translationResult" class="result-box"></div>
-                </div>
-
-                <div class="common-translations">
-                  <h4>Common Translations:</h4>
-                  <div class="translation-table">
-                    <div class="table-row header">
-                      <div class="table-cell">Federal Term</div>
-                      <div class="table-cell">Private Sector Alternative</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="table-cell">GS-14/15</div>
-                      <div class="table-cell">Senior Manager / Director</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="table-cell">GS-12/13</div>
-                      <div class="table-cell">Manager / Team Lead</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="table-cell">Contracting Officer's Representative (COR)</div>
-                      <div class="table-cell">Contract/Vendor Manager</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="table-cell">Program Management Office (PMO)</div>
-                      <div class="table-cell">Project Management Office</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="tool-card">
@@ -603,6 +499,111 @@ subtitle: Craft a compelling professional identity that showcases your federal e
     <div class="cta-buttons">
       <a href="/pages/interview-preparation.html" class="btn btn-primary">Interview Preparation</a>
       <a href="/pages/networking-strategies.html" class="btn btn-secondary">Networking Strategies</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modals (outside of any container for proper overlay) -->
+<!-- Achievement Builder Modal -->
+<div class="modal" id="achievementBuilderModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Achievement Statement Builder</h3>
+
+    <div class="builder-form">
+      <div class="form-group">
+        <label for="challenge">Challenge/Situation:</label>
+        <textarea id="challenge" placeholder="What problem or situation did you address?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="action">Action Taken:</label>
+        <textarea id="action" placeholder="What specific actions did you take?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="result">Result/Impact:</label>
+        <textarea id="result" placeholder="What measurable outcomes did you achieve? (Include numbers if possible)"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="actionVerb">Action Verb:</label>
+        <select id="actionVerb">
+          <option value="">Select an action verb...</option>
+          <option value="Led">Led</option>
+          <option value="Developed">Developed</option>
+          <option value="Implemented">Implemented</option>
+          <option value="Created">Created</option>
+          <option value="Managed">Managed</option>
+          <option value="Improved">Improved</option>
+          <option value="Reduced">Reduced</option>
+          <option value="Increased">Increased</option>
+          <option value="Streamlined">Streamlined</option>
+          <option value="Transformed">Transformed</option>
+          <option value="Spearheaded">Spearheaded</option>
+          <option value="Orchestrated">Orchestrated</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button id="generateStatement" class="btn btn-primary">Generate Statement</button>
+      </div>
+
+      <div class="result-container">
+        <h4>Your Achievement Statement:</h4>
+        <div id="statementResult" class="statement-result"></div>
+        <button id="copyStatement" class="btn btn-outline">Copy to Clipboard</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Term Translator Modal -->
+<div class="modal" id="termTranslatorModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Federal-to-Private Sector Translator</h3>
+
+    <div class="translator-form">
+      <div class="form-group">
+        <label for="federalTerm">Enter Federal Term or Phrase:</label>
+        <textarea id="federalTerm" placeholder="E.g., GS-14 Supervisory Program Analyst"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button id="translateTerm" class="btn btn-primary">Translate</button>
+      </div>
+
+      <div class="translation-result">
+        <h4>Private Sector Translation:</h4>
+        <div id="translationResult" class="result-box"></div>
+      </div>
+
+      <div class="common-translations">
+        <h4>Common Translations:</h4>
+        <div class="translation-table">
+          <div class="table-row header">
+            <div class="table-cell">Federal Term</div>
+            <div class="table-cell">Private Sector Alternative</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">GS-14/15</div>
+            <div class="table-cell">Senior Manager / Director</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">GS-12/13</div>
+            <div class="table-cell">Manager / Team Lead</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">Contracting Officer's Representative (COR)</div>
+            <div class="table-cell">Contract/Vendor Manager</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">Program Management Office (PMO)</div>
+            <div class="table-cell">Project Management Office</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
