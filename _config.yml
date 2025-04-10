@@ -102,18 +102,22 @@ navigation:
     children:
       - title: Transition Roadmap
         url: /pages/transition-roadmap.html
+      - title: Self-Assessment
+        url: /pages/self-assessment.html
       - title: Skill Translation
         url: /pages/skill-translation-hub.html
       - title: Resume & Branding
         url: /pages/resume-personal-branding.html
-      - title: Interview Prep
-        url: /pages/interview-preparation.html
       - title: Networking
         url: /pages/networking-strategies.html
       - title: Job Search
         url: /pages/job-search-resources.html
+      - title: Interview Prep
+        url: /pages/interview-preparation.html
       - title: Compensation
         url: /pages/compensation-benefits.html
+      - title: Resources
+        url: /pages/resources.html
   - title: Community
     children:
       - title: Success Stories
