@@ -2202,6 +2202,52 @@ body {
   font-size: 0.9rem;
 }
 
+/* Network Mapping Table Styles */
+.contact-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+  margin-bottom: 1.5rem;
+  table-layout: fixed;
+}
+
+.contact-table tr:first-child td {
+  width: 33.33%;
+}
+
+.label-cell {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  text-align: left;
+  vertical-align: bottom;
+  height: 1.5em;
+  white-space: nowrap;
+}
+
+.input-cell {
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  vertical-align: top;
+}
+
+.input-cell input, .input-cell select, .input-cell textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.input-cell textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
 .contact-field input, .contact-field select, .contact-field textarea {
   width: 100%;
   padding: 0.8rem;
@@ -2276,7 +2322,17 @@ body {
     flex-wrap: wrap;
   }
 
-  .contact-field {
+  .contact-table {
+    display: block;
+  }
+
+  .contact-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-table td {
     flex: 1 1 calc(50% - 0.5rem);
     min-width: 200px;
   }
@@ -2291,7 +2347,7 @@ body {
     padding: 1.5rem;
   }
 
-  .contact-field {
+  .contact-table td {
     flex: 1 1 100%;
     min-width: 100%;
   }

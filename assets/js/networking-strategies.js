@@ -96,9 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add remove button if it doesn't exist
         if (!newEntry.querySelector('.remove-contact-btn')) {
-          const lastRow = newEntry.querySelector('.contact-row:last-child');
-          const actionsDiv = document.createElement('div');
-          actionsDiv.className = 'contact-field';
+          const table = newEntry.querySelector('.contact-table');
+          const lastRow = table.insertRow(-1);
+          const cell = lastRow.insertCell(0);
+          cell.colSpan = 3;
+          cell.className = 'input-cell';
+          cell.style.textAlign = 'right';
 
           const removeButton = document.createElement('button');
           removeButton.className = 'remove-contact-btn';
@@ -108,8 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             saveNetworkMapData();
           };
 
-          actionsDiv.appendChild(removeButton);
-          lastRow.appendChild(actionsDiv);
+          cell.appendChild(removeButton);
         }
 
         contactList.appendChild(newEntry);
@@ -215,9 +217,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Add remove button if it doesn't exist
       if (!newEntry.querySelector('.remove-contact-btn')) {
-        const lastRow = newEntry.querySelector('.contact-row:last-child');
-        const actionsDiv = document.createElement('div');
-        actionsDiv.className = 'contact-field';
+        const table = newEntry.querySelector('.contact-table');
+        const lastRow = table.insertRow(-1);
+        const cell = lastRow.insertCell(0);
+        cell.colSpan = 3;
+        cell.className = 'input-cell';
+        cell.style.textAlign = 'right';
 
         const removeButton = document.createElement('button');
         removeButton.className = 'remove-contact-btn';
@@ -227,8 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
           saveNetworkMapData();
         };
 
-        actionsDiv.appendChild(removeButton);
-        lastRow.appendChild(actionsDiv);
+        cell.appendChild(removeButton);
       }
 
       updateContactEntry(newEntry, contactsData[i], listId);
