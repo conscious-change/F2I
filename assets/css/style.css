@@ -2353,6 +2353,420 @@ body {
   }
 }
 
+/* Informational Interview Guide Styles */
+
+
+.interview-guide-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Print styles for the guide */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0.5in;
+    orphans: 2;
+    widows: 2;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .modal, .modal-content, .interview-guide-content, .interview-guide-content * {
+    visibility: visible;
+  }
+
+  .modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    background-color: white;
+    display: block !important;
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.5cm;
+    box-shadow: none;
+    border: none;
+    height: auto;
+    overflow: visible;
+    transform: none;
+  }
+
+  .close-modal, #printGuideBtn, #downloadGuidePDF, .guide-actions {
+    display: none !important;
+  }
+
+  h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  .step-card, .question-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .step-cards {
+    display: block;
+  }
+
+  .guide-section {
+    page-break-after: auto;
+  }
+
+  .guide-subsection {
+    page-break-inside: avoid;
+  }
+
+  .template-box, .tips-box {
+    page-break-inside: avoid;
+  }
+
+  .tracking-table {
+    page-break-inside: avoid;
+  }
+
+  .question-category {
+    page-break-inside: avoid;
+  }
+
+  .question-cards {
+    page-break-inside: avoid;
+  }
+}
+
+.guide-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+  border-left: 4px solid #0077cc;
+  padding-left: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.guide-section {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.5rem;
+}
+
+.guide-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.guide-section h4 {
+  color: #0077cc;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #0077cc;
+  display: inline-block;
+}
+
+.guide-subsection {
+  margin-bottom: 1.8rem;
+}
+
+.guide-subsection h5 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.step-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.step-card {
+  flex: 1 1 300px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  background-color: #0077cc;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  line-height: 1.5;
+  flex: 1;
+}
+
+.guide-subsection ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.guide-subsection li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.template-box, .tips-box {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.template-box p {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.tips-box h6 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #0077cc;
+}
+
+.question-category {
+  margin-bottom: 1.5rem;
+}
+
+.question-category h6 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.question-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.question-card {
+  background-color: #f0f7ff;
+  border-left: 4px solid #0077cc;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.question-card:hover {
+  transform: translateX(3px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.interview-tracker {
+  margin: 1.5rem 0;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+}
+
+.tracking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
+.tracking-table th, .tracking-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.tracking-table th {
+  background-color: #0077cc;
+  color: white;
+  font-weight: 600;
+}
+
+.tracking-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.tracking-table tr:hover {
+  background-color: #f0f7ff;
+}
+
+.interview-form {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 1.5rem;
+}
+
+.interview-form h5 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: 200px;
+}
+
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tracker-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.delete-interview {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.delete-interview:hover {
+  background-color: #c82333;
+}
+
+.no-interviews-message {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.download-prompt {
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.guide-footer {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  color: #555;
+}
+
+.guide-footer p {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.guide-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.guide-actions button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+.guide-actions button i {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .template-box, .tips-box {
+    padding: 1rem;
+  }
+
+  .tracking-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .step-card {
+    flex: 1 1 100%;
+  }
+}
+
 /* Resume & Personal Branding Page Styles */
 .resume-hero {
   background: linear-gradient(135deg, #0056b3 0%, #0077cc 100%);

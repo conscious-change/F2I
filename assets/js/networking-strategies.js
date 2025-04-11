@@ -10,27 +10,193 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // LinkedIn Networking Guide Modal
-  const openLinkedInGuideButton = document.getElementById('openLinkedInGuide');
-  if (openLinkedInGuideButton) {
-    openLinkedInGuideButton.onclick = function() {
-      alert('LinkedIn Networking Guide would open here. This feature is coming soon!');
-    }
-  }
-
   // Informational Interview Guide Modal
   const openInterviewGuideButton = document.getElementById('openInterviewGuide');
-  if (openInterviewGuideButton) {
+  const interviewGuideModal = document.getElementById('interviewGuideModal');
+
+  if (openInterviewGuideButton && interviewGuideModal) {
     openInterviewGuideButton.onclick = function() {
-      alert('Informational Interview Guide would open here. This feature is coming soon!');
+      interviewGuideModal.style.display = "block";
     }
   }
 
-  // Association Directory Modal
-  const openAssociationDirectoryButton = document.getElementById('openAssociationDirectory');
-  if (openAssociationDirectoryButton) {
-    openAssociationDirectoryButton.onclick = function() {
-      alert('Industry Association Directory would open here. This feature is coming soon!');
+  // Interview Tracker Functionality
+  const interviewTableBody = document.getElementById('interviewTableBody');
+  const contactNameInput = document.getElementById('contactName');
+  const companyRoleInput = document.getElementById('companyRole');
+  const interviewDateInput = document.getElementById('interviewDate');
+  const nextContactDateInput = document.getElementById('nextContactDate');
+  const keyInsightsInput = document.getElementById('keyInsights');
+  const followupActionsInput = document.getElementById('followupActions');
+  const addInterviewBtn = document.getElementById('addInterviewBtn');
+  const clearFormBtn = document.getElementById('clearFormBtn');
+  const exportInterviewsCSVBtn = document.getElementById('exportInterviewsCSV');
+  const clearAllInterviewsBtn = document.getElementById('clearAllInterviewsBtn');
+
+  // Load interviews from localStorage
+  function loadInterviews() {
+    const interviews = JSON.parse(localStorage.getItem('informationalInterviews')) || [];
+    interviewTableBody.innerHTML = '';
+
+    if (interviews.length === 0) {
+      const emptyRow = document.createElement('tr');
+      emptyRow.innerHTML = `<td colspan="7" class="no-interviews-message">No interviews recorded yet. Use the form below to add your first interview.</td>`;
+      interviewTableBody.appendChild(emptyRow);
+      return;
+    }
+
+    interviews.forEach((interview, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${interview.contactName}</td>
+        <td>${interview.companyRole}</td>
+        <td>${formatDate(interview.interviewDate)}</td>
+        <td>${interview.keyInsights}</td>
+        <td>${interview.followupActions}</td>
+        <td>${formatDate(interview.nextContactDate)}</td>
+        <td><button class="delete-interview" data-index="${index}">Delete</button></td>
+      `;
+      interviewTableBody.appendChild(row);
+    });
+
+    // Add event listeners to delete buttons
+    document.querySelectorAll('.delete-interview').forEach(button => {
+      button.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'));
+        deleteInterview(index);
+      });
+    });
+  }
+
+  // Format date for display
+  function formatDate(dateString) {
+    if (!dateString) return 'Not set';
+
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  }
+
+  // Add a new interview
+  function addInterview() {
+    const contactName = contactNameInput.value.trim();
+    const companyRole = companyRoleInput.value.trim();
+    const interviewDate = interviewDateInput.value;
+    const nextContactDate = nextContactDateInput.value;
+    const keyInsights = keyInsightsInput.value.trim();
+    const followupActions = followupActionsInput.value.trim();
+
+    if (!contactName || !companyRole) {
+      alert('Please enter at least the contact name and company/role.');
+      return;
+    }
+
+    const newInterview = {
+      contactName,
+      companyRole,
+      interviewDate,
+      nextContactDate,
+      keyInsights,
+      followupActions,
+      dateAdded: new Date().toISOString()
+    };
+
+    const interviews = JSON.parse(localStorage.getItem('informationalInterviews')) || [];
+    interviews.push(newInterview);
+    localStorage.setItem('informationalInterviews', JSON.stringify(interviews));
+
+    clearForm();
+    loadInterviews();
+  }
+
+  // Clear the form
+  function clearForm() {
+    contactNameInput.value = '';
+    companyRoleInput.value = '';
+    interviewDateInput.value = '';
+    nextContactDateInput.value = '';
+    keyInsightsInput.value = '';
+    followupActionsInput.value = '';
+  }
+
+  // Delete an interview
+  function deleteInterview(index) {
+    if (confirm('Are you sure you want to delete this interview record?')) {
+      const interviews = JSON.parse(localStorage.getItem('informationalInterviews')) || [];
+      interviews.splice(index, 1);
+      localStorage.setItem('informationalInterviews', JSON.stringify(interviews));
+      loadInterviews();
+    }
+  }
+
+  // Clear all interviews
+  function clearAllInterviews() {
+    if (confirm('Are you sure you want to delete ALL interview records? This cannot be undone.')) {
+      localStorage.removeItem('informationalInterviews');
+      loadInterviews();
+    }
+  }
+
+  // Export interviews as CSV
+  function exportInterviewsCSV() {
+    const interviews = JSON.parse(localStorage.getItem('informationalInterviews')) || [];
+
+    if (interviews.length === 0) {
+      alert('No interviews to export. Add some interviews first.');
+      return;
+    }
+
+    // CSV header
+    let csvContent = 'Contact Name,Company/Role,Interview Date,Key Insights,Follow-up Actions,Next Contact Date\n';
+
+    // Add each interview as a row
+    interviews.forEach(interview => {
+      const row = [
+        `"${interview.contactName.replace(/"/g, '""')}"`,
+        `"${interview.companyRole.replace(/"/g, '""')}"`,
+        `"${interview.interviewDate || ''}"`,
+        `"${interview.keyInsights.replace(/"/g, '""')}"`,
+        `"${interview.followupActions.replace(/"/g, '""')}"`,
+        `"${interview.nextContactDate || ''}"`
+      ];
+      csvContent += row.join(',') + '\n';
+    });
+
+    // Create a download link
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'informational_interviews.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Initialize the tracker
+  if (interviewTableBody && addInterviewBtn) {
+    // Load existing interviews
+    loadInterviews();
+
+    // Add event listeners
+    addInterviewBtn.addEventListener('click', addInterview);
+    clearFormBtn.addEventListener('click', clearForm);
+    exportInterviewsCSVBtn.addEventListener('click', exportInterviewsCSV);
+    clearAllInterviewsBtn.addEventListener('click', clearAllInterviews);
+  }
+
+  // Open Network Map from Guide
+  const openNetworkMapFromGuideButton = document.getElementById('openNetworkMapFromGuide');
+  if (openNetworkMapFromGuideButton && networkMappingModal) {
+    openNetworkMapFromGuideButton.onclick = function(e) {
+      e.preventDefault();
+      interviewGuideModal.style.display = "none";
+      networkMappingModal.style.display = "block";
+      loadNetworkMapData();
     }
   }
 
