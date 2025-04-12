@@ -27,11 +27,41 @@ body {
   margin: 0 auto;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .navbar .logo {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.nav-cta-button {
+  display: none; /* Hidden on mobile by default */
+  background-color: #ff6b00;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-cta-button:hover {
+  background-color: #ff8c33;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 992px) {
+  .nav-cta-button {
+    display: inline-block;
+  }
 }
 
 .navbar .nav-links {
@@ -172,7 +202,7 @@ body {
 }
 
 .section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   margin-top: 0;
 }
 
@@ -230,7 +260,7 @@ body {
   background-size: cover; /* Ensures the image covers the entire section */
   color: white; /* Text color for contrast */
   text-align: center; /* Center-align the text */
-  padding: 150px 20px; /* Maintain your existing padding */
+  padding: 80px 20px; /* Reduced padding for smaller hero section */
   position: relative; /* Allows for overlays or z-index adjustments */
   margin-top: 60px;
 }
@@ -365,6 +395,103 @@ body {
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.feature-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.roadmap-preview {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.roadmap-preview a {
+  color: #0077cc;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: color 0.3s ease;
+}
+
+.roadmap-preview a:hover {
+  color: #005fa3;
+}
+
+.features-hero {
+  margin: 2rem 0 1rem;
+}
+
+.features-hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.features-hero-text {
+  flex: 1;
+  padding: 2rem;
+}
+
+.features-hero-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.features-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.features-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.home-cta {
+  margin-bottom: 1.5rem;
+}
+
+.home-cta .btn {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .features-hero-content {
+    flex-direction: column;
+  }
+
+  .features-hero-image {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .features-hero-text {
+    padding: 1.5rem;
+  }
+
+  .roadmap-preview {
+    text-align: center;
+  }
 }
 
 .feature-link {
@@ -1921,6 +2048,85 @@ body {
   margin-bottom: 3rem;
 }
 
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.checklist-header h2 {
+  margin: 0;
+}
+
+.checklist-progress {
+  background-color: #e9ecef;
+  height: 10px;
+  border-radius: 5px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.checklist-progress-bar {
+  height: 100%;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  transition: width 0.3s ease;
+}
+
+.checklist-progress-text {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.action-step {
+  position: relative;
+  padding-left: 40px;
+  transition: all 0.3s ease;
+}
+
+.action-step-checkbox {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.action-step.completed .step-content {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.action-step.completed .step-number {
+  background-color: #28a745;
+}
+
+.checklist-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.reset-button {
+  background-color: transparent;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
 .action-plan h2 {
   margin-top: 0;
   color: #2c3e50;
@@ -2035,6 +2241,105 @@ body {
   .cta-buttons .btn {
     width: 100%;
     margin-bottom: 1rem;
+  }
+}
+
+/* Next Step Navigation Component */
+.next-step-nav {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #eaeaea;
+  padding-top: 2rem;
+}
+
+.next-step-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.next-step-container h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.next-step-link {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-step-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.next-step-content {
+  flex: 1;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.next-step-arrow {
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  font-weight: 300;
+}
+
+.all-steps-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.all-steps-link a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #4ca1af;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.all-steps-link a:hover {
+  color: #4ca1af;
+}
+
+@media (max-width: 768px) {
+  .step-title {
+    font-size: 1.2rem;
+  }
+
+  .step-description {
+    font-size: 0.9rem;
+  }
+
+  .next-step-arrow {
+    font-size: 1.5rem;
+    margin-left: 1rem;
   }
 }
 

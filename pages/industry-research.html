@@ -4,12 +4,9 @@ title: Research & Industry Exploration
 subtitle: Gain insights into private sector industries and identify opportunities that align with your federal experience
 ---
 
-<div class="industry-hero">
-  <div class="industry-hero-content">
-    <h2>Research & Industry Exploration</h2>
-    <p class="hero-subtitle">Gain insights into private sector industries and identify opportunities that align with your federal experience</p>
-  </div>
-</div>
+<script src="/assets/js/industry-research.js"></script>
+
+
 
 <div class="industry-content">
   <div class="intro-section">
@@ -115,7 +112,7 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         <li>Identify soft skills that may be emphasized differently in the private sector</li>
         <li>Develop a plan to address any significant gaps</li>
       </ul>
-      <a href="/pages/skill-translation-hub.html" class="resource-link">Skill Translation Hub →</a>
+
     </div>
 
     <div class="strategy-card">
@@ -146,13 +143,22 @@ subtitle: Gain insights into private sector industries and identify opportunitie
 
 
   <div class="action-plan">
-    <h2>Your Industry Research Action Plan</h2>
+    <div class="checklist-header">
+      <h2>Your Industry Research Action Plan</h2>
+    </div>
+
     <p>
-      Follow these steps to conduct thorough industry research:
+      Track your progress as you conduct thorough industry research. Check off each step as you complete it:
     </p>
 
+    <div class="checklist-progress">
+      <div id="checklist-progress-bar" class="checklist-progress-bar" style="width: 0%"></div>
+    </div>
+    <div id="checklist-progress-text" class="checklist-progress-text">0 of 8 steps completed (0%)</div>
+
     <div class="action-steps">
-      <div class="action-step">
+      <div id="action-step-1" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="1" id="step-1">
         <div class="step-number">1</div>
         <div class="step-content">
           <h3>Identify Target Industries</h3>
@@ -160,7 +166,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-2" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="2" id="step-2">
         <div class="step-number">2</div>
         <div class="step-content">
           <h3>Research Industry Trends</h3>
@@ -168,7 +175,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-3" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="3" id="step-3">
         <div class="step-number">3</div>
         <div class="step-content">
           <h3>Identify Target Companies</h3>
@@ -176,7 +184,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-4" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="4" id="step-4">
         <div class="step-number">4</div>
         <div class="step-content">
           <h3>Research Roles and Requirements</h3>
@@ -184,7 +193,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-5" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="5" id="step-5">
         <div class="step-number">5</div>
         <div class="step-content">
           <h3>Conduct Skills Gap Analysis</h3>
@@ -192,7 +202,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-6" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="6" id="step-6">
         <div class="step-number">6</div>
         <div class="step-content">
           <h3>Research Compensation</h3>
@@ -200,7 +211,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-7" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="7" id="step-7">
         <div class="step-number">7</div>
         <div class="step-content">
           <h3>Connect with Industry Professionals</h3>
@@ -208,7 +220,8 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
 
-      <div class="action-step">
+      <div id="action-step-8" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="8" id="step-8">
         <div class="step-number">8</div>
         <div class="step-content">
           <h3>Refine Your Focus</h3>
@@ -216,15 +229,13 @@ subtitle: Gain insights into private sector industries and identify opportunitie
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="industry-cta">
-    <h2>Ready to Explore Your Target Industries?</h2>
-    <p>Use the resources below to continue your research journey:</p>
-    <div class="cta-buttons">
-      <a href="/pages/skill-translation-hub.html" class="btn btn-primary">Skill Translation Hub</a>
-      <a href="/pages/networking-strategies.html" class="btn btn-primary">Networking Strategies</a>
-      <a href="/pages/self-assessment.html" class="btn btn-primary">Self-Assessment Toolkit</a>
+    <div class="checklist-actions">
+      <button id="reset-checklist" class="reset-button">Reset Progress</button>
     </div>
   </div>
+
+
 </div>
+
+{% include next-step.html step_number=2 %}

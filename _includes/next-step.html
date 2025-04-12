@@ -1,0 +1,93 @@
+{% if include.step_number %}
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    {% if include.step_number == 1 %}
+    <a href="/pages/industry-research.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (2/9)</div>
+        <div class="step-title">Research & Industry Exploration</div>
+        <div class="step-description">Gain insights into private sector industries and identify opportunities</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 2 %}
+    <a href="/pages/skill-translation-hub.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (3/9)</div>
+        <div class="step-title">Skill Translation & Development</div>
+        <div class="step-description">Learn to communicate your federal experience effectively</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 3 %}
+    <a href="/pages/resume-personal-branding.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (4/9)</div>
+        <div class="step-title">Resume & Personal Branding</div>
+        <div class="step-description">Create a compelling private sector resume and establish your professional brand</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 4 %}
+    <a href="/pages/networking-strategies.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (5/9)</div>
+        <div class="step-title">Networking & Relationship Building</div>
+        <div class="step-description">Expand your professional network beyond government circles</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 5 %}
+    <a href="/pages/job-search-resources.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (6/9)</div>
+        <div class="step-title">Job Search Strategy</div>
+        <div class="step-description">Develop a targeted approach to finding opportunities in the private sector</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 6 %}
+    <a href="/pages/interview-preparation.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (7/9)</div>
+        <div class="step-title">Interview Preparation</div>
+        <div class="step-description">Prepare to excel in private sector interviews</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 7 %}
+    <a href="/pages/compensation-benefits.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (8/9)</div>
+        <div class="step-title">Compensation Negotiation</div>
+        <div class="step-description">Learn to negotiate competitive compensation packages</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 8 %}
+    <a href="/pages/resources.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (9/9)</div>
+        <div class="step-title">Transition & Onboarding</div>
+        <div class="step-description">Successfully navigate your exit from federal service and entry into the private sector</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% elsif include.step_number == 9 %}
+    <a href="/pages/community.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Completed All Steps!</div>
+        <div class="step-title">Join Our Community</div>
+        <div class="step-description">Connect with others who have successfully made the transition</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    {% endif %}
+    
+    <div class="all-steps-link">
+      <a href="/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+{% endif %}
