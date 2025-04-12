@@ -293,6 +293,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedSection = document.getElementById(sectionId);
     if (selectedSection) {
       selectedSection.classList.add('active');
+
+      // If showing the summary section, populate it with data from other sections
+      if (sectionId === 'section5') {
+        populateSummaryTab();
+      }
     } else {
       console.error('Section not found:', sectionId);
     }
@@ -353,7 +358,9 @@ document.addEventListener('DOMContentLoaded', function() {
       softwareTools: [],
       leadershipSkills: {},
       problemSolvingSkills: {},
-      communicationSkills: {}
+      communicationSkills: {},
+      achievements: [],
+      industryAnalysis: {}
     };
 
     // Collect core technical skills
@@ -417,6 +424,30 @@ document.addEventListener('DOMContentLoaded', function() {
           rating: toolRating,
           equivalent: toolEquivalent
         });
+      }
+    });
+
+    // Collect achievements
+    const achievementEntries = document.querySelectorAll('#achievements .achievement-entry');
+    achievementEntries.forEach(entry => {
+      const achievementText = entry.querySelector('.achievement-text')?.value || '';
+      const achievementImpact = entry.querySelector('.achievement-impact')?.value || '';
+      const achievementSkills = entry.querySelector('.achievement-skills')?.value || '';
+
+      if (achievementText || achievementImpact || achievementSkills) {
+        data.achievements.push({
+          text: achievementText,
+          impact: achievementImpact,
+          skills: achievementSkills
+        });
+      }
+    });
+
+    // Collect industry analysis
+    const industryInputs = document.querySelectorAll('#industryAnalysis input, #industryAnalysis textarea');
+    industryInputs.forEach(input => {
+      if (input.name && input.value) {
+        data.industryAnalysis[input.name] = input.value;
       }
     });
 
@@ -533,6 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     }
+
   }
 
   // Save assessment data to a file
@@ -654,5 +686,160 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update progress bar
     progressFill.style.width = `${progressPercentage}%`;
     progressText.textContent = `${progressPercentage}% Complete`;
+  }
+
+  // Populate summary tab with data from other sections
+  function populateSummaryTab() {
+    console.log('Populating summary tab...');
+    const data = collectData();
+
+    // Get top skills based on ratings
+    const allSkills = [];
+
+    // Add technical skills
+    for (const skillId in data.coreTechnicalSkills) {
+      const rating = parseInt(data.coreTechnicalSkills[skillId]);
+      if (rating >= 4) { // Only include skills rated 4 or 5
+        const skillName = coreTechnicalSkillsList.find(s => s.id === skillId)?.name;
+        if (skillName) {
+          allSkills.push({ name: skillName, rating: rating });
+        }
+      }
+    }
+
+    // Add leadership skills
+    for (const skillId in data.leadershipSkills) {
+      const rating = parseInt(data.leadershipSkills[skillId]);
+      if (rating >= 4) { // Only include skills rated 4 or 5
+        const skillName = leadershipSkillsList.find(s => s.id === skillId)?.name;
+        if (skillName) {
+          allSkills.push({ name: skillName, rating: rating });
+        }
+      }
+    }
+
+    // Add problem-solving skills
+    for (const skillId in data.problemSolvingSkills) {
+      const rating = parseInt(data.problemSolvingSkills[skillId]);
+      if (rating >= 4) { // Only include skills rated 4 or 5
+        const skillName = problemSolvingSkillsList.find(s => s.id === skillId)?.name;
+        if (skillName) {
+          allSkills.push({ name: skillName, rating: rating });
+        }
+      }
+    }
+
+    // Add communication skills
+    for (const skillId in data.communicationSkills) {
+      const rating = parseInt(data.communicationSkills[skillId]);
+      if (rating >= 4) { // Only include skills rated 4 or 5
+        const skillName = communicationSkillsList.find(s => s.id === skillId)?.name;
+        if (skillName) {
+          allSkills.push({ name: skillName, rating: rating });
+        }
+      }
+    }
+
+    // Add agency-specific skills
+    data.agencySkills.forEach(skill => {
+      const rating = parseInt(skill.rating);
+      if (rating >= 4) { // Only include skills rated 4 or 5
+        allSkills.push({ name: skill.name, rating: rating });
+      }
+    });
+
+    // Sort skills by rating (highest first)
+    allSkills.sort((a, b) => b.rating - a.rating);
+
+    // Populate top skills fields
+    const topSkillInputs = document.querySelectorAll('#topSkills input');
+    for (let i = 0; i < Math.min(topSkillInputs.length, allSkills.length); i++) {
+      topSkillInputs[i].value = allSkills[i].name;
+    }
+
+    // Get skills to develop (lowest rated skills)
+    const skillsToDevelop = [];
+
+    // Add all skills with ratings 1-3
+    const lowRatedSkills = [];
+
+    // Technical skills
+    for (const skillId in data.coreTechnicalSkills) {
+      const rating = parseInt(data.coreTechnicalSkills[skillId]);
+      if (rating > 0 && rating <= 3) { // Only include skills rated 1-3
+        const skillName = coreTechnicalSkillsList.find(s => s.id === skillId)?.name;
+        if (skillName) {
+          lowRatedSkills.push({ name: skillName, rating: rating });
+        }
+      }
+    }
+
+    // Leadership skills
+    for (const skillId in data.leadershipSkills) {
+      const rating = parseInt(data.leadershipSkills[skillId]);
+      if (rating > 0 && rating <= 3) { // Only include skills rated 1-3
+        const skillName = leadershipSkillsList.find(s => s.id === skillId)?.name;
+        if (skillName) {
+          lowRatedSkills.push({ name: skillName, rating: rating });
+        }
+      }
+    }
+
+    // Sort by rating (lowest first)
+    lowRatedSkills.sort((a, b) => a.rating - b.rating);
+
+    // Populate skills to develop fields
+    const developSkillInputs = document.querySelectorAll('#skillsToDevelop input');
+    for (let i = 0; i < Math.min(developSkillInputs.length, lowRatedSkills.length); i++) {
+      developSkillInputs[i].value = lowRatedSkills[i].name;
+    }
+
+    // Create value proposition based on top skills and achievements
+    const valueProposition = document.getElementById('valueProposition');
+    if (valueProposition && allSkills.length > 0) {
+      // Only auto-generate if the field is empty
+      if (!valueProposition.value.trim()) {
+        const topThreeSkills = allSkills.slice(0, 3).map(skill => skill.name).join(', ');
+
+        // Get a significant achievement if available
+        let achievementPhrase = '';
+        if (data.achievements && data.achievements.length > 0) {
+          // Find an achievement with high impact
+          const significantAchievement = data.achievements.find(a => a.text && a.text.length > 10);
+          if (significantAchievement) {
+            achievementPhrase = ` with demonstrated success in ${significantAchievement.text.split('.')[0]}`;
+          }
+        }
+
+        valueProposition.value = `Experienced federal professional with expertise in ${topThreeSkills}${achievementPhrase}. Bringing a unique perspective from government service with a proven track record of delivering results in complex regulatory environments.`;
+      }
+    }
+
+    // Suggest next steps based on assessment data
+    const nextStepInputs = document.querySelectorAll('#nextSteps input');
+
+    // First step is always about the resume
+    if (nextStepInputs[0] && !nextStepInputs[0].value.trim()) {
+      nextStepInputs[0].value = "Update resume to highlight transferable skills";
+    }
+
+    // Second step depends on industry analysis
+    if (nextStepInputs[1] && !nextStepInputs[1].value.trim()) {
+      if (data.industryAnalysis && data.industryAnalysis.targetIndustry1) {
+        nextStepInputs[1].value = `Research companies in the ${data.industryAnalysis.targetIndustry1} industry`;
+      } else {
+        nextStepInputs[1].value = "Research target companies in preferred industries";
+      }
+    }
+
+    // Third step is about networking
+    if (nextStepInputs[2] && !nextStepInputs[2].value.trim()) {
+      // If they have skills to develop, suggest that
+      if (lowRatedSkills.length > 0) {
+        nextStepInputs[2].value = `Develop skills in ${lowRatedSkills[0].name}`;
+      } else {
+        nextStepInputs[2].value = "Connect with industry professionals for informational interviews";
+      }
+    }
   }
 });
