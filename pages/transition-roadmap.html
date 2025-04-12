@@ -4,12 +4,30 @@ title: Transition Roadmap
 subtitle: Your step-by-step guide to successfully transitioning from federal service to the private sector
 ---
 
+<script src="/assets/js/transition-roadmap.js"></script>
+
 <div class="roadmap-content">
   <!-- Roadmap Hero Image Section -->
   <div class="roadmap-hero">
-    <div class="roadmap-image">
-      <img src="/assets/img/transition-roadmap.jpg" alt="Fed 2 Industry Transition Roadmap" onerror="this.src='/assets/img/placeholder.jpg'; this.onerror=null;">
+    <div class="roadmap-card">
+      <div class="roadmap-image">
+        <img id="roadmapImage" src="/assets/img/transition-roadmap.jpg" alt="Fed 2 Industry Transition Roadmap" onerror="this.src='/assets/img/placeholder.jpg'; this.onerror=null;">
+        <div class="image-overlay">
+          <button id="expandRoadmap" class="expand-btn"><i class="fas fa-expand"></i> View Full Size</button>
+        </div>
+      </div>
+      <div class="roadmap-card-content">
+        <h2>Your Path to Success in the Private Sector</h2>
+        <p>Click on the image to view the full roadmap or explore the detailed steps below.</p>
+      </div>
     </div>
+  </div>
+
+  <!-- Roadmap Lightbox -->
+  <div id="roadmapLightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="expandedRoadmap">
+    <div id="lightboxCaption" class="lightbox-caption">Fed 2 Industry Transition Roadmap</div>
   </div>
 
   <div class="roadmap-intro">
