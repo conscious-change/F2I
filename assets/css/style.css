@@ -1083,7 +1083,7 @@ body {
 
 /* Skill Translation Hub Styles */
 .translation-hero {
-  background: linear-gradient(135deg, #0056b3 0%, #0077cc 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
   color: white;
   padding: 4rem 1rem;
   text-align: center;
@@ -2040,7 +2040,7 @@ body {
 
 /* Networking Strategies Page Styles */
 .networking-hero {
-  background: linear-gradient(135deg, #0077cc 0%, #004080 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
   color: white;
   padding: 4rem 1rem;
   text-align: center;
@@ -3084,7 +3084,7 @@ body {
 
 /* Resume & Personal Branding Page Styles */
 .resume-hero {
-  background: linear-gradient(135deg, #0056b3 0%, #0077cc 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
   color: white;
   padding: 4rem 1rem;
   text-align: center;
@@ -4139,7 +4139,8 @@ textarea[readonly] {
 .about-hero {
   padding: 3rem 1rem;
   margin-bottom: 3rem;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
   border-radius: 12px;
 }
 
@@ -4696,16 +4697,17 @@ textarea[readonly] {
 }
 
 .roadmap-cta {
-  background-color: #f0f7ff;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
   padding: 3rem 2rem;
   text-align: center;
   border-radius: 12px;
   margin-top: 3rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .roadmap-cta h2 {
-  color: #0056b3;
+  color: white;
   margin-bottom: 1rem;
 }
 
