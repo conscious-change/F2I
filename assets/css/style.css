@@ -1723,6 +1723,321 @@ body {
   }
 }
 
+/* Industry Research Page Styles */
+.industry-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
+
+.industry-hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.industry-hero .hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.industry-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.intro-section {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.why-research {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border-left: 5px solid #4ca1af;
+}
+
+.why-research h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.why-research ul {
+  margin-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.why-research li {
+  margin-bottom: 0.5rem;
+}
+
+.research-strategies {
+  margin-bottom: 3rem;
+}
+
+.research-strategies h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.strategy-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.strategy-card h3 {
+  color: #4ca1af;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.strategy-card p {
+  margin-bottom: 1rem;
+}
+
+.strategy-card ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.strategy-card li {
+  margin-bottom: 0.5rem;
+}
+
+.resource-box, .example-box, .tip-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.resource-box h4, .example-box h4, .tip-box h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.tip-box {
+  border-left: 4px solid #ffc107;
+}
+
+.resource-box {
+  border-left: 4px solid #4ca1af;
+}
+
+.example-box {
+  border-left: 4px solid #6c757d;
+}
+
+.resource-link {
+  display: inline-block;
+  color: #4ca1af;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+  color: #2c3e50;
+  text-decoration: underline;
+}
+
+.research-tools {
+  margin-bottom: 3rem;
+}
+
+.research-tools h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.tool-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card h3 {
+  color: #4ca1af;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.tool-card p {
+  margin-bottom: 1rem;
+}
+
+.tool-card ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tool-card li {
+  margin-bottom: 0.5rem;
+}
+
+.action-plan {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+.action-plan h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.action-plan p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.action-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-step {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  background-color: #4ca1af;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.step-content p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.industry-cta {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.industry-cta h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.industry-cta p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .industry-hero h2 {
+    font-size: 2rem;
+  }
+
+  .industry-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .strategy-card, .tool-card, .action-step {
+    padding: 1.5rem;
+  }
+
+  .action-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
 /* Networking Strategies Page Styles */
 .networking-hero {
   background: linear-gradient(135deg, #0077cc 0%, #004080 100%);
