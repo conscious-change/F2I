@@ -360,6 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
       problemSolvingSkills: {},
       communicationSkills: {},
       achievements: [],
+      starStories: [],
       industryAnalysis: {}
     };
 
@@ -428,17 +429,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Collect achievements
-    const achievementEntries = document.querySelectorAll('#achievements .achievement-entry');
+    const achievementEntries = document.querySelectorAll('#keyAchievements .achievement-entry');
     achievementEntries.forEach(entry => {
-      const achievementText = entry.querySelector('.achievement-text')?.value || '';
+      const achievementTitle = entry.querySelector('.achievement-title')?.value || '';
+      const achievementDescription = entry.querySelector('.achievement-description')?.value || '';
       const achievementImpact = entry.querySelector('.achievement-impact')?.value || '';
       const achievementSkills = entry.querySelector('.achievement-skills')?.value || '';
 
-      if (achievementText || achievementImpact || achievementSkills) {
+      if (achievementTitle || achievementDescription || achievementImpact || achievementSkills) {
         data.achievements.push({
-          text: achievementText,
+          title: achievementTitle,
+          description: achievementDescription,
           impact: achievementImpact,
           skills: achievementSkills
+        });
+      }
+    });
+
+    // Collect STAR stories
+    data.starStories = [];
+    const starStories = document.querySelectorAll('#starStories .star-story');
+    starStories.forEach((story, index) => {
+      const storyNumber = index + 1;
+      const situation = story.querySelector(`[name="situation_${storyNumber}"]`)?.value || '';
+      const task = story.querySelector(`[name="task_${storyNumber}"]`)?.value || '';
+      const action = story.querySelector(`[name="action_${storyNumber}"]`)?.value || '';
+      const result = story.querySelector(`[name="result_${storyNumber}"]`)?.value || '';
+      const skills = story.querySelector(`[name="skills_${storyNumber}"]`)?.value || '';
+
+      if (situation || task || action || result || skills) {
+        data.starStories.push({
+          situation: situation,
+          task: task,
+          action: action,
+          result: result,
+          skills: skills
         });
       }
     });
@@ -804,10 +829,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get a significant achievement if available
         let achievementPhrase = '';
         if (data.achievements && data.achievements.length > 0) {
-          // Find an achievement with high impact
-          const significantAchievement = data.achievements.find(a => a.text && a.text.length > 10);
+          // Find an achievement with title and description
+          const significantAchievement = data.achievements.find(a => a.title && a.description);
           if (significantAchievement) {
-            achievementPhrase = ` with demonstrated success in ${significantAchievement.text.split('.')[0]}`;
+            achievementPhrase = ` with demonstrated success in ${significantAchievement.title}`;
           }
         }
 
