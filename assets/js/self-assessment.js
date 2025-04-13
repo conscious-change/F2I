@@ -164,6 +164,21 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Load Assessment File input not found');
     }
+
+    // Download and print buttons
+    const downloadResultsBtn = document.getElementById('downloadResults');
+    if (downloadResultsBtn) {
+      downloadResultsBtn.addEventListener('click', downloadResultsAsCSV);
+    } else {
+      console.error('Download Results button not found');
+    }
+
+    const printResultsBtn = document.getElementById('printResults');
+    if (printResultsBtn) {
+      printResultsBtn.addEventListener('click', printAssessment);
+    } else {
+      console.error('Print Assessment button not found');
+    }
   }
 
   // Generate the core technical skills grid
@@ -688,6 +703,33 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    // Collect summary data
+    data.valueProposition = document.getElementById('valueProposition')?.value || '';
+
+    // Collect top skills
+    const topSkillInputs = document.querySelectorAll('#topSkills input');
+    topSkillInputs.forEach((input, index) => {
+      if (input.value) {
+        data[`topSkill${index + 1}`] = input.value;
+      }
+    });
+
+    // Collect skills to develop
+    const developSkillInputs = document.querySelectorAll('#skillsToDevelop input');
+    developSkillInputs.forEach((input, index) => {
+      if (input.value) {
+        data[`developSkill${index + 1}`] = input.value;
+      }
+    });
+
+    // Collect next steps
+    const nextStepInputs = document.querySelectorAll('#nextSteps input');
+    nextStepInputs.forEach((input, index) => {
+      if (input.value) {
+        data[`nextStep${index + 1}`] = input.value;
+      }
+    });
+
     return data;
   }
 
@@ -817,6 +859,230 @@ document.addEventListener('DOMContentLoaded', function() {
     linkElement.setAttribute('href', dataUri);
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
+  }
+
+  // Download assessment results as CSV
+  function downloadResultsAsCSV() {
+    console.log('Downloading assessment results as CSV...');
+    const data = collectData();
+    const csvContent = convertDataToCSV(data);
+    const dataUri = 'data:text/csv;charset=utf-8,'+ encodeURIComponent(csvContent);
+
+    const exportFileDefaultName = 'f2i-self-assessment-results.csv';
+
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+  }
+
+  // Print assessment
+  function printAssessment() {
+    console.log('Printing assessment...');
+    const data = collectData();
+    const csvContent = convertDataToCSV(data);
+
+    // Create a new window for printing
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Fed 2 Industry Self-Assessment Results</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              margin: 20px;
+            }
+            h1 {
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            pre {
+              white-space: pre-wrap;
+              background-color: #f8f9fa;
+              padding: 15px;
+              border-radius: 5px;
+              font-family: monospace;
+            }
+            @media print {
+              body {
+                margin: 0.5in;
+              }
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Fed 2 Industry Self-Assessment Results</h1>
+          <pre>${csvContent}</pre>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+
+    // Wait for content to load before printing
+    setTimeout(() => {
+      printWindow.print();
+      printWindow.close();
+    }, 500);
+  }
+
+  // Convert assessment data to CSV format
+  function convertDataToCSV(data) {
+    let csvContent = 'Fed 2 Industry Self-Assessment Results\n\n';
+
+    // Technical Skills
+    csvContent += 'TECHNICAL SKILLS\n';
+    csvContent += 'Core Technical Skills:\n';
+    csvContent += 'Skill,Rating\n';
+
+    // Core Technical Skills
+    for (const skillId in data.coreTechnicalSkills) {
+      if (data.coreTechnicalSkills[skillId]) {
+        const skillName = coreTechnicalSkillsList.find(s => s.id === skillId)?.name || skillId;
+        csvContent += `"${skillName}","${data.coreTechnicalSkills[skillId]}"\n`;
+      }
+    }
+
+    csvContent += '\nAgency-Specific Technical Skills:\n';
+    csvContent += 'Skill,Rating,Notes\n';
+
+    // Agency-Specific Skills
+    data.agencySkills.forEach(skill => {
+      if (skill.name) {
+        csvContent += `"${skill.name}","${skill.rating}","${skill.notes}"\n`;
+      }
+    });
+
+    csvContent += '\nSoftware & Digital Tools:\n';
+    csvContent += 'Tool,Rating,Industry Equivalent\n';
+
+    // Software Tools
+    data.softwareTools.forEach(tool => {
+      if (tool.name) {
+        csvContent += `"${tool.name}","${tool.rating}","${tool.equivalent}"\n`;
+      }
+    });
+
+    // Transferable Skills
+    csvContent += '\nTRANSFERABLE SKILLS\n';
+    csvContent += 'Leadership Skills:\n';
+    csvContent += 'Skill,Rating\n';
+
+    // Leadership Skills
+    for (const skillId in data.leadershipSkills) {
+      if (data.leadershipSkills[skillId]) {
+        const skillName = leadershipSkillsList.find(s => s.id === skillId)?.name || skillId;
+        csvContent += `"${skillName}","${data.leadershipSkills[skillId]}"\n`;
+      }
+    }
+
+    csvContent += '\nProblem-Solving Skills:\n';
+    csvContent += 'Skill,Rating\n';
+
+    // Problem-Solving Skills
+    for (const skillId in data.problemSolvingSkills) {
+      if (data.problemSolvingSkills[skillId]) {
+        const skillName = problemSolvingSkillsList.find(s => s.id === skillId)?.name || skillId;
+        csvContent += `"${skillName}","${data.problemSolvingSkills[skillId]}"\n`;
+      }
+    }
+
+    csvContent += '\nCommunication Skills:\n';
+    csvContent += 'Skill,Rating\n';
+
+    // Communication Skills
+    for (const skillId in data.communicationSkills) {
+      if (data.communicationSkills[skillId]) {
+        const skillName = communicationSkillsList.find(s => s.id === skillId)?.name || skillId;
+        csvContent += `"${skillName}","${data.communicationSkills[skillId]}"\n`;
+      }
+    }
+
+    // Achievements
+    csvContent += '\nACHIEVEMENTS & IMPACT\n';
+    csvContent += 'Key Achievements:\n';
+    csvContent += 'Title,Description,Impact,Skills Demonstrated\n';
+
+    data.achievements.forEach(achievement => {
+      if (achievement.title || achievement.description) {
+        csvContent += `"${achievement.title}","${achievement.description}","${achievement.impact}","${achievement.skills}"\n`;
+      }
+    });
+
+    // STAR Stories
+    csvContent += '\nSTAR Stories:\n';
+
+    data.starStories.forEach((story, index) => {
+      csvContent += `\nSTAR Story ${index + 1}:\n`;
+      csvContent += `Situation: ${story.situation}\n`;
+      csvContent += `Task: ${story.task}\n`;
+      csvContent += `Action: ${story.action}\n`;
+      csvContent += `Result: ${story.result}\n`;
+      csvContent += `Skills Demonstrated: ${story.skills}\n`;
+    });
+
+    // Industry Analysis
+    csvContent += '\nINDUSTRY ANALYSIS\n';
+    csvContent += 'Target Industries:\n';
+
+    if (data.industryAnalysis.targetIndustry1) {
+      csvContent += `1. ${data.industryAnalysis.targetIndustry1}\n`;
+    }
+    if (data.industryAnalysis.targetIndustry2) {
+      csvContent += `2. ${data.industryAnalysis.targetIndustry2}\n`;
+    }
+    if (data.industryAnalysis.targetIndustry3) {
+      csvContent += `3. ${data.industryAnalysis.targetIndustry3}\n`;
+    }
+
+    csvContent += '\nTarget Industry Skills:\n';
+    csvContent += 'Skill,Current Level,Gap Closure Plan\n';
+
+    data.industrySkills.forEach(skill => {
+      if (skill.name) {
+        csvContent += `"${skill.name}","${skill.rating}","${skill.gap}"\n`;
+      }
+    });
+
+    csvContent += '\nTerminology Translation:\n';
+    csvContent += 'Federal Term,Industry Equivalent,Context\n';
+
+    data.terminology.forEach(term => {
+      if (term.federal || term.industry) {
+        csvContent += `"${term.federal}","${term.industry}","${term.context}"\n`;
+      }
+    });
+
+    // Summary
+    csvContent += '\nSUMMARY\n';
+    csvContent += `Value Proposition: ${data.valueProposition || ''}\n\n`;
+
+    csvContent += 'Top Skills:\n';
+    for (let i = 1; i <= 5; i++) {
+      const skillValue = data[`topSkill${i}`] || '';
+      if (skillValue) {
+        csvContent += `${i}. ${skillValue}\n`;
+      }
+    }
+
+    csvContent += '\nSkills to Develop:\n';
+    for (let i = 1; i <= 3; i++) {
+      const skillValue = data[`developSkill${i}`] || '';
+      if (skillValue) {
+        csvContent += `${i}. ${skillValue}\n`;
+      }
+    }
+
+    csvContent += '\nNext Steps:\n';
+    for (let i = 1; i <= 3; i++) {
+      const stepValue = data[`nextStep${i}`] || '';
+      if (stepValue) {
+        csvContent += `${i}. ${stepValue}\n`;
+      }
+    }
+
+    return csvContent;
   }
 
   // Load assessment data from a file
