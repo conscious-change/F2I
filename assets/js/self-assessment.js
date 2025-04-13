@@ -108,6 +108,34 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Add Software Tool button not found');
     }
 
+    const addIndustrySkillBtn = document.getElementById('addIndustrySkill');
+    if (addIndustrySkillBtn) {
+      addIndustrySkillBtn.addEventListener('click', addIndustrySkill);
+    } else {
+      console.error('Add Industry Skill button not found');
+    }
+
+    const addTerminologyBtn = document.getElementById('addTerminology');
+    if (addTerminologyBtn) {
+      addTerminologyBtn.addEventListener('click', addTerminology);
+    } else {
+      console.error('Add Terminology button not found');
+    }
+
+    const addAchievementBtn = document.getElementById('addAchievement');
+    if (addAchievementBtn) {
+      addAchievementBtn.addEventListener('click', addAchievement);
+    } else {
+      console.error('Add Achievement button not found');
+    }
+
+    const addStarStoryBtn = document.getElementById('addStarStory');
+    if (addStarStoryBtn) {
+      addStarStoryBtn.addEventListener('click', addStarStory);
+    } else {
+      console.error('Add STAR Story button not found');
+    }
+
     // Save and load buttons
     const saveAssessmentBtn = document.getElementById('saveAssessment');
     if (saveAssessmentBtn) {
@@ -280,6 +308,154 @@ document.addEventListener('DOMContentLoaded', function() {
     saveData();
   }
 
+  // Add a new industry skill
+  function addIndustrySkill() {
+    console.log('Adding industry skill...');
+    const container = document.getElementById('industrySkills');
+
+    if (!container) {
+      console.error('Industry Skills container not found');
+      return;
+    }
+
+    const skillEntry = document.createElement('div');
+    skillEntry.className = 'industry-skill-entry';
+
+    skillEntry.innerHTML = `
+      <input type="text" class="form-control industry-skill-name" placeholder="Required industry skill">
+      <select class="form-control industry-skill-rating">
+        <option value="">Your current level</option>
+        <option value="1">1 = Basic</option>
+        <option value="2">2 = Intermediate</option>
+        <option value="3">3 = Proficient</option>
+        <option value="4">4 = Advanced</option>
+        <option value="5">5 = Expert</option>
+      </select>
+      <textarea class="form-control industry-skill-gap compact-textarea" placeholder="How to close the gap"></textarea>
+    `;
+
+    // Add event listeners to save data
+    const inputs = skillEntry.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('change', saveData);
+    });
+
+    container.appendChild(skillEntry);
+    saveData();
+  }
+
+  // Add a new terminology entry
+  function addTerminology() {
+    console.log('Adding terminology entry...');
+    const container = document.getElementById('terminologyTranslation');
+
+    if (!container) {
+      console.error('Terminology Translation container not found');
+      return;
+    }
+
+    const termEntry = document.createElement('div');
+    termEntry.className = 'terminology-entry';
+
+    termEntry.innerHTML = `
+      <input type="text" class="form-control federal-term" placeholder="Federal term/concept">
+      <input type="text" class="form-control industry-term" placeholder="Industry equivalent">
+      <input type="text" class="form-control term-context" placeholder="Context for usage">
+    `;
+
+    // Add event listeners to save data
+    const inputs = termEntry.querySelectorAll('input');
+    inputs.forEach(input => {
+      input.addEventListener('change', saveData);
+    });
+
+    container.appendChild(termEntry);
+    saveData();
+  }
+
+  // Add a new achievement entry
+  function addAchievement() {
+    console.log('Adding achievement...');
+    const container = document.getElementById('keyAchievements');
+
+    if (!container) {
+      console.error('Key Achievements container not found');
+      return;
+    }
+
+    const achievementEntry = document.createElement('div');
+    achievementEntry.className = 'achievement-entry';
+
+    achievementEntry.innerHTML = `
+      <input type="text" class="form-control achievement-title" placeholder="Achievement title">
+      <textarea class="form-control achievement-description compact-textarea" placeholder="Brief description of the achievement"></textarea>
+      <textarea class="form-control achievement-impact compact-textarea" placeholder="Quantifiable impact (numbers, percentages, etc.)"></textarea>
+      <textarea class="form-control achievement-skills compact-textarea" placeholder="Skills demonstrated"></textarea>
+    `;
+
+    // Add event listeners to save data
+    const inputs = achievementEntry.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('change', saveData);
+    });
+
+    container.appendChild(achievementEntry);
+    saveData();
+  }
+
+  // Add a new STAR story
+  function addStarStory() {
+    console.log('Adding STAR story...');
+    const container = document.getElementById('starStories');
+
+    if (!container) {
+      console.error('STAR Stories container not found');
+      return;
+    }
+
+    // Count existing stories to determine the new story number
+    const existingStories = container.querySelectorAll('.star-story');
+    const storyNumber = existingStories.length + 1;
+
+    const starStory = document.createElement('div');
+    starStory.className = 'star-story';
+
+    starStory.innerHTML = `
+      <h4>STAR Story ${storyNumber}</h4>
+      <div class="star-fields">
+        <div class="star-field">
+          <label>Situation:</label>
+          <textarea class="form-control compact-textarea" name="situation_${storyNumber}" placeholder="Describe the situation"></textarea>
+        </div>
+        <div class="star-field">
+          <label>Task:</label>
+          <textarea class="form-control compact-textarea" name="task_${storyNumber}" placeholder="What was your task or responsibility?"></textarea>
+        </div>
+        <div class="star-field">
+          <label>Action:</label>
+          <textarea class="form-control compact-textarea" name="action_${storyNumber}" placeholder="What actions did you take?"></textarea>
+        </div>
+        <div class="star-field">
+          <label>Result:</label>
+          <textarea class="form-control compact-textarea" name="result_${storyNumber}" placeholder="What was the outcome? Include metrics if possible"></textarea>
+        </div>
+        <div class="star-field">
+          <label>Skills Demonstrated:</label>
+          <textarea class="form-control compact-textarea" name="skills_${storyNumber}" placeholder="What skills did you demonstrate in this story?"></textarea>
+        </div>
+      </div>
+    `;
+
+    // Add event listeners to save data
+    const inputs = starStory.querySelectorAll('textarea');
+    inputs.forEach(input => {
+      input.addEventListener('change', saveData);
+    });
+
+    container.appendChild(starStory);
+    saveData();
+  }
+
   // Show a specific section
   function showSection(sectionId) {
     console.log('Showing section:', sectionId);
@@ -361,6 +537,8 @@ document.addEventListener('DOMContentLoaded', function() {
       communicationSkills: {},
       achievements: [],
       starStories: [],
+      industrySkills: [],
+      terminology: [],
       industryAnalysis: {}
     };
 
@@ -464,6 +642,40 @@ document.addEventListener('DOMContentLoaded', function() {
           action: action,
           result: result,
           skills: skills
+        });
+      }
+    });
+
+    // Collect industry skills
+    data.industrySkills = [];
+    const industrySkillEntries = document.querySelectorAll('#industrySkills .industry-skill-entry');
+    industrySkillEntries.forEach(entry => {
+      const skillName = entry.querySelector('.industry-skill-name')?.value || '';
+      const skillRating = entry.querySelector('.industry-skill-rating')?.value || '';
+      const skillGap = entry.querySelector('.industry-skill-gap')?.value || '';
+
+      if (skillName || skillRating || skillGap) {
+        data.industrySkills.push({
+          name: skillName,
+          rating: skillRating,
+          gap: skillGap
+        });
+      }
+    });
+
+    // Collect terminology translations
+    data.terminology = [];
+    const terminologyEntries = document.querySelectorAll('#terminologyTranslation .terminology-entry');
+    terminologyEntries.forEach(entry => {
+      const federalTerm = entry.querySelector('.federal-term')?.value || '';
+      const industryTerm = entry.querySelector('.industry-term')?.value || '';
+      const termContext = entry.querySelector('.term-context')?.value || '';
+
+      if (federalTerm || industryTerm || termContext) {
+        data.terminology.push({
+          federal: federalTerm,
+          industry: industryTerm,
+          context: termContext
         });
       }
     });
