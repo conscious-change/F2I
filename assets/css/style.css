@@ -3506,6 +3506,66 @@ body {
   padding: 0 1rem;
 }
 
+/* Resume Brand Matters Section */
+.resume-brand-matters {
+  margin-bottom: 4rem;
+}
+
+.resume-brand-matters h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.resume-brand-matters h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0056b3, #4ca1af);
+  border-radius: 2px;
+}
+
+.resume-intro {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.resume-intro-icon {
+  font-size: 3.5rem;
+  margin-right: 2rem;
+  color: #0056b3;
+  flex-shrink: 0;
+}
+
+.resume-intro p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .resume-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resume-intro-icon {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
 /* Intro Section */
 .intro-section {
   margin-bottom: 3rem;
@@ -4010,8 +4070,20 @@ body {
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .tool-card {
@@ -4341,9 +4413,41 @@ textarea[readonly] {
 
 .branding-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+/* Ensure the cards appear in the correct order */
+.branding-steps .step-card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.branding-steps .step-card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.branding-steps .step-card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.branding-steps .step-card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@media (max-width: 768px) {
+  .branding-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .branding-steps .step-card:nth-child(n) {
+    grid-column: 1;
+    grid-row: auto;
+  }
 }
 
 .step-card {
