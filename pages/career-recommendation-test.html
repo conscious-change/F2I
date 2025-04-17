@@ -232,6 +232,45 @@ subtitle: Testing the career recommendation engine data structure
   }
 </style>
 
+<script>
+  // Check if FileReader is available
+  if (typeof FileReader === 'undefined') {
+    console.error('FileReader API is not available in this browser');
+
+    // Create a simple polyfill for FileReader
+    window.FileReader = function() {
+      this.readAsText = function(file) {
+        const reader = this;
+
+        // Use XMLHttpRequest as a fallback
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', URL.createObjectURL(file), true);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            if (reader.onload) {
+              reader.result = xhr.responseText;
+              reader.onload({ target: reader });
+            }
+          } else {
+            if (reader.onerror) {
+              reader.onerror(new Error('Failed to load file'));
+            }
+          }
+        };
+        xhr.onerror = function() {
+          if (reader.onerror) {
+            reader.onerror(new Error('Failed to load file'));
+          }
+        };
+        xhr.send();
+      };
+    };
+
+    console.log('FileReader polyfill has been added');
+  } else {
+    console.log('FileReader API is available');
+  }
+</script>
 <script src="/assets/js/career-recommendation-engine.js"></script>
 <script src="/assets/js/career-database.js"></script>
 <script>
@@ -620,19 +659,40 @@ subtitle: Testing the career recommendation engine data structure
       const file = event.target.files[0];
       if (!file) return;
 
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        try {
-          const assessmentData = JSON.parse(e.target.result);
-          const profile = new UserAssessmentProfile();
-          profile.populateFromSelfAssessment(assessmentData);
-          displayProfileData(profile);
-        } catch (error) {
-          console.error('Error loading assessment data:', error);
-          alert('Error loading assessment data. Please make sure the file is valid JSON.');
-        }
-      };
-      reader.readAsText(file);
+      console.log('File selected:', file.name);
+
+      try {
+        console.log('Creating FileReader...');
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+          console.log('File loaded successfully');
+          try {
+            const assessmentData = JSON.parse(e.target.result);
+            console.log('JSON parsed successfully');
+            const profile = new UserAssessmentProfile();
+            console.log('Profile created');
+            profile.populateFromSelfAssessment(assessmentData);
+            console.log('Profile populated');
+            displayProfileData(profile);
+            console.log('Profile data displayed');
+          } catch (error) {
+            console.error('Error processing assessment data:', error);
+            alert('Error processing assessment data: ' + error.message);
+          }
+        };
+
+        reader.onerror = function() {
+          console.error('Error reading file');
+          alert('Error reading file');
+        };
+
+        console.log('Reading file as text...');
+        reader.readAsText(file);
+      } catch (error) {
+        console.error('Error with FileReader:', error);
+        alert('Error with file processing: ' + error.message);
+      }
     });
   });
 </script>

@@ -1,9 +1,11 @@
 /**
  * Career Recommendation Engine
- * 
+ *
  * A local JavaScript-based career recommendation system that uses
  * self-assessment results to suggest suitable career paths.
  */
+
+console.log('Career Recommendation Engine loaded successfully');
 
 // Comprehensive data structure for user assessment results
 class UserAssessmentProfile {
@@ -12,34 +14,34 @@ class UserAssessmentProfile {
     this.technicalSkills = {
       // Core technical skills from federal service
       coreTechnicalSkills: {}, // e.g., { "data_analysis": 4, "project_management": 5 }
-      
+
       // Agency-specific technical skills
       agencySkills: [], // Array of { name, rating, notes }
-      
+
       // Software and digital tools
       softwareTools: [], // Array of { name, rating, equivalent }
-      
+
       // Industry-specific skills
       industrySkills: [] // Array of { name, rating, gap }
     };
-    
+
     // Transferable soft skills with proficiency ratings (1-5 scale)
     this.softSkills = {
       // Leadership skills
       leadershipSkills: {}, // e.g., { "team_leadership": 4, "strategic_planning": 3 }
-      
+
       // Problem-solving skills
       problemSolvingSkills: {}, // e.g., { "critical_thinking": 5, "decision_making": 4 }
-      
+
       // Communication skills
       communicationSkills: {} // e.g., { "written_communication": 5, "presentation": 3 }
     };
-    
+
     // Professional interests and work values
     this.professionalInterests = {
       // Target industries of interest
       targetIndustries: [], // e.g., ["technology", "healthcare", "consulting"]
-      
+
       // Work environment preferences
       workEnvironment: {
         remoteWork: 0, // 0-5 preference scale
@@ -47,7 +49,7 @@ class UserAssessmentProfile {
         workpaceType: "", // "startup", "corporate", "nonprofit", etc.
         workLifeBalance: 0 // 0-5 importance scale
       },
-      
+
       // Career motivators and values
       careerValues: {
         salary: 0, // 0-5 importance scale
@@ -59,7 +61,7 @@ class UserAssessmentProfile {
         recognition: 0 // 0-5 importance scale
       }
     };
-    
+
     // Personality traits (based on common assessment models)
     this.personalityTraits = {
       // Big Five personality dimensions (0-100 scale)
@@ -68,7 +70,7 @@ class UserAssessmentProfile {
       extraversion: 0,
       agreeableness: 0,
       neuroticism: 0,
-      
+
       // Work style preferences
       workStyles: {
         analytical: 0, // 0-5 scale
@@ -80,13 +82,13 @@ class UserAssessmentProfile {
         big_picture: 0 // 0-5 scale
       }
     };
-    
+
     // Key achievements and experiences
     this.achievements = []; // Array of { title, description, impact, skills }
-    
+
     // STAR stories for behavioral examples
     this.starStories = []; // Array of { situation, task, action, result, skills }
-    
+
     // Career transition goals
     this.careerGoals = {
       shortTerm: "", // Short-term career goal
@@ -95,7 +97,7 @@ class UserAssessmentProfile {
       salaryCriteria: "", // Salary expectations
       locationPreferences: [] // Preferred locations
     };
-    
+
     // Skill gaps and development areas
     this.developmentAreas = {
       skillsToImprove: [], // Skills to develop
@@ -103,39 +105,39 @@ class UserAssessmentProfile {
       certifications: [] // Certifications to pursue
     };
   }
-  
+
   // Method to populate the profile from self-assessment data
   populateFromSelfAssessment(assessmentData) {
     // Technical skills
     if (assessmentData.coreTechnicalSkills) {
       this.technicalSkills.coreTechnicalSkills = { ...assessmentData.coreTechnicalSkills };
     }
-    
+
     if (assessmentData.agencySkills && assessmentData.agencySkills.length > 0) {
       this.technicalSkills.agencySkills = [...assessmentData.agencySkills];
     }
-    
+
     if (assessmentData.softwareTools && assessmentData.softwareTools.length > 0) {
       this.technicalSkills.softwareTools = [...assessmentData.softwareTools];
     }
-    
+
     if (assessmentData.industrySkills && assessmentData.industrySkills.length > 0) {
       this.technicalSkills.industrySkills = [...assessmentData.industrySkills];
     }
-    
+
     // Soft skills
     if (assessmentData.leadershipSkills) {
       this.softSkills.leadershipSkills = { ...assessmentData.leadershipSkills };
     }
-    
+
     if (assessmentData.problemSolvingSkills) {
       this.softSkills.problemSolvingSkills = { ...assessmentData.problemSolvingSkills };
     }
-    
+
     if (assessmentData.communicationSkills) {
       this.softSkills.communicationSkills = { ...assessmentData.communicationSkills };
     }
-    
+
     // Professional interests
     if (assessmentData.industryAnalysis) {
       // Extract target industries
@@ -151,16 +153,16 @@ class UserAssessmentProfile {
       }
       this.professionalInterests.targetIndustries = industries;
     }
-    
+
     // Achievements and STAR stories
     if (assessmentData.achievements && assessmentData.achievements.length > 0) {
       this.achievements = [...assessmentData.achievements];
     }
-    
+
     if (assessmentData.starStories && assessmentData.starStories.length > 0) {
       this.starStories = [...assessmentData.starStories];
     }
-    
+
     // Development areas
     if (assessmentData.developSkill1 || assessmentData.developSkill2 || assessmentData.developSkill3) {
       const skillsToImprove = [];
@@ -169,7 +171,7 @@ class UserAssessmentProfile {
       if (assessmentData.developSkill3) skillsToImprove.push(assessmentData.developSkill3);
       this.developmentAreas.skillsToImprove = skillsToImprove;
     }
-    
+
     // Career goals
     if (assessmentData.nextStep1 || assessmentData.nextStep2 || assessmentData.nextStep3) {
       const desiredRoles = [];
@@ -180,70 +182,70 @@ class UserAssessmentProfile {
       }
       this.careerGoals.desiredRoles = desiredRoles;
     }
-    
+
     return this;
   }
-  
+
   // Method to get the top technical skills (rated 4-5)
   getTopTechnicalSkills() {
     const topSkills = [];
-    
+
     // Check core technical skills
     for (const [skill, rating] of Object.entries(this.technicalSkills.coreTechnicalSkills)) {
       if (rating >= 4) {
         topSkills.push({ name: skill, rating: rating });
       }
     }
-    
+
     // Check agency skills
     this.technicalSkills.agencySkills.forEach(skill => {
       if (skill.rating >= 4) {
         topSkills.push({ name: skill.name, rating: skill.rating });
       }
     });
-    
+
     // Check software tools
     this.technicalSkills.softwareTools.forEach(tool => {
       if (tool.rating >= 4) {
         topSkills.push({ name: tool.name, rating: tool.rating });
       }
     });
-    
+
     return topSkills.sort((a, b) => b.rating - a.rating);
   }
-  
+
   // Method to get the top soft skills (rated 4-5)
   getTopSoftSkills() {
     const topSkills = [];
-    
+
     // Check leadership skills
     for (const [skill, rating] of Object.entries(this.softSkills.leadershipSkills)) {
       if (rating >= 4) {
         topSkills.push({ name: skill, rating: rating });
       }
     }
-    
+
     // Check problem-solving skills
     for (const [skill, rating] of Object.entries(this.softSkills.problemSolvingSkills)) {
       if (rating >= 4) {
         topSkills.push({ name: skill, rating: rating });
       }
     }
-    
+
     // Check communication skills
     for (const [skill, rating] of Object.entries(this.softSkills.communicationSkills)) {
       if (rating >= 4) {
         topSkills.push({ name: skill, rating: rating });
       }
     }
-    
+
     return topSkills.sort((a, b) => b.rating - a.rating);
   }
-  
+
   // Method to get skill gaps (industry skills with low ratings)
   getSkillGaps() {
     const skillGaps = [];
-    
+
     this.technicalSkills.industrySkills.forEach(skill => {
       if (skill.rating <= 2 && skill.name) {
         skillGaps.push({
@@ -253,7 +255,7 @@ class UserAssessmentProfile {
         });
       }
     });
-    
+
     return skillGaps;
   }
 }

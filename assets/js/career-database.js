@@ -1,10 +1,12 @@
 /**
  * Career Database
- * 
+ *
  * A database of career profiles for the career recommendation engine.
  * Each profile includes required skills, interests, personality traits,
  * and career information.
  */
+
+console.log('Career Database loaded successfully');
 
 // Career Database
 const careerDatabase = [
@@ -13,7 +15,7 @@ const careerDatabase = [
     title: "Product Manager",
     description: "Oversees product development from conception to launch, balancing business needs with technical feasibility and user experience.",
     federalTransition: "Ideal for federal project managers, program analysts, and policy specialists who have experience coordinating cross-functional teams and translating requirements into deliverables.",
-    
+
     // Skills required (0-5 scale, where 0 = not required, 5 = essential)
     requiredSkills: {
       technical: {
@@ -37,7 +39,7 @@ const careerDatabase = [
         team_leadership: 4
       }
     },
-    
+
     // Relevant software and tools
     relevantTools: [
       "Product Management Software (Jira, Asana, Trello)",
@@ -45,7 +47,7 @@ const careerDatabase = [
       "Prototyping Tools (Figma, Sketch)",
       "Customer Feedback Platforms"
     ],
-    
+
     // Professional interests that align with this career
     relatedInterests: [
       "Technology",
@@ -54,7 +56,7 @@ const careerDatabase = [
       "Innovation",
       "Problem Solving"
     ],
-    
+
     // Work values that align with this role
     workValues: {
       autonomy: 4,
@@ -65,7 +67,7 @@ const careerDatabase = [
       workLifeBalance: 3,
       advancement: 4
     },
-    
+
     // Personality traits that suit this career (0-5 scale)
     personalityTraits: {
       openness: 4, // Open to new ideas and approaches
@@ -73,7 +75,7 @@ const careerDatabase = [
       extraversion: 4, // Comfortable working with diverse stakeholders
       agreeableness: 3, // Balanced between collaboration and assertiveness
       neuroticism: 1, // Emotionally stable under pressure
-      
+
       workStyles: {
         analytical: 4,
         creative: 4,
@@ -83,7 +85,7 @@ const careerDatabase = [
         big_picture: 5
       }
     },
-    
+
     // Career information
     careerInfo: {
       medianSalary: "$115,000 - $150,000",
@@ -93,7 +95,7 @@ const careerDatabase = [
       advancement: "Senior Product Manager, Director of Product, VP of Product, Chief Product Officer",
       entryRequirements: "Bachelor's degree, 3-5 years experience in project management or related field"
     },
-    
+
     // Federal to private transition tips
     transitionTips: [
       "Emphasize experience managing complex projects with multiple stakeholders",
@@ -103,13 +105,13 @@ const careerDatabase = [
       "Obtain product management certifications (e.g., Scrum, PMP)"
     ]
   },
-  
+
   {
     id: "data_analyst",
     title: "Data Analyst",
     description: "Collects, processes, and performs statistical analyses on large datasets to identify patterns and insights that drive business decisions.",
     federalTransition: "Well-suited for federal employees with experience in data management, statistical analysis, reporting, or research who enjoy working with numbers and finding patterns in complex information.",
-    
+
     // Skills required (0-5 scale, where 0 = not required, 5 = essential)
     requiredSkills: {
       technical: {
@@ -133,7 +135,7 @@ const careerDatabase = [
         teamwork: 3
       }
     },
-    
+
     // Relevant software and tools
     relevantTools: [
       "SQL",
@@ -143,7 +145,7 @@ const careerDatabase = [
       "Statistical Software (SPSS, SAS)",
       "Data Cleaning Tools"
     ],
-    
+
     // Professional interests that align with this career
     relatedInterests: [
       "Data and Analytics",
@@ -152,7 +154,7 @@ const careerDatabase = [
       "Problem Solving",
       "Technology"
     ],
-    
+
     // Work values that align with this role
     workValues: {
       autonomy: 3,
@@ -163,7 +165,7 @@ const careerDatabase = [
       workLifeBalance: 4,
       advancement: 3
     },
-    
+
     // Personality traits that suit this career (0-5 scale)
     personalityTraits: {
       openness: 3, // Curious about patterns and insights
@@ -171,7 +173,7 @@ const careerDatabase = [
       extraversion: 2, // Can work independently
       agreeableness: 3, // Collaborative but objective
       neuroticism: 2, // Handles ambiguity well
-      
+
       workStyles: {
         analytical: 5,
         creative: 2,
@@ -181,7 +183,7 @@ const careerDatabase = [
         big_picture: 3
       }
     },
-    
+
     // Career information
     careerInfo: {
       medianSalary: "$85,000 - $110,000",
@@ -191,7 +193,7 @@ const careerDatabase = [
       advancement: "Senior Data Analyst, Data Scientist, Analytics Manager, Business Intelligence Manager",
       entryRequirements: "Bachelor's degree in statistics, mathematics, economics, computer science, or related field"
     },
-    
+
     // Federal to private transition tips
     transitionTips: [
       "Highlight experience with large, complex datasets and reporting",
@@ -201,13 +203,13 @@ const careerDatabase = [
       "Obtain relevant certifications (e.g., Microsoft Power BI, Tableau)"
     ]
   },
-  
+
   {
     id: "cybersecurity_specialist",
     title: "Cybersecurity Specialist",
     description: "Protects computer systems, networks, and data from cyber threats by implementing security measures, monitoring for breaches, and responding to incidents.",
     federalTransition: "Excellent match for federal IT security specialists, intelligence analysts, or compliance officers with experience in security protocols, risk assessment, or regulatory compliance.",
-    
+
     // Skills required (0-5 scale, where 0 = not required, 5 = essential)
     requiredSkills: {
       technical: {
@@ -231,7 +233,7 @@ const careerDatabase = [
         stress_management: 4
       }
     },
-    
+
     // Relevant software and tools
     relevantTools: [
       "Security Information and Event Management (SIEM) tools",
@@ -240,7 +242,7 @@ const careerDatabase = [
       "Encryption Technologies",
       "Firewalls and Network Security Tools"
     ],
-    
+
     // Professional interests that align with this career
     relatedInterests: [
       "Cybersecurity",
@@ -249,7 +251,7 @@ const careerDatabase = [
       "Problem Solving",
       "Continuous Learning"
     ],
-    
+
     // Work values that align with this role
     workValues: {
       autonomy: 3,
@@ -260,7 +262,7 @@ const careerDatabase = [
       workLifeBalance: 3,
       advancement: 4
     },
-    
+
     // Personality traits that suit this career (0-5 scale)
     personalityTraits: {
       openness: 3, // Balanced between established protocols and new approaches
@@ -268,7 +270,7 @@ const careerDatabase = [
       extraversion: 2, // Can work independently
       agreeableness: 3, // Collaborative but firm on security requirements
       neuroticism: 2, // Calm under pressure
-      
+
       workStyles: {
         analytical: 5,
         creative: 3,
@@ -278,7 +280,7 @@ const careerDatabase = [
         big_picture: 4
       }
     },
-    
+
     // Career information
     careerInfo: {
       medianSalary: "$100,000 - $130,000",
@@ -288,7 +290,7 @@ const careerDatabase = [
       advancement: "Senior Security Specialist, Security Architect, CISO (Chief Information Security Officer)",
       entryRequirements: "Bachelor's degree in cybersecurity, computer science, or related field; Security certifications (CISSP, CEH, Security+)"
     },
-    
+
     // Federal to private transition tips
     transitionTips: [
       "Emphasize experience with security protocols and compliance frameworks",
@@ -298,13 +300,13 @@ const careerDatabase = [
       "Showcase experience with security tools and technologies"
     ]
   },
-  
+
   {
     id: "management_consultant",
     title: "Management Consultant",
     description: "Helps organizations improve performance through analysis of existing problems and development of plans for improvement, often specializing in specific industries or business functions.",
     federalTransition: "Great fit for federal program managers, policy analysts, or strategic planners who have experience with organizational assessment, process improvement, or change management.",
-    
+
     // Skills required (0-5 scale, where 0 = not required, 5 = essential)
     requiredSkills: {
       technical: {
@@ -328,7 +330,7 @@ const careerDatabase = [
         leadership: 4
       }
     },
-    
+
     // Relevant software and tools
     relevantTools: [
       "Business Analysis Tools",
@@ -337,7 +339,7 @@ const careerDatabase = [
       "Process Mapping Software",
       "Microsoft Office Suite (Advanced)"
     ],
-    
+
     // Professional interests that align with this career
     relatedInterests: [
       "Business Strategy",
@@ -346,7 +348,7 @@ const careerDatabase = [
       "Problem Solving",
       "Change Management"
     ],
-    
+
     // Work values that align with this role
     workValues: {
       autonomy: 4,
@@ -357,7 +359,7 @@ const careerDatabase = [
       workLifeBalance: 2,
       advancement: 5
     },
-    
+
     // Personality traits that suit this career (0-5 scale)
     personalityTraits: {
       openness: 4, // Open to new approaches and ideas
@@ -365,7 +367,7 @@ const careerDatabase = [
       extraversion: 4, // Comfortable working with clients
       agreeableness: 3, // Balanced between collaboration and assertiveness
       neuroticism: 1, // Handles pressure and ambiguity well
-      
+
       workStyles: {
         analytical: 5,
         creative: 4,
@@ -375,7 +377,7 @@ const careerDatabase = [
         big_picture: 5
       }
     },
-    
+
     // Career information
     careerInfo: {
       medianSalary: "$95,000 - $150,000",
@@ -385,7 +387,7 @@ const careerDatabase = [
       advancement: "Senior Consultant, Manager, Partner, Independent Consultant",
       entryRequirements: "Bachelor's or Master's degree in business, economics, or related field; MBA often preferred"
     },
-    
+
     // Federal to private transition tips
     transitionTips: [
       "Highlight experience with organizational assessment and improvement",
@@ -395,13 +397,13 @@ const careerDatabase = [
       "Develop expertise in specific industries or functional areas"
     ]
   },
-  
+
   {
     id: "compliance_manager",
     title: "Compliance Manager",
     description: "Ensures an organization adheres to internal policies and regulatory requirements by developing compliance programs, conducting audits, and managing risk.",
     federalTransition: "Excellent match for federal regulatory specialists, auditors, inspectors, or legal analysts with experience in regulatory frameworks, compliance monitoring, or risk assessment.",
-    
+
     // Skills required (0-5 scale, where 0 = not required, 5 = essential)
     requiredSkills: {
       technical: {
@@ -425,7 +427,7 @@ const careerDatabase = [
         training_facilitation: 3
       }
     },
-    
+
     // Relevant software and tools
     relevantTools: [
       "Governance, Risk, and Compliance (GRC) Software",
@@ -434,7 +436,7 @@ const careerDatabase = [
       "Reporting Tools",
       "Regulatory Tracking Software"
     ],
-    
+
     // Professional interests that align with this career
     relatedInterests: [
       "Regulatory Compliance",
@@ -443,7 +445,7 @@ const careerDatabase = [
       "Process Improvement",
       "Corporate Governance"
     ],
-    
+
     // Work values that align with this role
     workValues: {
       autonomy: 3,
@@ -454,7 +456,7 @@ const careerDatabase = [
       workLifeBalance: 4,
       advancement: 3
     },
-    
+
     // Personality traits that suit this career (0-5 scale)
     personalityTraits: {
       openness: 3, // Balance between established procedures and new approaches
@@ -462,7 +464,7 @@ const careerDatabase = [
       extraversion: 3, // Balanced for both independent work and stakeholder interaction
       agreeableness: 3, // Diplomatic but firm on compliance requirements
       neuroticism: 2, // Handles pressure well
-      
+
       workStyles: {
         analytical: 5,
         creative: 2,
@@ -472,7 +474,7 @@ const careerDatabase = [
         big_picture: 3
       }
     },
-    
+
     // Career information
     careerInfo: {
       medianSalary: "$90,000 - $120,000",
@@ -482,7 +484,7 @@ const careerDatabase = [
       advancement: "Senior Compliance Manager, Director of Compliance, Chief Compliance Officer",
       entryRequirements: "Bachelor's degree in business, law, or related field; Compliance certifications often preferred"
     },
-    
+
     // Federal to private transition tips
     transitionTips: [
       "Emphasize experience with regulatory frameworks and compliance monitoring",
