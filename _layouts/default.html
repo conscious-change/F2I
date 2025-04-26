@@ -49,6 +49,14 @@
   <script src="{{ '/assets/js/skill-translation.js' | relative_url }}"></script>
   {% endif %}
 
+  {% if page.url contains 'job-search-resources' %}
+  <script src="{{ '/assets/js/job-search.js' | relative_url }}"></script>
+  {% endif %}
+
+  {% if page.url contains 'interview-preparation' %}
+  <script src="{{ '/assets/js/interview-preparation.js' | relative_url }}"></script>
+  {% endif %}
+
   <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
