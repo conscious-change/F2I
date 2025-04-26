@@ -609,9 +609,15 @@ body {
 /* FAQ Section */
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .faq-item {
@@ -6211,5 +6217,435 @@ textarea[readonly] {
   .tab-button.active {
     border-bottom: 1px solid #e0e0e0;
     border-left: 3px solid #0077cc;
+  }
+}
+
+/* Transition Checklist Page Styles */
+.checklist-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.checklist-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0077cc;
+}
+
+/* Why Checklist Matters Section */
+.why-checklist-matters {
+  margin-bottom: 3rem;
+}
+
+.checklist-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.checklist-intro-icon {
+  font-size: 2.5rem;
+  color: #0077cc;
+  line-height: 1;
+}
+
+.checklist-intro p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.checklist-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Checklist Sections */
+.before-starting-section,
+.first-30-days-section,
+.days-31-60-section,
+.days-61-90-section,
+.common-challenges-section,
+.success-stories-section,
+.resources-section {
+  margin-bottom: 3rem;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checklist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.checklist-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.checklist-card h3 {
+  color: #0077cc;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-top: 0.3rem;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.checklist-item label {
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.transition-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-left: 4px solid #0077cc;
+}
+
+.tip-icon {
+  font-size: 2rem;
+  color: #0077cc;
+  line-height: 1;
+}
+
+.tip-content h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0077cc;
+}
+
+.tip-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Challenges Section */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.challenge-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-icon {
+  font-size: 2rem;
+  color: #0077cc;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.challenge-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.challenge-card p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.challenge-solution {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: auto;
+}
+
+/* Success Stories Section */
+.story-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+
+.story-header {
+  margin-bottom: 1rem;
+}
+
+.story-header h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.story-author {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+.story-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Resources Section */
+.resources-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.resource-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  max-width: 500px;
+  width: 100%;
+}
+
+.resource-icon {
+  font-size: 2rem;
+  color: #0077cc;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.resource-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.resource-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.resource-card li {
+  margin-bottom: 0.8rem;
+}
+
+.resource-card a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+/* Enhanced Community Page Styles */
+.community-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.intro-section {
+  margin-bottom: 2rem;
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn-large {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+}
+
+.community-benefits-section {
+  margin-bottom: 3rem;
+}
+
+.community-benefits-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0077cc;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: #0077cc;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.benefit-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.benefit-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.community-join-section {
+  background-color: #0077cc;
+  color: white;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.join-content h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.join-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.join-content .btn-primary {
+  background-color: white;
+  color: #0077cc;
+  border: none;
+}
+
+.join-content .btn-primary:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .community-hero,
+  .community-join-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .checklist-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .checklist-container {
+    grid-template-columns: 1fr;
+  }
+
+  .challenges-grid,
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transition-tip {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
