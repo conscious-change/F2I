@@ -1,0 +1,22 @@
+{% comment %}
+Skip navigation link for accessibility
+{% endcomment %}
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>

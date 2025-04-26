@@ -1,0 +1,69 @@
+name: Jekyll Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+        bundler-cache: true
+    
+    - name: Install dependencies
+      run: bundle install
+    
+    - name: Build site
+      run: bundle exec jekyll build
+    
+    - name: Run HTML tests
+      run: |
+        gem install html-proofer
+        htmlproofer ./_site --disable-external --allow-hash-href --assume-extension
+    
+    - name: Run Lighthouse CI
+      uses: treosh/lighthouse-ci-action@v9
+      with:
+        urls: |
+          http://localhost:4000/
+          http://localhost:4000/pages/about.html
+          http://localhost:4000/pages/transition-roadmap.html
+        uploadArtifacts: true
+        temporaryPublicStorage: true
+        runs: 3
+        serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
+        serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
+        configPath: './lighthouserc.json'
+    
+    - name: Upload site artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: site
+        path: _site/
+        
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download site artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: site
+        path: _site
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
