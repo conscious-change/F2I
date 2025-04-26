@@ -45,6 +45,10 @@
   <script src="{{ '/assets/js/networking-strategies.js' | relative_url }}"></script>
   {% endif %}
 
+  {% if page.url contains 'skill-translation-hub' %}
+  <script src="{{ '/assets/js/skill-translation.js' | relative_url }}"></script>
+  {% endif %}
+
   <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
