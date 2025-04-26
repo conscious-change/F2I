@@ -57,6 +57,10 @@
   <script src="{{ '/assets/js/interview-preparation.js' | relative_url }}"></script>
   {% endif %}
 
+  {% if page.url contains 'compensation-benefits' %}
+  <script src="{{ '/assets/js/compensation.js' | relative_url }}"></script>
+  {% endif %}
+
   <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
