@@ -1,13 +1,20 @@
 // F2I Service Worker for offline capabilities
 
-const CACHE_NAME = 'f2i-cache-v1';
+const CACHE_NAME = 'f2i-cache-v2';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/assets/css/style.css',
   '/assets/js/script.js',
+  '/assets/js/webp-detection.js',
   '/assets/img/hero-bg.jpg',
+  '/assets/img/hero-bg.webp',
   '/assets/img/about-hero.jpg',
+  '/assets/img/about-hero.webp',
+  '/assets/img/about-why.jpg',
+  '/assets/img/about-why.webp',
+  '/assets/img/transition-roadmap.jpg',
+  '/assets/img/transition-roadmap.webp',
   '/offline.html'
 ];
 
@@ -47,26 +54,26 @@ self.addEventListener('fetch', event => {
         if (response) {
           return response;
         }
-        
+
         // Clone the request
         const fetchRequest = event.request.clone();
-        
+
         return fetch(fetchRequest)
           .then(response => {
             // Check if valid response
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
-            
+
             // Clone the response
             const responseToCache = response.clone();
-            
+
             // Add to cache
             caches.open(CACHE_NAME)
               .then(cache => {
                 cache.put(event.request, responseToCache);
               });
-              
+
             return response;
           })
           .catch(error => {

@@ -1,0 +1,34 @@
+{% capture srcset %}
+{% for i in resized %}
+    /{{ i.path }} {{ i.width }}w,
+{% endfor %}
+{% endcapture %}
+
+{% assign smallest = resized | sort: 'width' | first %}
+{% assign largest = resized | sort: 'width' | last %}
+
+{% if original.width > largest.width %}
+    {% assign largest = original %}
+{% endif %}
+
+<picture>
+    {% if webp_source %}
+    <source
+        type="image/webp"
+        srcset="{{ webp_srcset | strip_newlines }}"
+        sizes="{{ sizes }}">
+    {% endif %}
+    
+    <source
+        srcset="{{ srcset | strip_newlines }}"
+        sizes="{{ sizes }}">
+        
+    <img
+        src="/{{ smallest.path }}"
+        alt="{{ alt }}"
+        {% if lazy %}loading="lazy"{% else %}loading="eager"{% endif %}
+        {% if class %}class="{{ class }}"{% endif %}
+        {% if width %}width="{{ width }}"{% endif %}
+        {% if height %}height="{{ height }}"{% endif %}
+        {% if fetchpriority %}fetchpriority="{{ fetchpriority }}"{% endif %}>
+</picture>

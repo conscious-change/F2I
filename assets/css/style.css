@@ -271,6 +271,7 @@ body {
   padding: 80px 20px; /* Reduced padding for smaller hero section */
   position: relative; /* Allows for overlays or z-index adjustments */
   margin-top: 60px;
+  /* Responsive background images are handled by responsive-background.html include */
 }
 
 /* Optional: Add a semi-transparent overlay for better text visibility */

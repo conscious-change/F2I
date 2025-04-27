@@ -21,6 +21,21 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-responsive-image
+
+# Responsive Image Configuration
+responsive_image:
+  template: _includes/responsive-image-template.html
+  sizes:
+    - width: 400
+    - width: 800
+    - width: 1200
+    - width: 1600
+  base_path: assets/img
+  output_path_format: assets/img/responsive/%{dirname}/%{filename}-%{width}x%{height}.%{extension}
+  save_to_source: false
+  strip: true
+  quality: 85
 
 # Content Collections
 collections:

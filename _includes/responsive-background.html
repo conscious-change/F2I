@@ -1,0 +1,65 @@
+{% comment %}
+Responsive background image include that generates appropriate CSS for responsive background images
+with WebP support
+Usage: {% include responsive-background.html selector=".hero" path="/assets/img/hero-bg.jpg" %}
+{% endcomment %}
+
+{% assign file_extension = include.path | split: '.' | last %}
+{% assign base_path = include.path | replace: file_extension, '' | replace: '.', '' %}
+{% assign filename = include.path | split: '/' | last | replace: '.' | append: file_extension | replace: file_extension, '' %}
+
+<style>
+  /* Basic background image that works for all browsers and sizes */
+  {{ include.selector }} {
+    background-image: url('{{ include.path }}');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  /* WebP Support with Feature Detection */
+  .webp {{ include.selector }} {
+    background-image: url('{{ base_path }}webp');
+  }
+
+  /* Responsive Background Images */
+  @media (max-width: 480px) {
+    {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-400.{{ file_extension }}');
+    }
+
+    .webp {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-400.webp');
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-800.{{ file_extension }}');
+    }
+
+    .webp {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-800.webp');
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1200px) {
+    {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-1200.{{ file_extension }}');
+    }
+
+    .webp {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-1200.webp');
+    }
+  }
+
+  @media (min-width: 1201px) {
+    {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-1600.{{ file_extension }}');
+    }
+
+    .webp {{ include.selector }} {
+      background-image: url('/assets/img/responsive/{{ filename }}-1600.webp');
+    }
+  }
+</style>
