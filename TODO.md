@@ -1,8 +1,8 @@
 #TODO: 
-- Update the Transition Roadmap 
-- Fix the Recommendation Engine 
-
-- Errors to sort out: can't find variable FileReader in loading saved self-assessment.json 
+- Review each page content and make sure its accurate 
+- Add RESUME templates 
+- Optimize codebase, currently css is at 6000+ lines of code -- see Notes #PROMPTS section 
+- 
 
 Completed: 
 [ ] Template 
