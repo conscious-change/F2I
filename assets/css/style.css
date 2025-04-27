@@ -264,7 +264,7 @@ body {
 }
 
 .hero {
-  background: url('/assets/img/hero-bg.jpg') no-repeat center center; /* Background image */
+  background: url('/assets/img/hero-bg.jpg') no-repeat center center, #0056b3; /* Background image with blue fallback */
   background-size: cover; /* Ensures the image covers the entire section */
   color: white; /* Text color for contrast */
   text-align: center; /* Center-align the text */
