@@ -1434,13 +1434,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Use XMLHttpRequest to load the sample file
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/changes_logs/extra/f2i-self-assessment-filled.json', true);
+    xhr.open('GET', '/assets/data/f2i-self-assessment-template.json', true);
     xhr.onload = function() {
       if (xhr.status === 200) {
         processLoadedData(xhr.responseText);
       } else {
         console.error('Error loading sample data:', xhr.statusText);
-        showManualInputFallback();
+        // Try the fallback file if the template doesn't exist
+        console.log('Trying fallback location...');
+        const fallbackXhr = new XMLHttpRequest();
+        fallbackXhr.open('GET', '/changes_logs/extra/f2i-self-assessment-template.json', true);
+        fallbackXhr.onload = function() {
+          if (fallbackXhr.status === 200) {
+            processLoadedData(fallbackXhr.responseText);
+          } else {
+            console.error('Error loading fallback sample data:', fallbackXhr.statusText);
+            // Try the original file as a last resort
+            console.log('Trying original file as last resort...');
+            const lastResortXhr = new XMLHttpRequest();
+            lastResortXhr.open('GET', '/changes_logs/extra/f2i-self-assessment-filled.json', true);
+            lastResortXhr.onload = function() {
+              if (lastResortXhr.status === 200) {
+                processLoadedData(lastResortXhr.responseText);
+              } else {
+                console.error('Error loading last resort sample data:', lastResortXhr.statusText);
+                showManualInputFallback();
+              }
+            };
+            lastResortXhr.onerror = function() {
+              console.error('Error loading last resort sample data');
+              showManualInputFallback();
+            };
+            lastResortXhr.send();
+          }
+        };
+        fallbackXhr.onerror = function() {
+          console.error('Error loading fallback sample data');
+          showManualInputFallback();
+        };
+        fallbackXhr.send();
       }
     };
     xhr.onerror = function() {
