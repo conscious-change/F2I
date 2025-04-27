@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load sample data
   loadSampleDataBtn.addEventListener('click', function() {
     console.log('Loading sample data...');
-    
+
     // Use XMLHttpRequest to load the sample file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', '/assets/data/f2i-self-assessment-template.json', true);
@@ -478,6 +478,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Load from self-assessment file
   loadFromAssessmentBtn.addEventListener('click', function() {
+    // First try to get data from localStorage (if user is coming from self-assessment page)
+    const storedData = localStorage.getItem('assessmentData');
+    if (storedData) {
+      try {
+        console.log('Found assessment data in localStorage');
+        const assessmentData = JSON.parse(storedData);
+        const profile = new UserAssessmentProfile();
+        profile.populateFromSelfAssessment(assessmentData);
+        displayProfileData(profile);
+        return;
+      } catch (error) {
+        console.error('Error processing stored assessment data:', error);
+        // Continue to file input if localStorage approach fails
+      }
+    }
+
+    // If no data in localStorage or processing failed, use file input
     assessmentFileInput.click();
   });
 
@@ -488,8 +505,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('File selected:', file.name);
 
+    // Safari-compatible approach for reading files
     try {
-      console.log('Creating FileReader...');
+      console.log('Reading file using direct FileReader approach...');
       const reader = new FileReader();
 
       reader.onload = function(e) {
@@ -509,16 +527,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       };
 
-      reader.onerror = function() {
-        console.error('Error reading file');
-        alert('Error reading file');
+      reader.onerror = function(e) {
+        console.error('Error reading file:', e);
+
+        // Try alternative approach for Safari
+        console.log('Trying alternative approach for Safari...');
+        try {
+          // Create a form and FormData object
+          const formData = new FormData();
+          formData.append('file', file);
+
+          // Use fetch API instead of XMLHttpRequest
+          fetch('/process-assessment-file', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log('File processed via server');
+            const profile = new UserAssessmentProfile();
+            profile.populateFromSelfAssessment(data);
+            displayProfileData(profile);
+          })
+          .catch(error => {
+            console.error('Error with server approach:', error);
+
+            // Final fallback - prompt user to use Firefox or Chrome
+            alert('Your browser (Safari) has stricter security settings that prevent direct file loading. Please try using Firefox or Chrome, or use the "Load Sample Data" button instead.');
+          });
+        } catch (fallbackError) {
+          console.error('Error with fallback approach:', fallbackError);
+          alert('Unable to load file in this browser. Please try using Firefox or Chrome, or use the "Load Sample Data" button instead.');
+        }
       };
 
+      // Direct file reading - works in most browsers
       console.log('Reading file as text...');
       reader.readAsText(file);
     } catch (error) {
       console.error('Error with FileReader:', error);
-      alert('Error with file processing: ' + error.message);
+      alert('Error with file processing: ' + error.message + '\n\nPlease try using Firefox or Chrome, or use the "Load Sample Data" button instead.');
     }
   });
 });

@@ -338,8 +338,20 @@ subtitle: Identify and translate your federal experience into private sector val
       <div class="assessment-completion">
         <button id="downloadResults" class="btn btn-primary">Download Assessment Results</button>
         <button id="printResults" class="btn btn-secondary">Print Assessment</button>
-        <a href="/pages/career-recommendation-test.html" class="btn" style="background-color: #28a745; color: white;">View Career Recommendations</a>
+        <a href="/pages/career-recommendation-test.html" id="viewCareerRecommendations" class="btn" style="background-color: #28a745; color: white;">View Career Recommendations</a>
       </div>
+
+      <script>
+        // Add event listener to ensure data is passed to career recommendation page
+        document.getElementById('viewCareerRecommendations').addEventListener('click', function(e) {
+          // Save current assessment data to localStorage before navigating
+          const currentData = collectData();
+          if (currentData) {
+            localStorage.setItem('assessmentData', JSON.stringify(currentData));
+            console.log('Assessment data saved to localStorage for career recommendations');
+          }
+        });
+      </script>
     </div>
   </div>
 </div>
