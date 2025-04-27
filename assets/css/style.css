@@ -6701,3 +6701,38 @@ textarea[readonly] {
     display: none;
   }
 }
+
+/* Privacy Notice Styles */
+.privacy-notice {
+  background-color: #f8f9fa;
+  border-left: 4px solid #4ca1af;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-notice p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.privacy-notice p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-notice strong {
+  color: #2c3e50;
+}
+
+.privacy-notice a {
+  color: #4ca1af;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: color 0.3s ease;
+}
+
+.privacy-notice a:hover {
+  color: #2c3e50;
+}
