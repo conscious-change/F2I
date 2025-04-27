@@ -3520,6 +3520,23 @@ body {
   padding: 0 1rem;
 }
 
+.template-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border-left: 3px solid #0056b3;
+}
+
+.external-link-icon {
+  font-style: normal;
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
 /* Resume Brand Matters Section */
 .resume-brand-matters {
   margin-bottom: 4rem;
