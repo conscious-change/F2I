@@ -380,13 +380,13 @@ document.addEventListener('DOMContentLoaded', function() {
     termEntry.className = 'terminology-entry';
 
     termEntry.innerHTML = `
-      <input type="text" class="form-control federal-term" placeholder="Federal term/concept">
-      <input type="text" class="form-control industry-term" placeholder="Industry equivalent">
-      <input type="text" class="form-control term-context" placeholder="Context for usage">
+      <textarea class="form-control federal-term compact-textarea" placeholder="Federal term/concept"></textarea>
+      <textarea class="form-control industry-term compact-textarea" placeholder="Industry equivalent"></textarea>
+      <textarea class="form-control term-context compact-textarea" placeholder="Context for usage"></textarea>
     `;
 
     // Add event listeners to save data
-    const inputs = termEntry.querySelectorAll('input');
+    const inputs = termEntry.querySelectorAll('textarea');
     inputs.forEach(input => {
       input.addEventListener('change', saveData);
     });
@@ -1069,13 +1069,13 @@ document.addEventListener('DOMContentLoaded', function() {
           termEntry.className = 'terminology-entry';
 
           termEntry.innerHTML = `
-            <input type="text" class="form-control federal-term" placeholder="Federal term/concept" value="${term.federal || ''}">
-            <input type="text" class="form-control industry-term" placeholder="Industry equivalent" value="${term.industry || ''}">
-            <input type="text" class="form-control term-context" placeholder="Context for usage" value="${term.context || ''}">
+            <textarea class="form-control federal-term compact-textarea" placeholder="Federal term/concept">${term.federal || ''}</textarea>
+            <textarea class="form-control industry-term compact-textarea" placeholder="Industry equivalent">${term.industry || ''}</textarea>
+            <textarea class="form-control term-context compact-textarea" placeholder="Context for usage">${term.context || ''}</textarea>
           `;
 
           // Add event listeners to save data
-          const inputs = termEntry.querySelectorAll('input');
+          const inputs = termEntry.querySelectorAll('textarea');
           inputs.forEach(input => {
             input.addEventListener('change', saveData);
           });

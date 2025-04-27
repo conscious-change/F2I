@@ -10,8 +10,6 @@ markdown: kramdown
 # Social Media
 social:
   linkedin: "#"
-  twitter: "#"
-  facebook: "#"
 
 # Contact Information
 contact:
@@ -23,7 +21,6 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
 
 # Content Collections
 collections:
