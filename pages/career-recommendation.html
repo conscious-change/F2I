@@ -36,21 +36,24 @@ subtitle: Find career matches based on your self-assessment
         <h3>Your Skills Profile</h3>
 
         <div class="row">
-          <div class="col-md-4">
-            <h4>Top Technical Skills</h4>
-            <div id="topTechnicalSkills" class="results-block">None identified yet.</div>
+          <div class="col-md-6">
+            <h4>Skills Radar Chart</h4>
+            <div id="skillsRadarChart" class="results-block radar-chart-container">
+              <canvas id="radarChart"></canvas>
+              <div id="radarChartLegend" class="radar-chart-legend"></div>
+              <p class="chart-note">This radar chart visualizes your skill profile across different categories.</p>
+            </div>
           </div>
 
-          <div class="col-md-4">
-            <h4>Top Soft Skills</h4>
-            <div id="topSoftSkills" class="results-block">None identified yet.</div>
-          </div>
-
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h4>Skill Gaps</h4>
             <div id="skillGaps" class="results-block">None identified yet.</div>
           </div>
         </div>
+
+        <!-- Hidden containers for backward compatibility -->
+        <div id="topTechnicalSkills" style="display: none;"></div>
+        <div id="topSoftSkills" style="display: none;"></div>
       </div>
     </div>
 
@@ -194,6 +197,196 @@ subtitle: Find career matches based on your self-assessment
     margin-top: 0.25rem;
   }
 
+  /* Skill gaps styles */
+  .skill-gaps-list {
+    margin-top: 0.5rem;
+  }
+
+  .skill-gap-item {
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid;
+  }
+
+  .skill-gap-item.severe-gap {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left-color: #dc3545;
+  }
+
+  .skill-gap-item.moderate-gap {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left-color: #ffc107;
+  }
+
+  .skill-gap-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-gap-name {
+    font-weight: 500;
+  }
+
+  .skill-gap-rating {
+    font-size: 0.9rem;
+    color: #495057;
+  }
+
+  /* Radar chart styles */
+  .radar-chart-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 1rem;
+  }
+
+  .radar-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0.25rem 0.75rem;
+  }
+
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  .legend-label {
+    font-size: 0.85rem;
+  }
+
+  .chart-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 1rem;
+  }
+
+  /* Error and empty state messages */
+  .error-message,
+  .no-skills-message {
+    padding: 1rem;
+    text-align: center;
+    color: #6c757d;
+  }
+
+  .error-message {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+    border: 1px solid rgba(220, 53, 69, 0.2);
+  }
+
+  .error-details {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: #dc3545;
+  }
+
+  /* Fallback skills display */
+  .fallback-skills {
+    padding: 1rem;
+  }
+
+  .fallback-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .fallback-skill-category {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-right: 1rem;
+  }
+
+  .fallback-skill-category h5 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #0056b3;
+  }
+
+  .fallback-skill-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .fallback-skill-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .fallback-skill-name {
+    font-weight: 500;
+  }
+
+  /* Skill table styles */
+  .skill-table-container {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .table-controls {
+    margin-bottom: 1rem;
+  }
+
+  .table-controls button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .table-controls button.active {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+
+  .skills-table th,
+  .skills-table td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+  }
+
+  .skills-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .skills-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+
+  .skills-table tr:hover {
+    background-color: #f0f7ff;
+  }
+
+  .star-rating {
+    color: #ffc107;
+    letter-spacing: 0.1rem;
+  }
+
   .career-info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -231,6 +424,9 @@ subtitle: Find career matches based on your self-assessment
     }
   }
 </style>
+
+<!-- Chart.js for radar chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="/assets/js/career-recommendation-engine.js"></script>
 <script src="/assets/js/career-database.js"></script>

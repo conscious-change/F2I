@@ -123,47 +123,19 @@ document.addEventListener('DOMContentLoaded', function() {
   function displayProfileData(profile) {
     currentProfile = profile;
 
-    // Display top technical skills
+    // Get all skills data
     const topTechSkills = profile.getTopTechnicalSkills();
-    if (topTechSkills.length > 0) {
-      topTechnicalSkillsElement.innerHTML = topTechSkills.map(skill =>
-        `<div class="skill-item">
-          <span class="skill-name">${skill.name}</span>
-          <span class="skill-rating">Rating: ${skill.rating}/5</span>
-        </div>`
-      ).join('');
-    } else {
-      topTechnicalSkillsElement.textContent = "No top technical skills identified.";
-    }
-
-    // Display top soft skills
     const topSoftSkillsList = profile.getTopSoftSkills();
-    if (topSoftSkillsList.length > 0) {
-      topSoftSkillsElement.innerHTML = topSoftSkillsList.map(skill =>
-        `<div class="skill-item">
-          <span class="skill-name">${skill.name}</span>
-          <span class="skill-rating">Rating: ${skill.rating}/5</span>
-        </div>`
-      ).join('');
-    } else {
-      topSoftSkillsElement.textContent = "No top soft skills identified.";
-    }
-
-    // Display skill gaps
     const skillGapsList = profile.getSkillGaps();
-    if (skillGapsList.length > 0) {
-      skillGapsElement.innerHTML = skillGapsList.map(skill =>
-        `<div class="skill-item">
-          <div>
-            <span class="skill-name">${skill.name}</span>
-            <div class="skill-gap-note">Gap: ${skill.gap || 'Not specified'}</div>
-          </div>
-          <span class="skill-rating">Current Level: ${skill.rating}/5</span>
-        </div>`
-      ).join('');
-    } else {
-      skillGapsElement.textContent = "No significant skill gaps identified.";
-    }
+
+    // Display skills using radar chart visualization
+    displaySkillsRadarChart(topTechSkills, topSoftSkillsList, skillGapsList);
+
+    // Display skill gaps in text format
+    displaySkillGaps(skillGapsList);
+
+    // Also create a tabular view for skills
+    displaySkillTable(topTechSkills, topSoftSkillsList, skillGapsList);
 
     // Calculate and display career matches
     const careerMatches = careerDatabase.map(career => {
@@ -209,6 +181,447 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       careerMatchesElement.innerHTML = "<p>No career matches found.</p>";
       careerDetailsElement.innerHTML = "<p>No career details available.</p>";
+    }
+  }
+
+  // Function to display skills using radar chart
+  function displaySkillsRadarChart(techSkills, softSkills, gapSkills) {
+    try {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        console.error('Chart.js is not loaded. Please check your internet connection or try a different browser.');
+        document.getElementById('skillsRadarChart').innerHTML = `
+          <div class="error-message">
+            <p>Unable to load the chart library. Please check your internet connection or try a different browser.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Get the canvas element
+      const canvas = document.getElementById('radarChart');
+      if (!canvas) {
+        console.error('Radar chart canvas element not found');
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+
+      // Handle case when there are no skills to display
+      if (techSkills.length === 0 && softSkills.length === 0) {
+        document.getElementById('skillsRadarChart').innerHTML = `
+          <div class="no-skills-message">
+            <p>No skills data available to display. Please load assessment data to see your skills radar chart.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Prepare data for the radar chart
+      const skillCategories = [
+        { name: 'Technical', skills: techSkills, color: 'rgba(0, 86, 179, 0.7)', borderColor: 'rgb(0, 86, 179)' }, // Blue
+        { name: 'Soft', skills: softSkills, color: 'rgba(40, 167, 69, 0.7)', borderColor: 'rgb(40, 167, 69)' }     // Green
+      ];
+
+      // Create datasets for the chart
+      const datasets = [];
+      const labels = [];
+      const labelMap = {};
+
+      // Process each skill category
+      skillCategories.forEach(category => {
+        if (category.skills.length === 0) return;
+
+        const data = [];
+
+        // Add top skills (up to 5) from each category to the chart
+        category.skills.slice(0, 5).forEach(skill => {
+          // Format skill name
+          const formattedName = skill.name
+            .replace(/_/g, ' ')
+            .replace(/\b\w/g, l => l.toUpperCase());
+
+          // Add to labels if not already present
+          if (!labelMap[formattedName]) {
+            labels.push(formattedName);
+            labelMap[formattedName] = labels.length - 1;
+          }
+
+          // Ensure data array has enough elements
+          while (data.length < labels.length) {
+            data.push(0);
+          }
+
+          // Set the skill rating in the data array
+          data[labelMap[formattedName]] = skill.rating;
+        });
+
+        // Add dataset for this category
+        datasets.push({
+          label: category.name + ' Skills',
+          data: data,
+          backgroundColor: category.color,
+          borderColor: category.borderColor,
+          borderWidth: 2,
+          pointBackgroundColor: category.borderColor,
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: category.borderColor,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        });
+      });
+
+      // If no datasets were created, show a message
+      if (datasets.length === 0 || labels.length === 0) {
+        document.getElementById('skillsRadarChart').innerHTML = `
+          <div class="no-skills-message">
+            <p>No skills data available to display. Please load assessment data to see your skills radar chart.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Fill in missing data points for all datasets
+      datasets.forEach(dataset => {
+        while (dataset.data.length < labels.length) {
+          dataset.data.push(0);
+        }
+      });
+
+      // Create the radar chart
+      try {
+        // Check if there's an existing chart and destroy it properly
+        if (window.skillsRadarChart instanceof Chart) {
+          window.skillsRadarChart.destroy();
+        } else if (window.skillsRadarChart) {
+          // If it exists but isn't a Chart instance, remove it
+          delete window.skillsRadarChart;
+        }
+      } catch (e) {
+        console.log('No previous chart to destroy or error destroying chart:', e);
+        // Clear any existing canvas content
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      // Create new chart - wrap in try/catch for extra safety
+      try {
+        window.skillsRadarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: labels,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: {
+                display: true,
+                color: 'rgba(0, 0, 0, 0.1)'
+              },
+              suggestedMin: 0,
+              suggestedMax: 5,
+              ticks: {
+                stepSize: 1,
+                callback: function(value) {
+                  return value;
+                }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.raw + '/5';
+                }
+              }
+            }
+          }
+        }
+      });
+      } catch (chartError) {
+        console.error('Error creating chart:', chartError);
+        // Provide a fallback display with text-based skill ratings
+        const skillsContainer = document.getElementById('skillsRadarChart');
+        if (skillsContainer) {
+          let fallbackHTML = `
+            <div class="fallback-skills">
+              <div class="error-message">
+                <p>Unable to display radar chart. Showing skills in text format instead.</p>
+              </div>
+              <div class="fallback-skills-container">
+          `;
+
+          // Add technical skills
+          if (techSkills && techSkills.length > 0) {
+            fallbackHTML += `
+              <div class="fallback-skill-category">
+                <h5>Technical Skills</h5>
+                <ul class="fallback-skill-list">
+                  ${techSkills.slice(0, 5).map(skill => {
+                    const formattedName = skill.name
+                      .replace(/_/g, ' ')
+                      .replace(/\b\w/g, l => l.toUpperCase());
+                    const stars = '★'.repeat(skill.rating) + '☆'.repeat(5 - skill.rating);
+                    return `<li><span class="fallback-skill-name">${formattedName}</span> <span class="star-rating">${stars}</span></li>`;
+                  }).join('')}
+                </ul>
+              </div>
+            `;
+          }
+
+          // Add soft skills
+          if (softSkills && softSkills.length > 0) {
+            fallbackHTML += `
+              <div class="fallback-skill-category">
+                <h5>Soft Skills</h5>
+                <ul class="fallback-skill-list">
+                  ${softSkills.slice(0, 5).map(skill => {
+                    const formattedName = skill.name
+                      .replace(/_/g, ' ')
+                      .replace(/\b\w/g, l => l.toUpperCase());
+                    const stars = '★'.repeat(skill.rating) + '☆'.repeat(5 - skill.rating);
+                    return `<li><span class="fallback-skill-name">${formattedName}</span> <span class="star-rating">${stars}</span></li>`;
+                  }).join('')}
+                </ul>
+              </div>
+            `;
+          }
+
+          fallbackHTML += `
+              </div>
+            </div>
+          `;
+
+          skillsContainer.innerHTML = fallbackHTML;
+        }
+        return; // Exit the function since we've provided a fallback
+      }
+
+      // Create custom legend
+      const legendContainer = document.getElementById('radarChartLegend');
+      if (legendContainer) {
+        legendContainer.innerHTML = datasets.map(dataset => `
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: ${dataset.borderColor}"></div>
+            <div class="legend-label">${dataset.label}</div>
+          </div>
+        `).join('');
+      }
+    } catch (error) {
+      console.error('Error creating radar chart:', error);
+      // Provide a fallback display
+      document.getElementById('skillsRadarChart').innerHTML = `
+        <div class="error-message">
+          <p>There was an error displaying the radar chart. Please try again or use a different browser.</p>
+          <p class="error-details">Error: ${error.message}</p>
+        </div>
+      `;
+    }
+  }
+
+  // Function to display skill gaps
+  function displaySkillGaps(gapSkills) {
+    try {
+      if (!skillGapsElement) {
+        console.error('Skill gaps element not found');
+        return;
+      }
+
+      if (gapSkills && gapSkills.length > 0) {
+        skillGapsElement.innerHTML = `
+          <div class="skill-gaps-list">
+            ${gapSkills.map(skill => {
+              // Format skill name
+              const formattedName = skill.name
+                .replace(/_/g, ' ')
+                .replace(/\b\w/g, l => l.toUpperCase());
+
+              // Determine severity class based on rating
+              const severityClass = skill.rating <= 2 ? 'severe-gap' : 'moderate-gap';
+
+              return `
+                <div class="skill-gap-item ${severityClass}">
+                  <div class="skill-gap-header">
+                    <span class="skill-gap-name">${formattedName}</span>
+                    <span class="skill-gap-rating">Current Level: ${skill.rating}/5</span>
+                  </div>
+                  <div class="skill-gap-note">${skill.gap || 'No specific gap information provided.'}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>`;
+      } else {
+        skillGapsElement.innerHTML = `
+          <div class="no-gaps-message">
+            <p>No significant skill gaps identified. Load assessment data to see any skill gaps.</p>
+          </div>`;
+      }
+    } catch (error) {
+      console.error('Error displaying skill gaps:', error);
+      if (skillGapsElement) {
+        skillGapsElement.innerHTML = `
+          <div class="error-message">
+            <p>There was an error displaying skill gaps. Please try again.</p>
+          </div>`;
+      }
+    }
+  }
+
+  // Function to display skills in a tabular format
+  function displaySkillTable(techSkills, softSkills, gapSkills) {
+    try {
+      // Create a container for the skill table if it doesn't exist
+      if (!document.getElementById('skillTableContainer')) {
+        const skillsProfileSection = document.querySelector('.skills-profile-section');
+        if (!skillsProfileSection) {
+          console.error('Skills profile section not found');
+          return;
+        }
+
+        const container = document.createElement('div');
+        container.id = 'skillTableContainer';
+        container.className = 'skill-table-container';
+        container.innerHTML = `
+          <h3>Skills Comparison Table</h3>
+          <div class="table-controls">
+            <button id="sortByName" class="btn btn-sm btn-outline-secondary">Sort by Name</button>
+            <button id="sortByRating" class="btn btn-sm btn-outline-secondary">Sort by Rating</button>
+            <button id="sortByCategory" class="btn btn-sm btn-outline-secondary">Sort by Category</button>
+          </div>
+          <div class="table-responsive">
+            <table id="skillsTable" class="skills-table">
+              <thead>
+                <tr>
+                  <th>Skill</th>
+                  <th>Category</th>
+                  <th>Rating</th>
+                  <th>Gap Analysis</th>
+                </tr>
+              </thead>
+              <tbody id="skillsTableBody">
+              </tbody>
+            </table>
+          </div>
+        `;
+
+        // Add the table after the skills profile section
+        skillsProfileSection.appendChild(container);
+
+        // Add event listeners for sorting
+        document.getElementById('sortByName').addEventListener('click', () => sortSkillTable('name'));
+        document.getElementById('sortByRating').addEventListener('click', () => sortSkillTable('rating'));
+        document.getElementById('sortByCategory').addEventListener('click', () => sortSkillTable('category'));
+      }
+
+      const tableBody = document.getElementById('skillsTableBody');
+      if (!tableBody) {
+        console.error('Skills table body not found');
+        return;
+      }
+
+      // Check if we have any skills to display
+      if ((!techSkills || techSkills.length === 0) &&
+          (!softSkills || softSkills.length === 0) &&
+          (!gapSkills || gapSkills.length === 0)) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="4" class="no-skills-message">
+              No skills data available. Please load assessment data to see your skills comparison.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      // Combine all skills into one array with category information
+      const allSkills = [
+        ...(techSkills || []).map(skill => ({ ...skill, category: 'Technical', gap: null })),
+        ...(softSkills || []).map(skill => ({ ...skill, category: 'Soft', gap: null })),
+        ...(gapSkills || []).map(skill => ({ ...skill, category: 'Gap' }))
+      ];
+
+      // Generate table rows
+      tableBody.innerHTML = allSkills.map(skill => {
+        // Format skill name
+        const formattedName = skill.name
+          .replace(/_/g, ' ')
+          .replace(/\b\w/g, l => l.toUpperCase());
+
+        // Create star rating
+        const stars = '★'.repeat(skill.rating) + '☆'.repeat(5 - skill.rating);
+
+        return `
+          <tr data-name="${formattedName}" data-rating="${skill.rating}" data-category="${skill.category}">
+            <td>${formattedName}</td>
+            <td>${skill.category}</td>
+            <td><span class="star-rating">${stars}</span> ${skill.rating}/5</td>
+            <td>${skill.gap || 'N/A'}</td>
+          </tr>
+        `;
+      }).join('');
+
+      // Sort by rating by default
+      sortSkillTable('rating');
+    } catch (error) {
+      console.error('Error displaying skill table:', error);
+      const tableContainer = document.getElementById('skillTableContainer');
+      if (tableContainer) {
+        tableContainer.innerHTML = `
+          <div class="error-message">
+            <p>There was an error displaying the skills table. Please try again.</p>
+          </div>
+        `;
+      }
+    }
+  }
+
+  // Function to sort the skill table
+  function sortSkillTable(sortBy) {
+    try {
+      const tableBody = document.getElementById('skillsTableBody');
+      if (!tableBody) {
+        console.error('Skills table body not found for sorting');
+        return;
+      }
+
+      const rows = Array.from(tableBody.querySelectorAll('tr'));
+      if (rows.length === 0) {
+        // No rows to sort
+        return;
+      }
+
+      // Highlight the active sort button
+      const sortButton = document.getElementById(`sortBy${sortBy.charAt(0).toUpperCase() + sortBy.slice(1)}`);
+      if (sortButton) {
+        document.querySelectorAll('.table-controls button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        sortButton.classList.add('active');
+      }
+
+      // Sort the rows
+      rows.sort((a, b) => {
+        if (sortBy === 'name') {
+          return a.dataset.name.localeCompare(b.dataset.name);
+        } else if (sortBy === 'rating') {
+          return parseInt(b.dataset.rating) - parseInt(a.dataset.rating); // Descending
+        } else if (sortBy === 'category') {
+          return a.dataset.category.localeCompare(b.dataset.category);
+        }
+        return 0;
+      });
+
+      // Re-append rows in the new order
+      rows.forEach(row => tableBody.appendChild(row));
+    } catch (error) {
+      console.error('Error sorting skill table:', error);
     }
   }
 
@@ -335,7 +748,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load sample data
   loadSampleDataBtn.addEventListener('click', function() {
     console.log('Loading sample data...');
-    
+
     // Use XMLHttpRequest to load the sample file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', '/assets/data/f2i-self-assessment-template.json', true);
@@ -415,7 +828,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Continue to file input if localStorage approach fails
       }
     }
-    
+
     // If no data in localStorage or processing failed, use file input
     assessmentFileInput.click();
   });
@@ -431,7 +844,7 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       console.log('Reading file using direct FileReader approach...');
       const reader = new FileReader();
-      
+
       reader.onload = function(e) {
         console.log('File loaded successfully');
         try {
@@ -451,14 +864,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       reader.onerror = function(e) {
         console.error('Error reading file:', e);
-        
+
         // Try alternative approach for Safari
         console.log('Trying alternative approach for Safari...');
         try {
           // Create a form and FormData object
           const formData = new FormData();
           formData.append('file', file);
-          
+
           // Use fetch API instead of XMLHttpRequest
           fetch('/process-assessment-file', {
             method: 'POST',
@@ -478,7 +891,7 @@ document.addEventListener('DOMContentLoaded', function() {
           })
           .catch(error => {
             console.error('Error with server approach:', error);
-            
+
             // Final fallback - prompt user to use Firefox or Chrome
             alert('Your browser (Safari) has stricter security settings that prevent direct file loading. Please try using Firefox or Chrome, or use the "Load Sample Data" button instead.');
           });
