@@ -1,0 +1,237 @@
+---
+layout: page
+title: Career Recommendation Engine (Beta)
+subtitle: Find career matches based on your self-assessment
+---
+
+<div class="container">
+  <div class="recommendation-section">
+    <h2>Career Recommendation Engine (Beta)</h2>
+    <p>This tool analyzes your self-assessment results to identify private sector careers that match your skills, experience, and interests.</p>
+
+    <div class="recommendation-controls">
+      <button id="loadSampleData" class="btn btn-primary">Load Sample Data</button>
+      <button id="loadFromAssessment" class="btn btn-primary">Load from Self-Assessment</button>
+      <input type="file" id="assessmentFileInput" accept=".json" style="display: none;">
+    </div>
+
+    <div class="results-section">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Career Matches</h3>
+          <div id="careerMatches" class="results-block career-matches">
+            <p>Load assessment data to see career matches.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="career-details-section">
+        <h3>Career Details</h3>
+        <div id="careerDetails" class="results-block">
+          <p>Select a career match to see details.</p>
+        </div>
+      </div>
+
+      <div class="skills-profile-section">
+        <h3>Your Skills Profile</h3>
+
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Top Technical Skills</h4>
+            <div id="topTechnicalSkills" class="results-block">None identified yet.</div>
+          </div>
+
+          <div class="col-md-4">
+            <h4>Top Soft Skills</h4>
+            <div id="topSoftSkills" class="results-block">None identified yet.</div>
+          </div>
+
+          <div class="col-md-4">
+            <h4>Skill Gaps</h4>
+            <div id="skillGaps" class="results-block">None identified yet.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-links">
+      <a href="/pages/self-assessment.html" class="btn btn-secondary">Return to Self-Assessment Page</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .recommendation-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .recommendation-controls {
+    margin-bottom: 2rem;
+  }
+
+  .recommendation-controls button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .results-section {
+    margin-top: 2rem;
+  }
+
+  .results-block {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .skill-name {
+    font-weight: 500;
+  }
+
+  .skill-rating {
+    background-color: #e9ecef;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .career-match-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .career-match-item:hover {
+    border-color: #0056b3;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+
+  .career-match-item.selected {
+    border-color: #0056b3;
+    background-color: #f0f7ff;
+  }
+
+  .match-score {
+    font-weight: bold;
+    color: #0056b3;
+    font-size: 1.2rem;
+  }
+
+  .career-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .career-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+
+  .career-details-section {
+    margin-top: 2rem;
+  }
+
+  .skills-profile-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .career-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .career-details-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0056b3;
+  }
+
+  .career-details-salary {
+    font-weight: 600;
+    color: #28a745;
+  }
+
+  .career-details-section h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #0056b3;
+    font-size: 1.1rem;
+  }
+
+  .skills-list, .interests-list, .tools-list, .tips-list {
+    padding-left: 1.5rem;
+  }
+
+  .skills-list li, .interests-list li, .tools-list li, .tips-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-gap-note {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+  }
+
+  .career-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .career-info-item {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+  }
+
+  .career-info-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #495057;
+    margin-bottom: 0.25rem;
+  }
+
+  .career-info-value {
+    font-size: 0.95rem;
+  }
+
+  .navigation-links {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .career-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script src="/assets/js/career-recommendation-engine.js"></script>
+<script src="/assets/js/career-database.js"></script>
+<script src="/assets/js/career-recommendation.js"></script>
