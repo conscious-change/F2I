@@ -158,6 +158,13 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Load Assessment button not found');
     }
 
+    const loadSampleAssessmentBtn = document.getElementById('loadSampleAssessment');
+    if (loadSampleAssessmentBtn) {
+      loadSampleAssessmentBtn.addEventListener('click', loadSampleAssessmentData);
+    } else {
+      console.error('Load Sample Assessment button not found');
+    }
+
     const loadAssessmentFileInput = document.getElementById('loadAssessmentFile');
     if (loadAssessmentFileInput) {
       loadAssessmentFileInput.addEventListener('change', loadAssessmentFromFile);
@@ -474,6 +481,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Show a specific section
   function showSection(sectionId) {
     console.log('Showing section:', sectionId);
+
+    // Make sure all sections are initialized
+    const allSections = ['section1', 'section2', 'section3', 'section4', 'section5'];
+    allSections.forEach(id => {
+      const section = document.getElementById(id);
+      if (!section) {
+        console.error(`Section ${id} not found`);
+      }
+    });
+
     // Hide all sections
     const sections = document.querySelectorAll('.assessment-section');
     sections.forEach(section => {
@@ -488,6 +505,34 @@ document.addEventListener('DOMContentLoaded', function() {
       // If showing the summary section, populate it with data from other sections
       if (sectionId === 'section5') {
         populateSummaryTab();
+      }
+
+      // If showing the achievements section, make sure the containers exist
+      if (sectionId === 'section3') {
+        const keyAchievements = document.getElementById('keyAchievements');
+        const starStories = document.getElementById('starStories');
+
+        if (!keyAchievements) {
+          console.error('keyAchievements container not found');
+        }
+
+        if (!starStories) {
+          console.error('starStories container not found');
+        }
+      }
+
+      // If showing the industry analysis section, make sure the containers exist
+      if (sectionId === 'section4') {
+        const industrySkills = document.getElementById('industrySkills');
+        const terminologyTranslation = document.getElementById('terminologyTranslation');
+
+        if (!industrySkills) {
+          console.error('industrySkills container not found');
+        }
+
+        if (!terminologyTranslation) {
+          console.error('terminologyTranslation container not found');
+        }
       }
     } else {
       console.error('Section not found:', sectionId);
@@ -736,6 +781,51 @@ document.addEventListener('DOMContentLoaded', function() {
   // Populate form with saved data
   function populateData(data) {
     console.log('Populating data...');
+
+    // Make sure all sections are initialized
+    console.log('Checking if sections are initialized...');
+    const section3 = document.getElementById('section3');
+    const section4 = document.getElementById('section4');
+
+    if (section3) {
+      console.log('Section 3 (Achievements) exists');
+      const keyAchievements = document.getElementById('keyAchievements');
+      const starStories = document.getElementById('starStories');
+
+      if (keyAchievements) {
+        console.log('keyAchievements container exists');
+      } else {
+        console.error('keyAchievements container not found');
+      }
+
+      if (starStories) {
+        console.log('starStories container exists');
+      } else {
+        console.error('starStories container not found');
+      }
+    } else {
+      console.error('Section 3 (Achievements) not found');
+    }
+
+    if (section4) {
+      console.log('Section 4 (Industry Analysis) exists');
+      const industrySkills = document.getElementById('industrySkills');
+      const terminologyTranslation = document.getElementById('terminologyTranslation');
+
+      if (industrySkills) {
+        console.log('industrySkills container exists');
+      } else {
+        console.error('industrySkills container not found');
+      }
+
+      if (terminologyTranslation) {
+        console.log('terminologyTranslation container exists');
+      } else {
+        console.error('terminologyTranslation container not found');
+      }
+    } else {
+      console.error('Section 4 (Industry Analysis) not found');
+    }
     // Populate core technical skills
     if (data.coreTechnicalSkills) {
       coreTechnicalSkillsList.forEach(skill => {
@@ -844,6 +934,207 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
+    // Populate achievements
+    if (data.achievements && data.achievements.length > 0) {
+      console.log('Populating achievements:', data.achievements);
+      const container = document.getElementById('keyAchievements');
+      if (container) {
+        console.log('Found keyAchievements container');
+        container.innerHTML = ''; // Clear existing entries
+
+        data.achievements.forEach(achievement => {
+          console.log('Processing achievement:', achievement);
+          const achievementEntry = document.createElement('div');
+          achievementEntry.className = 'achievement-entry';
+
+          achievementEntry.innerHTML = `
+            <input type="text" class="form-control achievement-title" placeholder="Achievement title" value="${achievement.title || ''}">
+            <textarea class="form-control achievement-description compact-textarea" placeholder="Brief description of the achievement">${achievement.description || ''}</textarea>
+            <textarea class="form-control achievement-impact compact-textarea" placeholder="Quantifiable impact (numbers, percentages, etc.)">${achievement.impact || ''}</textarea>
+            <textarea class="form-control achievement-skills compact-textarea" placeholder="Skills demonstrated">${achievement.skills || ''}</textarea>
+          `;
+
+          // Add event listeners to save data
+          const inputs = achievementEntry.querySelectorAll('input, textarea');
+          inputs.forEach(input => {
+            input.addEventListener('change', saveData);
+          });
+
+          container.appendChild(achievementEntry);
+        });
+      } else {
+        console.error('keyAchievements container not found');
+      }
+    } else {
+      console.log('No achievements data to populate');
+    }
+
+    // Populate STAR stories
+    if (data.starStories && data.starStories.length > 0) {
+      const container = document.getElementById('starStories');
+      if (container) {
+        container.innerHTML = ''; // Clear existing entries
+
+        data.starStories.forEach((story, index) => {
+          const storyNumber = index + 1;
+          const starStory = document.createElement('div');
+          starStory.className = 'star-story';
+
+          starStory.innerHTML = `
+            <h4>STAR Story ${storyNumber}</h4>
+            <div class="star-fields">
+              <div class="star-field">
+                <label>Situation:</label>
+                <textarea class="form-control compact-textarea" name="situation_${storyNumber}" placeholder="Describe the situation">${story.situation || ''}</textarea>
+              </div>
+              <div class="star-field">
+                <label>Task:</label>
+                <textarea class="form-control compact-textarea" name="task_${storyNumber}" placeholder="What was your task or responsibility?">${story.task || ''}</textarea>
+              </div>
+              <div class="star-field">
+                <label>Action:</label>
+                <textarea class="form-control compact-textarea" name="action_${storyNumber}" placeholder="What actions did you take?">${story.action || ''}</textarea>
+              </div>
+              <div class="star-field">
+                <label>Result:</label>
+                <textarea class="form-control compact-textarea" name="result_${storyNumber}" placeholder="What was the outcome? Include metrics if possible">${story.result || ''}</textarea>
+              </div>
+              <div class="star-field">
+                <label>Skills Demonstrated:</label>
+                <textarea class="form-control compact-textarea" name="skills_${storyNumber}" placeholder="What skills did you demonstrate in this story?">${story.skills || ''}</textarea>
+              </div>
+            </div>
+          `;
+
+          // Add event listeners to save data
+          const inputs = starStory.querySelectorAll('textarea');
+          inputs.forEach(input => {
+            input.addEventListener('change', saveData);
+          });
+
+          container.appendChild(starStory);
+        });
+      }
+    }
+
+    // Populate industry skills
+    if (data.industrySkills && data.industrySkills.length > 0) {
+      console.log('Populating industry skills:', data.industrySkills);
+      const container = document.getElementById('industrySkills');
+      if (container) {
+        console.log('Found industrySkills container');
+        container.innerHTML = ''; // Clear existing entries
+
+        data.industrySkills.forEach(skill => {
+          console.log('Processing industry skill:', skill);
+          const skillEntry = document.createElement('div');
+          skillEntry.className = 'industry-skill-entry';
+
+          skillEntry.innerHTML = `
+            <input type="text" class="form-control industry-skill-name" placeholder="Required industry skill" value="${skill.name || ''}">
+            <select class="form-control industry-skill-rating">
+              <option value="">Your current level</option>
+              <option value="1" ${skill.rating === '1' ? 'selected' : ''}>1 = Basic</option>
+              <option value="2" ${skill.rating === '2' ? 'selected' : ''}>2 = Intermediate</option>
+              <option value="3" ${skill.rating === '3' ? 'selected' : ''}>3 = Proficient</option>
+              <option value="4" ${skill.rating === '4' ? 'selected' : ''}>4 = Advanced</option>
+              <option value="5" ${skill.rating === '5' ? 'selected' : ''}>5 = Expert</option>
+            </select>
+            <textarea class="form-control industry-skill-gap compact-textarea" placeholder="How to close the gap">${skill.gap || ''}</textarea>
+          `;
+
+          // Add event listeners to save data
+          const inputs = skillEntry.querySelectorAll('input, select, textarea');
+          inputs.forEach(input => {
+            input.addEventListener('change', saveData);
+          });
+
+          container.appendChild(skillEntry);
+        });
+      } else {
+        console.error('industrySkills container not found');
+      }
+    } else {
+      console.log('No industry skills data to populate');
+    }
+
+    // Populate terminology translations
+    if (data.terminology && data.terminology.length > 0) {
+      const container = document.getElementById('terminologyTranslation');
+      if (container) {
+        container.innerHTML = ''; // Clear existing entries
+
+        data.terminology.forEach(term => {
+          const termEntry = document.createElement('div');
+          termEntry.className = 'terminology-entry';
+
+          termEntry.innerHTML = `
+            <input type="text" class="form-control federal-term" placeholder="Federal term/concept" value="${term.federal || ''}">
+            <input type="text" class="form-control industry-term" placeholder="Industry equivalent" value="${term.industry || ''}">
+            <input type="text" class="form-control term-context" placeholder="Context for usage" value="${term.context || ''}">
+          `;
+
+          // Add event listeners to save data
+          const inputs = termEntry.querySelectorAll('input');
+          inputs.forEach(input => {
+            input.addEventListener('change', saveData);
+          });
+
+          container.appendChild(termEntry);
+        });
+      }
+    }
+
+    // Populate industry analysis fields
+    if (data.industryAnalysis) {
+      const industryInputs = document.querySelectorAll('#industryAnalysis input, #industryAnalysis textarea');
+      industryInputs.forEach(input => {
+        if (input.name && data.industryAnalysis[input.name]) {
+          input.value = data.industryAnalysis[input.name];
+        }
+      });
+    }
+
+    // Populate summary fields
+    if (data.valueProposition) {
+      const valueProposition = document.getElementById('valueProposition');
+      if (valueProposition) {
+        valueProposition.value = data.valueProposition;
+      }
+    }
+
+    // Populate top skills
+    for (let i = 1; i <= 5; i++) {
+      const skillValue = data[`topSkill${i}`];
+      if (skillValue) {
+        const input = document.querySelector(`#topSkills input[name="topSkill${i}"]`);
+        if (input) {
+          input.value = skillValue;
+        }
+      }
+    }
+
+    // Populate skills to develop
+    for (let i = 1; i <= 3; i++) {
+      const skillValue = data[`developSkill${i}`];
+      if (skillValue) {
+        const input = document.querySelector(`#skillsToDevelop input[name="developSkill${i}"]`);
+        if (input) {
+          input.value = skillValue;
+        }
+      }
+    }
+
+    // Populate next steps
+    for (let i = 1; i <= 3; i++) {
+      const stepValue = data[`nextStep${i}`];
+      if (stepValue) {
+        const input = document.querySelector(`#nextSteps input[name="nextStep${i}"]`);
+        if (input) {
+          input.value = stepValue;
+        }
+      }
+    }
   }
 
   // Save assessment data to a file
@@ -1088,29 +1379,319 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load assessment data from a file
   function loadAssessmentFromFile(event) {
     console.log('Loading assessment from file...');
-    const file = event.target.files[0];
-    if (!file) {
+
+    // Get the file input element
+    const fileInput = event.target;
+    if (!fileInput || !fileInput.files || !fileInput.files[0]) {
       console.log('No file selected');
+
+      // If no file is selected, try to load the sample file
+      if (confirm('No file selected. Would you like to load the sample assessment data instead?')) {
+        loadSampleAssessmentData();
+      }
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = function(e) {
+    const file = fileInput.files[0];
+
+    // Try to use the FileReader API if available
+    if (typeof FileReader !== 'undefined') {
       try {
-        const data = JSON.parse(e.target.result);
-        populateData(data);
-        localStorage.setItem('assessmentData', JSON.stringify(data));
-        updateProgress();
-        alert('Assessment data loaded successfully!');
+        console.log('Using FileReader API');
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+          processLoadedData(e.target.result);
+        };
+
+        reader.onerror = function() {
+          console.error('Error reading file with FileReader');
+          if (confirm('Error reading the file. Would you like to load the sample assessment data instead?')) {
+            loadSampleAssessmentData();
+          } else {
+            alert('Please try again or try with a different file.');
+          }
+        };
+
+        reader.readAsText(file);
       } catch (error) {
-        console.error('Error loading assessment data:', error);
-        alert('Error loading assessment data. Please make sure the file is valid JSON.');
+        console.error('Error using FileReader:', error);
+        tryAlternativeMethod(file);
       }
-    };
-    reader.readAsText(file);
+    } else {
+      // FileReader not supported, try alternative method
+      console.warn('FileReader not supported, trying alternative method');
+      tryAlternativeMethod(file);
+    }
 
     // Reset the file input
-    event.target.value = '';
+    fileInput.value = '';
+  }
+
+  // Load the sample assessment data from the server
+  function loadSampleAssessmentData() {
+    console.log('Loading sample assessment data...');
+
+    // Use XMLHttpRequest to load the sample file
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/changes_logs/extra/f2i-self-assessment-filled.json', true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        processLoadedData(xhr.responseText);
+      } else {
+        console.error('Error loading sample data:', xhr.statusText);
+        showManualInputFallback();
+      }
+    };
+    xhr.onerror = function() {
+      console.error('Error loading sample data');
+      showManualInputFallback();
+    };
+    xhr.send();
+  }
+
+  // Alternative method to load file without FileReader
+  function tryAlternativeMethod(file) {
+    console.log('Trying alternative method to load file');
+
+    // Try using URL.createObjectURL if available
+    if (typeof URL !== 'undefined' && URL.createObjectURL) {
+      try {
+        const url = URL.createObjectURL(file);
+
+        // Use XMLHttpRequest to load the file
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            processLoadedData(xhr.responseText);
+          } else {
+            console.error('Error loading file with XMLHttpRequest:', xhr.statusText);
+            showManualInputFallback();
+          }
+        };
+        xhr.onerror = function() {
+          console.error('Error loading file with XMLHttpRequest');
+          showManualInputFallback();
+        };
+        xhr.send();
+
+        // Clean up the object URL
+        setTimeout(function() {
+          URL.revokeObjectURL(url);
+        }, 1000);
+      } catch (error) {
+        console.error('Error using URL.createObjectURL:', error);
+        showManualInputFallback();
+      }
+    } else {
+      console.error('Neither FileReader nor URL.createObjectURL is supported');
+      showManualInputFallback();
+    }
+  }
+
+  // Show a manual input fallback for browsers that don't support file loading
+  function showManualInputFallback() {
+    console.log('Showing manual input fallback');
+
+    // Create a modal dialog for manual input
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    modal.style.zIndex = '1000';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = 'white';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '5px';
+    modalContent.style.maxWidth = '80%';
+    modalContent.style.maxHeight = '80%';
+    modalContent.style.overflow = 'auto';
+
+    const heading = document.createElement('h3');
+    heading.textContent = 'Paste JSON Data';
+    heading.style.marginTop = '0';
+
+    const instructions = document.createElement('p');
+    instructions.textContent = 'Your browser does not support automatic file loading. Please open your JSON file in a text editor, copy all the content, and paste it below:';
+
+    const textarea = document.createElement('textarea');
+    textarea.style.width = '100%';
+    textarea.style.height = '300px';
+    textarea.style.marginBottom = '10px';
+    textarea.style.padding = '10px';
+    textarea.style.fontFamily = 'monospace';
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.justifyContent = 'space-between';
+
+    const loadButton = document.createElement('button');
+    loadButton.textContent = 'Load Data';
+    loadButton.style.padding = '10px 20px';
+    loadButton.style.backgroundColor = '#4CAF50';
+    loadButton.style.color = 'white';
+    loadButton.style.border = 'none';
+    loadButton.style.borderRadius = '4px';
+    loadButton.style.cursor = 'pointer';
+
+    const cancelButton = document.createElement('button');
+    cancelButton.textContent = 'Cancel';
+    cancelButton.style.padding = '10px 20px';
+    cancelButton.style.backgroundColor = '#f44336';
+    cancelButton.style.color = 'white';
+    cancelButton.style.border = 'none';
+    cancelButton.style.borderRadius = '4px';
+    cancelButton.style.cursor = 'pointer';
+
+    // Add event listeners
+    loadButton.addEventListener('click', function() {
+      const jsonText = textarea.value.trim();
+      if (jsonText) {
+        try {
+          processLoadedData(jsonText);
+          document.body.removeChild(modal);
+        } catch (error) {
+          alert('Invalid JSON data. Please check the format and try again.');
+        }
+      } else {
+        alert('Please paste your JSON data.');
+      }
+    });
+
+    cancelButton.addEventListener('click', function() {
+      document.body.removeChild(modal);
+    });
+
+    // Assemble the modal
+    buttonContainer.appendChild(cancelButton);
+    buttonContainer.appendChild(loadButton);
+
+    modalContent.appendChild(heading);
+    modalContent.appendChild(instructions);
+    modalContent.appendChild(textarea);
+    modalContent.appendChild(buttonContainer);
+
+    modal.appendChild(modalContent);
+
+    // Add the modal to the page
+    document.body.appendChild(modal);
+  }
+
+  // Process the loaded data
+  function processLoadedData(fileContent) {
+    try {
+      const data = JSON.parse(fileContent);
+      console.log('Loaded JSON data:', data);
+
+      // Check if achievements and industry skills exist
+      console.log('Achievements:', data.achievements);
+      console.log('Industry Skills:', data.industrySkills);
+
+      // Make sure all sections are visible before populating
+      const hasAchievements = data.achievements && data.achievements.length > 0;
+      const hasIndustrySkills = data.industrySkills && data.industrySkills.length > 0;
+
+      // If we have achievements or industry skills, make sure those sections are shown
+      if (hasAchievements) {
+        console.log('Showing achievements section before populating');
+        // Temporarily show the achievements section
+        const section3 = document.getElementById('section3');
+        if (section3) {
+          const wasHidden = !section3.classList.contains('active');
+          if (wasHidden) {
+            section3.classList.add('temp-active');
+            section3.style.display = 'block';
+          }
+        }
+      }
+
+      if (hasIndustrySkills) {
+        console.log('Showing industry skills section before populating');
+        // Temporarily show the industry skills section
+        const section4 = document.getElementById('section4');
+        if (section4) {
+          const wasHidden = !section4.classList.contains('active');
+          if (wasHidden) {
+            section4.classList.add('temp-active');
+            section4.style.display = 'block';
+          }
+        }
+      }
+
+      // Check if the DOM is fully loaded
+      if (document.readyState === 'complete') {
+        console.log('DOM is ready, populating data immediately');
+
+        // Force show the achievements and industry skills sections first
+        if (hasAchievements) {
+          console.log('Explicitly showing section3 before populating');
+          showSection('section3');
+        }
+
+        if (hasIndustrySkills) {
+          console.log('Explicitly showing section4 before populating');
+          showSection('section4');
+        }
+
+        // Now populate the data
+        populateData(data);
+
+        // Restore the current section
+        const currentSection = localStorage.getItem('currentSection') || 'section1';
+        showSection(currentSection);
+
+        // Restore section visibility
+        document.querySelectorAll('.temp-active').forEach(section => {
+          section.classList.remove('temp-active');
+          section.style.display = '';
+        });
+      } else {
+        console.log('DOM not ready, waiting for load event');
+        // Wait for the DOM to be fully loaded
+        window.addEventListener('load', function() {
+          console.log('DOM now loaded, populating data');
+
+          // Force show the achievements and industry skills sections first
+          if (hasAchievements) {
+            console.log('Explicitly showing section3 before populating');
+            showSection('section3');
+          }
+
+          if (hasIndustrySkills) {
+            console.log('Explicitly showing section4 before populating');
+            showSection('section4');
+          }
+
+          // Now populate the data
+          populateData(data);
+
+          // Restore the current section
+          const currentSection = localStorage.getItem('currentSection') || 'section1';
+          showSection(currentSection);
+
+          // Restore section visibility
+          document.querySelectorAll('.temp-active').forEach(section => {
+            section.classList.remove('temp-active');
+            section.style.display = '';
+          });
+        });
+      }
+
+      localStorage.setItem('assessmentData', JSON.stringify(data));
+      updateProgress();
+      alert('Assessment data loaded successfully!');
+    } catch (error) {
+      console.error('Error processing loaded data:', error);
+      alert('Error loading assessment data. Please make sure the file is valid JSON.');
+    }
   }
 
   // Update progress indicator
