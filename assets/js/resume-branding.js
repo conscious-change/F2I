@@ -41,53 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Checklist functionality
-  const checklistItems = document.querySelectorAll('.checklist-checkbox');
-  const resetButton = document.getElementById('resetChecklist');
-  const saveButton = document.getElementById('saveChecklist');
-
-  // Load saved checklist state from localStorage
-  loadChecklistState();
-
-  checklistItems.forEach(checkbox => {
-    checkbox.addEventListener('change', saveChecklistState);
-  });
-
-  if (resetButton) {
-    resetButton.addEventListener('click', () => {
-      checklistItems.forEach(checkbox => {
-        checkbox.checked = false;
-      });
-      saveChecklistState();
-    });
-  }
-
-  if (saveButton) {
-    saveButton.addEventListener('click', () => {
-      saveChecklistState();
-      alert('Checklist progress saved!');
-    });
-  }
-
-  function saveChecklistState() {
-    const state = {};
-    checklistItems.forEach(checkbox => {
-      state[checkbox.id] = checkbox.checked;
-    });
-    localStorage.setItem('resumeChecklist', JSON.stringify(state));
-  }
-
-  function loadChecklistState() {
-    const savedState = localStorage.getItem('resumeChecklist');
-    if (savedState) {
-      const state = JSON.parse(savedState);
-      checklistItems.forEach(checkbox => {
-        if (state[checkbox.id] !== undefined) {
-          checkbox.checked = state[checkbox.id];
-        }
-      });
-    }
-  }
+  // Checklist functionality removed
 
   // ===== MODAL FUNCTIONALITY =====
 

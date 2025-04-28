@@ -3820,57 +3820,83 @@ body {
 
 /* Checklist Tab */
 .checklist-container {
-  max-width: 700px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
-}
-
-.checklist-intro {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.checklist-intro p {
-  font-size: 1.1rem;
-  color: #555;
+  padding: 1.5rem;
 }
 
 .checklist-items {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
 }
 
 .checklist-item {
   display: flex;
   align-items: center;
-  background-color: #f8f9fa;
-  padding: 0.8rem 1.2rem;
+  background-color: white;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  width: 100%;
+  border-left: 3px solid #0056b3;
 }
 
 .checklist-item:hover {
   background-color: #f0f7ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .checklist-checkbox {
   margin-right: 1rem;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  accent-color: #0056b3;
 }
 
 .checklist-item label {
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #333;
+  line-height: 1.4;
 }
 
 .checklist-actions {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.checklist-actions .btn {
+  min-width: 160px;
+  padding: 0.8rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .checklist-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .checklist-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .checklist-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .checklist-actions .btn {
+    width: 100%;
+  }
 }
 
 /* Resume Tips */
