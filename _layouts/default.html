@@ -20,7 +20,7 @@
   <!-- Favicon -->
 
   <!-- WebP Detection (early load) -->
-  <script src="{{ '/assets/js/webp-detection.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/webp-detection.min.js' | relative_url }}"></script>
 
   <!-- Site Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -38,31 +38,31 @@
 
   {% include footer.html %}
 
-  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/progress-bar.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/script.min.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/progress-bar.min.js' | relative_url }}" defer></script>
 
   {% if page.url contains 'resume-personal-branding' %}
-  <script src="{{ '/assets/js/resume-branding.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/resume-branding.js' | relative_url }}" defer></script>
   {% endif %}
 
   {% if page.url contains 'networking-strategies' %}
-  <script src="{{ '/assets/js/networking-strategies.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/networking-strategies.js' | relative_url }}" defer></script>
   {% endif %}
 
   {% if page.url contains 'skill-translation-hub' %}
-  <script src="{{ '/assets/js/skill-translation.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/skill-translation.js' | relative_url }}" defer></script>
   {% endif %}
 
   {% if page.url contains 'job-search-resources' %}
-  <script src="{{ '/assets/js/job-search.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/job-search.js' | relative_url }}" defer></script>
   {% endif %}
 
   {% if page.url contains 'interview-preparation' %}
-  <script src="{{ '/assets/js/interview-preparation.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/interview-preparation.js' | relative_url }}" defer></script>
   {% endif %}
 
   {% if page.url contains 'compensation-benefits' %}
-  <script src="{{ '/assets/js/compensation.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/compensation.js' | relative_url }}" defer></script>
   {% endif %}
 
   <!-- Service Worker Registration -->
