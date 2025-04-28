@@ -5492,7 +5492,7 @@ textarea[readonly] {
 .job-search-content h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #0077cc;
+  color: #0056b3;
 }
 
 .job-search-intro {
@@ -5508,7 +5508,7 @@ textarea[readonly] {
 
 .job-search-intro-icon {
   font-size: 2.5rem;
-  color: #0077cc;
+  color: #0056b3;
   line-height: 1;
 }
 
@@ -5546,7 +5546,7 @@ textarea[readonly] {
 .benefit-card-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #0077cc;
+  color: #0056b3;
 }
 
 .benefit-card h3 {
@@ -5579,7 +5579,7 @@ textarea[readonly] {
 
 .strategy-tip {
   background-color: #f0f7ff;
-  border-left: 4px solid #0077cc;
+  border-left: 4px solid #0056b3;
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 0 8px 8px 0;
@@ -5591,7 +5591,7 @@ textarea[readonly] {
 }
 
 .resource-link a {
-  color: #0077cc;
+  color: #0056b3;
   text-decoration: none;
 }
 
@@ -5612,7 +5612,7 @@ textarea[readonly] {
 }
 
 .recruiter-card h3 {
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1rem;
 }
 
@@ -5638,7 +5638,7 @@ textarea[readonly] {
 
 .management-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -5682,7 +5682,7 @@ textarea[readonly] {
 
 .management-icon {
   font-size: 2rem;
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -5723,7 +5723,7 @@ textarea[readonly] {
 .interview-prep-content h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #0077cc;
+  color: #0056b3;
 }
 
 .interview-prep-intro {
@@ -5739,7 +5739,7 @@ textarea[readonly] {
 
 .interview-prep-intro-icon {
   font-size: 2.5rem;
-  color: #0077cc;
+  color: #0056b3;
   line-height: 1;
 }
 
@@ -5784,7 +5784,7 @@ textarea[readonly] {
 }
 
 .comparison-table th {
-  background-color: #0077cc;
+  background-color: #0056b3;
   color: white;
   padding: 1rem;
   text-align: center;
@@ -5815,11 +5815,11 @@ textarea[readonly] {
   border-radius: 8px;
   padding: 1.5rem;
   margin: 1.5rem 0;
-  border-left: 4px solid #0077cc;
+  border-left: 4px solid #0056b3;
 }
 
 .framework-box h4 {
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -5844,7 +5844,7 @@ textarea[readonly] {
 }
 
 .translation-table th {
-  background-color: #0077cc;
+  background-color: #0056b3;
   color: white;
   padding: 0.8rem;
   text-align: left;
@@ -5870,7 +5870,7 @@ textarea[readonly] {
 }
 
 .concerns-table th {
-  background-color: #0077cc;
+  background-color: #0056b3;
   color: white;
   padding: 0.8rem;
   text-align: left;
@@ -5893,7 +5893,7 @@ textarea[readonly] {
 
 .practice-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -5916,7 +5916,7 @@ textarea[readonly] {
 
 .practice-icon {
   font-size: 2rem;
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -5969,7 +5969,7 @@ textarea[readonly] {
 .compensation-content h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #0077cc;
+  color: #0056b3;
 }
 
 /* Why Compensation Matters Section */
@@ -6256,7 +6256,7 @@ textarea[readonly] {
 .checklist-content h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #0077cc;
+  color: #0056b3;
 }
 
 /* Why Checklist Matters Section */
@@ -6319,7 +6319,7 @@ textarea[readonly] {
 
 .checklist-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -6332,7 +6332,7 @@ textarea[readonly] {
 }
 
 .checklist-card h3 {
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1.2rem;
   font-size: 1.2rem;
   text-align: center;
@@ -6370,19 +6370,19 @@ textarea[readonly] {
   border-radius: 8px;
   padding: 1.5rem;
   margin-top: 2rem;
-  border-left: 4px solid #0077cc;
+  border-left: 4px solid #0056b3;
 }
 
 .tip-icon {
   font-size: 2rem;
-  color: #0077cc;
+  color: #0056b3;
   line-height: 1;
 }
 
 .tip-content h4 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: #0077cc;
+  color: #0056b3;
 }
 
 .tip-content p {
@@ -6393,7 +6393,7 @@ textarea[readonly] {
 /* Challenges Section */
 .challenges-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -6408,7 +6408,7 @@ textarea[readonly] {
 
 .challenge-icon {
   font-size: 2rem;
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -6482,7 +6482,7 @@ textarea[readonly] {
 
 .resource-icon {
   font-size: 2rem;
-  color: #0077cc;
+  color: #0056b3;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -6504,7 +6504,7 @@ textarea[readonly] {
 }
 
 .resource-card a {
-  color: #0077cc;
+  color: #0056b3;
   text-decoration: none;
 }
 
