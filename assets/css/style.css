@@ -1292,9 +1292,9 @@ body {
 
 .why-translation-matters h2 {
   text-align: center;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-  font-size: 2.2rem;
+  color: #0056b3;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
   position: relative;
   padding-bottom: 1rem;
 }
@@ -1335,16 +1335,11 @@ body {
 
 .translation-benefits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1rem;
-}
-
-/* Ensure the fourth card appears under the second card */
-.translation-benefits .benefit-card:nth-child(4) {
-  grid-column: 2;
 }
 
 /* Responsive adjustments */
@@ -1422,8 +1417,9 @@ body {
 }
 
 .translation-tools-section h2 {
+  text-align: center;
   color: #0056b3;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   position: relative;
   display: inline-block;
@@ -5521,17 +5517,17 @@ textarea[readonly] {
 
 .job-search-benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .benefit-card {
   background-color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5540,25 +5536,26 @@ textarea[readonly] {
 
 .benefit-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 .benefit-card-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
   color: #0056b3;
 }
 
 .benefit-card h3 {
-  color: #333;
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  color: #0056b3;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .benefit-card p {
-  color: #555;
-  line-height: 1.5;
   margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #555;
 }
 
 /* Job Search Strategy Section */
@@ -5666,31 +5663,33 @@ textarea[readonly] {
 
 .management-card {
   background-color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   height: 100%;
 }
 
 .management-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 .management-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #0056b3;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   text-align: center;
 }
 
 .management-card h3 {
-  color: #333;
+  color: #0056b3;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
@@ -5752,7 +5751,7 @@ textarea[readonly] {
 
 .interview-prep-benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -5900,38 +5899,41 @@ textarea[readonly] {
 
 .practice-card {
   background-color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   height: 100%;
 }
 
 .practice-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 .practice-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #0056b3;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   text-align: center;
 }
 
 .practice-card h3 {
-  color: #333;
+  color: #0056b3;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
 .practice-card p {
-  color: #555;
-  line-height: 1.5;
   margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #555;
 }
 
 /* Responsive adjustments for practice grid */
@@ -6003,7 +6005,7 @@ textarea[readonly] {
 
 .compensation-benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -6290,7 +6292,7 @@ textarea[readonly] {
 
 .checklist-benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
