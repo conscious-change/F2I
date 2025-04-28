@@ -331,12 +331,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Export LinkedIn checklist as PDF
+  // Export LinkedIn checklist as CSV
   if (exportLinkedInChecklistButton) {
     exportLinkedInChecklistButton.onclick = function() {
-      // In a real implementation, this would use a PDF generation library
-      // For now, we'll just show an alert
-      alert('In a production environment, this would generate a PDF with your LinkedIn profile checklist progress. For now, your progress is saved in your browser.');
+      // Create CSV content
+      let csvContent = "LinkedIn Profile Checklist Item,Status\n";
+
+      linkedinCheckboxes.forEach(checkbox => {
+        const label = document.querySelector(`label[for="${checkbox.id}"]`).textContent;
+        const status = checkbox.checked ? "Completed" : "Not Completed";
+        csvContent += `"${label}","${status}"\n`;
+      });
+
+      // Create a blob and download link
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.setAttribute("href", url);
+      link.setAttribute("download", "linkedin_profile_checklist.csv");
+      link.style.visibility = 'hidden';
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   }
 
