@@ -14,13 +14,17 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0056b3">
 
-  <!-- Preconnect to external domains -->
+  <!-- Resource Hints: Preconnect and Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Google Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Preload critical resources -->
+  <link rel="preload" href="{{ '/assets/img/hero-bg.jpg' | relative_url }}" as="image">
+  <link rel="preload" href="{{ '/assets/js/webp-detection.min.js' | relative_url }}" as="script">
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
 
   <!-- Favicon -->
 
@@ -82,15 +86,18 @@
   <script src="{{ '/assets/js/compensation.js' | relative_url }}" defer></script>
   {% endif %}
 
-  <!-- Service Worker Registration -->
+  <!-- Service Worker Registration (optimized) -->
   <script>
+    // Register service worker after page load to avoid blocking rendering
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
-          console.log('ServiceWorker registration failed: ', err);
-        });
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
       });
     }
   </script>
