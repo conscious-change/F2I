@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Save value proposition to PDF
+  // Save value proposition to CSV
   const saveValuePropositionButton = document.getElementById('saveValueProposition');
   if (saveValuePropositionButton) {
     saveValuePropositionButton.onclick = function() {
@@ -242,9 +242,9 @@ document.addEventListener('DOMContentLoaded', function() {
         valueProposition: valueProposition
       };
 
-      // In a real implementation, this would use a PDF generation library
+      // In a real implementation, this would generate and download a CSV file
       // For now, we'll just show an alert
-      alert('In a production environment, this would generate a PDF with your value proposition and worksheet answers. For now, please copy your value proposition from the result box.');
+      alert('In a production environment, this would generate a CSV file with your value proposition and worksheet answers. For now, please copy your value proposition from the result box.');
 
       // Save worksheet data to localStorage for persistence
       localStorage.setItem('valuePropositionWorksheet', JSON.stringify(worksheetData));
