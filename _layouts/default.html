@@ -41,15 +41,25 @@
   <link rel="stylesheet" href="{{ '/assets/css/font-display.css' | relative_url }}">
 
   <!-- Site Styles -->
-  {% if page.url == '/' or page.url contains 'about' or page.url contains 'transition-roadmap' %}
+  {% if page.url contains 'self-assessment' %}
+  <!-- Self Assessment page uses its own layout (assessment-base.html) -->
+  <!-- This condition is here as a fallback in case the page is loaded with default layout -->
+  <link rel="stylesheet" href="{{ '/assets/css/self-assessment/assessment-base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/self-assessment/assessment.css' | relative_url }}">
+  {% elsif page.url contains 'career-recommendation' %}
+  <!-- Career Recommendation page uses its own layout (career-recommendation-base.html) -->
+  <!-- This condition is here as a fallback in case the page is loaded with default layout -->
+  <link rel="stylesheet" href="{{ '/assets/css/career-recommendation/career-recommendation-base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/career-recommendation/career-recommendation.css' | relative_url }}">
+  {% elsif page.url == '/' or page.url contains 'about' or page.url contains 'transition-roadmap' %}
   <!-- New modular CSS for refactored pages -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% else %}
   <!-- Legacy CSS for other pages -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Page Standardization (excludes home, transition, and self-assessment pages) -->
-  {% unless page.url contains 'transition' or page.url contains 'self-assessment' %}
+  <!-- Page Standardization (excludes home, transition, self-assessment, and career-recommendation pages) -->
+  {% unless page.url contains 'transition' or page.url contains 'self-assessment' or page.url contains 'career-recommendation' %}
   <link rel="stylesheet" href="{{ '/assets/css/page-standardization.css' | relative_url }}">
   {% endunless %}
   {% endif %}
