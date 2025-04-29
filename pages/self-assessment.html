@@ -344,41 +344,10 @@ subtitle: Identify and translate your federal experience into private sector val
       </div>
 
       <div class="privacy-note">
-        <small>If you choose to share your assessment, we will anonymize it to help identify future job opportunities. Please see our <a href="/pages/privacy-policy.html" target="_blank">Privacy Policy</a>.</small>
+        <small>If you choose to share your assessment, we will anonymize it to help identify future job opportunities. Your data will be downloaded as a JSON file that you'll need to attach to the email. Please see our <a href="/pages/privacy-policy.html" target="_blank">Privacy Policy</a> for more information.</small>
       </div>
 
-      <script>
-        // Add event listener to ensure data is passed to career recommendation page
-        document.getElementById('viewCareerRecommendations').addEventListener('click', function(e) {
-          // Save current assessment data to localStorage before navigating
-          const currentData = collectData();
-          if (currentData) {
-            localStorage.setItem('assessmentData', JSON.stringify(currentData));
-            console.log('Assessment data saved to localStorage for career recommendations');
-          }
-        });
-
-        // Add event listener for sharing assessment with F2I
-        document.getElementById('shareAssessment').addEventListener('click', function() {
-          const currentData = collectData();
-          if (currentData) {
-            const jsonData = JSON.stringify(currentData, null, 2);
-            const subject = 'F2I Self-Assessment Data Submission';
-            const body = 'Thank you for sharing your assessment data with Fed 2 Industry. Your data will be anonymized and used to help identify future job opportunities that match skills like yours.\n\n' +
-                        'As mentioned in our Privacy Policy, we respect your privacy and will not share your information with third parties.\n\n' +
-                        'Your assessment data is attached below:\n\n' +
-                        jsonData;
-
-            // Create mailto link
-            const mailtoLink = `mailto:findjob@fed2industry.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
-          } else {
-            alert('No assessment data available to share. Please complete the assessment first.');
-          }
-        });
-      </script>
+      <!-- Note: Event listeners for buttons are now handled in self-assessment.js -->
 
       <!-- Note: The Career Recommendation page uses isolated CSS/JS to preserve functionality during site refactoring -->
     </div>

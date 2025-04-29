@@ -186,6 +186,29 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Print Assessment button not found');
     }
+
+    // Share assessment button
+    const shareAssessmentBtn = document.getElementById('shareAssessment');
+    if (shareAssessmentBtn) {
+      shareAssessmentBtn.addEventListener('click', shareAssessmentWithF2I);
+    } else {
+      console.error('Share Assessment button not found');
+    }
+
+    // Add event listener to ensure data is passed to career recommendation page
+    const viewCareerRecommendationsBtn = document.getElementById('viewCareerRecommendations');
+    if (viewCareerRecommendationsBtn) {
+      viewCareerRecommendationsBtn.addEventListener('click', function(e) {
+        // Save current assessment data to localStorage before navigating
+        const currentData = collectData();
+        if (currentData) {
+          localStorage.setItem('assessmentData', JSON.stringify(currentData));
+          console.log('Assessment data saved to localStorage for career recommendations');
+        }
+      });
+    } else {
+      console.error('View Career Recommendations button not found');
+    }
   }
 
   // Generate the core technical skills grid
@@ -1216,6 +1239,47 @@ document.addEventListener('DOMContentLoaded', function() {
       printWindow.print();
       printWindow.close();
     }, 500);
+  }
+
+  // Share assessment with F2I
+  function shareAssessmentWithF2I() {
+    console.log('Sharing assessment with F2I...');
+    const currentData = collectData();
+    if (currentData) {
+      // Create a JSON file from the assessment data
+      const jsonData = JSON.stringify(currentData, null, 2);
+      const blob = new Blob([jsonData], { type: 'application/json' });
+      const fileName = 'f2i-self-assessment.json';
+
+      // Create a download link for the JSON file
+      const downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = fileName;
+
+      // Trigger the download
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      // Prepare email content
+      const subject = 'F2I Self-Assessment Data Submission';
+      const body = 'Thank you for sharing your assessment data with Fed 2 Industry. Your data will be anonymized and used to help identify future job opportunities that match skills like yours.\n\n' +
+                  'As mentioned in our Privacy Policy, we respect your privacy and will not share your information with third parties.\n\n' +
+                  'Please attach the f2i-self-assessment.json file that was just downloaded to this email.';
+
+      // Create mailto link
+      const mailtoLink = `mailto:findjob@fed2industry.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Show confirmation message
+      alert('Your assessment data has been downloaded as a JSON file. Next, your email client will open. Please attach the downloaded JSON file to the email before sending.');
+
+      // Open email client
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+      }, 500);
+    } else {
+      alert('No assessment data available to share. Please complete the assessment first.');
+    }
   }
 
   // Convert assessment data to CSV format
