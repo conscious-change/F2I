@@ -29,6 +29,7 @@
 @import 'pages/about.css';
 @import 'pages/transition.css';
 @import 'pages/industry-research.css';
+@import 'pages/skill-translation.css';
 
 /*
  * Note: As we refactor more pages, we'll add additional imports here.

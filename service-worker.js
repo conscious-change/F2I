@@ -25,6 +25,7 @@ const URLS_TO_CACHE = [
   '/assets/css/pages/about.css',
   '/assets/css/pages/transition.css',
   '/assets/css/pages/industry-research.css',
+  '/assets/css/pages/skill-translation.css',
   '/assets/js/script.js',
   '/assets/js/webp-detection.js',
   '/assets/img/hero-bg.jpg',
