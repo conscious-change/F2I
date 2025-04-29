@@ -276,8 +276,53 @@ button {
 .assessment-completion {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 30px;
+}
+
+.privacy-note {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+}
+
+.privacy-note a {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.privacy-note a:hover {
+  color: #003d7a;
+}
+
+/* Button styles */
+.btn-neutral {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-neutral:hover {
+  background-color: #5a6268;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  font-size: inherit;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
 }
 
 .btn-small {

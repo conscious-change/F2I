@@ -32,11 +32,17 @@
 @import 'pages/skill-translation.css';
 @import 'pages/resume-personal-branding.css';
 @import 'pages/networking-strategies.css';
+@import 'pages/job-search-resources.css';
+@import 'pages/interview-preparation.css';
+@import 'pages/compensation-benefits.css';
+@import 'pages/transition-checklist.css';
+@import 'pages/success-stories.css';
+@import 'pages/simple-pages.css';
+@import 'pages/community.css';
 
 /*
  * Note: As we refactor more pages, we'll add additional imports here.
  * For example:
  * @import 'pages/assessment.css';
- * @import 'pages/skill-translation.css';
  * etc.
  */

@@ -338,8 +338,13 @@ subtitle: Identify and translate your federal experience into private sector val
 
       <div id="assessment-completion" class="assessment-completion">
         <button id="downloadResults" class="btn btn-primary">Download Assessment Results</button>
-        <button id="printResults" class="btn btn-secondary">Print Assessment</button>
-        <a href="/pages/career-recommendation.html" id="viewCareerRecommendations" class="btn" style="background-color: #28a745; color: white;">View Career Recommendations</a>
+        <button id="printResults" class="btn btn-neutral">Print Assessment</button>
+        <a href="/pages/career-recommendation.html" id="viewCareerRecommendations" class="btn btn-success">View Career Recommendations</a>
+        <button id="shareAssessment" class="btn btn-info">Share Assessment with F2I (Optional)</button>
+      </div>
+
+      <div class="privacy-note">
+        <small>If you choose to share your assessment, we will anonymize it to help identify future job opportunities. Please see our <a href="/pages/privacy-policy.html" target="_blank">Privacy Policy</a>.</small>
       </div>
 
       <script>
@@ -350,6 +355,27 @@ subtitle: Identify and translate your federal experience into private sector val
           if (currentData) {
             localStorage.setItem('assessmentData', JSON.stringify(currentData));
             console.log('Assessment data saved to localStorage for career recommendations');
+          }
+        });
+
+        // Add event listener for sharing assessment with F2I
+        document.getElementById('shareAssessment').addEventListener('click', function() {
+          const currentData = collectData();
+          if (currentData) {
+            const jsonData = JSON.stringify(currentData, null, 2);
+            const subject = 'F2I Self-Assessment Data Submission';
+            const body = 'Thank you for sharing your assessment data with Fed 2 Industry. Your data will be anonymized and used to help identify future job opportunities that match skills like yours.\n\n' +
+                        'As mentioned in our Privacy Policy, we respect your privacy and will not share your information with third parties.\n\n' +
+                        'Your assessment data is attached below:\n\n' +
+                        jsonData;
+
+            // Create mailto link
+            const mailtoLink = `mailto:findjob@fed2industry.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+          } else {
+            alert('No assessment data available to share. Please complete the assessment first.');
           }
         });
       </script>

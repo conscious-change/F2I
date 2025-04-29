@@ -1,0 +1,406 @@
+/*
+ * F2I Website Interview Preparation Page CSS
+ * Styles specific to the Interview Preparation page
+ */
+
+/* Interview Prep Content Container */
+.interview-prep-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Center align all section headers */
+.interview-prep-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  position: relative;
+}
+
+.interview-prep-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* Section Introduction */
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Why Interview Prep Matters Section */
+.why-interview-prep-matters {
+  margin-bottom: 3rem;
+}
+
+/* Interview Prep Introduction */
+.interview-prep-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.interview-prep-intro-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.interview-prep-intro p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Interview Prep Benefits */
+.interview-prep-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Federal vs Private Sector Interviews Section */
+.interview-differences-section {
+  margin-bottom: 3rem;
+}
+
+/* Comparison Table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
+.comparison-table th {
+  background-color: var(--primary);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: var(--gray-light);
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Preparation Strategies Section */
+.preparation-strategies-section {
+  margin-bottom: 3rem;
+}
+
+/* Accordion Container */
+.accordion-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: var(--gray-light);
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.accordion-toggle {
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0 1.2rem 1.2rem 1.2rem;
+}
+
+.accordion-content p {
+  margin-top: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.accordion-content ul {
+  margin-bottom: 1.5rem;
+}
+
+.accordion-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Framework Box */
+.framework-box {
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.framework-box h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.framework-box ul {
+  margin-bottom: 0;
+}
+
+/* Example Box */
+.example-box {
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.example-box h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Translation Table */
+.translation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.translation-table th {
+  background-color: var(--primary);
+  color: white;
+  text-align: left;
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+.translation-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.translation-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Concerns Table */
+.concerns-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.concerns-table th {
+  background-color: var(--primary);
+  color: white;
+  text-align: left;
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+.concerns-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.concerns-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Strategy Tip */
+.strategy-tip {
+  background-color: #e6f7ff;
+  border-left: 3px solid var(--info);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.strategy-tip strong {
+  color: #333;
+}
+
+/* Resource Link */
+.resource-link {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.resource-link a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.resource-link a:hover {
+  text-decoration: underline;
+}
+
+/* Practice Section */
+.practice-section {
+  margin-bottom: 3rem;
+}
+
+/* Practice Grid */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Practice Card */
+.practice-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.practice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.practice-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.practice-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.practice-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .interview-prep-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .interview-prep-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .interview-prep-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .accordion-header {
+    padding: 1rem;
+  }
+
+  .accordion-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-icon {
+    font-size: 1.3rem;
+  }
+
+  .practice-card {
+    padding: 1.2rem;
+  }
+
+  .practice-card h3 {
+    font-size: 1.2rem;
+  }
+}

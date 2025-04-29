@@ -51,17 +51,9 @@
   <!-- This condition is here as a fallback in case the page is loaded with default layout -->
   <link rel="stylesheet" href="{{ '/assets/css/career-recommendation/career-recommendation-base.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/career-recommendation/career-recommendation.css' | relative_url }}">
-  {% elsif page.url == '/' or page.url contains 'about' or page.url contains 'transition-roadmap' or page.url contains 'industry-research' or page.url contains 'skill-translation-hub' or page.url contains 'resume-personal-branding' or page.url contains 'networking-strategies' %}
-  <!-- New modular CSS for refactored pages -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% else %}
-  <!-- Legacy CSS for other pages -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
-  <!-- Page Standardization (excludes home, transition, self-assessment, and career-recommendation pages) -->
-  {% unless page.url contains 'transition' or page.url contains 'self-assessment' or page.url contains 'career-recommendation' %}
-  <link rel="stylesheet" href="{{ '/assets/css/page-standardization.css' | relative_url }}">
-  {% endunless %}
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% endif %}
 
   <!-- Font Awesome with preload -->
@@ -76,7 +68,7 @@
     !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
   </script>
 </head>
-<body class="{% if page.url == '/' %}home-page{% elsif page.url contains 'about' %}about-page{% elsif page.url contains 'transition-roadmap' %}transition-roadmap-page{% elsif page.url contains 'transition' %}transition-page{% elsif page.url contains 'self-assessment' %}self-assessment-page{% elsif page.url contains 'industry-research' %}industry-research-page{% elsif page.url contains 'skill-translation-hub' %}skill-translation-hub-page{% elsif page.url contains 'resume-personal-branding' %}resume-personal-branding-page{% elsif page.url contains 'networking-strategies' %}networking-strategies-page{% endif %}">
+<body class="{% if page.url == '/' %}home-page{% elsif page.url contains 'about' %}about-page{% elsif page.url contains 'transition-roadmap' %}transition-roadmap-page{% elsif page.url contains 'transition' %}transition-page{% elsif page.url contains 'self-assessment' %}self-assessment-page{% elsif page.url contains 'industry-research' %}industry-research-page{% elsif page.url contains 'skill-translation-hub' %}skill-translation-hub-page{% elsif page.url contains 'resume-personal-branding' %}resume-personal-branding-page{% elsif page.url contains 'networking-strategies' %}networking-strategies-page{% elsif page.url contains 'job-search-resources' %}job-search-resources-page{% endif %}">
   {% include skip-nav.html %}
   {% include navigation.html %}
 
@@ -112,6 +104,10 @@
 
   {% if page.url contains 'compensation-benefits' %}
   <script src="{{ '/assets/js/compensation.js' | relative_url }}" defer></script>
+  {% endif %}
+
+  {% if page.url contains 'join-team' %}
+  <script src="{{ '/assets/js/join-team.js' | relative_url }}" defer></script>
   {% endif %}
 
   <!-- Service Worker Registration (optimized) -->

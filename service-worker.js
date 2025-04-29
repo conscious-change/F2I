@@ -1,10 +1,9 @@
 // F2I Service Worker for offline capabilities
 
-const CACHE_NAME = 'f2i-cache-v3';
+const CACHE_NAME = 'f2i-cache-v4';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
-  '/assets/css/style.css',
   '/assets/css/main.css',
   '/assets/css/base/reset.css',
   '/assets/css/base/typography.css',
@@ -28,8 +27,16 @@ const URLS_TO_CACHE = [
   '/assets/css/pages/skill-translation.css',
   '/assets/css/pages/resume-personal-branding.css',
   '/assets/css/pages/networking-strategies.css',
+  '/assets/css/pages/job-search-resources.css',
+  '/assets/css/pages/interview-preparation.css',
+  '/assets/css/pages/compensation-benefits.css',
+  '/assets/css/pages/transition-checklist.css',
+  '/assets/css/pages/success-stories.css',
+  '/assets/css/pages/simple-pages.css',
+  '/assets/css/pages/community.css',
   '/assets/js/script.js',
   '/assets/js/webp-detection.js',
+  '/assets/js/join-team.js',
   '/assets/img/hero-bg.jpg',
   '/assets/img/hero-bg.webp',
   '/assets/img/about-hero.jpg',
@@ -99,7 +106,7 @@ self.addEventListener('fetch', event => {
 
             return response;
           })
-          .catch(error => {
+          .catch(() => {
             // If offline and requesting a page, show offline page
             if (event.request.mode === 'navigate') {
               return caches.match('/offline.html');
