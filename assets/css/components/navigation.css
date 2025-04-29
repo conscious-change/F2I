@@ -216,31 +216,4 @@ body:not(.home-page) .nav-progress-wrapper {
   display: block;
 }
 
-/* Breadcrumbs */
-.breadcrumbs {
-  background-color: var(--gray-light);
-  padding: 0.75rem 0;
-  margin-top: 60px;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.breadcrumb-item {
-  color: var(--gray);
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.breadcrumb-item.current {
-  color: var(--gray-dark);
-  font-weight: 500;
-}
-
-.breadcrumb-item:hover {
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: var(--gray);
-  margin: 0 0.5rem;
-}
+/* Breadcrumbs moved to breadcrumbs.css */

@@ -1,0 +1,47 @@
+/* 
+ * F2I Website Breadcrumbs Component CSS
+ * Styles for breadcrumb navigation
+ */
+
+/* Breadcrumbs Container */
+.breadcrumbs {
+  background-color: var(--gray-light);
+  padding: 0.75rem 0;
+  margin-top: 60px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Breadcrumb Items */
+.breadcrumb-item {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item.current {
+  color: var(--gray-dark);
+  font-weight: 500;
+}
+
+.breadcrumb-item:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Breadcrumb Separator */
+.breadcrumb-separator {
+  color: var(--gray);
+  margin: 0 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .breadcrumb-item {
+    font-size: 0.85rem;
+  }
+}
