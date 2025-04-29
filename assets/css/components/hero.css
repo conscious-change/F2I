@@ -1,0 +1,232 @@
+/* 
+ * F2I Website Hero Component CSS
+ * Styles for hero sections across the site
+ */
+
+/* Base Hero Section */
+.hero {
+  background: url('/assets/img/hero-bg.jpg') no-repeat center center, var(--primary);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  margin-top: 60px;
+}
+
+/* Hero Overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero .hero-tagline {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero .hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Page Hero Variants */
+.page-hero {
+  background-color: var(--dark);
+  color: white;
+  padding: 60px 20px 40px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.page-hero .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Transition Hero */
+.transition-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.transition-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.transition-hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Resume Hero */
+.resume-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.resume-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.resume-hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Skill Translation Hero */
+.translation-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.translation-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.translation-hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .hero-tagline {
+    font-size: 1.5rem;
+  }
+  
+  .hero .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .page-hero {
+    padding: 50px 15px 30px;
+  }
+  
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .transition-hero h1,
+  .resume-hero h1,
+  .translation-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero .hero-tagline {
+    font-size: 1.4rem;
+  }
+  
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .transition-hero h1,
+  .resume-hero h1,
+  .translation-hero h1 {
+    font-size: 1.8rem;
+  }
+}

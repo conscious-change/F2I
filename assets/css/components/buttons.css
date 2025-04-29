@@ -1,0 +1,135 @@
+/*
+ * F2I Website Buttons CSS
+ * Styles for all button types
+ */
+
+/* Base Button */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Override default link hover behavior for all buttons */
+.btn:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: 0 !important;
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3) !important;
+  color: white;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  border: 2px solid var(--secondary);
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-light);
+  border-color: var(--secondary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Neutral Button */
+.btn-neutral {
+  background-color: var(--gray);
+  color: white;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-weight: 500;
+}
+
+.btn-neutral:hover {
+  background-color: #5a6268;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: white;
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background-color: #f0f7ff;
+  transform: translateY(-2px);
+  color: var(--primary);
+}
+
+/* Small Button */
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Large Button */
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Button Groups */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-group-center {
+  justify-content: center;
+}
+
+/* Navigation CTA Button */
+.nav-cta-button {
+  display: none; /* Hidden on mobile by default */
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-cta-button:hover {
+  background-color: var(--secondary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  .nav-cta-button {
+    display: inline-block;
+  }
+}

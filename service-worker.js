@@ -1,10 +1,27 @@
 // F2I Service Worker for offline capabilities
 
-const CACHE_NAME = 'f2i-cache-v2';
+const CACHE_NAME = 'f2i-cache-v3';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/assets/css/style.css',
+  '/assets/css/main.css',
+  '/assets/css/base/reset.css',
+  '/assets/css/base/typography.css',
+  '/assets/css/base/colors.css',
+  '/assets/css/base/layout.css',
+  '/assets/css/components/buttons.css',
+  '/assets/css/components/cards.css',
+  '/assets/css/components/navigation.css',
+  '/assets/css/components/footer.css',
+  '/assets/css/components/tabs.css',
+  '/assets/css/components/accordions.css',
+  '/assets/css/components/forms.css',
+  '/assets/css/components/hero.css',
+  '/assets/css/utils/responsive.css',
+  '/assets/css/pages/home.css',
+  '/assets/css/pages/about.css',
+  '/assets/css/pages/transition.css',
   '/assets/js/script.js',
   '/assets/js/webp-detection.js',
   '/assets/img/hero-bg.jpg',
