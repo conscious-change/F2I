@@ -4,31 +4,7 @@
  * This file is intentionally isolated from the main CSS refactoring
  */
 
-/* CSS Variables */
-:root {
-  /* Primary Colors */
-  --primary: #0056b3;
-  --primary-dark: #003d7a;
-  --primary-light: #0077cc;
-
-  /* Secondary Colors */
-  --secondary: #ff6b00;
-  --secondary-dark: #e55e00;
-  --secondary-light: #ff8c33;
-
-  /* Neutral Colors */
-  --dark: #111;
-  --gray-dark: #333;
-  --gray: #6c757d;
-  --gray-light: #f8f9fa;
-  --light: #fff;
-
-  /* Semantic Colors */
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-}
+/* Note: CSS Variables are now imported from base/colors.css */
 
 /* Reset */
 * {
