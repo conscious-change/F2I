@@ -97,8 +97,75 @@ Our goal is to help thousands of federal employees successfully transition to th
 
 ## Contributing
 
+### Branch Structure
+
+We use a structured branching strategy to manage development and releases:
+
+```
+main (production)
+  ↑
+staging
+  ↑
+development
+  ↑
+feature/[feature-name] (e.g., feature/header-redesign)
+bugfix/[bug-name] (e.g., bugfix/mobile-nav)
+cleanup/[cleanup-name] (e.g., cleanup/css-optimization)
+```
+
+#### Branch Purposes
+
+1. **`main`**: Production branch
+   - Contains only stable, tested code
+   - Deployed to production environment
+   - Protected from direct pushes (require pull requests)
+
+2. **`staging`**: Pre-production testing environment
+   - Mirrors the production environment
+   - Used for final QA before deploying to production
+   - Merged to `main` when ready for production
+
+3. **`development`**: Integration branch
+   - Contains the latest development work
+   - May be less stable than `staging`
+   - Used for developer testing and integration
+
+4. **Feature branches**
+   - Branch from `development`
+   - Used for new features
+   - Naming convention: `feature/[feature-name]`
+
+5. **Bugfix branches**
+   - Branch from `development` or directly from `staging` for urgent fixes
+   - Used for bug fixes
+   - Naming convention: `bugfix/[bug-name]`
+
+6. **Cleanup branches**
+   - Branch from `development`
+   - Used for refactoring, optimization, and technical debt
+   - Naming convention: `cleanup/[cleanup-name]`
+
+### Development Workflow
+
+1. Start a new feature:
+   ```bash
+   git checkout development
+   git pull
+   git checkout -b feature/new-feature-name
+   # Work on feature
+   git push -u origin feature/new-feature-name
+   ```
+
+2. Create a pull request to merge into `development`
+
+3. After testing in `development`, create a pull request to merge into `staging`
+
+4. After testing in `staging`, create a pull request to merge `staging` into `main`
+
+### Pull Request Process
+
 1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
+2. Create your feature branch following the naming convention above
 3. Commit your changes: `git commit -m 'Add some amazing feature'`
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
