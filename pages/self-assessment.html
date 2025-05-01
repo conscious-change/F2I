@@ -250,7 +250,32 @@ subtitle: Identify and translate your federal experience into private sector val
             <textarea class="form-control term-context compact-textarea" placeholder="Context for usage"></textarea>
           </div>
         </div>
-        <button id="addTerminology" class="btn btn-small">+ Add Term</button>
+        <div class="terminology-buttons">
+          <button id="addTerminology" class="btn btn-small">+ Add Term</button>
+          <button id="addCommonTerms" class="btn btn-small btn-info">+ Add Common Terms</button>
+        </div>
+      </div>
+
+      <!-- Common Terms Selection Modal -->
+      <div id="commonTermsModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Select Common Translation Terms</h3>
+            <span class="close-modal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <p>Select the federal-to-industry translation terms you'd like to add:</p>
+            <div id="termsCheckboxes" class="terms-checkboxes">
+              <!-- Will be populated by JavaScript -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="selectAllTerms" class="btn btn-small">Select All</button>
+            <button id="deselectAllTerms" class="btn btn-small">Deselect All</button>
+            <button id="addSelectedTerms" class="btn btn-primary">Add Selected Terms</button>
+            <button id="cancelTermSelection" class="btn btn-neutral">Cancel</button>
+          </div>
+        </div>
       </div>
     </div>
 
