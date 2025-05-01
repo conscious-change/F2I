@@ -818,6 +818,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!terminologyTranslation) {
           console.error('terminologyTranslation container not found');
         }
+
+        // Make sure the common terms modal is hidden when switching to this tab
+        const modal = document.getElementById('commonTermsModal');
+        if (modal) {
+          modal.style.display = 'none';
+        }
       }
     } else {
       console.error('Section not found:', sectionId);
