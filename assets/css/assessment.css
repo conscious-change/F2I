@@ -285,6 +285,139 @@ button {
   font-size: 14px;
 }
 
+.terminology-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 0;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-header {
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #0056b3;
+}
+
+.close-modal {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.terms-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.term-checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.term-checkbox-item:hover {
+  background-color: #f0f0f0;
+}
+
+.term-checkbox-item input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.term-checkbox-label {
+  flex: 1;
+}
+
+.term-checkbox-label .term-title {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.term-checkbox-label .term-translation {
+  color: #0056b3;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.term-checkbox-label .term-context {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .terms-checkboxes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .form-control {
   width: 100%;
   padding: 10px 12px;

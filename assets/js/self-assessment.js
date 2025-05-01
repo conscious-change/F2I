@@ -122,6 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Add Terminology button not found');
     }
 
+    const addCommonTermsBtn = document.getElementById('addCommonTerms');
+    if (addCommonTermsBtn) {
+      addCommonTermsBtn.addEventListener('click', addCommonTerminologyTerms);
+    } else {
+      console.error('Add Common Terms button not found');
+    }
+
     const addAchievementBtn = document.getElementById('addAchievement');
     if (addAchievementBtn) {
       addAchievementBtn.addEventListener('click', addAchievement);
@@ -393,6 +400,261 @@ document.addEventListener('DOMContentLoaded', function() {
 
     container.appendChild(termEntry);
     saveData();
+  }
+
+  // Common federal-to-industry translation terms
+  const commonTerms = [
+    {
+      id: 'term1',
+      federal: "GS-14 Program Manager",
+      industry: "Senior Product Manager / Director of Operations",
+      context: "Leadership role responsible for program strategy, execution, and outcomes"
+    },
+    {
+      id: 'term2',
+      federal: "Memorandum of Understanding (MOU)",
+      industry: "Service Level Agreement (SLA) / Partnership Agreement",
+      context: "Formal document outlining terms of collaboration between organizations"
+    },
+    {
+      id: 'term3',
+      federal: "Fiscal Year Execution",
+      industry: "Annual Budget Cycle / Financial Planning",
+      context: "Process of implementing and managing annual financial resources"
+    },
+    {
+      id: 'term4',
+      federal: "Stakeholder Engagement",
+      industry: "Client Relationship Management / Customer Success",
+      context: "Building and maintaining relationships with key partners and beneficiaries"
+    },
+    {
+      id: 'term5',
+      federal: "Procurement",
+      industry: "Vendor Management / Strategic Sourcing",
+      context: "Process of acquiring goods and services from external providers"
+    },
+    {
+      id: 'term6',
+      federal: "Performance Metrics",
+      industry: "KPIs / OKRs (Objectives and Key Results)",
+      context: "Measurements used to evaluate success and progress toward goals"
+    },
+    {
+      id: 'term7',
+      federal: "Federal Acquisition Regulation (FAR)",
+      industry: "Procurement Policy / Purchasing Guidelines",
+      context: "Rules governing the purchasing process"
+    },
+    {
+      id: 'term8',
+      federal: "Continuing Resolution (CR)",
+      industry: "Interim Budget / Contingency Funding",
+      context: "Temporary funding mechanism when full budget is not approved"
+    },
+    {
+      id: 'term9',
+      federal: "Inspector General Audit",
+      industry: "Internal/External Audit / Compliance Review",
+      context: "Formal examination of processes, controls, and compliance"
+    },
+    {
+      id: 'term10',
+      federal: "Congressional Testimony",
+      industry: "Executive Presentation / Board Meeting",
+      context: "Formal presentation to leadership or governance bodies"
+    },
+    {
+      id: 'term11',
+      federal: "Subject Matter Expert (SME)",
+      industry: "Domain Expert / Technical Specialist",
+      context: "Person with specialized knowledge in a specific area"
+    },
+    {
+      id: 'term12',
+      federal: "Interagency Working Group",
+      industry: "Cross-functional Team / Task Force",
+      context: "Collaborative team with members from different organizational units"
+    },
+    {
+      id: 'term13',
+      federal: "Agency Strategic Plan",
+      industry: "Corporate Strategy / Business Plan",
+      context: "Document outlining long-term objectives and approaches"
+    },
+    {
+      id: 'term14',
+      federal: "Federal Employee Viewpoint Survey",
+      industry: "Employee Engagement Survey / Pulse Survey",
+      context: "Tool to measure employee satisfaction and organizational health"
+    },
+    {
+      id: 'term15',
+      federal: "Standard Operating Procedure (SOP)",
+      industry: "Process Documentation / Playbook",
+      context: "Documented steps for completing routine tasks or processes"
+    }
+  ];
+
+  // Open the common terms selection modal
+  function addCommonTerminologyTerms() {
+    console.log('Opening common terms selection modal...');
+
+    // Get the modal
+    const modal = document.getElementById('commonTermsModal');
+    if (!modal) {
+      console.error('Common terms modal not found');
+      return;
+    }
+
+    // Get the checkboxes container
+    const checkboxesContainer = document.getElementById('termsCheckboxes');
+    if (!checkboxesContainer) {
+      console.error('Terms checkboxes container not found');
+      return;
+    }
+
+    // Clear existing checkboxes
+    checkboxesContainer.innerHTML = '';
+
+    // Add checkboxes for each term
+    commonTerms.forEach(term => {
+      const checkboxItem = document.createElement('div');
+      checkboxItem.className = 'term-checkbox-item';
+
+      checkboxItem.innerHTML = `
+        <input type="checkbox" id="${term.id}" name="${term.id}" value="${term.id}">
+        <label for="${term.id}" class="term-checkbox-label">
+          <span class="term-title">${term.federal}</span>
+          <span class="term-translation">${term.industry}</span>
+          <span class="term-context">${term.context}</span>
+        </label>
+      `;
+
+      checkboxesContainer.appendChild(checkboxItem);
+    });
+
+    // Show the modal
+    modal.style.display = 'block';
+
+    // Setup modal event listeners
+    setupModalEventListeners();
+  }
+
+  // Setup event listeners for the modal
+  function setupModalEventListeners() {
+    // Get modal elements
+    const modal = document.getElementById('commonTermsModal');
+    const closeBtn = modal.querySelector('.close-modal');
+    const selectAllBtn = document.getElementById('selectAllTerms');
+    const deselectAllBtn = document.getElementById('deselectAllTerms');
+    const addSelectedBtn = document.getElementById('addSelectedTerms');
+    const cancelBtn = document.getElementById('cancelTermSelection');
+
+    // Close button event
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    };
+
+    // Select all button event
+    selectAllBtn.onclick = function() {
+      const checkboxes = modal.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = true;
+      });
+    };
+
+    // Deselect all button event
+    deselectAllBtn.onclick = function() {
+      const checkboxes = modal.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    };
+
+    // Add selected terms button event
+    addSelectedBtn.onclick = function() {
+      addSelectedTermsToForm();
+      modal.style.display = 'none';
+    };
+
+    // Cancel button event
+    cancelBtn.onclick = function() {
+      modal.style.display = 'none';
+    };
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  }
+
+  // Add selected terms to the form
+  function addSelectedTermsToForm() {
+    console.log('Adding selected terms to form...');
+
+    // Get the terminology container
+    const container = document.getElementById('terminologyTranslation');
+    if (!container) {
+      console.error('Terminology Translation container not found');
+      return;
+    }
+
+    // Get all checked checkboxes
+    const checkedBoxes = document.querySelectorAll('#termsCheckboxes input[type="checkbox"]:checked');
+    if (checkedBoxes.length === 0) {
+      alert('No terms selected. Please select at least one term to add.');
+      return;
+    }
+
+    // Check if there are existing entries
+    const existingEntries = container.querySelectorAll('.terminology-entry');
+
+    // If there's only one entry and it's empty, clear the container
+    if (existingEntries.length === 1) {
+      const federalTerm = existingEntries[0].querySelector('.federal-term')?.value || '';
+      const industryTerm = existingEntries[0].querySelector('.industry-term')?.value || '';
+      const termContext = existingEntries[0].querySelector('.term-context')?.value || '';
+
+      if (!federalTerm && !industryTerm && !termContext) {
+        container.innerHTML = '';
+      }
+    }
+
+    // Add each selected term
+    let addedCount = 0;
+    checkedBoxes.forEach(checkbox => {
+      const termId = checkbox.value;
+      const term = commonTerms.find(t => t.id === termId);
+
+      if (term) {
+        const termEntry = document.createElement('div');
+        termEntry.className = 'terminology-entry';
+
+        termEntry.innerHTML = `
+          <textarea class="form-control federal-term compact-textarea" placeholder="Federal term/concept">${term.federal}</textarea>
+          <textarea class="form-control industry-term compact-textarea" placeholder="Industry equivalent">${term.industry}</textarea>
+          <textarea class="form-control term-context compact-textarea" placeholder="Context for usage">${term.context}</textarea>
+        `;
+
+        // Add event listeners to save data
+        const inputs = termEntry.querySelectorAll('textarea');
+        inputs.forEach(input => {
+          input.addEventListener('change', saveData);
+        });
+
+        container.appendChild(termEntry);
+        addedCount++;
+      }
+    });
+
+    // Save the data
+    saveData();
+
+    // Show confirmation message
+    alert(`Added ${addedCount} federal-to-industry terminology translation${addedCount !== 1 ? 's' : ''}.`);
   }
 
   // Add a new achievement entry
