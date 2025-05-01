@@ -55,15 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Term Translator Modal
-  const termTranslatorButton = document.getElementById('openTermTranslator');
-  const termTranslatorModal = document.getElementById('termTranslatorModal');
 
-  if (termTranslatorButton && termTranslatorModal) {
-    termTranslatorButton.onclick = function() {
-      termTranslatorModal.style.display = "block";
-    }
-  }
 
   // Value Proposition Worksheet Modal
   const valuePropositionButton = document.getElementById('openValuePropositionWorksheet');
@@ -132,51 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Translate federal term
-  const translateTermButton = document.getElementById('translateTerm');
-  if (translateTermButton) {
-    translateTermButton.onclick = function() {
-      const federalTerm = document.getElementById('federalTerm').value;
 
-      if (!federalTerm) {
-        alert('Please enter a federal term to translate.');
-        return;
-      }
-
-      // Simple translation dictionary
-      const translations = {
-        'GS-14 Supervisory Program Analyst': 'Senior Program Manager',
-        'GS-15': 'Director / Senior Director',
-        'GS-14': 'Senior Manager',
-        'GS-13': 'Manager',
-        'GS-12': 'Team Lead / Senior Specialist',
-        'GS-11': 'Specialist / Analyst',
-        'GS-9': 'Associate / Junior Specialist',
-        'Contracting Officer\'s Representative (COR)': 'Contract/Vendor Manager',
-        'Program Management Office (PMO)': 'Project Management Office',
-        'Subject Matter Expert (SME)': 'Domain Expert / Specialist',
-        'Decision Memorandum': 'Executive Brief / Recommendation',
-        'Federal Acquisition Regulation (FAR)': 'Procurement Policy / Purchasing Guidelines'
-      };
-
-      let translation = 'No direct translation found. Consider consulting with a career coach for a customized translation.';
-
-      // Check for exact matches
-      if (translations[federalTerm]) {
-        translation = translations[federalTerm];
-      } else {
-        // Check for partial matches
-        for (const [key, value] of Object.entries(translations)) {
-          if (federalTerm.includes(key)) {
-            translation = `Consider using: ${value}`;
-            break;
-          }
-        }
-      }
-
-      document.getElementById('translationResult').textContent = translation;
-    }
-  }
 
   // Generate value proposition
   const generateValuePropositionButton = document.getElementById('generateValueProposition');
