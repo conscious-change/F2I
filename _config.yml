@@ -67,29 +67,6 @@ collection_meta:
 # Default Layouts
 defaults:
   - scope:
-      path: ""
-      type: "resources"
-    values:
-      layout: "resource"
-  - scope:
-      path: ""
-      type: "job_listings"
-    values:
-      layout: "job"
-      image: "/assets/img/job-default.jpg"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      image: "/assets/img/post-default.jpg"
-
-  - scope:
-      path: ""
-      type: "guides"
-    values:
-      layout: "guide"
-  - scope:
       path: "pages"
     values:
       layout: "page"
