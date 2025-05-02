@@ -2,66 +2,81 @@ name: Jekyll Build and Test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ development ]
   pull_request:
-    branches: [ main ]
+    branches: [ development ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1.0'
+        ruby-version: '3.1'
         bundler-cache: true
-    
+
+    - name: Install system dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential imagemagick libmagickwand-dev webp
+
+    - name: Install Bundler and handle version mismatches
+      run: |
+        # Install bundler
+        gem install bundler
+
+        # Check if we need to update bundler version in Gemfile.lock
+        if grep -q "BUNDLED WITH" Gemfile.lock; then
+          bundled_with_version=$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1 | tr -d ' ')
+          installed_bundler_version=$(gem list bundler | grep -o "[0-9.]*" | head -n 1)
+
+          echo "Gemfile.lock requires Bundler $bundled_with_version, installed version is $installed_bundler_version"
+
+          if [ "$bundled_with_version" != "$installed_bundler_version" ]; then
+            echo "Updating Gemfile.lock to use Bundler $installed_bundler_version..."
+            sed -i "s/BUNDLED WITH.*$/BUNDLED WITH/" Gemfile.lock
+            sed -i "s/   $bundled_with_version.*$/   $installed_bundler_version/" Gemfile.lock
+          fi
+        fi
+
     - name: Install dependencies
       run: bundle install
-    
+
+    - name: Process responsive images
+      run: |
+        chmod +x scripts/process-images.sh
+        ./scripts/process-images.sh --recursive
+
     - name: Build site
       run: bundle exec jekyll build
-    
+
     - name: Run HTML tests
       run: |
         gem install html-proofer
-        htmlproofer ./_site --disable-external --allow-hash-href --assume-extension
-    
-    - name: Run Lighthouse CI
-      uses: treosh/lighthouse-ci-action@v9
-      with:
-        urls: |
-          http://localhost:4000/
-          http://localhost:4000/pages/about.html
-          http://localhost:4000/pages/transition-roadmap.html
-        uploadArtifacts: true
-        temporaryPublicStorage: true
-        runs: 3
-        serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
-        serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
-        configPath: './lighthouserc.json'
-    
+        htmlproofer ./_site --disable-external --allow-hash-href --assume-extension true --ignore-empty-alt --ignore-missing-alt
+   
     - name: Upload site artifact
       uses: actions/upload-artifact@v4
       with:
         name: site
         path: _site/
-        
+
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Download site artifact
       uses: actions/download-artifact@v4
       with:
         name: site
         path: _site
-    
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

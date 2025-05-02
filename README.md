@@ -64,12 +64,24 @@ Our goal is to help thousands of federal employees successfully transition to th
    bundle install
    ```
 
-3. Start the development server:
+3. Process responsive images (requires ImageMagick and WebP tools):
+   ```
+   # Install required tools (macOS)
+   brew install imagemagick webp
+
+   # Make the script executable
+   chmod +x scripts/process-images.sh
+
+   # Process all images
+   ./scripts/process-images.sh
+   ```
+
+4. Start the development server:
    ```
    bundle exec jekyll serve
    ```
 
-4. Visit `http://localhost:4000` in your browser to view the site.
+5. Visit `http://localhost:4000` in your browser to view the site.
 
 ### Alternative: Using the run_site.sh Script
 
@@ -88,12 +100,20 @@ Our goal is to help thousands of federal employees successfully transition to th
 - `_config.yml`: Jekyll configuration
 - `_layouts/`: HTML layouts
 - `_includes/`: Reusable HTML components
+  - `responsive-image.html`: Custom responsive image solution
+  - `responsive-background.html`: Custom responsive background image solution
 - `_posts/`: Blog posts
 - `_resources/`: Resource content
 - `_guides/`: Transition guides
 - `_success_stories/`: User success stories
 - `assets/`: CSS, JavaScript, and images
+  - `assets/img/`: Original images
+  - `assets/img/responsive/`: Responsive image variants
 - `pages/`: Main site pages
+- `scripts/`: Utility scripts
+  - `process-images.sh`: Script to generate responsive images
+- `docs/`: Documentation
+  - `responsive-images-guide.md`: Guide for working with images
 
 ## Contributing
 
