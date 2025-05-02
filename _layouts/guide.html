@@ -17,7 +17,7 @@ layout: default
           {% endif %}
         </div>
         {% endif %}
-        
+
         <div class="guide-details">
           {% if page.difficulty %}
           <div class="detail-item">
@@ -25,14 +25,14 @@ layout: default
             <span class="detail-value">{{ page.difficulty }}</span>
           </div>
           {% endif %}
-          
+
           {% if page.time_to_complete %}
           <div class="detail-item">
             <span class="detail-label">Time to Complete:</span>
             <span class="detail-value">{{ page.time_to_complete }}</span>
           </div>
           {% endif %}
-          
+
           {% if page.categories %}
           <div class="detail-item">
             <span class="detail-label">Categories:</span>
@@ -54,19 +54,19 @@ layout: default
         <div class="guide-main">
           {% if page.image %}
           <div class="guide-image">
-            <img src="{{ page.image }}" alt="{{ page.title }}">
+            {% include responsive-image-wrapper.html path=page.image alt=page.title lazy=true %}
           </div>
           {% endif %}
-          
+
           <div class="guide-toc">
             <h2>Table of Contents</h2>
             <div id="toc"></div>
           </div>
-          
+
           <div class="guide-body">
             {{ content }}
           </div>
-          
+
           {% if page.tags %}
           <div class="guide-tags">
             <h3>Tags:</h3>
@@ -78,20 +78,20 @@ layout: default
           </div>
           {% endif %}
         </div>
-        
+
         <div class="guide-sidebar">
           <div class="guide-actions">
             <a href="#" class="btn btn-primary print-btn" onclick="window.print(); return false;">Print Guide</a>
             <a href="#" class="btn btn-secondary pdf-btn">Download as PDF</a>
           </div>
-          
+
           <div class="related-guides">
             <h3>Related Guides</h3>
             <ul class="related-list">
               {% assign maxRelated = 5 %}
               {% assign minCommonTags = 1 %}
               {% assign maxRelatedCounter = 0 %}
-              
+
               {% for guide in site.guides %}
                 {% assign sameTagCount = 0 %}
                 {% for tag in guide.tags %}
@@ -101,10 +101,10 @@ layout: default
                     {% endif %}
                   {% endif %}
                 {% endfor %}
-                
+
                 {% if sameTagCount >= minCommonTags %}
                   <li><a href="{{ guide.url }}">{{ guide.title }}</a></li>
-                  
+
                   {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
                   {% if maxRelatedCounter >= maxRelated %}
                     {% break %}
@@ -113,7 +113,7 @@ layout: default
               {% endfor %}
             </ul>
           </div>
-          
+
           <div class="guide-resources">
             <h3>Recommended Resources</h3>
             <ul class="resources-list">
@@ -122,7 +122,7 @@ layout: default
               {% endfor %}
             </ul>
           </div>
-          
+
           <div class="feedback-box">
             <h3>Was This Guide Helpful?</h3>
             <p>We're constantly improving our guides. Let us know what you think!</p>
@@ -148,7 +148,7 @@ layout: default
             <a href="{{ guide.url }}">
               {% if guide.image %}
               <div class="card-image">
-                <img src="{{ guide.image }}" alt="{{ guide.title }}">
+                {% include responsive-image-wrapper.html path=guide.image alt=guide.title lazy=true %}
               </div>
               {% endif %}
               <h3>{{ guide.title }}</h3>
@@ -169,30 +169,30 @@ layout: default
   document.addEventListener('DOMContentLoaded', function() {
     const headings = document.querySelectorAll('.guide-body h2, .guide-body h3');
     const toc = document.getElementById('toc');
-    
+
     if (headings.length > 0 && toc) {
       const tocList = document.createElement('ul');
-      
+
       headings.forEach((heading, index) => {
         // Add ID to heading if it doesn't have one
         if (!heading.id) {
           heading.id = 'heading-' + index;
         }
-        
+
         const listItem = document.createElement('li');
         const link = document.createElement('a');
-        
+
         link.href = '#' + heading.id;
         link.textContent = heading.textContent;
-        
+
         if (heading.tagName === 'H3') {
           listItem.classList.add('toc-subitem');
         }
-        
+
         listItem.appendChild(link);
         tocList.appendChild(listItem);
       });
-      
+
       toc.appendChild(tocList);
     }
   });

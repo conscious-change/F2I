@@ -39,7 +39,7 @@ layout: default
         <div class="resource-sidebar">
           <div class="resource-download">
             {% if page.image %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="resource-image">
+            {% include responsive-image-wrapper.html path=page.image alt=page.title class="resource-image" lazy=true %}
             {% endif %}
 
             <div class="resource-meta">

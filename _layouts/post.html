@@ -88,7 +88,7 @@ layout: default
             <a href="{{ post.url }}">
               {% if post.image %}
               <div class="post-image">
-                <img src="{{ post.image }}" alt="{{ post.title }}">
+                {% include responsive-image-wrapper.html path=post.image alt=post.title lazy=true %}
               </div>
               {% endif %}
               <h3>{{ post.title }}</h3>

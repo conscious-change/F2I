@@ -2,6 +2,14 @@
 Enhanced responsive image include that generates appropriate srcset and sizes attributes
 with WebP support and proper lazy loading
 Usage: {% include responsive-image.html path="path/to/image.jpg" alt="Alt text" lazy=true %}
+Optional parameters:
+- class: CSS class for the image
+- id: ID attribute for the image
+- width: Width attribute for the image
+- height: Height attribute for the image
+- fetchpriority: Priority for fetching the image (high, low, auto)
+- sizes: Custom sizes attribute for responsive images
+- resize_options: Custom resize options (comma-separated list of widths)
 {% endcomment %}
 
 {% assign default_sizes = "(min-width: 1200px) 1200px, (min-width: 768px) 768px, 100vw" %}
@@ -26,11 +34,12 @@ Usage: {% include responsive-image.html path="path/to/image.jpg" alt="Alt text" 
   <!-- Fallback image -->
   <img
     src="{{ include.path | relative_url }}"
-    alt="{{ include.alt }}"
+    alt="{{ include.alt | default: 'Image' }}"
     loading="{% if include.lazy %}lazy{% else %}eager{% endif %}"
     {% if include.class %}class="{{ include.class }}"{% endif %}
     {% if include.id %}id="{{ include.id }}"{% endif %}
     {% if include.width %}width="{{ include.width }}"{% endif %}
     {% if include.height %}height="{{ include.height }}"{% endif %}
-    {% if include.fetchpriority %}fetchpriority="{{ include.fetchpriority }}"{% endif %}>
+    {% if include.fetchpriority %}fetchpriority="{{ include.fetchpriority }}"{% endif %}
+    decoding="async">
 </picture>

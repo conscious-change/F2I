@@ -1,0 +1,9 @@
+{% comment %}
+A wrapper for the responsive-image include that can be used in layouts
+This is useful for replacing direct <img> tags in layouts with responsive images
+Usage: {% include responsive-image-wrapper.html path=page.image alt=page.title class="your-class" %}
+{% endcomment %}
+
+{% if include.path %}
+  {% include responsive-image.html path=include.path alt=include.alt lazy=include.lazy class=include.class id=include.id width=include.width height=include.height fetchpriority=include.fetchpriority sizes=include.sizes resize_options=include.resize_options %}
+{% endif %}

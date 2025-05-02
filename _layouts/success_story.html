@@ -20,14 +20,14 @@ layout: default
             <span class="detail-value">{{ page.transition_time }}</span>
           </div>
           {% endif %}
-          
+
           {% if page.salary_increase %}
           <div class="detail-item">
             <span class="detail-label">Salary Increase:</span>
             <span class="detail-value">{{ page.salary_increase }}</span>
           </div>
           {% endif %}
-          
+
           {% if page.industry %}
           <div class="detail-item">
             <span class="detail-label">Industry:</span>
@@ -45,13 +45,13 @@ layout: default
         <div class="story-main">
           {% if page.image %}
           <div class="story-image">
-            <img src="{{ page.image }}" alt="{{ page.name }}">
+            {% include responsive-image-wrapper.html path=page.image alt=page.name lazy=true %}
           </div>
           {% endif %}
-          
+
           {{ content }}
         </div>
-        
+
         <div class="story-sidebar">
           <div class="key-takeaways">
             <h3>Key Takeaways</h3>
@@ -63,7 +63,7 @@ layout: default
               <li>Research compensation thoroughly to ensure you're properly valued</li>
             </ul>
           </div>
-          
+
           <div class="related-resources">
             <h3>Related Resources</h3>
             <ul class="related-list">
@@ -72,7 +72,7 @@ layout: default
               {% endfor %}
             </ul>
           </div>
-          
+
           <div class="cta-box">
             <h3>Ready to Start Your Transition?</h3>
             <p>Follow our proven roadmap to successfully transition from federal service to the private sector.</p>
@@ -95,7 +95,7 @@ layout: default
             <a href="{{ story.url }}">
               {% if story.image %}
               <div class="card-image">
-                <img src="{{ story.image }}" alt="{{ story.name }}">
+                {% include responsive-image-wrapper.html path=story.image alt=story.name lazy=true %}
               </div>
               {% endif %}
               <h3>{{ story.title }}</h3>
