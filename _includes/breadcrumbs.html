@@ -10,7 +10,7 @@
         <span class="breadcrumb-separator">/</span>
         {% assign crumb_limit = forloop.index | plus: 1 %}
         {% capture crumb_url %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}{% endcapture %}
-        <a href="/{{ crumb_url }}" class="breadcrumb-item">{{ crumb | replace:'-',' ' | capitalize }}</a>
+        <a href="{{ site.baseurl }}/{{ crumb_url }}" class="breadcrumb-item">{{ crumb | replace:'-',' ' | capitalize }}</a>
       {% endif %}
     {% endfor %}
   </div>
