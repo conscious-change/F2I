@@ -46,9 +46,7 @@ collections:
   job_listings:
     output: true
     permalink: /:collection/:name
-  success_stories:
-    output: true
-    permalink: /:collection/:name
+
   guides:
     output: true
     permalink: /:collection/:name
@@ -61,9 +59,7 @@ collection_meta:
   job_listings:
     title: "Job Listings"
     description: "Current job opportunities for federal employees"
-  success_stories:
-    title: "Success Stories"
-    description: "Real stories from federal employees who successfully transitioned to the private sector"
+
   guides:
     title: "Transition Guides"
     description: "Step-by-step guides for various aspects of the federal-to-private transition"
@@ -75,7 +71,6 @@ defaults:
       type: "resources"
     values:
       layout: "resource"
-      image: "/assets/img/resource-default.jpg"
   - scope:
       path: ""
       type: "job_listings"
@@ -88,18 +83,12 @@ defaults:
     values:
       layout: "post"
       image: "/assets/img/post-default.jpg"
-  - scope:
-      path: ""
-      type: "success_stories"
-    values:
-      layout: "success_story"
-      image: "/assets/img/story-default.jpg"
+
   - scope:
       path: ""
       type: "guides"
     values:
       layout: "guide"
-      image: "/assets/img/guide-default.jpg"
   - scope:
       path: "pages"
     values:
@@ -129,17 +118,11 @@ navigation:
         url: /pages/interview-preparation.html
       - title: Compensation
         url: /pages/compensation-benefits.html
-      - title: Resources
-        url: /pages/resources.html
   - title: Community
     children:
-      - title: Success Stories
-        url: /pages/success-stories.html
       - title: Join Community
         url: /pages/community.html
       - title: Blog
         url: /pages/blog.html
   - title: Learning Center
     url: /pages/learning-center.html
-  - title: Resources
-    url: /pages/resources.html
