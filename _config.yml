@@ -25,6 +25,8 @@ plugins:
 
 # Responsive Image Configuration
 responsive_image:
+  processor: 
+    - mini_magick 
   template: _includes/responsive-image-template.html
   sizes:
     - width: 400
