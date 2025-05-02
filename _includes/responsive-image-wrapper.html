@@ -1,0 +1,23 @@
+{% comment %}
+A wrapper for the responsive-image include that can be used in layouts
+This is useful for replacing direct <img> tags in layouts with responsive images
+Usage: {% include responsive-image-wrapper.html path=page.image alt=page.title class="your-class" %}
+{% endcomment %}
+
+{% if include.path and include.path != "" %}
+  {% assign file_exists = false %}
+  {% assign file_path = include.path | remove_first: "/" %}
+  {% for static_file in site.static_files %}
+    {% if static_file.path contains file_path %}
+      {% assign file_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if file_exists %}
+    {% include responsive-image.html path=include.path alt=include.alt lazy=include.lazy class=include.class id=include.id width=include.width height=include.height fetchpriority=include.fetchpriority sizes=include.sizes resize_options=include.resize_options %}
+  {% else %}
+    <!-- Fallback for missing image -->
+    <img src="/assets/img/placeholder.jpg" alt="{{ include.alt | default: 'Image' }}" class="{{ include.class }}" {% if include.id %}id="{{ include.id }}"{% endif %} loading="lazy" decoding="async">
+  {% endif %}
+{% endif %}

@@ -21,23 +21,22 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-responsive-image
+  # Remove the line below
+  # - jekyll-responsive-image
 
-# Responsive Image Configuration
-responsive_image:
-  processor: 
-    - mini_magick 
-  template: _includes/responsive-image-template.html
-  sizes:
-    - width: 400
-    - width: 800
-    - width: 1200
-    - width: 1600
-  base_path: assets/img
-  output_path_format: assets/img/responsive/%{dirname}/%{filename}-%{width}x%{height}.%{extension}
-  save_to_source: false
-  strip: true
-  quality: 85
+# Remove the entire responsive_image configuration block below
+# responsive_image:
+#  template: _includes/responsive-image-template.html
+#  sizes:
+#    - width: 400
+#    - width: 800
+#    - width: 1200
+#    - width: 1600
+#  base_path: assets/img
+#  output_path_format: assets/img/responsive/%{dirname}/%{filename}-%{width}x%{height}.%{extension}
+#  save_to_source: false
+#  strip: true
+#  quality: 85
 
 # Content Collections
 collections:
@@ -47,9 +46,7 @@ collections:
   job_listings:
     output: true
     permalink: /:collection/:name
-  success_stories:
-    output: true
-    permalink: /:collection/:name
+
   guides:
     output: true
     permalink: /:collection/:name
@@ -62,45 +59,13 @@ collection_meta:
   job_listings:
     title: "Job Listings"
     description: "Current job opportunities for federal employees"
-  success_stories:
-    title: "Success Stories"
-    description: "Real stories from federal employees who successfully transitioned to the private sector"
+
   guides:
     title: "Transition Guides"
     description: "Step-by-step guides for various aspects of the federal-to-private transition"
 
 # Default Layouts
 defaults:
-  - scope:
-      path: ""
-      type: "resources"
-    values:
-      layout: "resource"
-      image: "/assets/img/resource-default.jpg"
-  - scope:
-      path: ""
-      type: "job_listings"
-    values:
-      layout: "job"
-      image: "/assets/img/job-default.jpg"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      image: "/assets/img/post-default.jpg"
-  - scope:
-      path: ""
-      type: "success_stories"
-    values:
-      layout: "success_story"
-      image: "/assets/img/story-default.jpg"
-  - scope:
-      path: ""
-      type: "guides"
-    values:
-      layout: "guide"
-      image: "/assets/img/guide-default.jpg"
   - scope:
       path: "pages"
     values:
@@ -130,17 +95,11 @@ navigation:
         url: /pages/interview-preparation.html
       - title: Compensation
         url: /pages/compensation-benefits.html
-      - title: Resources
-        url: /pages/resources.html
   - title: Community
     children:
-      - title: Success Stories
-        url: /pages/success-stories.html
       - title: Join Community
         url: /pages/community.html
       - title: Blog
         url: /pages/blog.html
   - title: Learning Center
     url: /pages/learning-center.html
-  - title: Resources
-    url: /pages/resources.html
