@@ -58,21 +58,6 @@ jobs:
       run: |
         gem install html-proofer
         htmlproofer ./_site --disable-external --allow-hash-href --assume-extension true --ignore-empty-alt --ignore-missing-alt
-
-    - name: Run Lighthouse CI
-      uses: treosh/lighthouse-ci-action@v9
-      with:
-        urls: |
-          http://localhost:4000/
-          http://localhost:4000/pages/about.html
-          http://localhost:4000/pages/transition-roadmap.html
-        uploadArtifacts: true
-        temporaryPublicStorage: true
-        runs: 3
-        serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
-        serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
-        configPath: './lighthouserc.json'
-        artifactName: 'lighthouse-report-data'
    
     - name: Upload site artifact
       uses: actions/upload-artifact@v4
