@@ -745,13 +745,38 @@ document.addEventListener('DOMContentLoaded', function() {
     careerDetailsElement.innerHTML = html;
   }
 
+  // Function to detect the baseurl
+  function detectBaseurl() {
+    // Try to get baseurl from meta tag
+    const metaBaseurl = document.querySelector('meta[name="baseurl"]');
+    if (metaBaseurl) {
+      return metaBaseurl.getAttribute('content');
+    }
+
+    // Try to detect from script paths
+    const scripts = document.querySelectorAll('script[src*="/assets/js/"]');
+    for (const script of scripts) {
+      const src = script.getAttribute('src');
+      const match = src.match(/^(\/[^\/]+)?\/assets\/js\//);
+      if (match && match[1]) {
+        return match[1];
+      }
+    }
+
+    // Default baseurl for GitHub Pages
+    return '/F2I';
+  }
+
+  const baseurl = detectBaseurl();
+  console.log('Detected baseurl:', baseurl);
+
   // Load sample data
   loadSampleDataBtn.addEventListener('click', function() {
     console.log('Loading sample data...');
 
     // Use XMLHttpRequest to load the sample file
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/assets/data/f2i-self-assessment-template.json', true);
+    xhr.open('GET', baseurl + '/assets/data/f2i-self-assessment-template.json', true);
     xhr.onload = function() {
       if (xhr.status === 200) {
         console.log('Sample data loaded successfully');
@@ -764,7 +789,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Try the fallback file if the template doesn't exist
         console.log('Trying fallback location...');
         const fallbackXhr = new XMLHttpRequest();
-        fallbackXhr.open('GET', '/changes_logs/extra/f2i-self-assessment-template.json', true);
+        fallbackXhr.open('GET', baseurl + '/changes_logs/extra/f2i-self-assessment-template.json', true);
         fallbackXhr.onload = function() {
           if (fallbackXhr.status === 200) {
             console.log('Fallback sample data loaded successfully');
@@ -777,7 +802,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Try the original file as a last resort
             console.log('Trying original file as last resort...');
             const lastResortXhr = new XMLHttpRequest();
-            lastResortXhr.open('GET', '/changes_logs/extra/f2i-self-assessment-filled.json', true);
+            lastResortXhr.open('GET', baseurl + '/changes_logs/extra/f2i-self-assessment-filled.json', true);
             lastResortXhr.onload = function() {
               if (lastResortXhr.status === 200) {
                 console.log('Last resort sample data loaded successfully');
@@ -873,7 +898,7 @@ document.addEventListener('DOMContentLoaded', function() {
           formData.append('file', file);
 
           // Use fetch API instead of XMLHttpRequest
-          fetch('/process-assessment-file', {
+          fetch(baseurl + '/process-assessment-file', {
             method: 'POST',
             body: formData
           })
