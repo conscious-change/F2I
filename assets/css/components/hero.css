@@ -3,15 +3,62 @@
  * Styles for hero sections across the site
  */
 
-/* Base Hero Section */
+/* Base Hero Section with fallback */
 .hero {
-  background: url('/assets/img/hero-bg.jpg') no-repeat center center, var(--primary);
+  background: url('../img/hero-bg.jpg') no-repeat center center, var(--primary);
   background-size: cover;
   color: white;
   text-align: center;
   padding: 80px 20px;
   position: relative;
   margin-top: 60px;
+}
+
+/* WebP Support with proper paths for GitHub Pages */
+.webp .hero {
+  background-image: url('/F2I/assets/img/hero-bg.webp'), var(--primary);
+}
+
+/* Non-WebP fallback with proper paths for GitHub Pages */
+.no-webp .hero {
+  background-image: url('/F2I/assets/img/hero-bg.jpg'), var(--primary);
+}
+
+/* Responsive background images */
+@media (max-width: 480px) {
+  .webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-400.webp'), var(--primary);
+  }
+  .no-webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-400.jpg'), var(--primary);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-800.webp'), var(--primary);
+  }
+  .no-webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-800.jpg'), var(--primary);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-1200.webp'), var(--primary);
+  }
+  .no-webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-1200.jpg'), var(--primary);
+  }
+}
+
+@media (min-width: 1201px) {
+  .webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-1600.webp'), var(--primary);
+  }
+  .no-webp .hero {
+    background-image: url('/F2I/assets/img/responsive/hero-bg-1600.jpg'), var(--primary);
+  }
 }
 
 /* Hero Overlay */

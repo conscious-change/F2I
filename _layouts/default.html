@@ -25,9 +25,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="{{ '/assets/img/hero-bg.jpg' | relative_url }}" as="image">
-  <link rel="preload" href="{{ '/assets/js/webp-detection.min.js' | relative_url }}" as="script">
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+      
+      // Set the appropriate URL based on support
+      link.href = webpSupport ? 
+        '{{ "/assets/img/hero-bg.webp" | relative_url }}' : 
+        '{{ "/assets/img/hero-bg.jpg" | relative_url }}';
+      
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
 
   <!-- Google Font: Poppins with display=swap -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
