@@ -22,7 +22,7 @@
   background-color: #111;
   color: white;
   padding: 60px 20px 40px;
-  margin-top: 0;
+  margin-top: 60px; /* Account for fixed navbar */
   text-align: center;
 }
 
