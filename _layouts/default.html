@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
   <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="{{ site.baseurl }}">
 
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
@@ -32,15 +33,15 @@
       var link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
-      
+
       // Check if browser might support WebP
       var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
-      
+
       // Set the appropriate URL based on support
-      link.href = webpSupport ? 
-        '{{ "/assets/img/hero-bg.webp" | relative_url }}' : 
+      link.href = webpSupport ?
+        '{{ "/assets/img/hero-bg.webp" | relative_url }}' :
         '{{ "/assets/img/hero-bg.jpg" | relative_url }}';
-      
+
       // Add to head
       document.head.appendChild(link);
     })();
