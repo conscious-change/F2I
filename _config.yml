@@ -3,8 +3,8 @@ title: Fed 2 Industry
 email: contact@fed2industry.com
 description: Resources for federal employees transitioning to industry careers.
 author: "F2I Team"
-baseurl: ""
-url: ""
+baseurl: "/F2I"  # Add your repository name here
+url: "https://conscious-change.github.io"  # Add your GitHub Pages URL here
 markdown: kramdown
 
 # Social Media

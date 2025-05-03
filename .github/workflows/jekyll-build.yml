@@ -24,6 +24,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential imagemagick libmagickwand-dev webp
 
+    - name: Make scripts executable
+      run: |
+        chmod +x run_site.sh
+        chmod +x scripts/process-images.sh
+
     - name: Install Bundler and handle version mismatches
       run: |
         # Install bundler
@@ -48,11 +53,14 @@ jobs:
 
     - name: Process responsive images
       run: |
-        chmod +x scripts/process-images.sh
         ./scripts/process-images.sh --recursive
 
-    - name: Build site
-      run: bundle exec jekyll build
+    - name: Build site with custom script
+      run: |
+        # Modify run_site.sh to build instead of serve in CI environment
+        sed -i 's/bundle exec jekyll serve/bundle exec jekyll build --baseurl "\/F2I"/' run_site.sh
+        # Run the script but skip the interactive prompts
+        ./run_site.sh
 
     - name: Run HTML tests
       run: |
