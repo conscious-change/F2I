@@ -5,13 +5,13 @@ Usage: {% include responsive-background.html selector=".hero" path="/assets/img/
 {% endcomment %}
 
 {% assign file_extension = include.path | split: '.' | last %}
-{% assign base_path = include.path | replace: file_extension, '' | replace: '.', '' %}
-{% assign filename = include.path | split: '/' | last | replace: '.' | append: file_extension | replace: file_extension, '' %}
+{% assign base_path = include.path | split: '.' | first %}
+{% assign filename = include.path | split: '/' | last | split: '.' | first %}
 
 <style>
   /* Basic background image that works for all browsers and sizes */
   {{ include.selector }} {
-    background-image: url('{{ include.path }}');
+    background-image: url('{{ site.baseurl }}{{ include.path }}');
     background-color: #0056b3; /* Blue background color as fallback */
     background-size: cover;
     background-position: center center;
@@ -20,55 +20,55 @@ Usage: {% include responsive-background.html selector=".hero" path="/assets/img/
 
   /* WebP Support with Feature Detection */
   .webp {{ include.selector }} {
-    background-image: url('{{ base_path }}webp');
+    background-image: url('{{ site.baseurl }}{{ base_path }}.webp');
     background-color: #0056b3; /* Blue background color as fallback */
   }
 
   /* Responsive Background Images */
   @media (max-width: 480px) {
     {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-400.{{ file_extension }}');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-400.{{ file_extension }}');
       background-color: #0056b3; /* Blue background color as fallback */
     }
 
     .webp {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-400.webp');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-400.webp');
       background-color: #0056b3; /* Blue background color as fallback */
     }
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
     {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-800.{{ file_extension }}');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-800.{{ file_extension }}');
       background-color: #0056b3; /* Blue background color as fallback */
     }
 
     .webp {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-800.webp');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-800.webp');
       background-color: #0056b3; /* Blue background color as fallback */
     }
   }
 
   @media (min-width: 769px) and (max-width: 1200px) {
     {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-1200.{{ file_extension }}');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-1200.{{ file_extension }}');
       background-color: #0056b3; /* Blue background color as fallback */
     }
 
     .webp {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-1200.webp');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-1200.webp');
       background-color: #0056b3; /* Blue background color as fallback */
     }
   }
 
   @media (min-width: 1201px) {
     {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-1600.{{ file_extension }}');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-1600.{{ file_extension }}');
       background-color: #0056b3; /* Blue background color as fallback */
     }
 
     .webp {{ include.selector }} {
-      background-image: url('/assets/img/responsive/{{ filename }}-1600.webp');
+      background-image: url('{{ site.baseurl }}/assets/img/responsive/{{ filename }}-1600.webp');
       background-color: #0056b3; /* Blue background color as fallback */
     }
   }
