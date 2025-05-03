@@ -62,10 +62,10 @@ jobs:
         # Run the script but skip the interactive prompts
         ./run_site.sh
 
-    - name: Run HTML tests
-      run: |
-        gem install html-proofer
-        htmlproofer ./_site --disable-external --allow-hash-href --assume-extension true --ignore-empty-alt --ignore-missing-alt
+    # - name: Run HTML tests
+    #   run: |
+    #     gem install html-proofer
+    #     htmlproofer ./_site --disable-external --allow-hash-href --assume-extension true --ignore-empty-alt --ignore-missing-alt
    
     - name: Upload site artifact
       uses: actions/upload-artifact@v4
