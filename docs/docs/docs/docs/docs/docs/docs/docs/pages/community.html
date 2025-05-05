@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>Community</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      // Set the appropriate URL based on support
+      link.href = webpSupport ?
+        '/F2I/assets/img/hero-bg.webp' :
+        '/F2I/assets/img/hero-bg.jpg';
+
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <!-- WebP Detection (early load) -->
+  <script src="/F2I/assets/js/webp-detection.min.js"></script>
+
+  <!-- Font Display Optimization -->
+  <link rel="stylesheet" href="/F2I/assets/css/font-display.css">
+
+  <!-- Site Styles -->
+  
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="/F2I/assets/css/main.css">
+  
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var s=a.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&d.setAttribute(l,o[l]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    /* loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+  </script>
+</head>
+<body class="">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>Community</h1>
+    
+      <p class="subtitle">Connect with fellow federal employees and alumni navigating the transition to the private sector</p>
+    
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="community-content">
+  <div class="intro-section">
+    <p>
+      Transitioning from federal service to the private sector is easier when you're not doing it alone. Our community brings together current and former federal employees at all stages of the transition journey to share experiences, provide support, and build valuable connections.
+    </p>
+  </div>
+
+  <div class="community-benefits-section">
+    <h2>Why Join Our Community?</h2>
+    <p class="section-intro">
+      Our community offers unique benefits specifically designed for federal employees transitioning to the private sector:
+    </p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">👥</div>
+        <h3>Peer Support</h3>
+        <p>
+          Connect with others who understand the unique challenges of transitioning from federal service to the private sector. Share experiences, ask questions, and receive guidance from those who have walked the same path.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🔍</div>
+        <h3>Inside Information</h3>
+        <p>
+          Gain insights into company cultures, interview processes, and job opportunities from those who have successfully made the transition. Access information that isn't available through traditional job search channels.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Networking</h3>
+        <p>
+          Build relationships with professionals across industries who can provide referrals, recommendations, and introductions. Expand your professional network beyond government circles.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">📚</div>
+        <h3>Knowledge Sharing</h3>
+        <p>
+          Learn from others' experiences, mistakes, and successes to make your own transition smoother. Access a wealth of collective wisdom about navigating the federal-to-private transition.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h3>Accountability</h3>
+        <p>
+          Find transition partners who can help you stay on track with your goals and action plans. Set milestones, track progress, and receive encouragement to maintain momentum throughout your journey.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🌱</div>
+        <h3>Growth</h3>
+        <p>
+          Develop new skills and perspectives through community workshops, discussions, and collaborative learning. Expand your capabilities and prepare for success in the private sector environment.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="community-join-section">
+    <div class="join-content">
+      <h2>Ready to Connect?</h2>
+      <p>Join our community of federal employees and alumni who are navigating the transition to the private sector. Share experiences, build connections, and access resources that will help you succeed in your journey.</p>
+      <a href="https://discord.gg/hcCQhacK" class="btn btn-primary btn-large">Join Now - It's Free</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+  <script src="/F2I/assets/js/image-optimizer.min.js" defer></script>
+  <script src="/F2I/assets/js/fix-links.js" defer></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>

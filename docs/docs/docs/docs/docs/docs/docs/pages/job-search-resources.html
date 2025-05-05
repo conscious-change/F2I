@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>Job Search Resources</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      // Set the appropriate URL based on support
+      link.href = webpSupport ?
+        '/F2I/assets/img/hero-bg.webp' :
+        '/F2I/assets/img/hero-bg.jpg';
+
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <!-- WebP Detection (early load) -->
+  <script src="/F2I/assets/js/webp-detection.min.js"></script>
+
+  <!-- Font Display Optimization -->
+  <link rel="stylesheet" href="/F2I/assets/css/font-display.css">
+
+  <!-- Site Styles -->
+  
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="/F2I/assets/css/main.css">
+  
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var s=a.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&d.setAttribute(l,o[l]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    /* loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+  </script>
+</head>
+<body class="job-search-resources-page">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>Job Search Resources</h1>
+    
+      <p class="subtitle">Find and secure private sector opportunities that value your federal experience</p>
+    
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="job-search-content">
+  <div class="why-job-search-matters">
+    <h2>Strategic Job Search for Federal Employees</h2>
+
+    <div class="job-search-intro">
+      <div class="job-search-intro-icon">🔎</div>
+      <p>
+        Finding the right private sector opportunity requires a strategic approach, especially for federal employees transitioning to industry. The job search process in the private sector differs significantly from federal hiring practices, with different timelines, expectations, and evaluation criteria. This page provides resources and strategies to help you identify, apply for, and secure positions that value your government experience.
+      </p>
+    </div>
+
+    <div class="job-search-benefits">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🎯</div>
+        <h3>Strategic Targeting</h3>
+        <p>Focus your search on organizations and roles that value federal experience</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🔄</div>
+        <h3>Effective Translation</h3>
+        <p>Present your federal experience in terms that resonate with private sector employers</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🤝</div>
+        <h3>Relationship Building</h3>
+        <p>Leverage networking and relationships to access hidden job opportunities</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card-icon">📊</div>
+        <h3>Organized Approach</h3>
+        <p>Manage your job search systematically to maximize effectiveness</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="job-search-strategy-section">
+    <h2>Job Search Strategy Framework</h2>
+    <p class="section-intro">
+      A successful transition from federal service to the private sector requires a structured approach to your job search:
+    </p>
+
+    <div class="accordion-container">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">🎯</div>
+          <h3>1. Define Your Target</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Before beginning your search, clearly define:</p>
+          <ul>
+            <li>Industries where your federal experience adds particular value</li>
+            <li>Roles that leverage your transferable skills</li>
+            <li>Companies that have a history of hiring former federal employees</li>
+            <li>Your geographical preferences and remote work requirements</li>
+            <li>Your compensation expectations and other priorities</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Create a "target list" of 20-30 organizations that align with your skills, interests, and values. Research each one thoroughly to understand their culture, challenges, and how your federal experience could add value.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">🏢</div>
+          <h3>2. Identify Federal-Friendly Employers</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Some organizations particularly value federal experience:</p>
+          <ul>
+            <li><strong>Government Contractors:</strong> Companies that work closely with federal agencies</li>
+            <li><strong>Consulting Firms:</strong> Especially those with government practice areas</li>
+            <li><strong>Regulated Industries:</strong> Healthcare, financial services, energy, telecommunications</li>
+            <li><strong>Nonprofits and Associations:</strong> Particularly those focused on policy or advocacy</li>
+            <li><strong>Companies Founded by Former Federal Employees:</strong> Often appreciate government experience</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Look for companies that highlight government experience in their job postings or that have executives with federal backgrounds. These organizations typically understand the value of your experience.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">🔄</div>
+          <h3>3. Leverage Multiple Search Channels</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Diversify your job search approach:</p>
+          <ul>
+            <li><strong>Networking:</strong> Often the most effective method (see our <a href="/pages/networking-strategies.html">Networking Strategies</a> page)</li>
+            <li><strong>Company Career Pages:</strong> Directly check opportunities at target organizations</li>
+            <li><strong>Recruiters:</strong> Connect with those specializing in government-to-private transitions</li>
+            <li><strong>Professional Associations:</strong> Access industry-specific job boards and events</li>
+            <li><strong>LinkedIn:</strong> Use advanced search features to find relevant opportunities</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Allocate your job search time proportionally to effectiveness: spend 60% on networking, 20% on direct applications to targeted companies, 10% on recruiter relationships, and 10% on job boards.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">📝</div>
+          <h3>4. Tailor Your Applications</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Customize your materials for each opportunity:</p>
+          <ul>
+            <li>Align your resume with the specific job description</li>
+            <li>Translate your federal experience into relevant private sector terms</li>
+            <li>Highlight achievements that demonstrate transferable skills</li>
+            <li>Address potential concerns about your government background</li>
+            <li>Demonstrate knowledge of the company and industry in your cover letter</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Create a master resume with all your experiences and achievements, then customize a targeted version for each application by selecting the most relevant elements for that specific role.
+          </div>
+          <p class="resource-link"><a href="/pages/resume-personal-branding.html">→ Resume & Personal Branding Guide</a></p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">⏱️</div>
+          <h3>5. Understand Private Sector Hiring Processes</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Private sector hiring differs from federal processes:</p>
+          <ul>
+            <li>Faster timelines (weeks rather than months)</li>
+            <li>More emphasis on cultural fit and potential</li>
+            <li>Multiple interview rounds with different stakeholders</li>
+            <li>Possible technical assessments or case studies</li>
+            <li>Negotiation expected for compensation and benefits</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Prepare for behavioral and situational interview questions that ask how you've handled specific challenges in the past. Practice translating your federal experiences into stories that demonstrate your skills and adaptability.
+          </div>
+          <p class="resource-link"><a href="/pages/interview-preparation.html">→ Interview Preparation Guide</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recruiter-section">
+    <h2>Working with Recruiters</h2>
+    <p class="section-intro">
+      Recruiters can be valuable allies in your job search, especially those who understand the value of federal experience:
+    </p>
+
+    <div class="tabs-container">
+      <div class="tabs-navigation">
+        <button class="tab-button active" data-tab="types">Types of Recruiters</button>
+        <button class="tab-button" data-tab="finding">Finding Recruiters</button>
+        <button class="tab-button" data-tab="working">Working with Recruiters</button>
+      </div>
+
+      <div class="tabs-content">
+        <div class="tab-panel active" id="types-panel">
+          <div class="recruiter-card">
+            <h3>Types of Recruiters</h3>
+            <p>
+              Understanding the different types of recruiters will help you engage with them effectively:
+            </p>
+            <ul>
+              <li><strong>Internal Recruiters:</strong> Work directly for hiring companies and focus exclusively on their organization's openings. They have deep knowledge of the company culture and hiring needs.</li>
+              <li><strong>Agency Recruiters:</strong> Work for recruiting firms and represent multiple companies. They often have broader industry knowledge and access to multiple opportunities.</li>
+              <li><strong>Executive Recruiters:</strong> Focus on senior-level positions, typically at the director level and above. They often conduct proactive searches for specific roles.</li>
+              <li><strong>Specialized Recruiters:</strong> Focus on specific industries or roles and have deep networks in their areas of specialization.</li>
+            </ul>
+            <div class="strategy-tip">
+              <strong>Pro Tip:</strong> When working with agency recruiters, ask about their experience placing federal employees in private sector roles. Those with a track record of successful transitions will better understand how to position your background.
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="finding-panel">
+          <div class="recruiter-card">
+            <h3>Finding the Right Recruiters</h3>
+            <p>
+              Identifying recruiters who understand federal experience is crucial:
+            </p>
+            <ul>
+              <li>Search for recruiters who specialize in government-to-private transitions</li>
+              <li>Ask your network for recommendations, especially colleagues who have successfully transitioned</li>
+              <li>Look for recruiters who are active in your target industry</li>
+              <li>Check LinkedIn for recruiters who have placed former federal employees</li>
+              <li>Attend industry events where recruiters are present</li>
+              <li>Research recruiting firms that work with government contractors</li>
+            </ul>
+            <div class="strategy-tip">
+              <strong>Pro Tip:</strong> Before engaging with a recruiter, research their LinkedIn profile to see if they have experience with candidates from your agency or with similar backgrounds. This will help you prioritize which relationships to develop.
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="working-panel">
+          <div class="recruiter-card">
+            <h3>Working Effectively with Recruiters</h3>
+            <p>
+              Maximize your recruiter relationships with these strategies:
+            </p>
+            <ul>
+              <li>Be clear about your skills, experience, and career goals</li>
+              <li>Provide a resume that translates your federal experience into private sector terms</li>
+              <li>Be transparent about your timeline and expectations</li>
+              <li>Respond promptly to communications</li>
+              <li>Provide feedback after interviews</li>
+              <li>Remember that recruiters work for the hiring company, not for you</li>
+              <li>Build long-term relationships rather than transactional interactions</li>
+            </ul>
+            <div class="strategy-tip">
+              <strong>Pro Tip:</strong> Prepare a concise "elevator pitch" that clearly articulates your value proposition for the private sector. This helps recruiters understand how to position you with their clients.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="job-search-management">
+    <h2>Managing Your Job Search</h2>
+    <p class="section-intro">
+      Staying organized is crucial for an effective job search campaign:
+    </p>
+
+    <div class="management-grid">
+      <div class="management-card">
+        <div class="management-icon">📊</div>
+        <h3>Create a Tracking System</h3>
+        <p>
+          Use a spreadsheet or job search app to track:
+        </p>
+        <ul>
+          <li>Companies and positions you've applied to</li>
+          <li>Application dates and status</li>
+          <li>Contact information for recruiters and hiring managers</li>
+          <li>Interview dates and follow-up actions</li>
+          <li>Notes from conversations and interviews</li>
+        </ul>
+        <div class="strategy-tip">
+          <strong>Pro Tip:</strong> Set up automated reminders for follow-ups to ensure you maintain appropriate contact with potential employers without letting opportunities slip through the cracks.
+        </div>
+      </div>
+
+      <div class="management-card">
+        <div class="management-icon">⏰</div>
+        <h3>Establish a Routine</h3>
+        <p>
+          Create a structured approach to your job search:
+        </p>
+        <ul>
+          <li>Set aside dedicated time for job searching activities</li>
+          <li>Establish daily or weekly goals (e.g., applications submitted, networking contacts)</li>
+          <li>Balance searching, networking, and skill development</li>
+          <li>Schedule regular time to update your tracking system</li>
+          <li>Treat your job search like a job itself, with regular hours and accountability</li>
+        </ul>
+        <div class="strategy-tip">
+          <strong>Pro Tip:</strong> Block specific times on your calendar for different job search activities. For example, dedicate mornings to applications and afternoons to networking and research.
+        </div>
+      </div>
+
+      <div class="management-card">
+        <div class="management-icon">📱</div>
+        <h3>Follow Up Strategically</h3>
+        <p>
+          Maintain appropriate contact with potential employers:
+        </p>
+        <ul>
+          <li>Send thank-you notes within 24 hours of interviews</li>
+          <li>Follow up on applications after 1-2 weeks if you haven't heard back</li>
+          <li>Provide additional information or materials that strengthen your candidacy</li>
+          <li>Maintain contact with your network throughout your search</li>
+          <li>Use each interaction to demonstrate your communication skills and professionalism</li>
+        </ul>
+        <div class="strategy-tip">
+          <strong>Pro Tip:</strong> Personalize each follow-up communication with specific references to your conversation. This demonstrates your attention to detail and genuine interest in the role.
+        </div>
+      </div>
+
+      <div class="management-card">
+        <div class="management-icon">🛡️</div>
+        <h3>Leverage Your Security Clearance</h3>
+        <p>
+          If you hold a security clearance, use it as a valuable asset:
+        </p>
+        <ul>
+          <li>Highlight your clearance level prominently on your resume</li>
+          <li>Target defense contractors and intelligence community partners</li>
+          <li>Research clearance portability rules and timelines</li>
+          <li>Network with cleared professionals in your target industries</li>
+          <li>Understand what you can and cannot disclose about your clearance</li>
+        </ul>
+        <div class="strategy-tip">
+          <strong>Pro Tip:</strong> Many private sector roles require clearances but struggle to find qualified candidates. Your active clearance can significantly reduce onboarding time, making you more attractive to employers.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    
+    <a href="/F2I/pages/interview-preparation.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (7/9)</div>
+        <div class="step-title">Interview Preparation</div>
+        <div class="step-description">Prepare to excel in private sector interviews</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    
+
+    <div class="all-steps-link">
+      <a href="/F2I/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+  <script src="/F2I/assets/js/image-optimizer.min.js" defer></script>
+  <script src="/F2I/assets/js/fix-links.js" defer></script>
+
+  
+
+  
+
+  
+
+  
+  <script src="/F2I/assets/js/job-search.js" defer></script>
+  
+
+  
+
+  
+
+  
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>
