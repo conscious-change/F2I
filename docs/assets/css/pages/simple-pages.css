@@ -1,0 +1,392 @@
+/*
+ * F2I Website Simple Pages CSS
+ * Styles for simple informational pages like Privacy Policy, Terms of Service, etc.
+ */
+
+/* Simple Page Content Container */
+.simple-page-content,
+.privacy-policy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Policy Section */
+.policy-section,
+.simple-section {
+  margin-bottom: 2.5rem;
+}
+
+.policy-section h2,
+.simple-section h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.5rem;
+}
+
+.policy-section p,
+.simple-section p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.policy-section ul,
+.simple-section ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.policy-section li,
+.simple-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.policy-section a,
+.simple-section a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: color 0.3s ease;
+}
+
+.policy-section a:hover,
+.simple-section a:hover {
+  color: var(--primary-dark);
+}
+
+/* Policy Footer */
+.policy-footer,
+.simple-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaeaea;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.policy-footer p,
+.simple-footer p {
+  margin-bottom: 1rem;
+}
+
+/* Return Link */
+.return-link {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.transition-journey-btn {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.transition-journey-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+/* Join Team Page Styles */
+.join-team-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.join-team-hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
+
+.join-team-hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.join-team-intro {
+  margin-bottom: 3rem;
+}
+
+.intro-card {
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.intro-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.intro-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.skills-needed-section {
+  margin-bottom: 3rem;
+}
+
+.skills-needed-section h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.skill-card h4 {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.skill-card p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.join-team-contact {
+  margin-bottom: 3rem;
+}
+
+.contact-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.contact-card h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+.contact-card p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contact-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-section h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-number {
+  background-color: var(--primary);
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.contact-section ul {
+  padding-left: 1.5rem;
+}
+
+.contact-section li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.contact-cta {
+  text-align: center;
+}
+
+.contact-cta .btn {
+  margin-bottom: 1rem;
+}
+
+.cta-note {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Join Team Confirmation Message */
+.join-confirmation-message {
+  background-color: #f0f9ff;
+  border: 1px solid #b3e0ff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.confirmation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.confirmation-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-content h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.confirmation-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Offline Page Styles */
+.offline-message {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.offline-message h2 {
+  margin-bottom: 1rem;
+}
+
+.offline-message ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.offline-message li {
+  margin-bottom: 0.5rem;
+}
+
+.offline-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .join-team-hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .policy-section h2,
+  .simple-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .intro-card {
+    padding: 1.5rem;
+  }
+
+  .intro-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 1.2rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+}

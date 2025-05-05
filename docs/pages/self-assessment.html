@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>F2I Self-Assessment</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base Colors CSS -->
+  <link rel="stylesheet" href="/F2I/assets/css/base/colors.css">
+
+  <!-- Self Assessment Specific CSS -->
+  <link rel="stylesheet" href="/F2I/assets/css/self-assessment/assessment-base.css">
+  <link rel="stylesheet" href="/F2I/assets/css/self-assessment/assessment.css">
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var l=a.styleSheets;if(o)for(var s in o)o.hasOwnProperty(s)&&d.setAttribute(s,o[s]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=l.length;n--;)if(l[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+  </script>
+</head>
+<body class="self-assessment-page">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>F2I Self-Assessment</h1>
+    
+    <p class="page-subtitle">Identify and translate your federal experience into private sector value</p>
+    
+  </div>
+</div>
+
+<div class="container">
+  <div class="assessment-container">
+  <div class="assessment-intro">
+    <!-- Note: This page uses isolated CSS/JS to preserve functionality during site refactoring -->
+    <p>
+      This self-assessment will help you identify transferable skills and achievements from your federal career that are valuable in the private sector.
+      Complete each section at your own pace. Please be honest and specific in your responses. Not sure where to start? Click the "Load Sample Data" button to see a comprehensive example of a completed assessment.
+    </p>
+
+    <div class="save-load-info">
+      <h3>Save & Continue Later</h3>
+      <p>
+        Your responses are automatically saved in your browser as you work. If you need to continue on a different device or browser,
+        you can save your progress to a file and load it later:
+      </p>
+      <ol>
+        <li><strong>Save your progress</strong> - Click the "Save to File" button to download your responses as a JSON file</li>
+        <li><strong>Continue later</strong> - When you return, click "Load from File" to upload your saved responses and continue where you left off</li>
+      </ol>
+    </div>
+
+    <div class="assessment-controls">
+      <button id="saveAssessment" class="btn btn-primary" style="border: none !important;">Save to File</button>
+      <button id="loadAssessment" class="btn btn-neutral" style="border: none !important;">Load from File</button>
+      <button id="loadSampleAssessment" class="btn btn-info" style="border: none !important;">Load Sample Data</button>
+      <input type="file" id="loadAssessmentFile" style="display: none;" accept=".json">
+    </div>
+  </div>
+
+  <div class="assessment-progress">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text">
+      <span id="progressText">0% Complete</span>
+    </div>
+  </div>
+
+  <div class="assessment-tabs">
+    <button class="tab-button active" data-section="section1">Technical Skills</button>
+    <button class="tab-button" data-section="section2">Transferable Skills</button>
+    <button class="tab-button" data-section="section3">Achievements</button>
+    <button class="tab-button" data-section="section4">Industry Analysis</button>
+    <button class="tab-button" data-section="section5">Summary</button>
+  </div>
+
+  <div class="assessment-sections">
+    <!-- Section 1: Technical Skills -->
+    <div class="assessment-section active" id="section1">
+      <h2>Technical Skills Assessment</h2>
+
+      <div class="subsection">
+        <h3>Core Technical Skills</h3>
+        <p class="rating-guide">Rate your proficiency in each skill area:</p>
+        <div class="rating-legend">
+          <span class="rating-item"><strong>1</strong> = Basic</span>
+          <span class="rating-item"><strong>2</strong> = Intermediate</span>
+          <span class="rating-item"><strong>3</strong> = Proficient</span>
+          <span class="rating-item"><strong>4</strong> = Advanced</span>
+          <span class="rating-item"><strong>5</strong> = Expert</span>
+        </div>
+
+        <div class="skill-grid" id="coreTechnicalSkills">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Agency-Specific Technical Skills</h3>
+        <p>List specialized technical skills from your agency/role</p>
+        <p class="instruction-text">Add skills specific to your agency or role that may be valuable in the private sector</p>
+
+        <div id="agencySkills">
+          <div class="skill-entry">
+            <input type="text" class="form-control skill-name" placeholder="Skill name">
+            <select class="form-control skill-rating">
+              <option value="">Select rating</option>
+              <option value="1">1 = Basic</option>
+              <option value="2">2 = Intermediate</option>
+              <option value="3">3 = Proficient</option>
+              <option value="4">4 = Advanced</option>
+              <option value="5">5 = Expert</option>
+            </select>
+            <textarea class="form-control skill-notes compact-textarea" placeholder="How this skill transfers to industry"></textarea>
+          </div>
+        </div>
+        <button id="addAgencySkill" class="btn btn-small">+ Add Skill</button>
+      </div>
+
+      <div class="subsection">
+        <h3>Software & Digital Tools</h3>
+        <p>List software and digital tools you're proficient with</p>
+        <p class="instruction-text">Include all relevant software, platforms, and digital tools you've used in your federal role</p>
+
+        <div id="softwareTools">
+          <div class="tool-entry">
+            <input type="text" class="form-control tool-name" placeholder="Tool/Software name">
+            <select class="form-control tool-rating">
+              <option value="">Select rating</option>
+              <option value="1">1 = Basic</option>
+              <option value="2">2 = Intermediate</option>
+              <option value="3">3 = Proficient</option>
+              <option value="4">4 = Advanced</option>
+              <option value="5">5 = Expert</option>
+            </select>
+            <input type="text" class="form-control tool-equivalent" placeholder="Industry equivalent (if different)">
+          </div>
+        </div>
+        <button id="addSoftwareTool" class="btn btn-small">+ Add Tool</button>
+      </div>
+    </div>
+
+    <!-- Section 2: Transferable Skills -->
+    <div class="assessment-section" id="section2">
+      <h2>Transferable Skills Assessment</h2>
+
+      <div class="subsection">
+        <h3>Leadership & Management Skills</h3>
+        <p class="rating-guide">Rate your proficiency in each leadership skill:</p>
+        <div class="rating-legend">
+          <span class="rating-item"><strong>1</strong> = Basic</span>
+          <span class="rating-item"><strong>2</strong> = Intermediate</span>
+          <span class="rating-item"><strong>3</strong> = Proficient</span>
+          <span class="rating-item"><strong>4</strong> = Advanced</span>
+          <span class="rating-item"><strong>5</strong> = Expert</span>
+        </div>
+
+        <div class="skill-grid" id="leadershipSkills">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Problem-Solving & Critical Thinking</h3>
+        <p class="rating-guide">Rate your proficiency in each problem-solving skill:</p>
+        <p class="instruction-text">These skills are highly valued across all industries and demonstrate your ability to tackle complex challenges</p>
+
+        <div class="skill-grid" id="problemSolvingSkills">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Communication & Interpersonal Skills</h3>
+        <p class="rating-guide">Rate your proficiency in each communication skill:</p>
+        <p class="instruction-text">Effective communication skills are essential for success in any private sector role</p>
+
+        <div class="skill-grid" id="communicationSkills">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Achievements -->
+    <div class="assessment-section" id="section3">
+      <h2>Achievements & Impact</h2>
+
+      <div class="subsection">
+        <h3>Key Achievements</h3>
+        <p class="rating-guide">Document your most significant achievements in federal service</p>
+        <p class="instruction-text">Focus on measurable results and the skills you demonstrated in each achievement</p>
+
+        <div id="keyAchievements">
+          <div class="achievement-entry">
+            <input type="text" class="form-control achievement-title" placeholder="Achievement title">
+            <textarea class="form-control achievement-description compact-textarea" placeholder="Brief description of the achievement"></textarea>
+            <textarea class="form-control achievement-impact compact-textarea" placeholder="Quantifiable impact (numbers, percentages, etc.)"></textarea>
+            <textarea class="form-control achievement-skills compact-textarea" placeholder="Skills demonstrated"></textarea>
+          </div>
+        </div>
+        <button id="addAchievement" class="btn btn-small">+ Add Achievement</button>
+      </div>
+
+      <div class="subsection">
+        <h3>STAR Stories</h3>
+        <p class="rating-guide">Develop stories that demonstrate your impact using the STAR format</p>
+        <p class="instruction-text">These stories will help you prepare for behavioral interview questions</p>
+
+        <div id="starStories">
+          <div class="star-story">
+            <h4>STAR Story</h4>
+            <div class="star-fields">
+              <div class="star-field">
+                <label>Situation:</label>
+                <textarea class="form-control compact-textarea" name="situation_1" placeholder="Describe the situation"></textarea>
+              </div>
+              <div class="star-field">
+                <label>Task:</label>
+                <textarea class="form-control compact-textarea" name="task_1" placeholder="What was your task or responsibility?"></textarea>
+              </div>
+              <div class="star-field">
+                <label>Action:</label>
+                <textarea class="form-control compact-textarea" name="action_1" placeholder="What actions did you take?"></textarea>
+              </div>
+              <div class="star-field">
+                <label>Result:</label>
+                <textarea class="form-control compact-textarea" name="result_1" placeholder="What was the outcome? Include metrics if possible"></textarea>
+              </div>
+              <div class="star-field">
+                <label>Skills Demonstrated:</label>
+                <textarea class="form-control compact-textarea" name="skills_1" placeholder="What skills did you demonstrate in this story?"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="addStarStory" class="btn btn-small">+ Add STAR Story</button>
+      </div>
+    </div>
+
+    <!-- Section 4: Industry Analysis -->
+    <div class="assessment-section" id="section4">
+      <h2>Industry Skills Gap Analysis</h2>
+
+      <div class="subsection">
+        <h3>Target Industry Skills</h3>
+        <p class="rating-guide">Identify skills required in your target industry and assess your current level</p>
+        <p class="instruction-text">This will help you identify skill gaps to address in your transition plan</p>
+
+        <div id="industrySkills">
+          <div class="industry-skill-entry">
+            <input type="text" class="form-control industry-skill-name" placeholder="Required industry skill">
+            <select class="form-control industry-skill-rating">
+              <option value="">Your current level</option>
+              <option value="1">1 = Basic</option>
+              <option value="2">2 = Intermediate</option>
+              <option value="3">3 = Proficient</option>
+              <option value="4">4 = Advanced</option>
+              <option value="5">5 = Expert</option>
+            </select>
+            <textarea class="form-control industry-skill-gap compact-textarea" placeholder="How to close the gap"></textarea>
+          </div>
+        </div>
+        <button id="addIndustrySkill" class="btn btn-small">+ Add Industry Skill</button>
+      </div>
+
+      <div class="subsection">
+        <h3>Terminology Translation</h3>
+        <p class="rating-guide">Translate federal terms to industry equivalents</p>
+        <p class="instruction-text">Learning to speak the language of your target industry is essential for a successful transition</p>
+
+        <div id="terminologyTranslation">
+          <div class="terminology-entry">
+            <textarea class="form-control federal-term compact-textarea" placeholder="Federal term/concept"></textarea>
+            <textarea class="form-control industry-term compact-textarea" placeholder="Industry equivalent"></textarea>
+            <textarea class="form-control term-context compact-textarea" placeholder="Context for usage"></textarea>
+          </div>
+        </div>
+        <div class="terminology-buttons">
+          <button id="addTerminology" class="btn btn-small">+ Add Term</button>
+          <button id="addCommonTerms" class="btn btn-small btn-info">+ Add Common Terms</button>
+        </div>
+      </div>
+
+      <!-- Common Terms Selection Modal -->
+      <div id="commonTermsModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Select Common Translation Terms</h3>
+            <span class="close-modal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <p>Select the federal-to-industry translation terms you'd like to add:</p>
+            <div id="termsCheckboxes" class="terms-checkboxes">
+              <!-- Will be populated by JavaScript -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="selectAllTerms" class="btn btn-small">Select All</button>
+            <button id="deselectAllTerms" class="btn btn-small">Deselect All</button>
+            <button id="addSelectedTerms" class="btn btn-primary">Add Selected Terms</button>
+            <button id="cancelTermSelection" class="btn btn-neutral">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Summary -->
+    <div class="assessment-section" id="section5">
+      <h2>Inventory Summary</h2>
+
+      <div class="subsection">
+        <h3>Top Skills for Industry Transition</h3>
+        <p class="rating-guide">List your 5 strongest skills for transitioning to industry</p>
+        <p class="instruction-text">These will be your key selling points in resumes, cover letters, and interviews</p>
+
+        <div id="topSkills">
+          <div class="numbered-item">
+            <span class="number">1.</span>
+            <input type="text" class="form-control" name="topSkill1">
+          </div>
+          <div class="numbered-item">
+            <span class="number">2.</span>
+            <input type="text" class="form-control" name="topSkill2">
+          </div>
+          <div class="numbered-item">
+            <span class="number">3.</span>
+            <input type="text" class="form-control" name="topSkill3">
+          </div>
+          <div class="numbered-item">
+            <span class="number">4.</span>
+            <input type="text" class="form-control" name="topSkill4">
+          </div>
+          <div class="numbered-item">
+            <span class="number">5.</span>
+            <input type="text" class="form-control" name="topSkill5">
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Skills to Develop</h3>
+        <p class="rating-guide">List the top 3 skills you need to develop for your industry transition</p>
+        <p class="instruction-text">These will be priority areas for your professional development plan</p>
+
+        <div id="skillsToDevelop">
+          <div class="numbered-item">
+            <span class="number">1.</span>
+            <input type="text" class="form-control" name="developSkill1">
+          </div>
+          <div class="numbered-item">
+            <span class="number">2.</span>
+            <input type="text" class="form-control" name="developSkill2">
+          </div>
+          <div class="numbered-item">
+            <span class="number">3.</span>
+            <input type="text" class="form-control" name="developSkill3">
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Your Unique Value Proposition</h3>
+        <p class="rating-guide">Write a 2-3 sentence statement that captures the unique value you bring from federal service to industry</p>
+        <p class="instruction-text">This will be the foundation for your elevator pitch and personal branding</p>
+
+        <textarea id="valueProposition" class="form-control" rows="4"></textarea>
+      </div>
+
+      <div class="subsection">
+        <h3>Next Steps</h3>
+        <p>List your next 3 steps to prepare for your industry transition</p>
+
+        <div id="nextSteps">
+          <div class="numbered-item">
+            <span class="number">1.</span>
+            <input type="text" class="form-control" name="nextStep1">
+          </div>
+          <div class="numbered-item">
+            <span class="number">2.</span>
+            <input type="text" class="form-control" name="nextStep2">
+          </div>
+          <div class="numbered-item">
+            <span class="number">3.</span>
+            <input type="text" class="form-control" name="nextStep3">
+          </div>
+        </div>
+      </div>
+
+      <div id="assessment-completion" class="assessment-completion">
+        <button id="downloadResults" class="btn btn-primary">Download Assessment Results</button>
+        <button id="printResults" class="btn btn-neutral">Print Assessment</button>
+        <a href="/F2I/pages/career-recommendation.html" id="viewCareerRecommendations" class="btn btn-success">View Career Recommendations</a>
+        <button id="shareAssessment" class="btn btn-info">Share Assessment with F2I (Optional)</button>
+      </div>
+
+      <div class="privacy-note">
+        <small>If you choose to share your assessment, we will anonymize it to help identify future job opportunities. Your data will be downloaded as a JSON file that you'll need to attach to the email. Please see our <a href="/F2I/pages/privacy-policy.html" target="_blank">Privacy Policy</a> for more information.</small>
+      </div>
+
+      <!-- Note: Event listeners for buttons are now handled in self-assessment.js -->
+
+      <!-- Note: The Career Recommendation page uses isolated CSS/JS to preserve functionality during site refactoring -->
+    </div>
+  </div>
+</div>
+
+
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    
+    <a href="/F2I/pages/industry-research.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (2/9)</div>
+        <div class="step-title">Research & Industry Exploration</div>
+        <div class="step-description">Gain insights into private sector industries and identify opportunities</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    
+
+    <div class="all-steps-link">
+      <a href="/F2I/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+<script src="/F2I/assets/js/self-assessment/self-assessment.js"></script>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+
+  <!-- Add navigation JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hamburger menu functionality
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.navbar .nav-links');
+      const navGroups = document.querySelectorAll('.nav-group');
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent click from bubbling to document
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        // Handle dropdown menus
+        navGroups.forEach(group => {
+          const groupTitle = group.querySelector('.nav-group-title');
+
+          if (groupTitle) {
+            groupTitle.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Close other dropdowns
+              navGroups.forEach(otherGroup => {
+                if (otherGroup !== group) {
+                  otherGroup.classList.remove('active');
+                }
+              });
+
+              // Toggle current dropdown
+              group.classList.toggle('active');
+            });
+          }
+        });
+
+        // Close menu when clicking a regular link (not dropdown toggles)
+        document.querySelectorAll('.navbar .nav-links a:not(.nav-group-title)').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          // If the click is outside the navbar and the menu is active
+          if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+
+            // Also close any open dropdowns
+            navGroups.forEach(group => {
+              group.classList.remove('active');
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>
