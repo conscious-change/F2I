@@ -1,0 +1,82 @@
+/* 
+ * F2I Website Colors CSS
+ * Color variables and utility classes
+ */
+
+:root {
+  /* Primary Colors */
+  --primary: #0056b3;
+  --primary-dark: #003d7a;
+  --primary-light: #0077cc;
+  
+  /* Secondary Colors */
+  --secondary: #ff6b00;
+  --secondary-dark: #e55e00;
+  --secondary-light: #ff8c33;
+  
+  /* Neutral Colors */
+  --dark: #111;
+  --gray-dark: #333;
+  --gray: #6c757d;
+  --gray-light: #f8f9fa;
+  --light: #fff;
+  
+  /* Semantic Colors */
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+/* Background Colors */
+.bg-primary { background-color: var(--primary); }
+.bg-primary-dark { background-color: var(--primary-dark); }
+.bg-primary-light { background-color: var(--primary-light); }
+
+.bg-secondary { background-color: var(--secondary); }
+.bg-secondary-dark { background-color: var(--secondary-dark); }
+.bg-secondary-light { background-color: var(--secondary-light); }
+
+.bg-dark { background-color: var(--dark); }
+.bg-gray-dark { background-color: var(--gray-dark); }
+.bg-gray { background-color: var(--gray); }
+.bg-gray-light { background-color: var(--gray-light); }
+.bg-light { background-color: var(--light); }
+
+.bg-success { background-color: var(--success); }
+.bg-info { background-color: var(--info); }
+.bg-warning { background-color: var(--warning); }
+.bg-danger { background-color: var(--danger); }
+
+/* Text Colors */
+.text-primary { color: var(--primary); }
+.text-primary-dark { color: var(--primary-dark); }
+.text-primary-light { color: var(--primary-light); }
+
+.text-secondary { color: var(--secondary); }
+.text-secondary-dark { color: var(--secondary-dark); }
+.text-secondary-light { color: var(--secondary-light); }
+
+.text-dark { color: var(--dark); }
+.text-gray-dark { color: var(--gray-dark); }
+.text-gray { color: var(--gray); }
+.text-gray-light { color: var(--gray-light); }
+.text-light { color: var(--light); }
+
+.text-success { color: var(--success); }
+.text-info { color: var(--info); }
+.text-warning { color: var(--warning); }
+.text-danger { color: var(--danger); }
+
+/* Gradients */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+}

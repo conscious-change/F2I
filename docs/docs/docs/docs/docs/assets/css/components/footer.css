@@ -1,0 +1,159 @@
+/* 
+ * F2I Website Footer CSS
+ * Styles for the site footer
+ */
+
+/* Footer Container */
+.site-footer {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 3rem 0 1rem;
+  margin-top: 2rem;
+}
+
+.site-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Footer Content Grid */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer Sections */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.footer-section.about {
+  padding-left: 0.5rem;
+}
+
+.footer-section.about p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer Titles */
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--light);
+  font-weight: 600;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a, .contact-info a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .contact-info a:hover {
+  color: var(--light);
+  text-decoration: underline;
+}
+
+/* Social Links */
+.social-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-link:hover {
+  color: var(--light);
+  transform: translateY(-2px);
+}
+
+/* Contact Info */
+.contact-info {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-icon {
+  margin-right: 0.5rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--light);
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
