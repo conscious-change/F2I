@@ -1,0 +1,665 @@
+/*
+ * F2I Website Networking Strategies Page CSS
+ * Styles specific to the Networking Strategies page
+ */
+
+/* Networking Content Container */
+.networking-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Center align all section headers */
+.networking-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  position: relative;
+}
+
+.networking-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* Introduction Section */
+.intro-section {
+  margin-bottom: 3rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  border-top: 5px solid var(--primary);
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0 0 0.8rem 0;
+}
+
+.intro-section p:last-child {
+  margin-bottom: 0;
+}
+
+.citation {
+  font-size: 0.85rem !important;
+  color: #777 !important;
+  text-align: left !important;
+  border-top: 1px solid #eaeaea;
+  padding-top: 0.8rem;
+  margin-top: 1rem !important;
+}
+
+.citation a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.citation a:hover {
+  text-decoration: underline;
+}
+
+/* Why Networking Section */
+.why-networking {
+  margin-bottom: 3rem;
+}
+
+.why-networking p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.why-networking ul {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+.why-networking li {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Networking Strategies Section */
+.networking-strategies {
+  margin-bottom: 4rem;
+}
+
+/* Strategy Card */
+.strategy-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.strategy-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.strategy-card p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.strategy-card ul {
+  margin-bottom: 1rem;
+}
+
+.strategy-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* Networking Tips Section */
+.networking-tips {
+  margin-bottom: 4rem;
+}
+
+/* Tips Grid */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tip Card */
+.tip-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border-top: 4px solid var(--primary);
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tip-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.tip-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Overcoming Challenges Section */
+.overcoming-challenges {
+  margin-bottom: 4rem;
+}
+
+/* Challenge Card */
+.challenge-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.challenge-card p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Networking Tools Section */
+.networking-tools {
+  margin-bottom: 4rem;
+}
+
+/* Tools Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Tool Card */
+.tool-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.tool-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.tool-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+/* Success Stories Section */
+.success-stories {
+  margin-bottom: 4rem;
+}
+
+/* Story Card */
+.story-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.story-header {
+  margin-bottom: 1rem;
+}
+
+.story-header h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.story-author {
+  font-style: italic;
+  color: #777;
+  margin: 0;
+}
+
+.story-card p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+/* Network Mapping Form */
+.network-mapping-form {
+  margin-top: 1.5rem;
+}
+
+.worksheet-intro {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.mapping-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.mapping-section h4 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.contact-entry {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.input-cell {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.input-cell label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.input-cell input, .input-cell textarea, .input-cell select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.input-cell textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.add-contact-btn, .remove-contact-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.add-contact-btn:hover, .remove-contact-btn:hover {
+  text-decoration: underline;
+}
+
+.mapping-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Interview Guide Modal */
+.interview-guide-form {
+  margin-top: 1.5rem;
+}
+
+.question-categories {
+  margin-top: 1.5rem;
+}
+
+.question-category {
+  margin-bottom: 1.5rem;
+}
+
+.question-category h6 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.question-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.question-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  border-left: 3px solid var(--primary);
+}
+
+.interview-tracker {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.interview-tracker h5 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.tracker-table th {
+  background-color: #f8f9fa;
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #eee;
+}
+
+.tracker-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+.tracker-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.no-interviews-message {
+  text-align: center;
+  padding: 1.5rem;
+  color: #777;
+  font-style: italic;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group.half-width {
+  flex: 0 0 calc(50% - 0.5rem);
+}
+
+.form-group.full-width {
+  flex: 0 0 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tracker-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.download-prompt {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.download-prompt a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.download-prompt a:hover {
+  text-decoration: underline;
+}
+
+.guide-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 1.5rem;
+  }
+
+  .question-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-group.half-width {
+    flex: 0 0 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .networking-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .strategy-card, .challenge-card {
+    padding: 1.2rem;
+  }
+
+  .strategy-card h3, .challenge-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .tip-card {
+    padding: 1.2rem;
+  }
+
+  .tip-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .tool-card {
+    padding: 1.2rem;
+  }
+
+  .tool-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-actions, .tracker-actions, .mapping-actions {
+    flex-direction: column;
+  }
+}
