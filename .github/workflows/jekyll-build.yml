@@ -3,6 +3,8 @@ name: Jekyll Build and Test
 on:
   push:
     branches: [ development, main ]
+    paths-ignore:
+      - 'docs/**'  # Ignore changes to the docs directory
   pull_request:
     branches: [ development, main ]
 
@@ -88,7 +90,7 @@ jobs:
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
         git add docs/
-        git commit -m "Update docs directory for GitHub Pages" || echo "No changes to commit"
+        git commit -m "Update docs directory for GitHub Pages [skip ci]" || echo "No changes to commit"
         git push
 
     # - name: Run HTML tests
