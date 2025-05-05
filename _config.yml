@@ -23,6 +23,7 @@ plugins:
   - jekyll-seo-tag
   # Remove the line below
   # - jekyll-responsive-image
+destination: ./docs
 
 # Remove the entire responsive_image configuration block below
 # responsive_image:
