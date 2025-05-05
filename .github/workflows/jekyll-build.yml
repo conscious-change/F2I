@@ -57,8 +57,8 @@ jobs:
 
     - name: Build site with custom script
       run: |
-        # Modify run_site.sh to build to docs instead of _site
-        sed -i 's/bundle exec jekyll serve/bundle exec jekyll build --baseurl "\/F2I" --destination docs/' run_site.sh
+        # Modify run_site.sh to build instead of serve in CI environment
+        sed -i 's/bundle exec jekyll serve/bundle exec jekyll build --baseurl "\/F2I"/' run_site.sh
         # Run the script but skip the interactive prompts
         ./run_site.sh
 
