@@ -21,8 +21,7 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  # Remove the line below or change to _site
-  # destination: ./docs
+destination: ./docs
 
 # Remove the entire responsive_image configuration block below
 # responsive_image:
