@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>Resume & Personal Branding</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      // Set the appropriate URL based on support
+      link.href = webpSupport ?
+        '/F2I/assets/img/hero-bg.webp' :
+        '/F2I/assets/img/hero-bg.jpg';
+
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <!-- WebP Detection (early load) -->
+  <script src="/F2I/assets/js/webp-detection.min.js"></script>
+
+  <!-- Font Display Optimization -->
+  <link rel="stylesheet" href="/F2I/assets/css/font-display.css">
+
+  <!-- Site Styles -->
+  
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="/F2I/assets/css/main.css">
+  
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var s=a.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&d.setAttribute(l,o[l]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    /* loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+  </script>
+</head>
+<body class="resume-personal-branding-page">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>Resume & Personal Branding</h1>
+    
+      <p class="subtitle">Craft a compelling professional identity that showcases your federal experience for private sector success</p>
+    
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="resume-branding-content">
+  <div class="resume-brand-matters">
+    <h2>Your Resume & Brand Matter</h2>
+
+    <div class="resume-intro">
+      <div class="resume-intro-icon">📄</div>
+      <p>
+        Your resume and personal brand are critical tools in your transition from federal service to the private sector. They serve as your professional introduction and can make the difference between getting an interview or being overlooked. This page provides practical guidance and interactive tools to help you effectively present your government experience in a way that resonates with private sector employers.
+      </p>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Resume Transformation</h2>
+
+    <div class="resume-transformation-tabs">
+      <div class="tabs-navigation">
+        <button class="tab-button active" data-tab="compare">Federal vs. Private</button>
+        <button class="tab-button" data-tab="examples">Before & After Examples</button>
+      </div>
+
+      <div class="tabs-content">
+        <!-- Tab 1: Federal vs. Private Comparison -->
+        <div class="tab-panel active" id="compare-panel">
+          <div class="comparison-container">
+            <div class="comparison-item federal">
+              <div class="comparison-header">
+                <div class="comparison-icon">🏛️</div>
+                <h3>Federal Resume Approach</h3>
+              </div>
+              <ul class="comparison-list">
+                <li><span class="list-icon">📋</span> Comprehensive and detailed (often 5+ pages)</li>
+                <li><span class="list-icon">📝</span> Focus on responsibilities and duties</li>
+                <li><span class="list-icon">🔤</span> Government-specific terminology and acronyms</li>
+                <li><span class="list-icon">✓</span> Emphasis on compliance and process</li>
+                <li><span class="list-icon">📑</span> Structured around position descriptions</li>
+                <li><span class="list-icon">🔍</span> Detailed work history with specific dates</li>
+                <li><span class="list-icon">🏆</span> Awards and recognition often listed separately</li>
+              </ul>
+            </div>
+
+            <div class="comparison-item private">
+              <div class="comparison-header">
+                <div class="comparison-icon">🏢</div>
+                <h3>Private Sector Resume Approach</h3>
+              </div>
+              <ul class="comparison-list">
+                <li><span class="list-icon">📄</span> Concise and targeted (typically 1-2 pages)</li>
+                <li><span class="list-icon">📊</span> Focus on achievements and impact</li>
+                <li><span class="list-icon">💼</span> Industry-standard terminology</li>
+                <li><span class="list-icon">💰</span> Emphasis on results and value creation</li>
+                <li><span class="list-icon">🎯</span> Structured around accomplishments</li>
+                <li><span class="list-icon">⏱️</span> Recent and relevant experience highlighted</li>
+                <li><span class="list-icon">💡</span> Achievements integrated within job descriptions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Before & After Examples -->
+        <div class="tab-panel" id="examples-panel">
+          <div class="examples-container">
+            <div class="example-card">
+              <h3>Job Title Transformation</h3>
+              <div class="example-comparison">
+                <div class="example-before">
+                  <h4>Before (Federal)</h4>
+                  <p>GS-14 Supervisory Program Analyst, Office of Policy Implementation</p>
+                </div>
+                <div class="example-after">
+                  <h4>After (Private Sector)</h4>
+                  <p>Senior Program Manager with expertise in policy development and implementation</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <h3>Achievement Statement Transformation</h3>
+              <div class="example-comparison">
+                <div class="example-before">
+                  <h4>Before (Federal)</h4>
+                  <p>Responsible for managing a team of analysts who reviewed compliance documentation for federal grant programs.</p>
+                </div>
+                <div class="example-after">
+                  <h4>After (Private Sector)</h4>
+                  <p>Led a cross-functional team of 10 analysts that streamlined compliance review processes, reducing processing time by 30% and saving $500,000 annually while maintaining 100% accuracy.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <h3>Technical Skills Transformation</h3>
+              <div class="example-comparison">
+                <div class="example-before">
+                  <h4>Before (Federal)</h4>
+                  <p>Utilized FPDS-NG, SAM, and FAR knowledge to process procurement actions in accordance with federal acquisition regulations.</p>
+                </div>
+                <div class="example-after">
+                  <h4>After (Private Sector)</h4>
+                  <p>Leveraged advanced procurement database systems and deep regulatory knowledge to optimize $25M in contract acquisitions, ensuring compliance while reducing procurement cycle time by 20%.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="resume-tips">
+      <h3>Key Resume Transformation Tips</h3>
+      <div class="tips-accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="tip-icon">🎯</div>
+            <h4>Focus on achievements, not just responsibilities</h4>
+            <div class="accordion-toggle">+</div>
+          </div>
+          <div class="accordion-content">
+            <p>Quantify your accomplishments and highlight the impact of your work. Use the CAR method:</p>
+            <ul>
+              <li><strong>Challenge:</strong> What problem or situation did you face?</li>
+              <li><strong>Action:</strong> What specific actions did you take?</li>
+              <li><strong>Result:</strong> What measurable outcomes did you achieve?</li>
+            </ul>
+            <div class="tip-example">
+              <p><strong>Instead of:</strong> "Managed a team of 10 analysts responsible for reviewing grant applications."</p>
+              <p><strong>Try:</strong> "Led a team of 10 analysts that implemented a streamlined review process, reducing application backlog by 40% and increasing approval accuracy by 25%."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="tip-icon">🔄</div>
+            <h4>Translate government terminology</h4>
+            <div class="accordion-toggle">+</div>
+          </div>
+          <div class="accordion-content">
+            <p>Replace government-specific language with industry-standard terms that private sector hiring managers will understand.</p>
+            <div class="translation-table">
+              <div class="table-row header">
+                <div class="table-cell">Federal Term</div>
+                <div class="table-cell">Private Sector Alternative</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">GS-14 Supervisory Program Analyst</div>
+                <div class="table-cell">Senior Program Manager</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Contracting Officer's Representative (COR)</div>
+                <div class="table-cell">Contract/Vendor Manager</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Prepared Decision Memoranda</div>
+                <div class="table-cell">Developed Executive Briefings</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Ensured Compliance with Federal Regulations</div>
+                <div class="table-cell">Implemented Regulatory Risk Management</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="tip-icon">🔍</div>
+            <h4>Highlight transferable skills</h4>
+            <div class="accordion-toggle">+</div>
+          </div>
+          <div class="accordion-content">
+            <p>Emphasize skills that are valuable across sectors. Focus on these high-demand transferable skills:</p>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">👥</div>
+                <div class="skill-name">Leadership</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">📊</div>
+                <div class="skill-name">Project Management</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">🤝</div>
+                <div class="skill-name">Stakeholder Engagement</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">📈</div>
+                <div class="skill-name">Data Analysis</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">💰</div>
+                <div class="skill-name">Budget Management</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">⚖️</div>
+                <div class="skill-name">Regulatory Knowledge</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">🔄</div>
+                <div class="skill-name">Change Management</div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">🚨</div>
+                <div class="skill-name">Crisis Management</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="tip-icon">✂️</div>
+            <h4>Be concise</h4>
+            <div class="accordion-toggle">+</div>
+          </div>
+          <div class="accordion-content">
+            <p>Private sector resumes are typically 1-2 pages. Focus on your most relevant and impressive achievements from the past 10-15 years.</p>
+            <div class="tip-example">
+              <h5>Tips for Condensing Your Resume:</h5>
+              <ul>
+                <li>Focus on the last 10-15 years of experience (unless earlier experience is highly relevant)</li>
+                <li>Eliminate redundant information across positions</li>
+                <li>Remove detailed descriptions of federal processes that aren't relevant to your target role</li>
+                <li>Use bullet points instead of paragraphs</li>
+                <li>Prioritize achievements with the most impressive metrics and outcomes</li>
+                <li>Combine similar roles or positions if appropriate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="tip-icon">🎯</div>
+            <h4>Customize for each opportunity</h4>
+            <div class="accordion-toggle">+</div>
+          </div>
+          <div class="accordion-content">
+            <p>Tailor your resume for each position by highlighting the most relevant experience and using keywords from the job description.</p>
+            <div class="customization-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h5>Analyze the Job Description</h5>
+                  <p>Highlight key skills, qualifications, and responsibilities mentioned in the job posting.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h5>Identify Matching Experience</h5>
+                  <p>Review your background for relevant examples that demonstrate the required skills.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h5>Prioritize Content</h5>
+                  <p>Reorganize your resume to put the most relevant experience and skills first.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h5>Incorporate Keywords</h5>
+                  <p>Include industry and role-specific terminology from the job description.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h5>Adjust Your Summary</h5>
+                  <p>Customize your professional summary to align with the specific role and company.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-tools">
+      <h3>Interactive Resume Tools</h3>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">📝</div>
+          <h4>Achievement Statement Builder</h4>
+          <p>Create powerful achievement statements that highlight your impact using our interactive builder.</p>
+          <button class="btn btn-primary" id="openAchievementBuilder">Build Statements</button>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">📄</div>
+          <h4>Resume Templates</h4>
+          <p>Download industry-specific resume templates designed for federal employees transitioning to the private sector.</p>
+          <p class="template-note">These templates are <strong>ATS-proofed</strong> and can be submitted as Word or PDF files. <a href="https://en.wikipedia.org/wiki/Applicant_tracking_system" target="_blank" rel="noopener noreferrer">Learn more about ATS (Applicant Tracking Systems) <i class="external-link-icon">↗</i></a></p>
+          <div class="template-buttons">
+            <a href="/F2I/assets/data/Genera_resume_editable.docx" class="btn btn-outline" download>General Template</a>
+            <a href="/F2I/assets/data/Tech_resume_editable.docx" class="btn btn-outline" download>Tech Industry</a>
+            <a href="/F2I/assets/data/Consulting_resume_editable.docx" class="btn btn-outline" download>Consulting</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="branding-section">
+    <h2>Personal Branding</h2>
+
+    <p>
+      Your personal brand is how you present yourself professionally to the world. It encompasses your unique value proposition, professional reputation, and online presence.
+    </p>
+
+    <div class="branding-steps">
+      <div class="step-card">
+        <h3>1. Define Your Value Proposition</h3>
+        <p>
+          Identify what makes you unique and valuable to private sector employers. Consider:
+        </p>
+        <ul>
+          <li>Your specialized expertise from federal service</li>
+          <li>Unique perspectives gained from government experience</li>
+          <li>Specific problems you're uniquely qualified to solve</li>
+          <li>The intersection of your skills, passions, and market needs</li>
+        </ul>
+        <button id="openValuePropositionWorksheet" class="btn btn-primary">Value Proposition Worksheet</button>
+      </div>
+
+      <div class="step-card">
+        <h3>2. Craft Your Elevator Pitch</h3>
+        <p>
+          Develop a concise, compelling introduction that communicates who you are, what you do, and the value you offer.
+        </p>
+        <div class="example-box">
+          <h4>Example Elevator Pitch:</h4>
+          <p>
+            "I'm a former FDA regulatory affairs specialist with 12 years of experience navigating complex approval processes for medical devices. I help companies develop regulatory strategies that accelerate time-to-market while ensuring compliance. My government background gives me unique insight into how regulatory bodies evaluate submissions, which has helped my clients achieve a 40% faster approval rate."
+          </p>
+        </div>
+        <button id="openElevatorPitchBuilder" class="btn btn-primary">Elevator Pitch Builder</button>
+      </div>
+
+      <div class="step-card">
+        <h3>3. Build Your LinkedIn Profile</h3>
+        <p>
+          LinkedIn is essential for your private sector job search. Optimize your profile by:
+        </p>
+        <ul>
+          <li>Using a professional photo and compelling headline</li>
+          <li>Writing a summary that highlights your value proposition</li>
+          <li>Translating your experience using private sector terminology</li>
+          <li>Showcasing achievements and quantifiable results</li>
+          <li>Including relevant skills and endorsements</li>
+          <li>Requesting recommendations from colleagues and supervisors</li>
+        </ul>
+        <button id="openLinkedInChecklist" class="btn btn-primary">LinkedIn Profile Checklist</button>
+      </div>
+
+      <div class="step-card">
+        <h3>4. Develop Your Online Presence</h3>
+        <p>
+          Establish credibility in your target industry through:
+        </p>
+        <ul>
+          <li>Publishing articles or blog posts on industry topics</li>
+          <li>Participating in relevant online communities and discussions</li>
+          <li>Sharing insights on social media platforms</li>
+          <li>Speaking at industry events or webinars</li>
+          <li>Creating a personal website or portfolio (if applicable)</li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Success Stories Section - Commented out as requested
+  <div class="success-stories">
+    <h2>Success Stories</h2>
+
+    <div class="story-card">
+      <div class="story-header">
+        <h3>From Government Analyst to Industry Consultant</h3>
+        <p class="story-author">— David R., Former Department of Energy Analyst</p>
+      </div>
+      <p>
+        "Transforming my 15-page federal resume into a focused 2-page document that highlighted my achievements was a game-changer. I emphasized how I had saved taxpayers $2.3M through process improvements and highlighted my project management skills. Within two months, I received three job offers from consulting firms."
+      </p>
+    </div>
+
+    <a href="/pages/success-stories.html" class="btn btn-secondary">Read More Success Stories</a>
+  </div>
+  -->
+
+
+</div>
+
+<!-- Modals (outside of any container for proper overlay) -->
+<!-- Achievement Builder Modal -->
+<div class="modal" id="achievementBuilderModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Achievement Statement Builder</h3>
+
+    <div class="builder-form">
+      <div class="form-group">
+        <label for="challenge">Challenge/Situation:</label>
+        <textarea id="challenge" placeholder="What problem or situation did you address?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="action">Action Taken:</label>
+        <textarea id="action" placeholder="What specific actions did you take?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="result">Result/Impact:</label>
+        <textarea id="result" placeholder="What measurable outcomes did you achieve? (Include numbers if possible)"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="actionVerb">Action Verb:</label>
+        <select id="actionVerb">
+          <option value="">Select an action verb...</option>
+          <option value="Led">Led</option>
+          <option value="Developed">Developed</option>
+          <option value="Implemented">Implemented</option>
+          <option value="Created">Created</option>
+          <option value="Managed">Managed</option>
+          <option value="Improved">Improved</option>
+          <option value="Reduced">Reduced</option>
+          <option value="Increased">Increased</option>
+          <option value="Streamlined">Streamlined</option>
+          <option value="Transformed">Transformed</option>
+          <option value="Spearheaded">Spearheaded</option>
+          <option value="Orchestrated">Orchestrated</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button id="generateStatement" class="btn btn-primary">Generate Statement</button>
+      </div>
+
+      <div class="result-container">
+        <h4>Your Achievement Statement:</h4>
+        <div id="statementResult" class="statement-result"></div>
+        <button id="copyStatement" class="btn btn-outline">Copy to Clipboard</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- LinkedIn Profile Checklist Modal -->
+<div class="modal" id="linkedinChecklistModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>LinkedIn Profile Checklist</h3>
+
+    <div class="linkedin-checklist-form">
+      <p class="worksheet-intro">Use this comprehensive checklist to optimize your LinkedIn profile for your transition to the private sector. Track your progress and ensure your profile makes the right impression on recruiters and hiring managers.</p>
+
+      <!-- Profile Photo & Banner Section -->
+      <div class="checklist-section">
+        <h4>Profile Photo & Banner</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-photo" class="linkedin-checkbox">
+            <label for="linkedin-photo">Professional headshot (well-lit, appropriate attire, neutral background)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-banner" class="linkedin-checkbox">
+            <label for="linkedin-banner">Custom banner image related to your industry or professional brand</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Headline Section -->
+      <div class="checklist-section">
+        <h4>Headline</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-headline-keywords" class="linkedin-checkbox">
+            <label for="linkedin-headline-keywords">Contains relevant industry keywords (not just job title)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-headline-value" class="linkedin-checkbox">
+            <label for="linkedin-headline-value">Communicates your value proposition or specialty</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-headline-private" class="linkedin-checkbox">
+            <label for="linkedin-headline-private">Uses private sector terminology (not government titles/acronyms)</label>
+          </div>
+        </div>
+        <div class="example-box">
+          <h5>Example Headlines:</h5>
+          <p><strong>Instead of:</strong> "GS-14 Program Analyst at Department of Defense"</p>
+          <p><strong>Try:</strong> "Program Management & Operations Leader | Cybersecurity Expert | Driving Efficiency & Innovation in Complex Organizations"</p>
+        </div>
+      </div>
+
+      <!-- About/Summary Section -->
+      <div class="checklist-section">
+        <h4>About/Summary</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-story" class="linkedin-checkbox">
+            <label for="linkedin-summary-story">Tells your professional story in first person</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-value" class="linkedin-checkbox">
+            <label for="linkedin-summary-value">Includes your value proposition</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-achievements" class="linkedin-checkbox">
+            <label for="linkedin-summary-achievements">Highlights 2-3 key achievements with metrics</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-skills" class="linkedin-checkbox">
+            <label for="linkedin-summary-skills">Lists core skills and expertise areas</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-seeking" class="linkedin-checkbox">
+            <label for="linkedin-summary-seeking">Mentions what you're seeking or interested in</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-summary-call" class="linkedin-checkbox">
+            <label for="linkedin-summary-call">Includes a call to action (how to contact you)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="checklist-section">
+        <h4>Experience</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-titles" class="linkedin-checkbox">
+            <label for="linkedin-experience-titles">Job titles translated to private sector equivalents</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-descriptions" class="linkedin-checkbox">
+            <label for="linkedin-experience-descriptions">Descriptions focus on achievements, not just responsibilities</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-metrics" class="linkedin-checkbox">
+            <label for="linkedin-experience-metrics">Quantifiable results and metrics included</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-keywords" class="linkedin-checkbox">
+            <label for="linkedin-experience-keywords">Industry-relevant keywords incorporated</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-acronyms" class="linkedin-checkbox">
+            <label for="linkedin-experience-acronyms">Government acronyms and jargon translated or explained</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-experience-bullets" class="linkedin-checkbox">
+            <label for="linkedin-experience-bullets">Bullet points used for readability (not dense paragraphs)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills & Endorsements Section -->
+      <div class="checklist-section">
+        <h4>Skills & Endorsements</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-relevant" class="linkedin-checkbox">
+            <label for="linkedin-skills-relevant">Top skills relevant to target industry/roles</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-order" class="linkedin-checkbox">
+            <label for="linkedin-skills-order">Skills ordered by relevance to target roles</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-endorsements" class="linkedin-checkbox">
+            <label for="linkedin-skills-endorsements">Endorsements requested from colleagues</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-skills-keywords" class="linkedin-checkbox">
+            <label for="linkedin-skills-keywords">Industry-specific keywords included</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations Section -->
+      <div class="checklist-section">
+        <h4>Recommendations</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-recommendations-received" class="linkedin-checkbox">
+            <label for="linkedin-recommendations-received">At least 3 recommendations received</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-recommendations-diverse" class="linkedin-checkbox">
+            <label for="linkedin-recommendations-diverse">Recommendations from diverse sources (supervisors, peers, subordinates)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-recommendations-given" class="linkedin-checkbox">
+            <label for="linkedin-recommendations-given">Recommendations given to others (reciprocity)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Sections -->
+      <div class="checklist-section">
+        <h4>Additional Sections</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-education" class="linkedin-checkbox">
+            <label for="linkedin-education">Education section complete with degrees, certifications, and relevant coursework</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-accomplishments" class="linkedin-checkbox">
+            <label for="linkedin-accomplishments">Accomplishments section includes projects, publications, patents, etc.</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-volunteer" class="linkedin-checkbox">
+            <label for="linkedin-volunteer">Volunteer experience added (if applicable)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-interests" class="linkedin-checkbox">
+            <label for="linkedin-interests">Following relevant industry companies, groups, and thought leaders</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile URL & Activity -->
+      <div class="checklist-section">
+        <h4>Profile URL & Activity</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-url" class="linkedin-checkbox">
+            <label for="linkedin-url">Custom URL created (linkedin.com/in/yourname)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-activity" class="linkedin-checkbox">
+            <label for="linkedin-activity">Recent activity shows engagement with industry content</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-posts" class="linkedin-checkbox">
+            <label for="linkedin-posts">Posted or shared relevant industry content</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="linkedin-open" class="linkedin-checkbox">
+            <label for="linkedin-open">"Open to Work" setting configured appropriately</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-actions">
+        <button id="resetLinkedInChecklist" class="btn btn-outline">Reset Checklist</button>
+        <button id="saveLinkedInChecklist" class="btn btn-primary">Save Progress</button>
+        <button id="exportLinkedInChecklist" class="btn btn-primary">Export as CSV</button>
+      </div>
+
+      <div class="linkedin-progress">
+        <h4>Your Progress: <span id="linkedinProgress">0%</span></h4>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="linkedinProgressBar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Elevator Pitch Builder Modal -->
+<div class="modal" id="elevatorPitchModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Elevator Pitch Builder</h3>
+
+    <div class="elevator-form">
+      <p class="worksheet-intro">Your elevator pitch is a 30-second introduction that communicates who you are, what you do, and the value you offer. Complete the sections below to craft a compelling elevator pitch.</p>
+
+      <div class="form-group">
+        <label>Introduction (Who you are):</label>
+        <textarea id="elevatorIntro" placeholder="E.g., I'm a former FDA regulatory affairs specialist with 12 years of experience..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Value Proposition (What you do & your unique value):</label>
+        <textarea id="elevatorValue" placeholder="E.g., I help companies develop regulatory strategies that accelerate time-to-market while ensuring compliance..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Proof Point (Specific achievement or credential):</label>
+        <textarea id="elevatorProof" placeholder="E.g., In my last role, I reduced approval timelines by 40% while maintaining 100% compliance..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Call to Action (What you're looking for):</label>
+        <textarea id="elevatorAction" placeholder="E.g., I'm currently exploring opportunities in the medical device industry where I can help companies navigate regulatory challenges..."></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button id="generateElevatorPitch" class="btn btn-primary">Generate Elevator Pitch</button>
+      </div>
+
+      <div class="result-container">
+        <h4>Your Elevator Pitch:</h4>
+        <div id="elevatorPitchResult" class="statement-result"></div>
+        <p class="result-note"><em>Please modify further for clarity and natural speech (this is just an example framework)</em></p>
+        <div class="result-actions">
+          <button id="copyElevatorPitch" class="btn btn-outline">Copy to Clipboard</button>
+          <button id="practiceElevatorPitch" class="btn btn-primary">Practice Mode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Value Proposition Worksheet Modal -->
+<div class="modal" id="valuePropositionModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Value Proposition Worksheet</h3>
+
+    <div class="worksheet-form">
+      <p class="worksheet-intro">Complete this worksheet to define your unique value proposition for private sector employers. This will help you articulate what makes you valuable and differentiated in the job market.</p>
+
+      <div class="worksheet-section">
+        <h4>1. Your Federal Experience</h4>
+        <div class="form-group">
+          <label>What specialized knowledge or expertise did you gain in federal service?</label>
+          <textarea id="federalExpertise" placeholder="E.g., Regulatory compliance in healthcare, cybersecurity protocols for critical infrastructure, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What unique perspectives do you have from working in government?</label>
+          <textarea id="federalPerspectives" placeholder="E.g., Understanding of how policy decisions impact implementation, insight into government priorities, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>2. Your Skills & Strengths</h4>
+        <div class="form-group">
+          <label>What are your top 3-5 transferable skills?</label>
+          <textarea id="transferableSkills" placeholder="E.g., Project management, stakeholder engagement, data analysis, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What do colleagues consistently praise you for?</label>
+          <textarea id="strengths" placeholder="E.g., Ability to simplify complex information, calm leadership during crises, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>3. Market Needs & Opportunities</h4>
+        <div class="form-group">
+          <label>What specific problems or challenges exist in your target industry?</label>
+          <textarea id="marketChallenges" placeholder="E.g., Navigating complex regulations, improving operational efficiency, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>How does your federal background uniquely position you to solve these problems?</label>
+          <textarea id="uniqueSolutions" placeholder="E.g., Insider knowledge of regulatory processes, experience managing large-scale government programs, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>4. Your Passions & Motivations</h4>
+        <div class="form-group">
+          <label>What aspects of your work do you find most energizing or meaningful?</label>
+          <textarea id="passions" placeholder="E.g., Mentoring team members, solving complex problems, creating efficient systems, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What impact do you want to make in your next role?</label>
+          <textarea id="desiredImpact" placeholder="E.g., Help organizations navigate regulatory challenges, improve public-private partnerships, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="worksheet-section">
+        <h4>5. Your Value Proposition Statement</h4>
+        <p class="worksheet-tip">Based on your answers above, craft a value proposition statement that captures your unique combination of expertise, skills, and perspective.</p>
+
+        <div class="form-group">
+          <label>I help [target employers/industry]...</label>
+          <textarea id="valuePropositionTarget" placeholder="E.g., healthcare technology companies..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>to [solve specific problems]...</label>
+          <textarea id="valuePropositionProblem" placeholder="E.g., navigate complex regulatory environments and accelerate approval processes..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>by leveraging my [unique skills/experience]...</label>
+          <textarea id="valuePropositionSkills" placeholder="E.g., decade of experience in FDA regulatory affairs and deep understanding of compliance requirements..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>which results in [specific benefits]...</label>
+          <textarea id="valuePropositionBenefits" placeholder="E.g., faster time-to-market, reduced compliance risks, and more effective government relations."></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button id="generateValueProposition" class="btn btn-primary">Generate Value Proposition</button>
+      </div>
+
+      <div class="result-container">
+        <h4>Your Value Proposition Statement:</h4>
+        <div id="valuePropositionResult" class="statement-result"></div>
+        <p class="result-note"><em>Please modify further for clarity and flow (this is just an example framework)</em></p>
+        <div class="result-actions">
+          <button id="copyValueProposition" class="btn btn-outline">Copy to Clipboard</button>
+          <button id="saveValueProposition" class="btn btn-primary">Save as CSV</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    
+    <a href="/F2I/pages/networking-strategies.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (5/9)</div>
+        <div class="step-title">Networking & Relationship Building</div>
+        <div class="step-description">Expand your professional network beyond government circles</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    
+
+    <div class="all-steps-link">
+      <a href="/F2I/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+  <script src="/F2I/assets/js/image-optimizer.min.js" defer></script>
+  <script src="/F2I/assets/js/fix-links.js" defer></script>
+
+  
+  <script src="/F2I/assets/js/resume-branding.js" defer></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>
