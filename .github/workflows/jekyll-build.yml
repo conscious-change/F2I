@@ -62,6 +62,12 @@ jobs:
         # Run the script but skip the interactive prompts
         ./run_site.sh
 
+    # Copy the built site from _site to docs
+    - name: Copy site to docs directory
+      run: |
+        mkdir -p docs
+        cp -r _site/* docs/
+
     # Only run the commit and push steps on the main branch
     - name: Commit docs directory to main branch
       if: github.ref == 'refs/heads/main'
