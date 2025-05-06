@@ -1,7 +1,0 @@
-# Redirect asset requests without /F2I prefix
-/assets/*  /F2I/assets/:splat  301
-/pages/*   /F2I/pages/:splat   301
-/service-worker.js  /F2I/service-worker.js  301
-
-# Redirect root to /F2I/
-/  /F2I/  301
