@@ -1,0 +1,123 @@
+{
+  "coreTechnicalSkills": {
+    "dataAnalysis": "3",
+    "projectManagement": "5",
+    "budgetManagement": "4",
+    "procurement": "2",
+    "itSystems": "2",
+    "policyDevelopment": "3",
+    "compliance": "1",
+    "researchMethods": "3",
+    "technicalWriting": "4",
+    "programEvaluation": "4"
+  },
+  "agencySkills": [
+    {
+      "name": "Communication ",
+      "rating": "4",
+      "notes": "Help overall business processes "
+    },
+    {
+      "name": "Project Management ",
+      "rating": "4",
+      "notes": "Ensure timely completion of projects "
+    }
+  ],
+  "softwareTools": [
+    {
+      "name": "Power BI",
+      "rating": "3",
+      "equivalent": ""
+    },
+    {
+      "name": "Power Automate",
+      "rating": "2",
+      "equivalent": ""
+    }
+  ],
+  "leadershipSkills": {
+    "teamLeadership": "4",
+    "strategicPlanning": "4",
+    "decisionMaking": "3",
+    "delegation": "2",
+    "performanceManagement": "2",
+    "conflictResolution": "3",
+    "changeManagement": "2",
+    "mentoring": "5",
+    "resourceAllocation": "4",
+    "stakeholderManagement": "5"
+  },
+  "problemSolvingSkills": {
+    "criticalThinking": "4",
+    "analyticalReasoning": "4",
+    "rootCauseAnalysis": "3",
+    "creativeProblemSolving": "3",
+    "decisionAnalysis": "4",
+    "systemsThinking": "5",
+    "riskAssessment": "2",
+    "processImprovement": "2",
+    "research": "3",
+    "adaptability": "3"
+  },
+  "communicationSkills": {
+    "writtenCommunication": "4",
+    "verbalCommunication": "3",
+    "presentationSkills": "4",
+    "activeListening": "3",
+    "negotiation": "2",
+    "persuasion": "4",
+    "crossFunctionalComm": "4",
+    "clientCommunication": "4",
+    "feedbackDelivery": "2",
+    "digitalCommunication": "2"
+  },
+  "achievements": [
+    {
+      "title": "Implemented X early detection system ",
+      "description": "Helped scale a end to end detection system product ",
+      "impact": "Improved process by 30%",
+      "skills": "Leadership and Implementation "
+    }
+  ],
+  "starStories": [
+    {
+      "situation": "Help demonstrate the everyday use of X system in support of Y Activity in a resource constrained country",
+      "task": "Secure funding, lead the program and develop a monitoring and evaluation framework ",
+      "action": "Create and present a concept note, secure funding, identify subject matter experts and multiple stakeholder meetings to identify clear milestone ",
+      "result": "Within 12 months the program was running at 80% ",
+      "skills": "communication, negotiation, leadership "
+    }
+  ],
+  "industrySkills": [
+    {
+      "name": "Data Analysis ",
+      "rating": "3",
+      "gap": "Additional training "
+    },
+    {
+      "name": "Machine Learning",
+      "rating": "3",
+      "gap": "Additional training "
+    }
+  ],
+  "terminology": [
+    {
+      "federal": "GS-13 Microbiologist",
+      "industry": "Sr. Manager ",
+      "context": "Leads teams "
+    }
+  ],
+  "industryAnalysis": {},
+  "valueProposition": "Experienced federal professional with expertise in Project Management, Mentoring/Coaching, Stakeholder Management with demonstrated success in Implemented X early detection system . Bringing a unique perspective from government service with a proven track record of delivering results in complex regulatory environments.",
+  "topSkill1": "Project Management",
+  "topSkill2": "Mentoring/Coaching",
+  "topSkill3": "Stakeholder Management",
+  "topSkill4": "Systems Thinking",
+  "topSkill5": "Budget Management",
+  "developSkill1": "Compliance/Regulatory",
+  "developSkill2": "Procurement",
+  "developSkill3": "IT Systems",
+  "nextStep1": "Update resume to highlight transferable skills",
+  "nextStep2": "Research target companies in preferred industries",
+  "nextStep3": "Connect with industry professionals for informational interviews"
+}
