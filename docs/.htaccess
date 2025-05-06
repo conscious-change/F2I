@@ -1,0 +1,32 @@
+# Redirect requests for assets without /F2I prefix to include it
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.fed2industry\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/F2I/
+RewriteCond %{REQUEST_URI} ^/(assets|pages|service-worker\.js) [NC]
+RewriteRule ^(.*)$ /F2I/$1 [L,R=301]
+
+# Set correct content types
+AddType text/css .css
+AddType application/javascript .js
+AddType image/webp .webp
+
+# Enable CORS for font files
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
