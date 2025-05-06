@@ -77,11 +77,18 @@ jobs:
         echo "Build completed. Checking _site directory:"
         ls -la _site/
 
+    # Clean up any nested docs directories before copying
+    - name: Clean up docs directory
+      run: |
+        rm -rf docs
+        mkdir -p docs
+        
     # Copy the built site from _site to docs
     - name: Copy site to docs directory
       run: |
-        mkdir -p docs
         cp -r _site/* docs/
+        # Create a .nojekyll file to disable GitHub Pages' Jekyll processing
+        touch docs/.nojekyll
 
     # Only run the commit and push steps on the main branch
     - name: Commit docs directory to main branch
