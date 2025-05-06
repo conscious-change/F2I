@@ -1,8 +1,8 @@
 # Site settings
 title: From Force to Industry
 description: Resources for military members transitioning to civilian careers
-baseurl: "/F2I" # Keep the /F2I baseurl
-url: "https://www.fed2industry.com" # Custom domain URL
+baseurl: "" # Empty for custom domain
+url: "https://www.fed2industry.com"
 markdown: kramdown
 
 # Social Media
