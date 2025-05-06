@@ -60,35 +60,24 @@ jobs:
       run: |
         ./scripts/process-images.sh --recursive
 
-    - name: Debug run_site.sh
+    - name: Build site with custom script
       run: |
-        echo "Content of run_site.sh before modification:"
-        cat run_site.sh
-        
-        # Modify run_site.sh to build instead of serve in CI environment
+        # Keep using the /F2I baseurl for all builds
         sed -i 's/bundle exec jekyll serve/bundle exec jekyll build --baseurl "\/F2I"/' run_site.sh
-        
-        echo "Content of run_site.sh after modification:"
-        cat run_site.sh
         
         # Run the script but skip the interactive prompts
         ./run_site.sh
-        
-        echo "Build completed. Checking _site directory:"
-        ls -la _site/
 
-    # Clean up any nested docs directories before copying
-    - name: Clean up docs directory
-      run: |
-        rm -rf docs
-        mkdir -p docs
-        
     # Copy the built site from _site to docs
     - name: Copy site to docs directory
       run: |
+        rm -rf docs
+        mkdir -p docs
         cp -r _site/* docs/
         # Create a .nojekyll file to disable GitHub Pages' Jekyll processing
         touch docs/.nojekyll
+        # Create CNAME file for custom domain
+        echo "www.fed2industry.com" > docs/CNAME
 
     # Only run the commit and push steps on the main branch
     - name: Commit docs directory to main branch

@@ -1,10 +1,8 @@
-# Site Settings
-title: Fed 2 Industry
-email: contact@fed2industry.com
-description: Resources for federal employees transitioning to industry careers.
-author: "F2I Team"
-baseurl: "/F2I"  # Add your repository name here
-url: "https://conscious-change.github.io"  # Add your GitHub Pages URL here
+# Site settings
+title: From Force to Industry
+description: Resources for military members transitioning to civilian careers
+baseurl: "/F2I" # Keep the /F2I baseurl
+url: "https://www.fed2industry.com" # Custom domain URL
 markdown: kramdown
 
 # Social Media
