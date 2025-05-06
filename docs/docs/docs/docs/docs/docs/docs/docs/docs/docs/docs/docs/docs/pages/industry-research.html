@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>Research & Industry Exploration</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      // Set the appropriate URL based on support
+      link.href = webpSupport ?
+        '/F2I/assets/img/hero-bg.webp' :
+        '/F2I/assets/img/hero-bg.jpg';
+
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <!-- WebP Detection (early load) -->
+  <script src="/F2I/assets/js/webp-detection.min.js"></script>
+
+  <!-- Font Display Optimization -->
+  <link rel="stylesheet" href="/F2I/assets/css/font-display.css">
+
+  <!-- Site Styles -->
+  
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="/F2I/assets/css/main.css">
+  
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var s=a.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&d.setAttribute(l,o[l]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    /* loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+  </script>
+</head>
+<body class="industry-research-page">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>Research & Industry Exploration</h1>
+    
+      <p class="subtitle">Gain insights into private sector industries and identify opportunities that align with your federal experience</p>
+    
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <script src="/F2I/assets/js/industry-research.js"></script>
+
+
+
+<div class="industry-content">
+  <div class="intro-section">
+    <p>
+      Thorough research and industry exploration are critical steps in your transition from federal service to the private sector. Understanding the landscape of potential industries, their cultures, and how your skills translate will help you make informed decisions and position yourself effectively for your next career move.
+    </p>
+  </div>
+
+  <div class="why-research">
+    <h2>Why Research Matters for Federal Transitions</h2>
+    <p>
+      For federal employees transitioning to the private sector, comprehensive research is particularly important because:
+    </p>
+    <ul>
+      <li>It helps you identify industries where your federal experience is most valued</li>
+      <li>It provides insights into private sector culture, expectations, and language</li>
+      <li>It allows you to understand compensation structures and benefits differences</li>
+      <li>It helps you identify growth industries with long-term career potential</li>
+      <li>It enables you to make informed decisions about additional training or certifications</li>
+    </ul>
+  </div>
+
+  <div class="research-strategies">
+    <h2>Effective Research Strategies</h2>
+
+    <div class="strategy-card">
+      <h3>1. Industry Analysis</h3>
+      <p>
+        Begin by identifying and analyzing industries that align with your skills, interests, and values:
+      </p>
+      <ul>
+        <li>Research growth trends and future outlook for potential industries</li>
+        <li>Identify industries actively recruiting professionals with government experience</li>
+        <li>Analyze industry challenges and how your federal experience might address them</li>
+        <li>Understand the competitive landscape and major players in each industry</li>
+        <li>Research industry-specific terminology and buzzwords</li>
+      </ul>
+      <div class="resource-box">
+        <h4>Recommended Resources:</h4>
+        <ul>
+          <li>Bureau of Labor Statistics Industry Outlook reports</li>
+          <li>Industry-specific publications and news sources</li>
+          <li>LinkedIn Industry Insights</li>
+          <li>Industry association websites and reports</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="strategy-card">
+      <h3>2. Company Research</h3>
+      <p>
+        Once you've identified target industries, research specific companies within those sectors:
+      </p>
+      <ul>
+        <li>Identify companies with a history of hiring former federal employees</li>
+        <li>Research company culture, values, and work environment</li>
+        <li>Analyze company performance, growth trajectory, and stability</li>
+        <li>Understand the company's products, services, and customer base</li>
+        <li>Research recent news, developments, and strategic initiatives</li>
+      </ul>
+      <div class="example-box">
+        <h4>Company Research Checklist:</h4>
+        <ul>
+          <li>Company website (About Us, Careers, News sections)</li>
+          <li>Annual reports and investor presentations</li>
+          <li>Press releases and recent news</li>
+          <li>Employee reviews on Glassdoor and similar platforms</li>
+          <li>LinkedIn profiles of current employees with federal backgrounds</li>
+          <li>Company social media presence</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="strategy-card">
+      <h3>3. Role Analysis</h3>
+      <p>
+        Research specific roles that align with your skills and experience:
+      </p>
+      <ul>
+        <li>Identify private sector roles that utilize your federal experience</li>
+        <li>Analyze job descriptions to understand required skills and qualifications</li>
+        <li>Research typical career paths and advancement opportunities</li>
+        <li>Understand day-to-day responsibilities and expectations</li>
+        <li>Research compensation ranges and benefits packages</li>
+      </ul>
+      <div class="tip-box">
+        <h4>Pro Tip:</h4>
+        <p>
+          Create a spreadsheet to track roles across different companies and industries. Include columns for required skills, qualifications, salary ranges, and notes on how your federal experience aligns with each role.
+        </p>
+      </div>
+    </div>
+
+    <div class="strategy-card">
+      <h3>4. Skills Gap Analysis</h3>
+      <p>
+        Identify any gaps between your current skills and those required in your target roles:
+      </p>
+      <ul>
+        <li>Compare your current skills to those listed in job descriptions</li>
+        <li>Identify technical skills or certifications that may be required</li>
+        <li>Research industry-specific software or tools you may need to learn</li>
+        <li>Identify soft skills that may be emphasized differently in the private sector</li>
+        <li>Develop a plan to address any significant gaps</li>
+      </ul>
+
+    </div>
+
+    <div class="strategy-card">
+      <h3>5. Compensation Research</h3>
+      <p>
+        Understand private sector compensation structures and benefits:
+      </p>
+      <ul>
+        <li>Research salary ranges for your target roles in specific industries and locations</li>
+        <li>Understand typical benefits packages and how they differ from federal benefits</li>
+        <li>Research bonus structures, equity compensation, and other incentives</li>
+        <li>Understand how to negotiate compensation in the private sector</li>
+        <li>Consider the total compensation package, not just base salary</li>
+      </ul>
+      <div class="resource-box">
+        <h4>Salary Research Resources:</h4>
+        <ul>
+          <li>Glassdoor Salary Reports</li>
+          <li>PayScale</li>
+          <li>Bureau of Labor Statistics Occupational Outlook Handbook</li>
+          <li>Industry association salary surveys</li>
+          <li>Robert Half Salary Guide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="action-plan">
+    <div class="checklist-header">
+      <h2>Your Industry Research Action Plan</h2>
+    </div>
+
+    <p>
+      Track your progress as you conduct thorough industry research. Check off each step as you complete it:
+    </p>
+
+    <div class="checklist-progress">
+      <div id="checklist-progress-bar" class="checklist-progress-bar" style="width: 0%"></div>
+    </div>
+    <div id="checklist-progress-text" class="checklist-progress-text">0 of 7 steps completed (0%)</div>
+
+    <div class="action-steps">
+      <div id="action-step-1" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="1" id="step-1">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Identify Target Industries</h3>
+          <p>Based on your skills, interests, and values, identify 3-5 industries to research in depth.</p>
+        </div>
+      </div>
+
+      <div id="action-step-2" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="2" id="step-2">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Research Industry Trends</h3>
+          <p>Analyze growth projections, challenges, and opportunities in each target industry.</p>
+        </div>
+      </div>
+
+      <div id="action-step-3" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="3" id="step-3">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Identify Target Companies</h3>
+          <p>Create a list of 10-15 companies within your target industries that align with your goals.</p>
+        </div>
+      </div>
+
+      <div id="action-step-4" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="4" id="step-4">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Research Roles and Requirements</h3>
+          <p>Identify specific roles and analyze the skills, qualifications, and experience required.</p>
+        </div>
+      </div>
+
+      <div id="action-step-5" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="5" id="step-5">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Conduct Skills Gap Analysis</h3>
+          <p>Compare your current skills to those required and develop a plan to address any gaps.</p>
+        </div>
+      </div>
+
+      <div id="action-step-6" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="6" id="step-6">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <h3>Research Compensation</h3>
+          <p>Understand salary ranges and benefits packages for your target roles.</p>
+        </div>
+      </div>
+
+
+      <div id="action-step-7" class="action-step">
+        <input type="checkbox" class="action-step-checkbox" data-step-id="7" id="step-7">
+        <div class="step-number">7</div>
+        <div class="step-content">
+          <h3>Refine Your Focus</h3>
+          <p>Based on your research, narrow your focus to the most promising industries, companies, and roles.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="checklist-actions">
+      <button id="reset-checklist" class="reset-button">Reset Progress</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    
+    <a href="/F2I/pages/skill-translation-hub.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (3/9)</div>
+        <div class="step-title">Skill Translation & Development</div>
+        <div class="step-description">Learn to communicate your federal experience effectively</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    
+
+    <div class="all-steps-link">
+      <a href="/F2I/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+  <script src="/F2I/assets/js/image-optimizer.min.js" defer></script>
+  <script src="/F2I/assets/js/fix-links.js" defer></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>
