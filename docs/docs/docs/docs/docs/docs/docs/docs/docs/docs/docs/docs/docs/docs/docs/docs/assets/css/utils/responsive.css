@@ -1,0 +1,168 @@
+/* 
+ * F2I Website Responsive CSS
+ * Responsive utilities and media queries
+ */
+
+/* Responsive Breakpoints:
+ * - xs: 0-575px (default)
+ * - sm: 576px-767px
+ * - md: 768px-991px
+ * - lg: 992px-1199px
+ * - xl: 1200px+
+ */
+
+/* Responsive Visibility */
+.hide-xs {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .hide-xs {
+    display: initial;
+  }
+  
+  .show-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-sm-down {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-md-up {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .hide-md-down {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .hide-lg-up {
+    display: none;
+  }
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  /* Typography adjustments */
+  h1, .page-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2, .section-title {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  /* Grid adjustments */
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  /* Typography adjustments */
+  h1, .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  h2, .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .page-header .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-intro {
+    font-size: 1rem;
+  }
+  
+  /* Layout adjustments */
+  .page-header {
+    padding: 50px 15px 30px;
+  }
+  
+  .section {
+    padding: 30px 15px;
+  }
+  
+  /* Grid adjustments */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Flex adjustments */
+  .flex-md-column {
+    flex-direction: column;
+  }
+  
+  /* Component adjustments */
+  .tabs-navigation {
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  /* Typography adjustments */
+  h1, .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2, .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero .hero-tagline {
+    font-size: 1.4rem;
+  }
+  
+  /* Component adjustments */
+  .btn {
+    padding: 0.7rem 1.2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}

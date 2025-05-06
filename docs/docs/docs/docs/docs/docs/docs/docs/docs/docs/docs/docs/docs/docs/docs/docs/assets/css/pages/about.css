@@ -1,0 +1,256 @@
+/*
+ * F2I Website About Page CSS
+ * Styles specific to the About page
+ */
+
+/* About Page Container */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* About Sections */
+.about-section {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.about-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.about-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 1.6rem;
+}
+
+/* Mission Section */
+.mission-section {
+  text-align: center;
+}
+
+.mission-statement {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--gray-dark);
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Why Section */
+.why-section {
+  background-color: var(--gray-light);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.two-column-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.column-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.column-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.column-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.feature-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.list-icon {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Services Section */
+.services-section {
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background-color: var(--gray-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.service-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.service-card p {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stats-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--gray-light);
+  border-radius: 12px;
+}
+
+/* Team Section */
+.team-section h3 {
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.5rem;
+  text-align: center; /* Center all h3 headings in team section */
+}
+
+.team-section p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+.team-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+.team-text .team-cta {
+  text-align: center !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 100%; /* Ensure full width */
+  display: block; /* Ensure block display */
+}
+
+.team-cta .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Utility Classes */
+.alt-section {
+  background-color: var(--gray-light);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .mission-statement {
+    font-size: 1.1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Ensure two-column layouts stack properly on mobile */
+  .two-column-grid {
+    flex-direction: column;
+  }
+
+  .column-text {
+    order: 1; /* Text comes first on mobile */
+  }
+
+  .column-image {
+    order: 0; /* Image comes second on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+}
