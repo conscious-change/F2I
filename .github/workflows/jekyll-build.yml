@@ -62,8 +62,8 @@ jobs:
 
     - name: Build site with custom script
       run: |
-        # Keep using the /F2I baseurl for all builds
-        sed -i 's/bundle exec jekyll serve/bundle exec jekyll build --baseurl "\/F2I"/' run_site.sh
+        # Use empty baseurl for custom domain
+        sed -i 's/bundle exec jekyll serve/bundle exec jekyll build --baseurl ""/' run_site.sh
         
         # Run the script but skip the interactive prompts
         ./run_site.sh
