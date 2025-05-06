@@ -1,0 +1,227 @@
+{
+  "coreTechnicalSkills": {
+    "dataAnalysis": "4",
+    "projectManagement": "5",
+    "budgetManagement": "4",
+    "procurement": "3",
+    "itSystems": "3",
+    "policyDevelopment": "4",
+    "compliance": "4",
+    "researchMethods": "3",
+    "technicalWriting": "5",
+    "programEvaluation": "4"
+  },
+  "agencySkills": [
+    {
+      "name": "Federal Grant Management",
+      "rating": "5",
+      "notes": "Transferable to corporate philanthropy, CSR programs, and nonprofit partnerships"
+    },
+    {
+      "name": "Regulatory Compliance",
+      "rating": "4",
+      "notes": "Valuable for regulated industries like healthcare, finance, and energy"
+    },
+    {
+      "name": "Interagency Coordination",
+      "rating": "5",
+      "notes": "Applicable to cross-functional team leadership and matrix management"
+    },
+    {
+      "name": "Emergency Response Planning",
+      "rating": "4",
+      "notes": "Relevant for business continuity, crisis management, and risk mitigation roles"
+    }
+  ],
+  "softwareTools": [
+    {
+      "name": "Microsoft Power BI",
+      "rating": "4",
+      "equivalent": "Tableau, Looker"
+    },
+    {
+      "name": "SharePoint",
+      "rating": "4",
+      "equivalent": "Confluence, Box, Google Workspace"
+    },
+    {
+      "name": "Power Automate",
+      "rating": "3",
+      "equivalent": "Zapier, Integromat"
+    },
+    {
+      "name": "Federal Financial System",
+      "rating": "4",
+      "equivalent": "SAP, Oracle Financials, NetSuite"
+    },
+    {
+      "name": "GIS Software",
+      "rating": "3",
+      "equivalent": "ESRI ArcGIS, QGIS"
+    }
+  ],
+  "leadershipSkills": {
+    "teamLeadership": "5",
+    "strategicPlanning": "4",
+    "decisionMaking": "4",
+    "delegation": "3",
+    "performanceManagement": "4",
+    "conflictResolution": "4",
+    "changeManagement": "3",
+    "mentoring": "5",
+    "resourceAllocation": "4",
+    "stakeholderManagement": "5"
+  },
+  "problemSolvingSkills": {
+    "criticalThinking": "5",
+    "analyticalReasoning": "4",
+    "rootCauseAnalysis": "4",
+    "creativeProblemSolving": "3",
+    "decisionAnalysis": "4",
+    "systemsThinking": "5",
+    "riskAssessment": "4",
+    "processImprovement": "4",
+    "research": "3",
+    "adaptability": "4"
+  },
+  "communicationSkills": {
+    "writtenCommunication": "5",
+    "verbalCommunication": "4",
+    "presentationSkills": "4",
+    "activeListening": "4",
+    "negotiation": "3",
+    "persuasion": "4",
+    "crossFunctionalComm": "5",
+    "clientCommunication": "4",
+    "feedbackDelivery": "4",
+    "digitalCommunication": "3"
+  },
+  "achievements": [
+    {
+      "title": "Led Cross-Agency Data Integration Initiative",
+      "description": "Spearheaded a project to integrate data systems across three federal agencies to improve information sharing and decision-making capabilities.",
+      "impact": "Reduced reporting time by 65%, eliminated data redundancy by 40%, and saved approximately $1.2M in annual operational costs.",
+      "skills": "Project Management, Systems Thinking, Stakeholder Management, Technical Leadership"
+    },
+    {
+      "title": "Modernized Regulatory Compliance Framework",
+      "description": "Redesigned outdated compliance processes by implementing risk-based approaches and digital tracking systems.",
+      "impact": "Increased compliance rate from 78% to 94%, reduced processing time by 35%, and improved stakeholder satisfaction scores by 28%.",
+      "skills": "Process Improvement, Regulatory Knowledge, Change Management, Digital Transformation"
+    },
+    {
+      "title": "Developed Emergency Response Protocol",
+      "description": "Created comprehensive emergency response protocols for regional offices, including training materials and simulation exercises.",
+      "impact": "Implemented in 12 regional offices, trained 200+ staff, reduced average emergency response time by 22 minutes (40% improvement).",
+      "skills": "Crisis Management, Training Development, Strategic Planning, Cross-functional Coordination"
+    },
+    {
+      "title": "Secured Major Program Funding",
+      "description": "Led effort to secure continued funding for critical agency program through detailed analysis, stakeholder engagement, and compelling presentation of outcomes.",
+      "impact": "Secured $4.5M in funding for a 3-year program extension, protecting 15 jobs and enabling service to 10,000+ beneficiaries annually.",
+      "skills": "Budget Management, Stakeholder Engagement, Strategic Communication, Data Analysis"
+    }
+  ],
+  "starStories": [
+    {
+      "situation": "Our agency faced a critical challenge when a new legislative mandate required us to implement a complex data reporting system within 6 months, while our IT resources were already stretched thin on other priority projects.",
+      "task": "As the Program Manager, I was tasked with developing and implementing a solution that would meet the legislative requirements on time without disrupting existing operations or requiring significant additional resources.",
+      "action": "I formed a cross-functional team with representatives from IT, policy, and operations. We mapped current processes, identified integration points, and developed a phased implementation approach. I negotiated with leadership to secure temporary contractor support for technical development while training internal staff to maintain the system long-term. I also established weekly progress reviews and created a risk mitigation plan to address potential obstacles.",
+      "result": "We successfully launched the system two weeks ahead of schedule and 15% under budget. The solution automated 80% of previously manual reporting processes, reducing staff time spent on compliance by approximately 1,200 hours annually. The system received recognition from agency leadership as a model for future implementations, and I was asked to share our approach with other program offices.",
+      "skills": "Project Management, Strategic Planning, Stakeholder Management, Resource Allocation, Change Management"
+    },
+    {
+      "situation": "During a major reorganization, my team experienced significant resistance to change, decreased morale, and a 25% drop in productivity as staff worried about their roles and the future direction of our work.",
+      "task": "As Team Lead, I needed to rebuild trust, restore productivity, and help the team successfully navigate the transition while maintaining essential services to our stakeholders.",
+      "action": "I scheduled individual meetings with each team member to understand their specific concerns and gather input on improving the transition. Based on this feedback, I created a transparent communication plan with regular updates on organizational changes. I advocated with senior leadership to clarify roles earlier in the process and secured opportunities for staff to provide input on new processes. I also implemented a skills development program to help team members adapt to new responsibilities.",
+      "result": "Within three months, team productivity returned to pre-reorganization levels. Staff engagement scores improved by 35% on the next employee survey. All critical deadlines during the transition period were met, and we received commendation from the Deputy Director for maintaining service quality during the reorganization. Two team members were promoted into new roles created by the reorganization.",
+      "skills": "Leadership, Change Management, Communication, Conflict Resolution, Mentoring, Advocacy"
+    },
+    {
+      "situation": "Our agency identified a critical gap in our ability to analyze large datasets efficiently, limiting our capacity to make data-driven policy recommendations and measure program effectiveness.",
+      "task": "I was assigned to develop and implement a data analytics strategy that would enhance our analytical capabilities without requiring significant budget increases or specialized hiring in a tight labor market.",
+      "action": "I conducted a skills assessment across the organization to identify existing but underutilized analytical talent. I designed a three-month training program for selected staff, partnering with a local university to provide specialized instruction. I secured executive sponsorship to reallocate 10% of participants' time to a data analytics community of practice. Additionally, I identified and implemented open-source analytics tools that integrated with our existing systems, and created standardized templates and processes for common analytical tasks.",
+      "result": "Within six months, we established a cross-functional data analytics team of 12 staff members who maintained their primary roles while dedicating part of their time to agency-wide analytics projects. The team completed 15 high-priority analyses in the first year, identifying over $3.2M in potential cost savings and program improvements. The model was so successful that it was adopted by two other divisions, and we received a government modernization award for innovative workforce development.",
+      "skills": "Strategic Planning, Training & Development, Resource Optimization, Innovation, Cross-functional Leadership"
+    }
+  ],
+  "industrySkills": [
+    {
+      "name": "Agile Project Management",
+      "rating": "3",
+      "gap": "Obtain Scrum Master certification and gain experience with sprint planning and agile tools like Jira"
+    },
+    {
+      "name": "Data Visualization",
+      "rating": "3",
+      "gap": "Complete advanced Tableau training and create a portfolio of visualization projects using public datasets"
+    },
+    {
+      "name": "Cloud Computing (AWS/Azure)",
+      "rating": "2",
+      "gap": "Complete AWS Certified Solutions Architect certification and gain hands-on experience through personal projects"
+    },
+    {
+      "name": "Digital Marketing Analytics",
+      "rating": "2",
+      "gap": "Take Google Analytics certification and collaborate with marketing teams on analytics projects"
+    },
+    {
+      "name": "Product Management",
+      "rating": "3",
+      "gap": "Join Product Management community, take online courses, and volunteer for product-focused projects"
+    }
+  ],
+  "terminology": [
+    {
+      "federal": "GS-14 Program Manager",
+      "industry": "Senior Product Manager / Director of Operations",
+      "context": "Leadership role responsible for program strategy, execution, and outcomes"
+    },
+    {
+      "federal": "Memorandum of Understanding (MOU)",
+      "industry": "Service Level Agreement (SLA) / Partnership Agreement",
+      "context": "Formal document outlining terms of collaboration between organizations"
+    },
+    {
+      "federal": "Fiscal Year Execution",
+      "industry": "Annual Budget Cycle / Financial Planning",
+      "context": "Process of implementing and managing annual financial resources"
+    },
+    {
+      "federal": "Stakeholder Engagement",
+      "industry": "Client Relationship Management / Customer Success",
+      "context": "Building and maintaining relationships with key partners and beneficiaries"
+    },
+    {
+      "federal": "Procurement",
+      "industry": "Vendor Management / Strategic Sourcing",
+      "context": "Process of acquiring goods and services from external providers"
+    },
+    {
+      "federal": "Performance Metrics",
+      "industry": "KPIs / OKRs (Objectives and Key Results)",
+      "context": "Measurements used to evaluate success and progress toward goals"
+    }
+  ],
+  "industryAnalysis": {
+    "targetIndustry1": "Technology/SaaS",
+    "industryTrends1": "Increasing focus on AI/ML integration, shift toward product-led growth, emphasis on data security and privacy compliance",
+    "targetIndustry2": "Healthcare Technology",
+    "industryTrends2": "Digital health expansion, interoperability requirements, value-based care models, telehealth normalization",
+    "targetIndustry3": "Management Consulting",
+    "industryTrends3": "Digital transformation services, data analytics offerings, sustainability consulting, public sector modernization"
+  },
+  "valueProposition": "Seasoned federal leader with 12+ years of experience delivering complex, high-impact programs in resource-constrained environments. I bring a unique combination of strategic vision and execution excellence, having successfully led cross-functional teams to modernize systems, improve operational efficiency, and enhance service delivery. My background in navigating complex regulatory environments, managing diverse stakeholders, and optimizing limited resources positions me to drive significant value in organizations seeking disciplined innovation and measurable results.",
+  "topSkill1": "Strategic Program Management",
+  "topSkill2": "Stakeholder Engagement & Management",
+  "topSkill3": "Cross-functional Team Leadership",
+  "topSkill4": "Data-Driven Decision Making",
+  "topSkill5": "Change Management & Organizational Transformation",
+  "developSkill1": "Cloud Computing Technologies (AWS/Azure)",
+  "developSkill2": "Agile/Scrum Methodologies",
+  "developSkill3": "Advanced Data Visualization",
+  "nextStep1": "Revise resume to highlight transferable skills and quantifiable achievements",
+  "nextStep2": "Schedule informational interviews with 3-5 professionals in target industries",
+  "nextStep3": "Complete AWS Cloud Practitioner certification within 60 days"
+}
