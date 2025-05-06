@@ -1,0 +1,162 @@
+/*
+ * F2I Website Community Page CSS
+ * Styles specific to the Community page
+ */
+
+/* Community Content Container */
+.community-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Center align all section headers */
+.community-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  position: relative;
+}
+
+.community-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* Section Introduction */
+.intro-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.intro-section p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Community Benefits Section */
+.community-benefits-section {
+  margin-bottom: 3rem;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Benefit Card */
+.benefit-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.benefit-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.benefit-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Community Join Section */
+.community-join-section {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.join-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.join-content h2 {
+  color: white !important;
+  margin-bottom: 1.5rem;
+}
+
+.join-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-join-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .community-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .benefit-card {
+    padding: 1.2rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .join-content p {
+    font-size: 1rem;
+  }
+}
