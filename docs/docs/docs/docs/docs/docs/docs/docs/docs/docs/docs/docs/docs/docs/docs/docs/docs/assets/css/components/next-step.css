@@ -1,0 +1,118 @@
+/* 
+ * F2I Website Next Step Component CSS
+ * Styles for the "Continue Your Transition Journey" section
+ */
+
+/* Next Step Navigation Container */
+.next-step-nav {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #eaeaea;
+  padding-top: 2rem;
+}
+
+.next-step-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.next-step-container h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+/* Next Step Link Card */
+.next-step-link {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-step-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-decoration: none;
+}
+
+/* Next Step Content */
+.next-step-content {
+  flex: 1;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Next Step Arrow */
+.next-step-arrow {
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  font-weight: 300;
+}
+
+/* View All Steps Link */
+.all-steps-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.all-steps-link a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #4ca1af;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.all-steps-link a:hover {
+  color: #4ca1af;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .next-step-container h3 {
+    font-size: 1.5rem;
+  }
+  
+  .step-title {
+    font-size: 1.2rem;
+  }
+  
+  .step-description {
+    font-size: 0.9rem;
+  }
+  
+  .next-step-arrow {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  .next-step-link {
+    padding: 1.2rem;
+  }
+}
