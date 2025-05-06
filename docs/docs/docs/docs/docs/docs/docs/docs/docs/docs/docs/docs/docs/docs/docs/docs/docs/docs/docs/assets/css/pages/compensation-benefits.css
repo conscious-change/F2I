@@ -1,0 +1,388 @@
+/*
+ * F2I Website Compensation & Benefits Page CSS
+ * Styles specific to the Compensation & Benefits page
+ */
+
+/* Compensation Content Container */
+.compensation-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Center align all section headers */
+.compensation-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  position: relative;
+}
+
+.compensation-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* Section Introduction */
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Why Compensation Matters Section */
+.why-compensation-matters {
+  margin-bottom: 3rem;
+}
+
+/* Compensation Introduction */
+.compensation-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.compensation-intro-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.compensation-intro p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Compensation Benefits */
+.compensation-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Benefit Card */
+.benefit-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border-top: 4px solid var(--primary);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.benefit-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.benefit-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Comparison Section */
+.comparison-section {
+  margin-bottom: 3rem;
+}
+
+/* Comparison Table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
+.comparison-table th {
+  background-color: var(--primary);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: var(--gray-light);
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Negotiation Section */
+.negotiation-section {
+  margin-bottom: 3rem;
+}
+
+/* Accordion Container */
+.accordion-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: var(--gray-light);
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.accordion-toggle {
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0 1.2rem 1.2rem 1.2rem;
+}
+
+.accordion-content p {
+  margin-top: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.accordion-content ul {
+  margin-bottom: 1.5rem;
+}
+
+.accordion-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Strategy Tip */
+.strategy-tip {
+  background-color: #e6f7ff;
+  border-left: 3px solid var(--info);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.strategy-tip strong {
+  color: #333;
+}
+
+/* Federal Benefits Section */
+.federal-benefits-section {
+  margin-bottom: 3rem;
+}
+
+/* Tabs Container */
+.tabs-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Tabs Navigation */
+.tabs-navigation {
+  display: flex;
+  background-color: var(--gray-light);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-button {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.tab-button:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--primary);
+}
+
+.tab-button.active {
+  color: var(--primary);
+  background-color: white;
+  border-bottom: 3px solid var(--primary);
+}
+
+.tabs-content {
+  padding: 0;
+}
+
+.tab-panel {
+  display: none;
+  padding: 2rem;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Benefits Card */
+.benefits-card {
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.benefits-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.benefits-card ul {
+  margin-bottom: 1.5rem;
+}
+
+.benefits-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .compensation-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .compensation-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs-navigation {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .tab-button.active {
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 3px solid var(--primary);
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .compensation-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .accordion-header {
+    padding: 1rem;
+  }
+
+  .accordion-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-icon {
+    font-size: 1.3rem;
+  }
+
+  .tab-panel {
+    padding: 1.5rem 1rem;
+  }
+}

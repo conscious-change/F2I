@@ -1,0 +1,47 @@
+/*
+ * F2I Website Main CSS
+ * This file imports all modular CSS files
+ */
+
+/* Base Styles */
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'base/colors.css';
+@import 'base/layout.css';
+
+/* Component Styles */
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/navigation.css';
+@import 'components/footer.css';
+@import 'components/tabs.css';
+@import 'components/accordions.css';
+@import 'components/forms.css';
+@import 'components/hero.css';
+@import 'components/next-step.css';
+
+/* Utility Styles */
+@import 'utils/responsive.css';
+
+/* Page-specific Styles */
+@import 'pages/home.css';
+@import 'pages/about.css';
+@import 'pages/transition.css';
+@import 'pages/industry-research.css';
+@import 'pages/skill-translation.css';
+@import 'pages/resume-personal-branding.css';
+@import 'pages/networking-strategies.css';
+@import 'pages/job-search-resources.css';
+@import 'pages/interview-preparation.css';
+@import 'pages/compensation-benefits.css';
+@import 'pages/transition-checklist.css';
+@import 'pages/success-stories.css';
+@import 'pages/simple-pages.css';
+@import 'pages/community.css';
+
+/*
+ * Note: As we refactor more pages, we'll add additional imports here.
+ * For example:
+ * @import 'pages/assessment.css';
+ * etc.
+ */
