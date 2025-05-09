@@ -1,0 +1,209 @@
+/*
+ * F2I Website Home Page CSS
+ * Styles specific to the home page
+ */
+
+/* Hide navigation progress bar on home page */
+.home-page .nav-progress-wrapper {
+  display: none !important;
+}
+
+/* Hero Section */
+.hero {
+  background: url('/assets/img/hero-bg.jpg') no-repeat center center, var(--primary);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  margin-top: 60px;
+}
+
+/* Hero Overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero .hero-tagline {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero .hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Features Section */
+.features-section {
+  padding: 3rem 0 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.features-hero {
+  margin: 2rem 0 1rem;
+}
+
+.features-hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--gray-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.features-hero-text {
+  flex: 1;
+  padding: 2rem;
+}
+
+.features-hero-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.features-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.features-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.home-cta {
+  margin-bottom: 1.5rem;
+}
+
+.home-cta .btn {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Stats Section */
+.stats-section {
+  background-color: var(--gray-light);
+  padding: 2.5rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 2.5rem 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Roadmap Preview */
+.roadmap-preview {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.roadmap-preview a {
+  color: var(--primary-light);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: color 0.3s ease;
+}
+
+.roadmap-preview a:hover {
+  color: var(--primary-dark);
+}
+
+/* CTA Section */
+#cta.section {
+  padding: 2.5rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .features-hero-content {
+    flex-direction: column;
+  }
+
+  .features-hero-image {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .features-hero-text {
+    padding: 1.5rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero .hero-tagline {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero .hero-tagline {
+    font-size: 1.4rem;
+  }
+
+  .hero .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
