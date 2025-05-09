@@ -65,6 +65,6 @@ if grep -q "BUNDLED WITH" Gemfile.lock; then
 fi
 
 # Run Jekyll
-bundle exec jekyll build --baseurl "/F2I"
+bundle exec jekyll build --baseurl ""
 
 echo "Jekyll server started successfully. Press Ctrl+C to stop."
