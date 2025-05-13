@@ -22,8 +22,18 @@
   background-color: #111;
   color: white;
   padding: 60px 20px 40px;
-  margin-top: 60px; /* Account for fixed navbar */
+  margin-top: 60px; /* Restore original value */
   text-align: center;
+}
+
+/* Hero Section - specific fix for home page */
+.hero {
+  margin-top: 0; /* Ensure no gap on home page hero */
+}
+
+/* Remove the body padding-top if it was added */
+body {
+  /* No padding-top here */
 }
 
 /* Grids */

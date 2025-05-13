@@ -1,0 +1,294 @@
+/*
+ * F2I Website Industry Research Page CSS
+ * Styles specific to the Industry Research page
+ */
+
+/* Industry Hero Section */
+.industry-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
+
+.industry-hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.industry-hero .hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Industry Content Container */
+.industry-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Center align all section headers */
+.industry-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Introduction Section */
+.intro-section {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Why Research Section */
+.why-research {
+  background-color: var(--gray-light);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border-left: 5px solid #4ca1af;
+}
+
+.why-research h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* Research Strategies Section */
+.research-strategies {
+  margin-bottom: 3rem;
+}
+
+/* Strategy Card */
+.strategy-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.strategy-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.strategy-card p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.strategy-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.strategy-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* Resource Box */
+.resource-box, .example-box, .tip-box {
+  background-color: var(--gray-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--primary);
+}
+
+.resource-box h4, .example-box h4, .tip-box h4 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Action Plan Section */
+.action-plan {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.checklist-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.checklist-progress {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.checklist-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.checklist-progress-text {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+/* Action Steps */
+.action-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.action-step {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.action-step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.action-step-checkbox {
+  margin-top: 0.25rem;
+  transform: scale(1.2);
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.step-content p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* Checklist Actions */
+.checklist-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.reset-button {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Industry CTA Section */
+.industry-cta {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.industry-cta h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.industry-cta p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  min-width: 200px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .industry-hero h2 {
+    font-size: 2rem;
+  }
+
+  .industry-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .strategy-card, .action-step {
+    padding: 1.5rem;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .action-steps {
+    grid-template-columns: 1fr;
+  }
+}

@@ -131,6 +131,29 @@
   margin: 2rem 0;
 }
 
+/* Single stat card styling */
+.stats-grid.single-stat {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.single-stat .stat-card {
+  padding: 2rem;
+}
+
+.stat-context {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* Stats footer text */
+.stats-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
 /* FAQ Section */
 .faq-section {
   padding: 2.5rem 0;

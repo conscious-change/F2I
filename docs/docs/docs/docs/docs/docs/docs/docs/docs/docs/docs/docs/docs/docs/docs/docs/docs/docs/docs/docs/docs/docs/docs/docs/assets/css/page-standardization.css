@@ -1,0 +1,364 @@
+/*
+ * F2I Website Page Standardization CSS
+ * This file standardizes styling across specific pages while preserving functionality
+ * Excluded pages: home page, transition page, and self-assessment page
+ */
+
+/* Target all pages except excluded ones */
+body:not(.home-page):not(.transition-page):not(.self-assessment-page) {
+
+  /* ===== TYPOGRAPHY STANDARDIZATION ===== */
+
+  /* Page Headers */
+  .page-header {
+    background-color: #111;
+    color: white;
+    padding: 60px 20px 40px;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .page-header .subtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  /* Section Headers */
+  h2 {
+    font-size: 2rem;
+    color: #0056b3;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Section Introductions */
+  .section-intro,
+  p.section-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  /* ===== CARD STANDARDIZATION ===== */
+
+  /* Networking Strategies Page */
+  .networking-strategies .strategy-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #0056b3;
+    transition: all 0.3s ease;
+  }
+
+  .networking-strategies .strategy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .networking-strategies .strategy-card h3 {
+    color: #0056b3;
+    margin-bottom: 1rem;
+  }
+
+  /* Skill Translation Hub Page - Use as model for benefit cards */
+  .benefit-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 4px solid #0056b3;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .benefit-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h3 {
+    color: #0056b3;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Interview Preparation Page */
+  .interview-prep-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Job Search Resources Page */
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Compensation Page */
+  .compensation-benefits-content .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Transition Checklist Page - Wider cards */
+  .checklist-section .checklist-card {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== ACCORDION STANDARDIZATION ===== */
+
+  .accordion-container {
+    margin-bottom: 2rem;
+  }
+
+  .accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background-color: #f0f7ff;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .accordion-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+  }
+
+  .accordion-toggle {
+    font-size: 1.5rem;
+    color: #0056b3;
+  }
+
+  /* ===== TABS STANDARDIZATION ===== */
+
+  .tabs-container {
+    margin-bottom: 2rem;
+  }
+
+  .tabs-navigation {
+    display: flex;
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+  }
+
+  .tab-button {
+    padding: 0.8rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #6c757d;
+    transition: all 0.3s ease;
+  }
+
+  .tab-button:hover {
+    color: #0056b3;
+  }
+
+  .tab-button.active {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+  }
+
+  /* ===== BUTTON STANDARDIZATION ===== */
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+  }
+
+  .btn-primary:hover {
+    background-color: #003d7a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
+  }
+
+  .btn-secondary {
+    background-color: #ff6b00;
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background-color: #ff8c33;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+  @media (max-width: 992px) {
+    .page-header h1 {
+      font-size: 2.2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    /* Adjust grid layouts */
+    .interview-prep-benefits,
+    .resources-grid,
+    .compensation-benefits-content .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 50px 15px 30px;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .page-header .subtitle {
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Specific page adjustments */
+
+/* Community Page - Fix for "Ready to Connect" heading */
+.community-join-section .join-content h2 {
+  color: white !important;
+}
+
+/* Networking Strategies Page */
+.networking-content h2 {
+  color: #0056b3;
+}
+
+/* Resume & Personal Branding Page */
+.resume-branding-content .tabs-navigation {
+  border-bottom: 2px solid #dee2e6;
+}
+
+.resume-branding-content .tab-button.active {
+  color: #0056b3;
+  border-bottom-color: #0056b3;
+}
+
+/* Interview Preparation Page */
+.interview-prep-content .accordion-item {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Job Search Resources Page */
+.job-search-content .resource-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  border-left: 3px solid #0056b3;
+  transition: all 0.3s ease;
+}
+
+.job-search-content .resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Compensation Page */
+.compensation-benefits-content .benefit-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid #0056b3;
+}
+
+.compensation-benefits-content .benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Transition Checklist Page */
+.transition-checklist-content .checklist-card {
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer Fixes */
+.site-footer .footer-title {
+  color: white !important;
+}
