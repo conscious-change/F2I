@@ -410,7 +410,7 @@
     <h2>Ready to Start Your Transition Journey?</h2>
     <p>Join our community of federal employees successfully transitioning to rewarding careers in the private sector.</p>
     <div class="cta-buttons">
-      <a href="/pages/transition-roadmap.html" class="btn btn-primary">Start Your Journey</a>
+      <a href="/F2I/pages/transition-roadmap.html" class="btn btn-primary">Start Your Journey</a>
     </div>
   </div>
 </section>
@@ -492,7 +492,12 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         setTimeout(function() {
-          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          // Get the correct path based on the domain
+          var swPath = window.location.hostname === 'www.fed2industry.com' ? 
+                      '/F2I/service-worker.js' : 
+                      '/F2I/service-worker.js';
+                      
+          navigator.serviceWorker.register(swPath).then(function(registration) {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }).catch(function(err) {
             console.log('ServiceWorker registration failed: ', err);
