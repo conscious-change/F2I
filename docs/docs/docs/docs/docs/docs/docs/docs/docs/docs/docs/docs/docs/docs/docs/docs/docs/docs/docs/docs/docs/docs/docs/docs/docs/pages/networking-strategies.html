@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>Networking Strategies</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      // Set the appropriate URL based on support
+      link.href = webpSupport ?
+        '/F2I/assets/img/hero-bg.webp' :
+        '/F2I/assets/img/hero-bg.jpg';
+
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <!-- WebP Detection (early load) -->
+  <script src="/F2I/assets/js/webp-detection.min.js"></script>
+
+  <!-- Font Display Optimization -->
+  <link rel="stylesheet" href="/F2I/assets/css/font-display.css">
+
+  <!-- Site Styles -->
+  
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="/F2I/assets/css/main.css">
+  
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var s=a.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&d.setAttribute(l,o[l]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    /* loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+  </script>
+</head>
+<body class="networking-strategies-page">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>Networking Strategies</h1>
+    
+      <p class="subtitle">Build and leverage professional relationships to support your transition from federal service to the private sector</p>
+    
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="networking-content">
+  <div class="intro-section">
+    <p>
+      Networking is one of the most powerful tools for federal employees transitioning to the private sector. According to research by LinkedIn and the U.S. Bureau of Labor Statistics, up to 80% of jobs are filled through networking rather than traditional job applications.<sup><a href="https://www.linkedin.com/pulse/new-survey-reveals-85-all-jobs-filled-via-networking-lou-adler/" target="_blank">[1]</a></sup> This page provides strategies and resources to help you build and leverage a professional network outside of government.
+    </p>
+    <p class="citation">
+      <small>[1] Adler, L. (2016). New Survey Reveals 85% of All Jobs are Filled Via Networking. LinkedIn. <a href="https://www.linkedin.com/pulse/new-survey-reveals-85-all-jobs-filled-via-networking-lou-adler/" target="_blank">https://www.linkedin.com/pulse/new-survey-reveals-85-all-jobs-filled-via-networking-lou-adler/</a></small>
+    </p>
+  </div>
+
+  <div class="why-networking">
+    <h2>Why Networking Matters for Federal Transitions</h2>
+    <p>
+      For federal employees transitioning to the private sector, networking is particularly important because:
+    </p>
+    <ul>
+      <li>It provides insights into private sector culture and expectations</li>
+      <li>It helps you identify opportunities that may not be publicly advertised</li>
+      <li>It connects you with former federal employees who have successfully made the transition</li>
+      <li>It gives you advocates who can vouch for your skills and potential</li>
+      <li>It provides access to industry-specific knowledge and trends</li>
+    </ul>
+  </div>
+
+  <div class="networking-strategies">
+    <h2>Effective Networking Strategies</h2>
+
+    <div class="strategy-card">
+      <h3>1. Engage with Federal-to-Private Communities</h3>
+      <p>
+        Connect with others who have made or are making the transition from federal service:
+      </p>
+      <ul>
+        <li><strong>Join the F2I Community for targeted networking and peer support</strong></li>
+        <li>Connect with professionals who understand the unique challenges of federal-to-private transitions</li>
+        <li>Access specialized resources and insights from those who have successfully made the transition</li>
+        <li>Participate in agency alumni groups</li>
+      </ul>
+    </div>
+
+    <div class="strategy-card">
+      <h3>2. Leverage LinkedIn Effectively</h3>
+      <p>
+        LinkedIn is an essential tool for professional networking:
+      </p>
+      <ul>
+        <li>Optimize your profile to highlight transferable skills and achievements</li>
+        <li>Connect with former colleagues, especially those who have transitioned to the private sector</li>
+        <li>Join industry-specific groups and participate in discussions</li>
+        <li>Follow companies of interest and engage with their content</li>
+        <li>Use LinkedIn's advanced search to find alumni from your agencies or departments</li>
+        <li>Share relevant content and insights to establish your expertise</li>
+      </ul>
+
+    </div>
+
+    <div class="strategy-card">
+      <h3>3. Start with Your Existing Network</h3>
+      <p>
+        Begin by mapping your current connections:
+      </p>
+      <ul>
+        <li>Former colleagues who have moved to the private sector</li>
+        <li>Contractors and vendors you've worked with in government</li>
+        <li>Alumni from your schools or training programs</li>
+        <li>Professional association members</li>
+        <li>Friends and family with private sector connections</li>
+      </ul>
+      <button id="openNetworkMapping" class="btn btn-primary">Network Mapping Template</button>
+    </div>
+
+    <div class="strategy-card">
+      <h3>4. Conduct Informational Interviews</h3>
+      <p>
+        Informational interviews are conversations with professionals in your target industry to gather insights and advice:
+      </p>
+      <ul>
+        <li>Request 20-30 minute conversations with professionals in roles or companies that interest you</li>
+        <li>Prepare thoughtful questions about their career path, industry trends, and advice</li>
+        <li>Focus on learning, not job hunting</li>
+        <li>Always express gratitude and follow up afterward</li>
+        <li>Ask for introductions to other professionals who might provide valuable insights</li>
+      </ul>
+      <div class="example-box">
+        <h4>Sample Outreach Message:</h4>
+        <p>
+          "Hello [Name], I noticed you successfully transitioned from [federal agency] to [company/industry]. I'm currently exploring a similar career path and would greatly appreciate 20 minutes of your time to learn about your experience and any advice you might have. Would you be available for a brief virtual coffee next week? Thank you for considering."
+        </p>
+      </div>
+      <button id="openInterviewGuide" class="btn btn-primary">Tracking Informational Interviews</button>
+    </div>
+
+    <div class="strategy-card">
+      <h3>5. Join Professional Associations</h3>
+      <p>
+        Industry associations provide valuable networking opportunities and resources:
+      </p>
+      <ul>
+        <li>Identify associations relevant to your target industry or role</li>
+        <li>Attend meetings, conferences, and webinars</li>
+        <li>Volunteer for committees or projects to build relationships</li>
+        <li>Participate in mentorship programs if available</li>
+        <li>Access industry-specific job boards and resources</li>
+      </ul>
+
+    </div>
+
+    <div class="strategy-card">
+      <h3>6. Attend Industry Events</h3>
+      <p>
+        Events provide opportunities to connect with professionals in your target industry:
+      </p>
+      <ul>
+        <li>Industry conferences and trade shows</li>
+        <li>Networking events and meetups</li>
+        <li>Professional development workshops</li>
+        <li>Career fairs focused on your target industry</li>
+        <li>Alumni events from your educational institutions</li>
+      </ul>
+      <p>
+        <strong>Pro Tip:</strong> Before attending, research speakers and attendees, prepare your elevator pitch, and set specific networking goals.
+      </p>
+    </div>
+  </div>
+
+  <div class="networking-tips">
+    <h2>Networking Best Practices</h2>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>Be Authentic</h3>
+        <p>
+          Focus on building genuine relationships rather than transactional networking. Show sincere interest in others and look for ways to provide value.
+        </p>
+      </div>
+
+      <div class="tip-card">
+        <h3>Prepare Your Elevator Pitch</h3>
+        <p>
+          Develop a concise, compelling introduction that communicates your background, skills, and career goals in private sector terms.
+        </p>
+      </div>
+
+      <div class="tip-card">
+        <h3>Give Before You Ask</h3>
+        <p>
+          Offer assistance, share relevant information, or make introductions before asking for help with your job search.
+        </p>
+      </div>
+
+      <div class="tip-card">
+        <h3>Follow Up Consistently</h3>
+        <p>
+          Send thank-you notes after meetings, share relevant articles, and maintain regular contact with your network.
+        </p>
+      </div>
+
+      <div class="tip-card">
+        <h3>Be Specific in Your Requests</h3>
+        <p>
+          When seeking help, make clear, specific requests that are easy for others to fulfill, rather than general asks.
+        </p>
+      </div>
+
+      <div class="tip-card">
+        <h3>Maintain Your Network</h3>
+        <p>
+          Networking is an ongoing process, not just a job search activity. Continue to nurture relationships throughout your career.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overcoming-challenges">
+    <h2>Overcoming Common Networking Challenges</h2>
+
+    <div class="challenge-card">
+      <h3>"I'm an introvert and find networking uncomfortable."</h3>
+      <p>
+        <strong>Strategy:</strong> Start with one-on-one conversations rather than large events. Prepare questions in advance. Focus on being a good listener. Set small, achievable networking goals.
+      </p>
+    </div>
+
+    <div class="challenge-card">
+      <h3>"I don't know anyone in the private sector."</h3>
+      <p>
+        <strong>Strategy:</strong> Start with second-degree connections (friends of friends). Join industry associations and online communities. Attend events specifically for government-to-private transitions.
+      </p>
+    </div>
+
+    <div class="challenge-card">
+      <h3>"I'm concerned about networking while still employed in government."</h3>
+      <p>
+        <strong>Strategy:</strong> Focus on professional development rather than job hunting in your communications. Network outside of work hours. Be discreet about your transition plans until appropriate.
+      </p>
+    </div>
+
+    <div class="challenge-card">
+      <h3>"I'm not sure how to translate my government experience in networking conversations."</h3>
+      <p>
+        <strong>Strategy:</strong> Use our Skill Translation Hub to prepare talking points about your transferable skills. Practice your elevator pitch with friends. Focus on achievements and impact rather than responsibilities.
+      </p>
+      <a href="/pages/skill-translation-hub.html" class="tool-link">Skill Translation Hub →</a>
+    </div>
+  </div>
+
+  <!-- Success Stories Section (Commented Out)
+  <div class="success-stories">
+    <h2>Networking Success Stories</h2>
+
+    <div class="story-card">
+      <div class="story-header">
+        <h3>From EPA to Environmental Consulting</h3>
+        <p class="story-author">— Jennifer K., Former EPA Environmental Scientist</p>
+      </div>
+      <p>
+        "After 12 years at the EPA, I wanted to move into consulting but had few private sector contacts. I joined the Environmental Professionals Network and volunteered to help organize their annual conference. Through that experience, I met the CEO of an environmental consulting firm who was impressed by my regulatory knowledge. That connection led to an interview and eventually a senior consultant position—a role that was never publicly advertised."
+      </p>
+    </div>
+
+    <a href="/pages/success-stories.html" class="btn btn-secondary">Read More Success Stories</a>
+  </div>
+  -->
+
+
+
+
+
+<!-- Network Mapping Template Modal -->
+<div class="modal" id="networkMappingModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Network Mapping Template</h3>
+
+    <div class="network-mapping-form">
+      <p class="worksheet-intro">Use this template to map your professional network and identify potential connections who can help with your transition to the private sector. Track your networking activities and follow-ups to maximize your efforts.</p>
+
+      <!-- Former Colleagues Section -->
+      <div class="mapping-section">
+        <h4>Former Colleagues in the Private Sector</h4>
+        <p>Identify colleagues who have already made the transition from federal service.</p>
+
+        <div class="contact-list" id="colleaguesList">
+          <div class="contact-entry">
+            <table class="contact-table">
+              <tr>
+                <td class="label-cell">Name</td>
+                <td class="label-cell">Current Company/Role</td>
+                <td class="label-cell">Contact Information</td>
+              </tr>
+              <tr>
+                <td class="input-cell">
+                  <input type="text" class="contact-name" placeholder="Full Name">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-role" placeholder="Company and Position">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-info" placeholder="Email or LinkedIn URL">
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell" colspan="3">Notes</td>
+              </tr>
+              <tr>
+                <td class="input-cell" colspan="3">
+                  <textarea class="contact-notes" placeholder="Previous agency, relationship, potential help"></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button class="add-contact-btn" data-list="colleaguesList">+ Add Another Contact</button>
+        </div>
+      </div>
+
+      <!-- Industry Contacts Section -->
+      <div class="mapping-section">
+        <h4>Industry Contacts & Vendors</h4>
+        <p>List contractors, vendors, and industry professionals you've worked with.</p>
+
+        <div class="contact-list" id="industryList">
+          <div class="contact-entry">
+            <table class="contact-table">
+              <tr>
+                <td class="label-cell">Name</td>
+                <td class="label-cell">Company/Industry</td>
+                <td class="label-cell">Contact Information</td>
+              </tr>
+              <tr>
+                <td class="input-cell">
+                  <input type="text" class="contact-name" placeholder="Full Name">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-role" placeholder="Company and Industry">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-info" placeholder="Email or LinkedIn URL">
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell" colspan="3">Relationship Context</td>
+              </tr>
+              <tr>
+                <td class="input-cell" colspan="3">
+                  <textarea class="contact-notes" placeholder="How you know them, projects worked on together"></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button class="add-contact-btn" data-list="industryList">+ Add Another Contact</button>
+        </div>
+      </div>
+
+      <!-- Alumni Network Section -->
+      <div class="mapping-section">
+        <h4>Educational & Training Alumni</h4>
+        <p>Connect with alumni from your schools, universities, or training programs.</p>
+
+        <div class="contact-list" id="alumniList">
+          <div class="contact-entry">
+            <table class="contact-table">
+              <tr>
+                <td class="label-cell">Name</td>
+                <td class="label-cell">Shared Institution</td>
+                <td class="label-cell">Current Position</td>
+              </tr>
+              <tr>
+                <td class="input-cell">
+                  <input type="text" class="contact-name" placeholder="Full Name">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-role" placeholder="School, University, or Training Program">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-info" placeholder="Company and Role">
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell" colspan="3">Notes</td>
+              </tr>
+              <tr>
+                <td class="input-cell" colspan="3">
+                  <textarea class="contact-notes" placeholder="Industry relevance, potential introduction path"></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button class="add-contact-btn" data-list="alumniList">+ Add Another Contact</button>
+        </div>
+      </div>
+
+      <!-- Professional Associations Section -->
+      <div class="mapping-section">
+        <h4>Professional Association Contacts</h4>
+        <p>List connections from professional organizations and industry groups.</p>
+
+        <div class="contact-list" id="associationList">
+          <div class="contact-entry">
+            <table class="contact-table">
+              <tr>
+                <td class="label-cell">Name</td>
+                <td class="label-cell">Association</td>
+                <td class="label-cell">Position/Company</td>
+              </tr>
+              <tr>
+                <td class="input-cell">
+                  <input type="text" class="contact-name" placeholder="Full Name">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-role" placeholder="Organization Name">
+                </td>
+                <td class="input-cell">
+                  <input type="text" class="contact-info" placeholder="Role and Company">
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell" colspan="3">Notes</td>
+              </tr>
+              <tr>
+                <td class="input-cell" colspan="3">
+                  <textarea class="contact-notes" placeholder="Relationship details, potential value"></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button class="add-contact-btn" data-list="associationList">+ Add Another Contact</button>
+        </div>
+      </div>
+
+      <!-- Networking Action Plan -->
+      <div class="mapping-section">
+        <h4>Networking Action Plan</h4>
+        <p>Plan your outreach and follow-up activities.</p>
+
+        <div class="contact-list" id="actionList">
+          <div class="contact-entry">
+            <table class="contact-table">
+              <tr>
+                <td class="label-cell">Contact Name</td>
+                <td class="label-cell">Planned Action</td>
+                <td class="label-cell">Target Date</td>
+              </tr>
+              <tr>
+                <td class="input-cell">
+                  <input type="text" class="action-contact" placeholder="Person to contact">
+                </td>
+                <td class="input-cell">
+                  <select class="action-type">
+                    <option value="">Select action type...</option>
+                    <option value="Initial outreach">Initial outreach</option>
+                    <option value="Follow-up">Follow-up</option>
+                    <option value="Informational interview">Informational interview</option>
+                    <option value="Thank you note">Thank you note</option>
+                    <option value="Request introduction">Request introduction</option>
+                  </select>
+                </td>
+                <td class="input-cell">
+                  <input type="date" class="action-date">
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell" colspan="3">Notes</td>
+              </tr>
+              <tr>
+                <td class="input-cell" colspan="3">
+                  <textarea class="action-notes" placeholder="Specific talking points, questions, or goals"></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button class="add-contact-btn" data-list="actionList">+ Add Another Action</button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button id="saveNetworkMap" class="btn btn-primary">Save Network Map</button>
+        <button id="exportNetworkMap" class="btn btn-primary">Export as CSV</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    
+    <a href="/F2I/pages/job-search-resources.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (6/9)</div>
+        <div class="step-title">Job Search Strategy</div>
+        <div class="step-description">Develop a targeted approach to finding opportunities in the private sector</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    
+
+    <div class="all-steps-link">
+      <a href="/F2I/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Tracking Informational Interviews Modal -->
+<div class="modal" id="interviewGuideModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Tracking Informational Interviews</h3>
+
+    <div class="interview-guide-content">
+      <p class="guide-intro">Informational interviews are valuable opportunities to learn about careers, industries, and companies from professionals who are already working in your target field. Use this guide to prepare for and conduct effective informational interviews.</p>
+
+      <!-- Before the Interview Section -->
+      <div class="guide-section">
+        <h4>Before the Interview</h4>
+
+        <div class="guide-subsection">
+          <h5>Finding the Right People to Interview</h5>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">Start with your existing network (former colleagues who have transitioned to the private sector)</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">Leverage LinkedIn to find professionals with similar backgrounds who made the federal-to-private transition</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">Look for alumni from your educational institutions in your target industry</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">Consider second-degree connections (ask for introductions from mutual connections)</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">Reach out to members of the F2I Community who have successfully transitioned</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-subsection">
+          <h5>Crafting Your Outreach Message</h5>
+          <p>Your initial outreach should be concise, specific, and respectful of the person's time. Here's a template you can customize:</p>
+
+          <div class="template-box">
+            <p>Subject: Request for Informational Interview - Federal to [Industry] Transition</p>
+            <p>Dear [Name],</p>
+            <p>I hope this message finds you well. I found your profile while researching professionals who have successfully transitioned from federal service to [industry/role]. I'm currently a [your position] at [your agency] and am exploring similar career paths.</p>
+            <p>I would greatly appreciate the opportunity to speak with you for 20-30 minutes to learn about your experience transitioning to the private sector and any insights you might be willing to share. I'm particularly interested in [mention 1-2 specific aspects you'd like to learn about].</p>
+            <p>I understand you're busy, so I'm happy to work around your schedule. Would you be available for a brief virtual coffee in the coming weeks?</p>
+            <p>Thank you for considering my request.</p>
+            <p>Best regards,<br>[Your Name]</p>
+          </div>
+
+          <div class="tips-box">
+            <h6>Tips for Effective Outreach:</h6>
+            <div class="step-cards">
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">Personalize each message - mention something specific about their background or career path</div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">Be clear about why you're reaching out to them specifically</div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">Keep it brief - respect their time from the very beginning</div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">Offer flexibility in scheduling</div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-content">Don't ask for a job or referrals in your initial outreach</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-subsection">
+          <h5>Preparing for the Interview</h5>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">Research the person's background, company, and industry thoroughly</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">Prepare 8-10 thoughtful questions (you'll likely only get through 5-7)</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">Develop a brief (30-second) introduction about yourself</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">Be ready to clearly articulate your career interests and goals</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">Prepare to take notes during the conversation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- During the Interview Section -->
+      <div class="guide-section">
+        <h4>During the Interview</h4>
+
+        <div class="guide-subsection">
+          <h5>Suggested Questions</h5>
+          <p>Choose questions that are most relevant to your situation and the person you're interviewing:</p>
+
+          <div class="question-category">
+            <h6>About Their Transition:</h6>
+            <div class="question-cards">
+              <div class="question-card">What motivated you to transition from federal service to the private sector?</div>
+              <div class="question-card">What were the biggest challenges you faced during your transition?</div>
+              <div class="question-card">How did you translate your federal experience into language that resonated with private sector employers?</div>
+              <div class="question-card">What skills from your federal career have been most valuable in your current role?</div>
+              <div class="question-card">What new skills did you need to develop for the private sector?</div>
+            </div>
+          </div>
+
+          <div class="question-category">
+            <h6>About Their Current Role/Industry:</h6>
+            <div class="question-cards">
+              <div class="question-card">What does a typical day look like in your current role?</div>
+              <div class="question-card">How would you describe the culture difference between federal service and your current organization?</div>
+              <div class="question-card">What aspects of the industry were most surprising to you coming from the federal government?</div>
+              <div class="question-card">What are the most significant trends or challenges in your industry right now?</div>
+              <div class="question-card">How does decision-making differ between your federal experience and the private sector?</div>
+            </div>
+          </div>
+
+          <div class="question-category">
+            <h6>Advice and Recommendations:</h6>
+            <div class="question-cards">
+              <div class="question-card">What resources or preparations would you recommend for someone making a similar transition?</div>
+              <div class="question-card">If you could go back and give yourself advice before your transition, what would it be?</div>
+              <div class="question-card">Are there specific companies or types of roles that tend to value federal experience in this industry?</div>
+              <div class="question-card">What professional organizations or groups have you found most valuable?</div>
+              <div class="question-card">How did you approach salary negotiations coming from a federal pay scale?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-subsection">
+          <h5>Interview Etiquette</h5>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">Be punctual - log in or arrive 5 minutes early</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">Start by thanking them for their time</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">Keep your introduction brief</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">Listen actively and take notes</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">Be mindful of time - offer to wrap up when approaching the agreed time limit</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">6</div>
+              <div class="step-content">Ask if they can recommend anyone else you should speak with</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">7</div>
+              <div class="step-content">Never directly ask for a job or referral</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- After the Interview Section -->
+      <div class="guide-section">
+        <h4>After the Interview</h4>
+
+        <div class="guide-subsection">
+          <h5>Follow-Up</h5>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">Send a thank-you email within 24 hours</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">Reference specific insights or advice they shared</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">Connect on LinkedIn if you haven't already</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">Follow through on any resources they recommended</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">Update them on your progress if they expressed interest</div>
+            </div>
+          </div>
+
+          <div class="template-box">
+            <p>Subject: Thank You for Your Time and Insights</p>
+            <p>Dear [Name],</p>
+            <p>Thank you so much for taking the time to speak with me today. I truly appreciate your willingness to share your experience transitioning from [federal agency] to [company/industry].</p>
+            <p>Your insights about [mention 1-2 specific points they shared] were particularly valuable and have given me a clearer perspective on [specific aspect of the transition].</p>
+            <p>I'll definitely follow up on the resources you suggested, particularly [mention specific recommendation].</p>
+            <p>Thank you again for your generosity with your time and knowledge. I'd be happy to keep you updated on my transition journey if you're interested.</p>
+            <p>Best regards,<br>[Your Name]</p>
+          </div>
+        </div>
+
+        <div class="guide-subsection">
+          <h5>Building the Relationship</h5>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">Don't let the relationship end after one conversation</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">Share relevant articles or resources that might interest them</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">Engage with their content on LinkedIn</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">Provide updates on how you've implemented their advice (every 2-3 months)</div>
+            </div>
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">Offer to help them if opportunities arise</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h4>Tracking Your Informational Interviews</h4>
+        <p>Keep a record of your informational interviews to help you follow up and track insights:</p>
+
+        <div class="interview-tracker">
+          <table class="tracking-table" id="interviewTrackingTable">
+            <thead>
+              <tr>
+                <th>Contact Name</th>
+                <th>Company/Role</th>
+                <th>Date of Interview</th>
+                <th>Key Insights</th>
+                <th>Follow-up Actions</th>
+                <th>Next Contact Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="interviewTableBody">
+              <!-- Interview entries will be added here dynamically -->
+            </tbody>
+          </table>
+
+          <div class="interview-form">
+            <h5>Add New Interview</h5>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Contact Name</label>
+                <input type="text" id="contactName" placeholder="Full Name">
+              </div>
+              <div class="form-group">
+                <label for="companyRole">Company/Role</label>
+                <input type="text" id="companyRole" placeholder="Company and Position">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="interviewDate">Date of Interview</label>
+                <input type="date" id="interviewDate">
+              </div>
+              <div class="form-group">
+                <label for="nextContactDate">Next Contact Date</label>
+                <input type="date" id="nextContactDate">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="keyInsights">Key Insights</label>
+                <textarea id="keyInsights" placeholder="Notes on key takeaways from the conversation"></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="followupActions">Follow-up Actions</label>
+                <textarea id="followupActions" placeholder="Actions to take after the interview"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button id="addInterviewBtn" class="btn btn-primary">Add Interview</button>
+              <button id="clearFormBtn" class="btn btn-secondary">Clear Form</button>
+            </div>
+          </div>
+
+          <div class="tracker-actions">
+            <button id="exportInterviewsCSV" class="btn btn-primary"><i class="fas fa-file-csv"></i> Export as CSV</button>
+            <button id="clearAllInterviewsBtn" class="btn btn-secondary"><i class="fas fa-trash"></i> Clear All Data</button>
+          </div>
+        </div>
+
+        <p class="download-prompt">Also use our <a href="#" id="openNetworkMapFromGuide">Network Mapping Template</a> to organize your broader networking efforts.</p>
+      </div>
+
+      <div class="guide-footer">
+        <p>Remember: Informational interviews are about building relationships and gathering information, not asking for jobs. Approach each conversation with genuine curiosity and respect for the other person's time and expertise.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+  <script src="/F2I/assets/js/image-optimizer.min.js" defer></script>
+  <script src="/F2I/assets/js/fix-links.js" defer></script>
+
+  
+
+  
+  <script src="/F2I/assets/js/networking-strategies.js" defer></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>
