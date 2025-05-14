@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+  <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+  <meta name="baseurl" content="/F2I">
+
+  <title>Interview Preparation</title>
+  <meta name="description" content="Resources for federal employees transitioning to industry careers.">
+
+  
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self' blob: data:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed 2 Industry",
+  "url": "https://conscious-change.github.io/F2I",
+  "description": "Resources for federal employees transitioning to industry careers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://conscious-change.github.io/F2I/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Resource Hints: DNS Prefetch, Preconnect and Preload -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload critical resources with JavaScript to select the right format -->
+  <script>
+    // Create a preload link for the hero image based on WebP support
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+
+      // Check if browser might support WebP
+      var webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      // Set the appropriate URL based on support
+      link.href = webpSupport ?
+        '/F2I/assets/img/hero-bg.webp' :
+        '/F2I/assets/img/hero-bg.jpg';
+
+      // Add to head
+      document.head.appendChild(link);
+    })();
+  </script>
+
+  <!-- Google Font: Poppins with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:?!()%&" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <!-- WebP Detection (early load) -->
+  <script src="/F2I/assets/js/webp-detection.min.js"></script>
+
+  <!-- Font Display Optimization -->
+  <link rel="stylesheet" href="/F2I/assets/css/font-display.css">
+
+  <!-- Site Styles -->
+  
+  <!-- Modular CSS for all other pages -->
+  <link rel="stylesheet" href="/F2I/assets/css/main.css">
+  
+
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- Preload CSS polyfill -->
+  <script>
+    /* loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var s=a.styleSheets;if(o)for(var l in o)o.hasOwnProperty(l)&&d.setAttribute(l,o[l]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    /* loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+  </script>
+</head>
+<body class="">
+  
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<style>
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
+
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <a href="/F2I/" class="logo">Fed 2 Industry</a>
+      <a href="/F2I/pages/community.html" class="nav-cta-button">Join Our Community</a>
+      <div class="nav-progress-wrapper">
+        <div id="nav-progress-bar" class="nav-progress-bar">
+          <div id="nav-progress-fill" class="nav-progress-fill"></div>
+          <div id="nav-progress-text" class="nav-progress-text">Step <span id="current-step">0</span>/9</div>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/F2I/">Home</a></li>
+      <li><a href="/F2I/pages/about.html">About</a></li>
+
+      <!-- Transition Resources Group -->
+      <li class="nav-group">
+        <a href="#" class="nav-group-title">Transition Resources</a>
+        <ul class="nav-dropdown">
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">1. Self-Assessment</a></li>
+          <li><a href="/F2I/pages/industry-research.html">2. Industry Research</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">3. Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">4. Resume & Branding</a></li>
+          <li><a href="/F2I/pages/networking-strategies.html">5. Networking</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">6. Job Search</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">7. Interview Prep</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">8. Compensation</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">9. Transition Checklist</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/F2I/pages/community.html">Join Community</a></li>
+      <li><a href="/F2I/pages/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main id="main-content">
+    <div class="page-header">
+  <div class="container">
+    <h1>Interview Preparation</h1>
+    
+      <p class="subtitle">Master private sector interviews with strategies tailored for federal employees</p>
+    
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="interview-prep-content">
+  <div class="why-interview-prep-matters">
+    <h2>Mastering Private Sector Interviews</h2>
+
+    <div class="interview-prep-intro">
+      <div class="interview-prep-intro-icon">🎯</div>
+      <p>
+        Private sector interviews often differ significantly from federal hiring processes. As a federal employee transitioning to the private sector, understanding these differences and preparing strategically can significantly increase your chances of success. This guide will help you showcase your federal experience effectively and navigate the unique challenges of private sector interviews.
+      </p>
+    </div>
+
+    <div class="interview-prep-benefits">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🔄</div>
+        <h3>Translate Experience</h3>
+        <p>Frame your federal background in terms that resonate with private sector employers</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card-icon">💼</div>
+        <h3>Showcase Value</h3>
+        <p>Highlight the unique skills and perspectives you bring from government service</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🧠</div>
+        <h3>Prepare Strategically</h3>
+        <p>Anticipate and address common concerns about federal employees</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🗣️</div>
+        <h3>Communicate Effectively</h3>
+        <p>Structure your responses for maximum impact in different interview formats</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="interview-differences-section">
+    <h2>Federal vs. Private Sector Interviews</h2>
+    <p class="section-intro">
+      Understanding the key differences between federal and private sector interviews will help you adjust your approach and expectations:
+    </p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Federal Interview Process</th>
+          <th>Private Sector Interview Process</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Structured, standardized questions</td>
+          <td>More varied interview styles and questions</td>
+        </tr>
+        <tr>
+          <td>Panel interviews common</td>
+          <td>Multiple rounds with different stakeholders</td>
+        </tr>
+        <tr>
+          <td>Focus on specific knowledge and experience</td>
+          <td>Focus on cultural fit and potential</td>
+        </tr>
+        <tr>
+          <td>Formal scoring systems</td>
+          <td>Case studies and practical assessments common</td>
+        </tr>
+        <tr>
+          <td>Limited negotiation</td>
+          <td>Emphasis on soft skills and adaptability</td>
+        </tr>
+        <tr>
+          <td>Longer hiring timelines</td>
+          <td>Faster hiring decisions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="preparation-strategies-section">
+    <h2>Interview Preparation Strategies</h2>
+    <p class="section-intro">
+      A strategic approach to interview preparation can help you stand out as a candidate transitioning from federal service:
+    </p>
+
+    <div class="accordion-container">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">🔍</div>
+          <h3>1. Research the Company</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Private sector employers expect candidates to demonstrate knowledge of their organization:</p>
+          <ul>
+            <li>Study the company's products, services, and business model</li>
+            <li>Understand their market position and competitors</li>
+            <li>Research recent news, achievements, and challenges</li>
+            <li>Review their mission, vision, and values</li>
+            <li>Identify how your federal experience aligns with their needs</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Look for connections between your agency's mission and the company's goals. This helps you frame your experience in terms that demonstrate value alignment.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">📖</div>
+          <h3>2. Prepare Your Stories</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Develop concise, impactful stories that demonstrate your skills and achievements using the STAR method:</p>
+          <div class="framework-box">
+            <h4>STAR Method:</h4>
+            <ul>
+              <li><strong>Situation:</strong> Briefly describe the context</li>
+              <li><strong>Task:</strong> Explain your responsibility or challenge</li>
+              <li><strong>Action:</strong> Detail the specific actions you took</li>
+              <li><strong>Result:</strong> Share the quantifiable outcome or impact</li>
+            </ul>
+          </div>
+          <p>Prepare stories that demonstrate:</p>
+          <ul>
+            <li>Leadership and team management</li>
+            <li>Problem-solving and innovation</li>
+            <li>Adaptability and learning agility</li>
+            <li>Project management and execution</li>
+            <li>Stakeholder management</li>
+            <li>Results orientation and impact</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Keep your stories to 2-3 minutes maximum. Practice them until they flow naturally but don't sound rehearsed. Focus on quantifiable results whenever possible.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">🔄</div>
+          <h3>3. Translate Your Federal Experience</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Frame your government experience in terms that resonate with private sector employers:</p>
+          <div class="example-box">
+            <h4>Example Translations:</h4>
+            <table class="translation-table">
+              <tr>
+                <th>Instead of saying...</th>
+                <th>Try saying...</th>
+              </tr>
+              <tr>
+                <td>"Managed a federal program with a $5M budget"</td>
+                <td>"Led a $5M initiative that delivered 20% efficiency improvements while maintaining strict compliance requirements"</td>
+              </tr>
+              <tr>
+                <td>"Ensured compliance with federal regulations"</td>
+                <td>"Developed risk management strategies that protected organizational interests while navigating complex regulatory requirements"</td>
+              </tr>
+              <tr>
+                <td>"Coordinated with multiple federal agencies"</td>
+                <td>"Built and managed cross-functional partnerships to align diverse stakeholders around common objectives"</td>
+              </tr>
+            </table>
+          </div>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Review job descriptions carefully and incorporate industry terminology in your responses. This demonstrates your ability to adapt to the private sector environment.
+          </div>
+          <p class="resource-link"><a href="/pages/skill-translation-hub.html">→ More Translation Examples</a></p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">❓</div>
+          <h3>4. Prepare for Common Questions</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Be ready to address these frequently asked questions for federal-to-private transitions:</p>
+          <ul>
+            <li>"Why are you leaving government service?"</li>
+            <li>"How will you adapt to a faster-paced environment?"</li>
+            <li>"How do your government skills transfer to our industry?"</li>
+            <li>"What experience do you have with [specific private sector skill]?"</li>
+            <li>"How would you handle having less structure/guidance?"</li>
+            <li>"What attracts you to the private sector/our company?"</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Frame your answers positively. Instead of criticizing government processes, focus on the new challenges and opportunities you're seeking in the private sector.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">⚠️</div>
+          <h3>5. Address Potential Concerns</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Proactively address common concerns private sector employers might have about federal employees:</p>
+          <table class="concerns-table">
+            <tr>
+              <th>Potential Concern</th>
+              <th>How to Address It</th>
+            </tr>
+            <tr>
+              <td>Adaptability to faster pace</td>
+              <td>Share examples of when you worked under tight deadlines or managed crisis situations</td>
+            </tr>
+            <tr>
+              <td>Bureaucratic mindset</td>
+              <td>Highlight instances where you cut through red tape or implemented innovative solutions</td>
+            </tr>
+            <tr>
+              <td>Results orientation</td>
+              <td>Emphasize measurable outcomes and impact from your government work</td>
+            </tr>
+            <tr>
+              <td>Commercial awareness</td>
+              <td>Demonstrate understanding of business drivers and how your role contributes to organizational success</td>
+            </tr>
+          </table>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Don't wait for interviewers to raise these concerns. Weave examples that address them into your responses to demonstrate self-awareness and proactivity.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="skill-icon">💬</div>
+          <h3>6. Prepare Thoughtful Questions</h3>
+          <div class="accordion-toggle">+</div>
+        </div>
+        <div class="accordion-content">
+          <p>Asking insightful questions demonstrates your interest and engagement. Consider asking:</p>
+          <ul>
+            <li>"What are the biggest challenges facing the team/department right now?"</li>
+            <li>"How does this role contribute to the company's strategic objectives?"</li>
+            <li>"How do you measure success in this position?"</li>
+            <li>"Can you describe the company culture and team dynamics?"</li>
+            <li>"What opportunities exist for professional development and growth?"</li>
+            <li>"What do you enjoy most about working here?"</li>
+          </ul>
+          <div class="strategy-tip">
+            <strong>Pro Tip:</strong> Prepare at least 5-7 questions, as some may be answered during the interview. Having thoughtful questions ready shows you've done your research and are genuinely interested in the role.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="practice-section">
+    <h2>Practice Makes Perfect</h2>
+    <p class="section-intro">
+      The best way to prepare for interviews is through deliberate practice and feedback:
+    </p>
+
+    <div class="practice-grid">
+      <div class="practice-card">
+        <div class="practice-icon">👥</div>
+        <h3>Mock Interviews</h3>
+        <p>
+          Conduct practice interviews with friends or colleagues who have private sector experience. Ask them to provide honest feedback on your responses, body language, and overall presentation.
+        </p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">📹</div>
+        <h3>Record Yourself</h3>
+        <p>
+          Record yourself answering common interview questions and review your performance. Pay attention to filler words, pace, clarity, and how effectively you communicate your value.
+        </p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">🤝</div>
+        <h3>Join Practice Groups</h3>
+        <p>
+          Participate in interview preparation groups or workshops where you can practice with others in similar situations and receive structured feedback from experienced facilitators.
+        </p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">👨‍🏫</div>
+        <h3>Join the F2I Community</h3>
+        <p>
+          Work with your F2I community to get help on federal-to-private transitions. Connect with others who have successfully made the transition and can provide valuable insights and feedback on your interview approach.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="next-step-nav">
+  <div class="next-step-container">
+    <h3>Continue Your Transition Journey</h3>
+    
+    <a href="/F2I/pages/compensation-benefits.html" class="next-step-link">
+      <div class="next-step-content">
+        <div class="step-label">Next Step (8/9)</div>
+        <div class="step-title">Compensation Negotiation</div>
+        <div class="step-description">Learn to negotiate competitive compensation packages</div>
+      </div>
+      <div class="next-step-arrow">→</div>
+    </a>
+    
+
+    <div class="all-steps-link">
+      <a href="/F2I/pages/transition-roadmap.html">View All Steps in the Transition Roadmap</a>
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3 class="footer-title">Fed 2 Industry</h3>
+        <p>Helping federal employees successfully transition to rewarding careers in the private sector.</p>
+        <div class="contact-info">
+          <p><i class="footer-icon">✉️</i> <a href="mailto:contact@fed2industry.com">contact@fed2industry.com</a></p>
+        </div>
+        <!-- LinkedIn link temporarily hidden
+        <div class="social-links">
+          <a href="https://www.linkedin.com/groups/14635388/" class="social-link"><i class="footer-icon">🔗</i> Join F2I on LinkedIn</a>
+        </div>
+        -->
+      </div>
+
+      <div class="footer-section links">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/about.html">About Us</a></li>
+          <li><a href="/F2I/pages/transition-roadmap.html">Transition Roadmap</a></li>
+          <li><a href="/F2I/pages/self-assessment.html">Self-Assessment</a></li>
+          <li><a href="/F2I/pages/skill-translation-hub.html">Skill Translation</a></li>
+          <li><a href="/F2I/pages/resume-personal-branding.html">Resume & Branding</a></li>
+          <li><a href="/F2I/pages/community.html">Join Our Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section resources">
+        <h3 class="footer-title">Popular Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/F2I/pages/networking-strategies.html">Networking Strategies</a></li>
+          <li><a href="/F2I/pages/job-search-resources.html">Job Search Resources</a></li>
+          <li><a href="/F2I/pages/interview-preparation.html">Interview Preparation</a></li>
+          <li><a href="/F2I/pages/compensation-benefits.html">Compensation & Benefits</a></li>
+          <li><a href="/F2I/pages/transition-checklist.html">Transition Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fed 2 Industry. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/F2I/pages/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/F2I/assets/js/script.min.js" defer></script>
+  <script src="/F2I/assets/js/progress-bar.min.js" defer></script>
+  <script src="/F2I/assets/js/image-optimizer.min.js" defer></script>
+  <script src="/F2I/assets/js/fix-links.js" defer></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script src="/F2I/assets/js/interview-preparation.js" defer></script>
+  
+
+  
+
+  
+
+  <!-- Service Worker Registration (optimized) -->
+  <script>
+    // Register service worker after page load to avoid blocking rendering
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }, 1000); // Delay registration by 1 second to prioritize page rendering
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,33 +1,50 @@
 /**
- * Fix links missing the baseurl
+ * Fix paths for both custom domain and GitHub Pages
  */
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if we're on the custom domain
-  const isCustomDomain = window.location.hostname === 'www.fed2industry.com';
+  // Check if we're on GitHub Pages or custom domain
+  const isGitHubPages = window.location.hostname.includes('github.io');
   
-  if (isCustomDomain) {
-    // Fix all links that start with /pages/ but don't include the baseurl
+  if (isGitHubPages) {
+    // On GitHub Pages, ensure all paths have /F2I prefix
     document.querySelectorAll('a[href^="/pages/"]').forEach(function(link) {
       if (!link.getAttribute('href').startsWith('/F2I')) {
         link.setAttribute('href', '/F2I' + link.getAttribute('href'));
       }
     });
     
-    // Fix links to the home page
     document.querySelectorAll('a[href="/"]').forEach(function(link) {
       link.setAttribute('href', '/F2I/');
     });
     
-    // Fix cdn-cgi links if needed
-    document.querySelectorAll('a[href^="/cdn-cgi/"]').forEach(function(link) {
-      // These are usually Cloudflare links, so we should keep them as is
-      // But if they need to be fixed, uncomment the line below
-      // link.setAttribute('href', '/F2I' + link.getAttribute('href'));
+    // Fix asset paths for GitHub Pages
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      if (link.getAttribute('href').startsWith('/assets/') && !link.getAttribute('href').startsWith('/F2I')) {
+        link.setAttribute('href', '/F2I' + link.getAttribute('href'));
+      }
     });
     
-    // Fix service worker path if it's registered inline
-    if ('serviceWorker' in navigator) {
-      // This will be handled by the updated service worker registration script
-    }
+    document.querySelectorAll('script[src]').forEach(script => {
+      if (script.getAttribute('src').startsWith('/assets/') && !script.getAttribute('src').startsWith('/F2I')) {
+        script.setAttribute('src', '/F2I' + script.getAttribute('src'));
+      }
+    });
+  } else {
+    // On custom domain, REMOVE /F2I prefix from all paths
+    document.querySelectorAll('a[href^="/F2I/"]').forEach(function(link) {
+      link.setAttribute('href', link.getAttribute('href').replace('/F2I', ''));
+    });
+    
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      if (link.getAttribute('href').startsWith('/F2I/')) {
+        link.setAttribute('href', link.getAttribute('href').replace('/F2I', ''));
+      }
+    });
+    
+    document.querySelectorAll('script[src]').forEach(script => {
+      if (script.getAttribute('src').startsWith('/F2I/')) {
+        script.setAttribute('src', script.getAttribute('src').replace('/F2I', ''));
+      }
+    });
   }
 });
